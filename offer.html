@@ -1,0 +1,1377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AnnAlchemy™ — Stop Guessing Why Your Acne Keeps Coming Back</title>
+  <style>
+    :root{
+      --bg:#f8f3ec;
+      --bg-soft:#fdfaf6;
+      --paper:#fffdfb;
+      --paper-2:#fff8f1;
+      --ink:#1d1714;
+      --muted:#6b6057;
+      --line:#e8ddd1;
+      --line-strong:#d8c6b5;
+      --accent:#95663f;
+      --accent-dark:#6f4527;
+      --accent-soft:#f2e4d7;
+      --accent-pale:#fbf3eb;
+      --dark:#231913;
+      --shadow-xl:0 28px 80px rgba(44,30,20,.14);
+      --shadow-lg:0 18px 48px rgba(44,30,20,.10);
+      --shadow-md:0 10px 28px rgba(44,30,20,.08);
+      --radius-xl:32px;
+      --radius-lg:24px;
+      --radius-md:18px;
+      --radius-sm:14px;
+      --max:1180px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color:var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(149,102,63,.08), transparent 28%),
+        linear-gradient(180deg, #fcf8f3 0%, #f8f3ec 100%);
+      line-height:1.6;
+    }
+
+    a{text-decoration:none;color:inherit}
+    .container{width:min(var(--max), calc(100% - 32px)); margin:0 auto}
+    .section{padding:92px 0}
+    .section-tight{padding:58px 0}
+    .center{text-align:center}
+    .muted{color:var(--muted)}
+    .small{font-size:.95rem}
+    .lead{
+      font-size:clamp(1.08rem, 1.85vw, 1.28rem);
+      color:var(--muted);
+      max-width:900px;
+    }
+
+    h1,h2,h3,h4,p,ul,details{margin:0}
+    h1{
+      font-family: Georgia, "Times New Roman", serif;
+      font-size:clamp(2.7rem, 6vw, 5rem);
+      line-height:.98;
+      letter-spacing:-.045em;
+      font-weight:700;
+    }
+    h2{
+      font-family: Georgia, "Times New Roman", serif;
+      font-size:clamp(2rem, 3.2vw, 3.3rem);
+      line-height:1.04;
+      letter-spacing:-.035em;
+      font-weight:700;
+    }
+    h3{
+      font-size:1.28rem;
+      line-height:1.22;
+      font-weight:800;
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:9px 15px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      background:rgba(255,255,255,.72);
+      color:var(--accent-dark);
+      font-size:12px;
+      font-weight:800;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      backdrop-filter: blur(8px);
+    }
+    .eyebrow-dot{
+      width:8px;height:8px;border-radius:999px;background:var(--accent);
+      box-shadow:0 0 0 6px rgba(149,102,63,.10);
+    }
+
+    .hero{
+      padding:24px 0 78px;
+      position:relative;
+      overflow:hidden;
+    }
+    .hero:after{
+      content:"";
+      position:absolute;
+      right:-120px;
+      top:120px;
+      width:420px;
+      height:420px;
+      border-radius:999px;
+      background:radial-gradient(circle, rgba(149,102,63,.12), transparent 68%);
+      pointer-events:none;
+    }
+
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      padding:18px 0;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      font-weight:900;
+      letter-spacing:.02em;
+    }
+    .brand-badge{
+      width:42px;height:42px;border-radius:15px;
+      background:
+        radial-gradient(circle at 30% 25%, rgba(255,255,255,.45), transparent 28%),
+        linear-gradient(135deg, var(--accent) 0%, #c08a63 100%);
+      box-shadow:0 12px 30px rgba(149,102,63,.22);
+    }
+    .nav-actions{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:16px 22px;
+      border-radius:999px;
+      font-weight:800;
+      transition:.22s ease;
+      border:1px solid transparent;
+      cursor:pointer;
+      text-align:center;
+    }
+    .btn:hover{transform:translateY(-1px)}
+    .btn-primary{
+      background:linear-gradient(180deg, #9f6f49 0%, var(--accent-dark) 100%);
+      color:#fff;
+      box-shadow:0 16px 36px rgba(111,69,39,.24);
+    }
+    .btn-secondary{
+      background:#fff;
+      border-color:var(--line);
+      color:var(--ink);
+    }
+    .btn-ghost{
+      background:transparent;
+      color:#fff;
+      border-color:rgba(255,255,255,.14);
+    }
+
+    .hero-wrap{
+      display:grid;
+      grid-template-columns:1.12fr .88fr;
+      gap:36px;
+      align-items:center;
+      margin-top:38px;
+      position:relative;
+      z-index:1;
+    }
+    .hero-copy{
+      display:flex;
+      flex-direction:column;
+      gap:22px;
+    }
+
+    .hero-card{
+      background:linear-gradient(180deg, rgba(255,255,255,.98), rgba(255,248,241,.94));
+      border:1px solid rgba(232,221,209,.95);
+      border-radius:30px;
+      box-shadow:var(--shadow-xl);
+      padding:30px;
+      position:relative;
+      overflow:hidden;
+    }
+    .hero-card:before{
+      content:"";
+      position:absolute;
+      inset:auto -80px -80px auto;
+      width:240px;height:240px;border-radius:999px;
+      background:radial-gradient(circle, rgba(149,102,63,.12), transparent 70%);
+    }
+
+    .hero-bullets{
+      display:grid;
+      gap:12px;
+      margin-top:18px;
+    }
+    .hero-bullets div,
+    .check-list li,
+    .pain-list li,
+    .offer-card li{
+      display:flex;
+      align-items:flex-start;
+      gap:12px;
+      color:var(--ink);
+      font-size:.98rem;
+    }
+
+    .check{
+      flex:0 0 22px;
+      width:22px;height:22px;
+      border-radius:999px;
+      background:var(--accent-soft);
+      color:var(--accent-dark);
+      display:grid;place-items:center;
+      font-size:13px;font-weight:900;
+      margin-top:2px;
+    }
+
+    .hero-meta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:4px;
+    }
+    .pill{
+      padding:10px 14px;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:999px;
+      font-size:.92rem;
+      color:var(--muted);
+      box-shadow:0 6px 20px rgba(44,30,20,.04);
+    }
+
+    .trust-bar{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:16px;
+      margin-top:30px;
+    }
+    .trust-item{
+      background:rgba(255,255,255,.78);
+      border:1px solid var(--line);
+      border-radius:20px;
+      padding:20px;
+      box-shadow:0 8px 26px rgba(48,34,24,.05);
+      backdrop-filter: blur(6px);
+    }
+    .trust-item strong{
+      display:block;
+      font-size:1rem;
+      margin-bottom:6px;
+    }
+
+    .section-shell{
+      background:linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,250,245,.90));
+      border:1px solid rgba(232,221,209,.92);
+      border-radius:34px;
+      box-shadow:var(--shadow-lg);
+      padding:34px;
+    }
+
+    .split{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:28px;
+      align-items:start;
+    }
+
+    .card{
+      background:var(--paper);
+      border:1px solid var(--line);
+      border-radius:var(--radius-lg);
+      box-shadow:var(--shadow-md);
+      padding:28px;
+    }
+    .card-soft{
+      background:linear-gradient(180deg, #fff 0%, #fff9f3 100%);
+    }
+    .card-dark{
+      background:linear-gradient(135deg, #251b15 0%, #35271f 100%);
+      color:#fff;
+      border-color:rgba(255,255,255,.08);
+      box-shadow:var(--shadow-lg);
+    }
+    .card-dark .muted{color:rgba(255,255,255,.74)}
+    .card-dark .check-list li,
+    .card-dark .check-list li span:not(.check){
+      color:#ffffff;
+    }
+
+    .stack{display:grid; gap:18px}
+
+    .pain-list, .check-list{
+      list-style:none;
+      padding:0;
+      display:grid;
+      gap:14px;
+      margin-top:18px;
+    }
+
+    .num{
+      width:36px;height:36px;
+      border-radius:12px;
+      background:var(--accent-soft);
+      color:var(--accent-dark);
+      display:grid;place-items:center;
+      font-size:.95rem;
+      font-weight:900;
+      flex:0 0 36px;
+    }
+
+    .framework-grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:22px;
+      margin-top:28px;
+    }
+    .phase-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:18px;
+      margin-top:24px;
+    }
+    .phase-card,
+    .pillar-card{
+      background:linear-gradient(180deg, #fff 0%, #fffaf6 100%);
+      border:1px solid var(--line);
+      border-radius:24px;
+      padding:24px;
+      box-shadow:var(--shadow-md);
+    }
+    .phase-label,
+    .pillar-label{
+      display:inline-block;
+      margin-bottom:10px;
+      color:var(--accent-dark);
+      font-size:.82rem;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      font-weight:800;
+    }
+
+    .transformation{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:22px;
+      margin-top:28px;
+    }
+
+    .offer-grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:22px;
+      margin-top:28px;
+    }
+    .offer-card{
+      position:relative;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:26px;
+      padding:30px;
+      box-shadow:var(--shadow-lg);
+      overflow:hidden;
+    }
+    .offer-card.featured{
+      border:1.5px solid rgba(149,102,63,.30);
+      background:linear-gradient(180deg, #fff 0%, #fff7f0 100%);
+    }
+    .offer-card.spotlight{
+      background:linear-gradient(135deg, #2a1e17 0%, #3b2a21 100%);
+      color:#fff;
+      border-color:rgba(255,255,255,.08);
+    }
+    .offer-card.spotlight .muted{color:rgba(255,255,255,.76)}
+    .offer-card.spotlight .tag{
+      background:rgba(255,255,255,.10);
+      color:#fff;
+    }
+    .offer-card.spotlight .check{
+      background:rgba(255,255,255,.12);
+      color:#fff;
+    }
+    .offer-card.spotlight ul li,
+    .offer-card.spotlight ul li span:not(.check){
+      color:#ffffff;
+    }
+
+    .tag{
+      display:inline-block;
+      padding:8px 12px;
+      border-radius:999px;
+      font-size:.78rem;
+      font-weight:800;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      background:var(--accent-soft);
+      color:var(--accent-dark);
+      margin-bottom:14px;
+    }
+
+    .price{
+      display:flex;
+      align-items:baseline;
+      gap:8px;
+      margin:14px 0 18px;
+    }
+    .price strong{
+      font-size:2.1rem;
+      letter-spacing:-.04em;
+      line-height:1;
+    }
+    .price span{
+      color:inherit;
+      opacity:.72;
+      font-size:.95rem;
+    }
+
+    .offer-card ul{
+      list-style:none;
+      padding:0;
+      margin:18px 0 0;
+      display:grid;
+      gap:12px;
+    }
+
+    .pricing-table{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+      margin-top:26px;
+    }
+    .pricing-card{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:24px;
+      padding:28px;
+      box-shadow:var(--shadow-md);
+    }
+    .pricing-card.featured{
+      background:linear-gradient(180deg, #fff 0%, #fff8f2 100%);
+      border:1.5px solid rgba(149,102,63,.30);
+      transform:translateY(-4px);
+      box-shadow:var(--shadow-lg);
+    }
+
+    .two-col-checks{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:24px;
+      margin-top:24px;
+    }
+
+    .guarantee-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:18px;
+      margin-top:28px;
+    }
+
+    .faq-grid{
+      display:grid;
+      gap:14px;
+      margin-top:28px;
+    }
+    .faq-item{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:20px;
+      box-shadow:var(--shadow-md);
+      overflow:hidden;
+    }
+    .faq-item summary{
+      list-style:none;
+      cursor:pointer;
+      padding:22px 24px;
+      font-weight:800;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+    }
+    .faq-item summary::-webkit-details-marker{display:none}
+    .faq-item summary:after{
+      content:"+";
+      font-size:1.4rem;
+      color:var(--accent-dark);
+      flex:0 0 auto;
+    }
+    .faq-item[open] summary:after{content:"−"}
+    .faq-content{
+      padding:0 24px 24px;
+      color:var(--muted);
+    }
+
+    .cta-band{
+      background:linear-gradient(135deg, #231a15 0%, #34271f 100%);
+      color:#fff;
+      border-radius:34px;
+      padding:42px;
+      box-shadow:0 24px 60px rgba(26,18,13,.22);
+      position:relative;
+      overflow:hidden;
+    }
+    .cta-band:before{
+      content:"";
+      position:absolute;
+      right:-80px;
+      top:-40px;
+      width:280px;
+      height:280px;
+      border-radius:999px;
+      background:radial-gradient(circle, rgba(255,255,255,.10), transparent 70%);
+      pointer-events:none;
+    }
+    .cta-band .lead,
+    .cta-band .muted{
+      color:rgba(255,255,255,.76);
+    }
+    .cta-steps{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:16px;
+      margin-top:28px;
+    }
+    .cta-step{
+      background:rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.10);
+      border-radius:20px;
+      padding:20px;
+      position:relative;
+      z-index:1;
+    }
+    .cta-step .num{
+      background:rgba(255,255,255,.14);
+      color:#fff;
+    }
+
+    .disclaimer{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:22px;
+      padding:24px;
+      color:var(--muted);
+      font-size:.96rem;
+      box-shadow:var(--shadow-md);
+    }
+
+    .ps{
+      border-top:1px solid var(--line);
+      padding-top:24px;
+      margin-top:28px;
+    }
+
+    .footer{
+      padding:30px 0 110px;
+      color:var(--muted);
+      font-size:.92rem;
+    }
+
+    .sticky-mobile-cta{
+      position:fixed;
+      left:12px;
+      right:12px;
+      bottom:12px;
+      z-index:999;
+      display:none;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      padding:12px 14px;
+      background:rgba(35,26,21,.95);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:18px;
+      box-shadow:0 20px 40px rgba(17,12,10,.28);
+      backdrop-filter:blur(14px);
+    }
+    .sticky-mobile-copy{
+      color:#fff;
+      font-size:.92rem;
+      line-height:1.25;
+      font-weight:800;
+    }
+    .sticky-mobile-copy span{
+      display:block;
+      color:rgba(255,255,255,.70);
+      font-size:.78rem;
+      font-weight:500;
+      margin-top:3px;
+    }
+
+    @media (max-width: 1100px){
+      .hero-wrap,
+      .split,
+      .framework-grid,
+      .transformation,
+      .offer-grid,
+      .pricing-table,
+      .phase-grid,
+      .guarantee-grid,
+      .cta-steps,
+      .two-col-checks,
+      .trust-bar{
+        grid-template-columns:1fr 1fr;
+      }
+    }
+
+    @media (max-width: 760px){
+      .nav{flex-direction:column; align-items:flex-start}
+      .hero-wrap,
+      .split,
+      .framework-grid,
+      .transformation,
+      .offer-grid,
+      .pricing-table,
+      .phase-grid,
+      .guarantee-grid,
+      .cta-steps,
+      .two-col-checks,
+      .trust-bar{
+        grid-template-columns:1fr;
+      }
+      .hero{padding-bottom:54px}
+      .section{padding:72px 0}
+      .section-tight{padding:48px 0}
+      .cta-band,
+      .hero-card,
+      .section-shell{padding:28px}
+      .footer{padding-bottom:120px}
+      .sticky-mobile-cta{display:flex}
+      .nav-actions{width:100%}
+      .btn{width:100%}
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hero">
+    <div class="container">
+      <div class="nav">
+        <div class="brand">
+          <div class="brand-badge"></div>
+          <span>AnnAlchemy™</span>
+        </div>
+        <div class="nav-actions">
+          <a href="#offers" class="btn btn-secondary">Compare Your Options</a>
+          <a href="#clarity-session" class="btn btn-primary">Reserve Your Clarity Session</a>
+        </div>
+      </div>
+
+      <div class="hero-wrap">
+        <div class="hero-copy">
+          <span class="eyebrow"><span class="eyebrow-dot"></span> Nurse-led, evidence-informed adult acne support</span>
+
+          <h1>Stop Guessing Why Your Acne Keeps Coming Back</h1>
+
+          <p class="lead">
+            You do not need more panic, more random product switching, or another routine that feels too aggressive to sustain.
+            You need a clearer, more strategic way to understand recurring acne, reduce avoidable flare mistakes, and make smarter next-step decisions for both breakouts and acne marks.
+          </p>
+
+          <div class="hero-meta">
+            <span class="pill">Self-guided protocols available</span>
+            <span class="pill">Only 3 AnnAlchemy Clarity Session™ slots per week</span>
+            <span class="pill">Only 1 AnnAlchemy Intensive™ client per month</span>
+            <span class="pill">Current pricing valid until March 31, 2026</span>
+          </div>
+
+          <div style="display:flex; gap:14px; flex-wrap:wrap; margin-top:8px;">
+            <a href="#offers" class="btn btn-primary">Choose Your Best Starting Point</a>
+            <a href="#why-different" class="btn btn-secondary">See Why This Works Differently</a>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <span class="tag">The AnnAlchemy Relapse Control Framework™</span>
+          <h3 style="font-size:1.58rem; margin-bottom:12px;">A calmer, more strategic way to manage persistent acne and acne marks</h3>
+          <p class="muted">
+            This nurse-led, evidence-informed framework is designed to help you clarify what is active, calm what is irritated, correct what is recurring, and maintain progress more strategically — while accounting for common post-acne marks like redness and discoloration.
+          </p>
+
+          <div class="hero-bullets">
+            <div><span class="check">✓</span><span>Understand what may be driving your flare cycle</span></div>
+            <div><span class="check">✓</span><span>Reduce panic-driven decisions and over-treatment</span></div>
+            <div><span class="check">✓</span><span>Build a more tolerable routine you can actually maintain</span></div>
+            <div><span class="check">✓</span><span>Separate active breakouts from what acne left behind</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="trust-bar">
+        <div class="trust-item">
+          <strong>Clarity over chaos</strong>
+          <p class="small muted">Make your skin feel less random and your decisions less reactive.</p>
+        </div>
+        <div class="trust-item">
+          <strong>Tolerability matters</strong>
+          <p class="small muted">Support consistency by reducing unnecessary irritation and overload.</p>
+        </div>
+        <div class="trust-item">
+          <strong>Relapse-aware structure</strong>
+          <p class="small muted">Focus on the cycle behind recurring acne, not just the breakout you can see.</p>
+        </div>
+        <div class="trust-item">
+          <strong>Mark-aware strategy</strong>
+          <p class="small muted">Account for post-acne redness and discoloration with realistic expectations.</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="section section-tight">
+    <div class="container">
+      <div class="section-shell">
+        <div class="split">
+          <div class="stack">
+            <span class="eyebrow"><span class="eyebrow-dot"></span> The promise</span>
+            <h2>You are not failing your skin. You may just be missing the pattern.</h2>
+            <p class="lead" style="max-width:unset;">
+              The AnnAlchemy Relapse Control Framework™ helps you move from confusion and trial-and-error to more clarity and more control over recurring acne and acne marks.
+            </p>
+            <p class="muted">
+              This is for you if your acne improves, then comes back. If your routine feels too harsh, too confusing, or too hard to sustain. If you still do not know whether you are dealing with active acne, irritation, residual redness, discoloration, or all of the above.
+            </p>
+          </div>
+
+          <div class="card card-soft">
+            <h3>Most acne advice focuses on the breakout you can see.</h3>
+            <p class="muted" style="margin-top:10px;">
+              This framework focuses on the cycle behind the breakout — including recurring acne activity, confusion around likely aggravators, poor tolerability, and the marks acne can leave behind.
+            </p>
+            <ul class="check-list">
+              <li><span class="check">✓</span><span>The goal is not more panic.</span></li>
+              <li><span class="check">✓</span><span>The goal is not more random product switching.</span></li>
+              <li><span class="check">✓</span><span>The goal is not more over-treatment.</span></li>
+              <li><span class="check">✓</span><span>The goal is a more structured, evidence-informed, relapse-aware way to move forward.</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="why-different">
+    <div class="container">
+      <div class="center stack" style="align-items:center;">
+        <span class="eyebrow"><span class="eyebrow-dot"></span> Why this is different</span>
+        <h2>Recurring acne is rarely just about effort.</h2>
+        <p class="lead">
+          You may have already tried products, routines, restarts, stronger actives, stricter habits, and hoping the next plan will finally be the one. But when acne keeps coming back, the deeper problem is often not just the breakout itself. It is the cycle behind it.
+        </p>
+      </div>
+
+      <div class="split" style="margin-top:32px;">
+        <div class="card">
+          <h3>What usually happens</h3>
+          <ul class="pain-list">
+            <li><span class="check">✕</span><span>You react to fear, frustration, and visible flare-ups.</span></li>
+            <li><span class="check">✕</span><span>You switch products too fast or hit the skin too hard.</span></li>
+            <li><span class="check">✕</span><span>You cannot tell what is helping, what is irritating, or what is simply taking time.</span></li>
+            <li><span class="check">✕</span><span>You end up back in confusion, inconsistency, and discouragement.</span></li>
+          </ul>
+        </div>
+
+        <div class="card card-dark">
+          <h3>What this framework helps you do instead</h3>
+          <ul class="check-list">
+            <li><span class="check">✓</span><span>Think in patterns instead of panic.</span></li>
+            <li><span class="check">✓</span><span>Support consistency by protecting tolerability.</span></li>
+            <li><span class="check">✓</span><span>Understand what may be active versus residual.</span></li>
+            <li><span class="check">✓</span><span>Make steadier decisions with more clarity and less emotional whiplash.</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="framework">
+    <div class="container">
+      <div class="center stack" style="align-items:center;">
+        <span class="eyebrow"><span class="eyebrow-dot"></span> The framework</span>
+        <h2>The 4 scientific pillars behind a more strategic acne plan</h2>
+        <p class="lead">
+          This framework is built to help you understand recurring acne more intelligently, protect tolerability, and account for the marks inflammatory acne can leave behind.
+        </p>
+      </div>
+
+      <div class="framework-grid">
+        <div class="pillar-card">
+          <span class="pillar-label">Pillar 1</span>
+          <h3>Acne Pathophysiology</h3>
+          <p class="muted">
+            Acne involves interrelated biologic drivers such as altered keratinization, sebum activity, microbial dysregulation, and inflammation. Persistent acne is not simply a hygiene issue or a random cosmetic inconvenience.
+          </p>
+        </div>
+
+        <div class="pillar-card">
+          <span class="pillar-label">Pillar 2</span>
+          <h3>Hormonal and Pattern Influences</h3>
+          <p class="muted">
+            Adult acne may be influenced by recurring pattern factors such as hormonal signaling, cycle timing, stress, sleep disruption, or other aggravator patterns. These clues matter, even though they are not diagnostic on their own.
+          </p>
+        </div>
+
+        <div class="pillar-card">
+          <span class="pillar-label">Pillar 3</span>
+          <h3>Barrier Function and Tolerability</h3>
+          <p class="muted">
+            Acne plans often fail because the skin becomes too irritated, too inflamed, or too inconsistent to maintain. Better support means giving tolerability and routine sustainability the attention they deserve.
+          </p>
+        </div>
+
+        <div class="pillar-card">
+          <span class="pillar-label">Pillar 4</span>
+          <h3>Post-Acne Mark Awareness</h3>
+          <p class="muted">
+            Post-inflammatory redness and discoloration are common after inflammatory acne. They affect how you perceive progress, impact quality of life, and require realistic expectations instead of panic.
+          </p>
+        </div>
+      </div>
+
+      <div class="center stack" style="align-items:center; margin-top:54px;">
+        <span class="eyebrow"><span class="eyebrow-dot"></span> The 4 phases</span>
+        <h2>How you move from flare confusion to steadier control</h2>
+      </div>
+
+      <div class="phase-grid">
+        <div class="phase-card">
+          <span class="phase-label">Phase 1</span>
+          <h3>Clarify the Pattern</h3>
+          <p class="muted">
+            Make your skin feel less random by identifying recurring clues, possible aggravators, and what may actually be happening.
+          </p>
+        </div>
+
+        <div class="phase-card">
+          <span class="phase-label">Phase 2</span>
+          <h3>Calm the Skin</h3>
+          <p class="muted">
+            Reduce unnecessary irritation, improve tolerability, and step out of the over-treatment cycle.
+          </p>
+        </div>
+
+        <div class="phase-card">
+          <span class="phase-label">Phase 3</span>
+          <h3>Correct the Plan</h3>
+          <p class="muted">
+            Build a more strategic, realistic, and sustainable approach based on what the pattern is showing.
+          </p>
+        </div>
+
+        <div class="phase-card">
+          <span class="phase-label">Phase 4</span>
+          <h3>Maintain the Progress</h3>
+          <p class="muted">
+            Shift from reactive acne management to a steadier, more confident, maintenance-aware process.
+          </p>
+        </div>
+      </div>
+
+      <div class="card card-soft" style="margin-top:30px;">
+        <h3>One principle changes everything:</h3>
+        <p class="lead" style="max-width:unset; margin-top:10px;">
+          Active acne control comes first. Mark recovery follows. Both matter.
+        </p>
+        <p class="muted" style="margin-top:12px;">
+          Not everything still visible on your skin is the same problem. Some of it may be active acne. Some of it may be what acne left behind. They do not always improve on the same timeline, and they do not always deserve the same priority.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="split">
+        <div class="stack">
+          <span class="eyebrow"><span class="eyebrow-dot"></span> Why this matters</span>
+          <h2>Your skin is not the only thing relapse affects.</h2>
+          <p class="lead" style="max-width:unset;">
+            Every relapse affects confidence, decision-making, and how much trust you still have in your own ability to manage what is happening.
+          </p>
+          <p class="muted">
+            You should not have to choose between generic advice that does not fit your situation and trying to figure everything out alone through trial-and-error. That is how people end up in the same cycle: confusion, overreaction, inconsistency, discouragement, and repeated relapse.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>What this brand is built to offer instead</h3>
+          <ul class="check-list">
+            <li><span class="check">✓</span><span>More structure, not more hype</span></li>
+            <li><span class="check">✓</span><span>More clarity, not false certainty</span></li>
+            <li><span class="check">✓</span><span>More strategic support, not random guessing</span></li>
+            <li><span class="check">✓</span><span>A nurse-led, evidence-informed way to think through the problem and move forward</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="results">
+    <div class="container">
+      <div class="center stack" style="align-items:center;">
+        <span class="eyebrow"><span class="eyebrow-dot"></span> What progress can look like</span>
+        <h2>From the first win to long-term control</h2>
+        <p class="lead">
+          This process is not about chasing perfection. It is about replacing blind reaction with better observation, steadier decisions, and a more manageable way to protect progress over time.
+        </p>
+      </div>
+
+      <div class="transformation">
+        <div class="card">
+          <span class="tag">Phase 1 — First Win</span>
+          <h3>30–60 days of clearer direction</h3>
+          <ul class="check-list">
+            <li><span class="check">✓</span><span>A clearer map of what may be driving your flare cycle</span></li>
+            <li><span class="check">✓</span><span>Fewer panic-driven mistakes</span></li>
+            <li><span class="check">✓</span><span>A more tolerable routine you can actually follow</span></li>
+            <li><span class="check">✓</span><span>Early signs that your skin feels calmer, less reactive, and more predictable</span></li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <span class="tag">Phase 2 — What happens next</span>
+          <h3>More stability and better self-management</h3>
+          <ul class="check-list">
+            <li><span class="check">✓</span><span>Better pattern recognition</span></li>
+            <li><span class="check">✓</span><span>Steadier adherence and fewer flare spirals</span></li>
+            <li><span class="check">✓</span><span>Less mark-worsening from repeated inflammation</span></li>
+            <li><span class="check">✓</span><span>Stronger long-term control through more confident decision-making</span></li>
+          </ul>
+        </div>
+
+        <div class="card card-soft">
+          <span class="tag">Phase 3 — Long-term outcome</span>
+          <h3>More confidence, less guesswork</h3>
+          <ul class="check-list">
+            <li><span class="check">✓</span><span>Better self-trust and fewer relapse-triggered overreactions</span></li>
+            <li><span class="check">✓</span><span>A repeatable way to manage recurring acne and marks without falling back into chaos</span></li>
+            <li><span class="check">✓</span><span>More accurate interpretation of changes in your skin</span></li>
+            <li><span class="check">✓</span><span>A more realistic way to protect progress over time</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="offers">
+    <div class="container">
+      <div class="center stack" style="align-items:center;">
+        <span class="eyebrow"><span class="eyebrow-dot"></span> The offer stack</span>
+        <h2>Choose the level of support that matches where you are right now</h2>
+        <p class="lead">
+          Start self-guided if you need clarity. Book support if you want help interpreting your pattern and implementing a steadier, more strategic acne process.
+        </p>
+      </div>
+
+      <div class="offer-grid">
+        <div class="offer-card">
+          <span class="tag">Self-guided</span>
+          <h3>Relapse Control Guide™</h3>
+          <p class="muted">For adults tired of acne that improves, then comes back.</p>
+          <div class="price"><strong>$27</strong><span>one-time payment</span></div>
+          <p>
+            Understand recurring flare cycles, reduce common relapse mistakes, and limit the repeated creation of post-acne marks from ongoing inflammation.
+          </p>
+          <ul>
+            <li><span class="check">✓</span><span>Why acne relapses</span></li>
+            <li><span class="check">✓</span><span>What commonly restarts the cycle</span></li>
+            <li><span class="check">✓</span><span>How to stop panic-switching products</span></li>
+            <li><span class="check">✓</span><span>Relapse self-audit, weekly tracker, and prevention planning</span></li>
+          </ul>
+          <div style="margin-top:22px;">
+            <a href="#cta" class="btn btn-secondary" style="width:100%;">Start With The Guide</a>
+          </div>
+        </div>
+
+        <div class="offer-card">
+          <span class="tag">Self-guided</span>
+          <h3>Hormonal Trigger Mapping Workbook™</h3>
+          <p class="muted">For adults who feel like something is triggering their acne, but cannot clearly tell what.</p>
+          <div class="price"><strong>$37</strong><span>one-time payment</span></div>
+          <p>
+            Organize recurring acne clues around timing, stress, sleep, cycle shifts, irritation, and lingering post-acne marks so your skin feels less random and more understandable.
+          </p>
+          <ul>
+            <li><span class="check">✓</span><span>Track active acne versus residual redness and discoloration</span></li>
+            <li><span class="check">✓</span><span>Map cycle clues, routine changes, and pattern timing</span></li>
+            <li><span class="check">✓</span><span>Use interpretation prompts and clinician-prep notes</span></li>
+            <li><span class="check">✓</span><span>4-week trigger journal included</span></li>
+          </ul>
+          <div style="margin-top:22px;">
+            <a href="#cta" class="btn btn-secondary" style="width:100%;">Map Your Trigger Pattern</a>
+          </div>
+        </div>
+
+        <div class="offer-card">
+          <span class="tag">Self-guided</span>
+          <h3>Barrier-First Acne Reset™</h3>
+          <p class="muted">For acne-prone, reactive skin that needs less overload and more tolerability.</p>
+          <div class="price"><strong>$27</strong><span>one-time payment</span></div>
+          <p>
+            Reduce unnecessary irritation, improve tolerability, and avoid worsening active acne or post-acne redness and discoloration through over-treatment.
+          </p>
+          <ul>
+            <li><span class="check">✓</span><span>Signs of barrier stress</span></li>
+            <li><span class="check">✓</span><span>How harsh routines backfire</span></li>
+            <li><span class="check">✓</span><span>Routine simplification and reintroduction planning</span></li>
+            <li><span class="check">✓</span><span>7-day reset tracker and when to seek medical review</span></li>
+          </ul>
+          <div style="margin-top:22px;">
+            <a href="#cta" class="btn btn-secondary" style="width:100%;">Calm Your Routine</a>
+          </div>
+        </div>
+
+        <div class="offer-card featured">
+          <span class="tag">Best self-guided value</span>
+          <h3>AnnAlchemy Starter Library™</h3>
+          <p class="muted">Get all three self-guided offers in one private portal download.</p>
+          <div class="price"><strong>$77</strong><span>one-time payment</span></div>
+          <p>
+            Get the complete self-guided system for recurring acne, pattern mapping, and barrier-first support in one place.
+          </p>
+          <ul>
+            <li><span class="check">✓</span><span>Relapse Control Guide™</span></li>
+            <li><span class="check">✓</span><span>Hormonal Trigger Mapping Workbook™</span></li>
+            <li><span class="check">✓</span><span>Barrier-First Acne Reset™</span></li>
+            <li><span class="check">✓</span><span>All PDFs and deliverables from all three self-guided protocols included</span></li>
+          </ul>
+          <div style="margin-top:22px;">
+            <a href="#cta" class="btn btn-primary" style="width:100%;">Unlock The Starter Library</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="offer-grid" style="margin-top:24px;">
+        <div class="offer-card spotlight" id="clarity-session">
+          <span class="tag">Most popular personalized option</span>
+          <h3>AnnAlchemy Clarity Session™</h3>
+          <p class="muted">A focused 1:1 strategy session for adults who want help understanding what is active, what is residual, what may be driving the cycle, and what their next-step priorities should be.</p>
+          <div class="price"><strong>$127</strong><span>1:1 session</span></div>
+          <ul>
+            <li><span class="check">✓</span><span>60–75 minute 1:1 Zoom session</span></li>
+            <li><span class="check">✓</span><span>Intake process and written roadmap</span></li>
+            <li><span class="check">✓</span><span>Help understanding acne pattern, likely aggravators, and tolerability issues</span></li>
+            <li><span class="check">✓</span><span>More strategic next-step priorities for recurring acne and acne marks</span></li>
+          </ul>
+
+          <div class="card" style="margin-top:20px; padding:20px; background:rgba(255,255,255,.08); border-color:rgba(255,255,255,.08); box-shadow:none;">
+            <h3 style="font-size:1.05rem;">Bonus access included</h3>
+            <p class="small muted" style="margin-top:10px;">
+              AnnAlchemy Starter Library™ bundle, tracker template, next-step roadmap, medical-visit prep sheet, 7-day reset tracker, routine simplification checklist, reintroduction worksheet, Relapse Risk Audit™, Trigger Mapping Sheet™, Barrier Distress Check™, and Acne Pattern Summary Page™.
+            </p>
+          </div>
+
+          <div style="margin-top:22px;">
+            <a href="#cta" class="btn btn-primary" style="width:100%;">Reserve Your 1:1 Clarity Session</a>
+          </div>
+        </div>
+
+        <div class="offer-card featured">
+          <span class="tag">High-touch support</span>
+          <h3>AnnAlchemy Intensive™</h3>
+          <p class="muted">A nurse-led, evidence-informed coaching experience for adults who want more support implementing a strategic, tolerable, relapse-aware, and mark-aware acne management process over time.</p>
+          <div class="price"><strong>$497</strong><span>2-pay option available</span></div>
+          <ul>
+            <li><span class="check">✓</span><span>Kickoff strategy call (75–90 minutes)</span></li>
+            <li><span class="check">✓</span><span>Weekly check-ins or calls</span></li>
+            <li><span class="check">✓</span><span>Tracker review and support around tolerability, consistency, and pattern changes</span></li>
+            <li><span class="check">✓</span><span>Final summary and maintenance plan</span></li>
+            <li><span class="check">✓</span><span>Google Docs-based support structure</span></li>
+          </ul>
+
+          <div class="card card-soft" style="margin-top:20px; padding:20px;">
+            <h3 style="font-size:1.05rem;">Premium inclusions may include</h3>
+            <p class="muted small" style="margin-top:10px;">
+              All bonuses from the AnnAlchemy Clarity Session™ plus: async support during business days, tracker feedback, photo review commentary, personalized dashboard, maintenance extension option, written weekly focus notes, progress check-ins, and a 7-day brief follow-up.
+            </p>
+          </div>
+
+          <div style="margin-top:22px;">
+            <a href="#cta" class="btn btn-primary" style="width:100%;">Apply For High-Touch Support</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="center stack" style="align-items:center;">
+        <span class="eyebrow"><span class="eyebrow-dot"></span> Who this is for</span>
+        <h2>A better fit if you want clarity, consistency, and a more strategic process</h2>
+      </div>
+
+      <div class="two-col-checks">
+        <div class="card">
+          <h3>This is for you if…</h3>
+          <ul class="check-list">
+            <li><span class="check">✓</span><span>You have persistent or recurrent acne</span></li>
+            <li><span class="check">✓</span><span>Your skin feels unpredictable and frustrating to manage</span></li>
+            <li><span class="check">✓</span><span>You are tired of over-treating and starting over</span></li>
+            <li><span class="check">✓</span><span>You want a more structured, evidence-informed approach</span></li>
+            <li><span class="check">✓</span><span>You are also dealing with redness or discoloration after breakouts</span></li>
+            <li><span class="check">✓</span><span>You want more clarity, consistency, and tolerability</span></li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>This is not for you if…</h3>
+          <ul class="pain-list">
+            <li><span class="check">✕</span><span>You want a promise of a permanent cure</span></li>
+            <li><span class="check">✕</span><span>You want a one-product solution or magic fix</span></li>
+            <li><span class="check">✕</span><span>You want to keep switching constantly instead of staying consistent</span></li>
+            <li><span class="check">✕</span><span>You want aggressive over-treatment over a structured process</span></li>
+            <li><span class="check">✕</span><span>You do not want to track patterns or follow through</span></li>
+            <li><span class="check">✕</span><span>You want diagnosis or treatment beyond the scope of education and coaching support</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-tight">
+    <div class="container">
+      <div class="center stack" style="align-items:center;">
+        <span class="eyebrow"><span class="eyebrow-dot"></span> Evidence and safety note</span>
+        <h2>A more strategic acne plan starts with a more accurate understanding of the condition</h2>
+      </div>
+
+      <div class="card card-soft" style="margin-top:28px;">
+        <p class="muted">
+          Acne is a chronic inflammatory skin condition that often persists into adulthood. Current guidance supports not only treatment selection, but also maintenance planning, skin-care advice, attention to tolerability, and escalation when needed. Post-acne erythema and hyperpigmentation are common sequelae and may require distinct expectations and care considerations.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="pricing">
+    <div class="container">
+      <div class="center stack" style="align-items:center;">
+        <span class="eyebrow"><span class="eyebrow-dot"></span> Pricing</span>
+        <h2>Start where you need the most help right now</h2>
+        <p class="lead">
+          Begin with self-guided clarity, move into a focused session, or get implementation support over time.
+        </p>
+      </div>
+
+      <div class="pricing-table">
+        <div class="pricing-card">
+          <span class="tag">Self-guided</span>
+          <h3> AnnAlchemy Starter Library™</h3>
+          <div class="price"><strong>$77</strong><span>one-time payment</span></div>
+          <p class="muted">
+            Best if you want to understand the pattern, reduce common relapse mistakes, and get structured tools to work through recurring acne more strategically.
+          </p>
+          <div style="margin-top:20px;">
+            <a href="#cta" class="btn btn-secondary" style="width:100%;">Begin Self-Guided</a>
+          </div>
+        </div>
+
+        <div class="pricing-card featured">
+          <span class="tag">Most popular next step</span>
+          <h3> AnnAlchemy Clarity Session™</h3>
+          <div class="price"><strong>$127</strong><span>1:1 session</span></div>
+          <p class="muted">
+            Best if you want help understanding your acne pattern, likely aggravators, tolerability issues, and what your next priorities should be.
+          </p>
+          <div style="margin-top:20px;">
+            <a href="#cta" class="btn btn-primary" style="width:100%;">Book Your 1:1 Session</a>
+          </div>
+        </div>
+
+        <div class="pricing-card">
+          <span class="tag">Highest support</span>
+          <h3>AnnAlchemy Intensive™</h3>
+          <div class="price"><strong>$497</strong><span>2-pay option available</span></div>
+          <p class="muted">
+            Best if you want guided implementation, accountability, and structured support while managing recurring acne and acne marks over time.
+          </p>
+          <div style="margin-top:20px;">
+            <a href="#cta" class="btn btn-secondary" style="width:100%;">Apply For Ongoing Support</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-tight">
+    <div class="container">
+      <div class="center stack" style="align-items:center;">
+        <span class="eyebrow"><span class="eyebrow-dot"></span> Guarantees</span>
+        <h2>Built to leave you clearer, not more confused</h2>
+      </div>
+
+      <div class="guarantee-grid">
+        <div class="card">
+          <h3>Clarity Guarantee</h3>
+          <p class="muted">If you complete the intake and session process and still feel unclear on your next steps, your roadmap will be refined once at no extra cost.</p>
+        </div>
+
+        <div class="card">
+          <h3>Session Support Guarantee</h3>
+          <p class="muted">If your written roadmap is not delivered, it will be completed at no extra charge.</p>
+        </div>
+
+        <div class="card">
+          <h3>Intensive Support Guarantee</h3>
+          <p class="muted">If you fully participate in the Intensive and still feel the structure is unclear, you will receive an additional support check-in to tighten the plan.</p>
+        </div>
+
+        <div class="card card-soft">
+          <h3>Process Guarantee</h3>
+          <p class="muted">You will leave with a clearer roadmap, structured notes, and next-step priorities.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-tight">
+    <div class="container">
+      <div class="center stack" style="align-items:center;">
+        <span class="eyebrow"><span class="eyebrow-dot"></span> FAQ</span>
+        <h2>Questions you may still be asking</h2>
+        <p class="lead">These answers are here to help you make a clearer decision, not to push you into the wrong level of support.</p>
+      </div>
+
+      <div class="faq-grid">
+        <details class="faq-item">
+          <summary>What if I have already tried almost everything?</summary>
+          <div class="faq-content">
+            Many adults with recurring acne are not lacking effort. They are lacking a clearer way to distinguish pattern, tolerability problems, likely aggravators, and what is still active versus what is residual. This framework is built for that exact situation.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Does this promise a cure or permanent clearance?</summary>
+          <div class="faq-content">
+            No. This is not framed as a cure promise. It is a structured, nurse-led, evidence-informed support and education process designed to help you make more informed next-step decisions, reduce common relapse mistakes, and manage recurring acne more strategically.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>How do I know whether I should start self-guided or book a session?</summary>
+          <div class="faq-content">
+            Start self-guided if you want education, structure, and tools you can work through on your own. Book the AnnAlchemy Clarity Session™ if you want help interpreting your pattern, identifying likely aggravators, and getting a more personalized next-step roadmap. Apply for the Intensive if you want ongoing support implementing the process over time.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Can this help if I also have redness or dark marks after breakouts?</summary>
+          <div class="faq-content">
+            Yes. The framework is mark-aware. It accounts for common post-acne erythema and hyperpigmentation and helps you think more clearly about how visible marks may differ from active acne in both priority and timeline.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Is this a replacement for dermatologist care?</summary>
+          <div class="faq-content">
+            No. This does not replace diagnosis or individualized medical treatment. Dermatology or other qualified medical review may be appropriate when symptoms are severe, worsening, unclear, scarring, or not responding as expected.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>What if my skin is sensitive and easily irritated?</summary>
+          <div class="faq-content">
+            That is one reason this framework prioritizes barrier function and tolerability. Many acne routines fail because they become too irritating to sustain. A more strategic plan often needs less overload, not more force.
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="cta">
+    <div class="container">
+      <div class="cta-band">
+        <span class="eyebrow" style="background:rgba(255,255,255,.06); border-color:rgba(255,255,255,.12); color:#fff;">
+          <span class="eyebrow-dot" style="background:#fff; box-shadow:none;"></span>
+          4 simple next steps
+        </span>
+
+        <h2 style="margin-top:18px;">You do not need to keep managing recurring acne in reaction mode.</h2>
+        <p class="lead" style="margin-top:14px;">
+          Choose the level of support that matches where you are, use the framework to make your skin feel less random, and take the next step toward a more strategic, tolerable, relapse-aware way to manage recurring acne and acne marks.
+        </p>
+
+        <div class="cta-steps">
+          <div class="cta-step">
+            <div class="num">1</div>
+            <h3 style="margin-top:14px;">Choose your pathway</h3>
+            <p class="small muted" style="margin-top:8px;">Start with self-guided clarity, a 1:1 strategy session, or high-support coaching.</p>
+          </div>
+          <div class="cta-step">
+            <div class="num">2</div>
+            <h3 style="margin-top:14px;">Find your pattern</h3>
+            <p class="small muted" style="margin-top:8px;">Use the framework to make your skin feel less random and your decisions less reactive.</p>
+          </div>
+          <div class="cta-step">
+            <div class="num">3</div>
+            <h3 style="margin-top:14px;">Get your next-step plan</h3>
+            <p class="small muted" style="margin-top:8px;">Understand what may be active, what may be residual, and where your priorities should go next.</p>
+          </div>
+          <div class="cta-step">
+            <div class="num">4</div>
+            <h3 style="margin-top:14px;">Move forward with more control</h3>
+            <p class="small muted" style="margin-top:8px;">Replace panic and guesswork with a steadier, more confident process.</p>
+          </div>
+        </div>
+
+        <div style="display:flex; gap:14px; flex-wrap:wrap; margin-top:28px; position:relative; z-index:1;">
+          <a href="#" class="btn btn-primary">Reserve Your Clarity Session</a>
+          <a href="#offers" class="btn btn-ghost">Compare All Support Options</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-tight">
+    <div class="container">
+      <div class="split">
+        <div class="disclaimer">
+          <strong style="display:block; color:var(--ink); margin-bottom:10px;">Important Disclaimer</strong>
+          AnnAlchemy™ is a nurse-led, evidence-informed support and education framework. It is designed to help adults better understand recurring acne patterns, improve structure and consistency, and make more informed next-step decisions.
+          <br /><br />
+          It is not a medical diagnosis service, does not replace individualized medical care, and does not guarantee cure, clearance, or permanent resolution of acne or acne marks. Referral to a dermatologist or other qualified medical care may be appropriate in some cases, especially when symptoms are severe, unclear, worsening, or require medical treatment beyond the scope of education and coaching support.
+        </div>
+
+        <div class="disclaimer">
+          <strong style="display:block; color:var(--ink); margin-bottom:10px;">Intellectual Property and Use Notice</strong>
+          The AnnAlchemy Relapse Control Framework™, its named phases, pillar architecture, worksheets, language systems, and branded educational materials are proprietary intellectual property of AnnAlchemy™.
+          <br /><br />
+          This website content is provided for personal educational viewing only.
+          <br /><br />
+          No part of this framework may be copied, republished, taught, adapted, redistributed, resold, or used to create derivative educational, coaching, consulting, or digital products without prior written permission.
+        </div>
+      </div>
+
+      <div class="ps">
+        <p class="muted">
+          <strong style="color:var(--ink);">P.S.</strong> If your acne keeps coming back, that does not automatically mean nothing works. It may mean the cycle still has not been understood clearly enough. And if you are also dealing with redness, discoloration, irritation, inconsistency, and routine confusion, then more force is probably not the answer.
+          <br /><br />
+          A better strategy is.
+          <br /><br />
+          AnnAlchemy™ helps you stop guessing, calm the chaos, and manage recurring acne with more clarity and control.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container" style="display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap;">
+      <span>The AnnAlchemy™ Relapse Control Framework™. Nurse-led, evidence-informed recurring acne support.</span>
+      <span> AnnAlchemy™. All rights reserved. Personal educational use only. No reproduction, redistribution, adaptation, resale, or derivative use permitted.</span>
+    </div>
+  </footer>
+
+  <div class="sticky-mobile-cta">
+    <div class="sticky-mobile-copy">
+      Acne Clarity Session™
+      <span>1:1 support for recurring acne + acne marks</span>
+    </div>
+    <a href="#clarity-session" class="btn btn-primary" style="padding:13px 16px; width:auto;">Reserve</a>
+  </div>
+
+</body>
+</html>
