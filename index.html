@@ -652,7 +652,7 @@
       color:var(--accent-dark);
       flex:0 0 auto;
     }
-    .faq-item[open] summary:after{content:"−"}
+    .faq-item[open] summary:after{content:"\2212"}
     .faq-content{
       padding:0 24px 24px;
       color:var(--muted);
@@ -796,11 +796,9 @@
       .trust-bar{
         grid-template-columns:1fr;
       }
-      .hero{padding-bottom:54px}
-      .section{padding:72px 0}
+      .section{padding:64px 0}
       .section-tight{padding:48px 0}
-      .cta-band,
-      .hero-card,
+      .glass-shell{border-radius:26px}
       .section-shell{padding:28px}
       .footer{padding-bottom:120px}
       .sticky-mobile-cta{display:flex}
@@ -822,7 +820,7 @@
           <div class="brand-badge"></div>
           <div class="brand-wordmark">
             <small>Nurse-led, evidence-informed</small>
-            <strong>AnnAlchemy™</strong>
+            <strong>AnnAlchemy&trade;</strong>
           </div>
         </div>
         <div class="nav-actions">
@@ -844,10 +842,9 @@
               </p>
 
               <div class="hero-meta">
-                <span class="pill urgent">75% OFF on all AnnAlchemy self-guided protocols, Clarity Session™ and Intensive™</span>
-                <span class="pill">Only 3 AnnAlchemy Clarity Session™ slots per week</span>
-                <span class="pill">Only 1 AnnAlchemy Intensive™ client per month</span>
-                <span class="pill">Current pricing valid until March 31, 2026</span>
+                <span class="pill urgent">Founding-cohort pricing, locked for the current group before it steps up</span>
+                <span class="pill">Only 3 AnnAlchemy Clarity Session&trade; slots open each week</span>
+                <span class="pill">Only 1 AnnAlchemy Intensive&trade; client taken on each month</span>
               </div>
 
               <div class="hero-cta-row">
@@ -857,17 +854,17 @@
             </div>
 
             <div class="hero-card">
-              <span class="tag">The AnnAlchemy Method™</span>
+              <span class="tag">The AnnAlchemy Method&trade;</span>
               <h3 style="font-size:1.62rem; margin-top:16px; margin-bottom:12px;">A calmer, more strategic way to manage persistent acne and acne marks</h3>
               <p class="muted">
-                This nurse-led, evidence-informed framework is designed to help you clarify what is active, calm what is irritated, correct what is recurring, and maintain progress more strategically — while accounting for common post-acne marks like redness and discoloration.
+                This nurse-led, evidence-informed framework is designed to help you clarify what is active, calm what is irritated, correct what is recurring, and maintain progress more strategically, while accounting for common post-acne marks like redness and discoloration.
               </p>
 
               <div class="hero-bullets">
-                <div><span class="check">✓</span><span>Understand what may be driving your flare cycle</span></div>
-                <div><span class="check">✓</span><span>Reduce panic-driven decisions and over-treatment</span></div>
-                <div><span class="check">✓</span><span>Build a more tolerable routine you can actually maintain</span></div>
-                <div><span class="check">✓</span><span>Separate active breakouts from what acne left behind</span></div>
+                <div><span class="check">&#10003;</span><span>Understand what may be driving your flare cycle</span></div>
+                <div><span class="check">&#10003;</span><span>Reduce panic-driven decisions and over-treatment</span></div>
+                <div><span class="check">&#10003;</span><span>Build a more tolerable routine you can actually maintain</span></div>
+                <div><span class="check">&#10003;</span><span>Separate active breakouts from what acne left behind</span></div>
               </div>
             </div>
           </div>
@@ -903,7 +900,7 @@
             <span class="eyebrow"><span class="eyebrow-dot"></span> The promise</span>
             <h2>You are not failing your skin. You may just be missing the pattern.</h2>
             <p class="lead" style="max-width:unset;">
-              The AnnAlchemy Method™ helps you move from confusion and trial-and-error to more clarity and more control over recurring acne and acne marks.
+              The AnnAlchemy Method&trade; helps you move from confusion and trial-and-error to more clarity and more control over recurring acne and acne marks.
             </p>
             <p class="muted">
               This is for you if your acne improves, then comes back. If your routine feels too harsh, too confusing, or too hard to sustain. If you still do not know whether you are dealing with active acne, irritation, residual redness, discoloration, or all of the above.
@@ -913,13 +910,13 @@
           <div class="card card-soft">
             <h3>Most acne advice focuses on the breakout you can see.</h3>
             <p class="muted" style="margin-top:10px;">
-              This framework focuses on the cycle behind the breakout — including recurring acne activity, confusion around likely aggravators, poor tolerability, and the marks acne can leave behind.
+              This framework focuses on the cycle behind the breakout, including recurring acne activity, confusion around likely aggravators, poor tolerability, and the marks acne can leave behind.
             </p>
             <ul class="check-list">
-              <li><span class="check">✓</span><span>The goal is not more panic.</span></li>
-              <li><span class="check">✓</span><span>The goal is not more random product switching.</span></li>
-              <li><span class="check">✓</span><span>The goal is not more over-treatment.</span></li>
-              <li><span class="check">✓</span><span>The goal is a more structured, evidence-informed, relapse-aware way to move forward.</span></li>
+              <li><span class="check">&#10003;</span><span>The goal is not more panic.</span></li>
+              <li><span class="check">&#10003;</span><span>The goal is not more random product switching.</span></li>
+              <li><span class="check">&#10003;</span><span>The goal is not more over-treatment.</span></li>
+              <li><span class="check">&#10003;</span><span>The goal is a more structured, evidence-informed, relapse-aware way to move forward.</span></li>
             </ul>
           </div>
         </div>
@@ -941,21 +938,63 @@
         <div class="card">
           <h3>What usually happens</h3>
           <ul class="pain-list">
-            <li><span class="check">✕</span><span>You react to fear, frustration, and visible flare-ups.</span></li>
-            <li><span class="check">✕</span><span>You switch products too fast or hit the skin too hard.</span></li>
-            <li><span class="check">✕</span><span>You cannot tell what is helping, what is irritating, or what is simply taking time.</span></li>
-            <li><span class="check">✕</span><span>You end up back in confusion, inconsistency, and discouragement.</span></li>
+            <li><span class="check">&#10007;</span><span>You react to fear, frustration, and visible flare-ups.</span></li>
+            <li><span class="check">&#10007;</span><span>You switch products too fast or hit the skin too hard.</span></li>
+            <li><span class="check">&#10007;</span><span>You cannot tell what is helping, what is irritating, or what is simply taking time.</span></li>
+            <li><span class="check">&#10007;</span><span>You end up back in confusion, inconsistency, and discouragement.</span></li>
           </ul>
         </div>
 
         <div class="card card-dark">
           <h3>What this framework helps you do instead</h3>
           <ul class="check-list">
-            <li><span class="check">✓</span><span>Think in patterns instead of panic.</span></li>
-            <li><span class="check">✓</span><span>Support consistency by protecting tolerability.</span></li>
-            <li><span class="check">✓</span><span>Understand what may be active versus residual.</span></li>
-            <li><span class="check">✓</span><span>Make steadier decisions with more clarity and less emotional whiplash.</span></li>
+            <li><span class="check">&#10003;</span><span>Think in patterns instead of panic.</span></li>
+            <li><span class="check">&#10003;</span><span>Support consistency by protecting tolerability.</span></li>
+            <li><span class="check">&#10003;</span><span>Understand what may be active versus residual.</span></li>
+            <li><span class="check">&#10003;</span><span>Make steadier decisions with more clarity and less emotional whiplash.</span></li>
           </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-tight" id="founder">
+    <div class="container">
+      <div class="section-shell">
+        <div class="center stack" style="align-items:center;">
+          <span class="eyebrow"><span class="eyebrow-dot"></span> Who is behind this</span>
+          <h2>I was the person this is written for.</h2>
+          <p class="lead">
+            I am a nurse. I am also someone who spent years caught in the exact cycle you may be in right now: improve, relapse, panic, restart, and slowly stop trusting your own judgement.
+          </p>
+        </div>
+
+        <div class="card" style="max-width:760px; margin:30px auto 0;">
+          <p class="muted">
+            My name is Anna Cadano, RN, and I have been a registered nurse since June 2008. My skin and my career started at the same time. The recurring breakouts began while I was preparing for the nursing board exam that year, during a stretch of real emotional and personal strain, and they did not simply pass.
+          </p>
+          <p class="muted" style="margin-top:14px;">
+            Like many people reading this, I chased the answer through products. I bought what I could within my budget, then stretched the budget, because frustration makes expensive feel reasonable when you just want your skin back. That frustration is something I understand from the inside, not only as a clinician.
+          </p>
+          <p class="muted" style="margin-top:14px;">
+            That search eventually shaped my work. I joined a Filipino-owned skin research and clinics group that markets internationally, brought on as a clinical research nurse. The role deepened my familiarity with a wide range of skin conditions and aesthetic treatments, and it taught me something quieter but just as important. High quality, well-studied skincare is often expensive, and when a routine depends on what a person cannot consistently afford, it is not a sustainable plan, no matter how good the products are.
+          </p>
+          <p class="muted" style="margin-top:14px;">
+            My skin did settle for a time. Then it returned. That relapse was the turning point, because it forced an uncomfortable realization for someone who worked in this field. Even careful, well-chosen products do not resolve recurring acne through products alone. Something else was being missed, and I could not yet name it.
+          </p>
+          <p class="muted" style="margin-top:14px;">
+            So I did what frustrated people do, including frustrated nurses. I started following strangers online whose before-and-afters looked convincing, without asking whether they had any basis to be advising anyone. Some of their cheaper suggestions seemed to work for a few days or weeks. Then the breakouts came back, often worse. That loop repeated for years, and it is the same loop this brand exists to interrupt.
+          </p>
+          <p class="muted" style="margin-top:14px;">
+            What changed was not another product. It was observation. I studied my own skin and the patterns around it from 2008 onward, and slowly connected it to what I had learned across clinical research, pharmacovigilance, hospital practice, clinical process outsourcing, and community work as a student nurse. In 2025 it finally came together, and by December 2025 I had a structured protocol I could explain, not just things I happened to be doing.
+          </p>
+          <p class="muted" style="margin-top:14px;">
+            I built AnnAlchemy&trade; because almost no one is teaching recurring acne in a calm, structured, evidence-informed way. Not to replace your dermatologist, and not to promise anyone perfect skin. The goal is narrower and more honest: fewer wasted restarts, fewer panic decisions, a clearer understanding of your own pattern, and a more prepared, informed conversation with a clinician when one is needed. Less money and energy lost to guessing, and more control over the part that is genuinely yours to manage.
+          </p>
+          <p class="muted" style="margin-top:18px; border-top:1px solid var(--line); padding-top:18px;">
+            <strong style="color:var(--ink);">&mdash; Anna Cadano, RN</strong><br />
+            <span class="small">Registered nurse since 2008. Founder, AnnAlchemy&trade;.</span>
+          </p>
         </div>
       </div>
     </div>
@@ -1065,10 +1104,10 @@
         <div class="card">
           <h3>What this brand is built to offer instead</h3>
           <ul class="check-list">
-            <li><span class="check">✓</span><span>More structure, not more hype</span></li>
-            <li><span class="check">✓</span><span>More clarity, not false certainty</span></li>
-            <li><span class="check">✓</span><span>More strategic support, not random guessing</span></li>
-            <li><span class="check">✓</span><span>A nurse-led, evidence-informed way to think through the problem and move forward</span></li>
+            <li><span class="check">&#10003;</span><span>More structure, not more hype</span></li>
+            <li><span class="check">&#10003;</span><span>More clarity, not false certainty</span></li>
+            <li><span class="check">&#10003;</span><span>More strategic support, not random guessing</span></li>
+            <li><span class="check">&#10003;</span><span>A nurse-led, evidence-informed way to think through the problem and move forward</span></li>
           </ul>
         </div>
       </div>
@@ -1087,35 +1126,35 @@
 
       <div class="transformation">
         <div class="card">
-          <span class="tag">Phase 1 — First Win</span>
-          <h3>30–60 days of clearer direction</h3>
+          <span class="tag">Phase 1: First Win</span>
+          <h3>30&ndash;60 days of clearer direction</h3>
           <ul class="check-list">
-            <li><span class="check">✓</span><span>A clearer map of what may be driving your flare cycle</span></li>
-            <li><span class="check">✓</span><span>Fewer panic-driven mistakes</span></li>
-            <li><span class="check">✓</span><span>A more tolerable routine you can actually follow</span></li>
-            <li><span class="check">✓</span><span>Early signs that your skin feels calmer, less reactive, and more predictable</span></li>
+            <li><span class="check">&#10003;</span><span>A clearer map of what may be driving your flare cycle</span></li>
+            <li><span class="check">&#10003;</span><span>Fewer panic-driven mistakes</span></li>
+            <li><span class="check">&#10003;</span><span>A more tolerable routine you can actually follow</span></li>
+            <li><span class="check">&#10003;</span><span>Early signs that your skin feels calmer, less reactive, and more predictable</span></li>
           </ul>
         </div>
 
         <div class="card">
-          <span class="tag">Phase 2 — What happens next</span>
+          <span class="tag">Phase 2: What happens next</span>
           <h3>More stability and better self-management</h3>
           <ul class="check-list">
-            <li><span class="check">✓</span><span>Better pattern recognition</span></li>
-            <li><span class="check">✓</span><span>Steadier adherence and fewer flare spirals</span></li>
-            <li><span class="check">✓</span><span>Less mark-worsening from repeated inflammation</span></li>
-            <li><span class="check">✓</span><span>Stronger long-term control through more confident decision-making</span></li>
+            <li><span class="check">&#10003;</span><span>Better pattern recognition</span></li>
+            <li><span class="check">&#10003;</span><span>Steadier adherence and fewer flare spirals</span></li>
+            <li><span class="check">&#10003;</span><span>Less mark-worsening from repeated inflammation</span></li>
+            <li><span class="check">&#10003;</span><span>Stronger long-term control through more confident decision-making</span></li>
           </ul>
         </div>
 
         <div class="card card-soft">
-          <span class="tag">Phase 3 — Long-term outcome</span>
+          <span class="tag">Phase 3: Long-term outcome</span>
           <h3>More confidence, less guesswork</h3>
           <ul class="check-list">
-            <li><span class="check">✓</span><span>Better self-trust and fewer relapse-triggered overreactions</span></li>
-            <li><span class="check">✓</span><span>A repeatable way to manage recurring acne and marks without falling back into chaos</span></li>
-            <li><span class="check">✓</span><span>More accurate interpretation of changes in your skin</span></li>
-            <li><span class="check">✓</span><span>A more realistic way to protect progress over time</span></li>
+            <li><span class="check">&#10003;</span><span>Better self-trust and fewer relapse-triggered overreactions</span></li>
+            <li><span class="check">&#10003;</span><span>A repeatable way to manage recurring acne and marks without falling back into chaos</span></li>
+            <li><span class="check">&#10003;</span><span>More accurate interpretation of changes in your skin</span></li>
+            <li><span class="check">&#10003;</span><span>A more realistic way to protect progress over time</span></li>
           </ul>
         </div>
       </div>
@@ -1132,24 +1171,31 @@
         </p>
       </div>
 
+      <div class="card card-soft" style="margin-top:28px;">
+        <h3>Before you compare prices, compare them to something real.</h3>
+        <p class="muted" style="margin-top:10px;">
+          Most people reading this have already spent far more than the price of a guide on products that did not hold, plus the months between each restart and the marks each relapse left behind. The question is not only what a guide costs. It is what another year of the same cycle costs. Founding pricing is the lowest these will be, and it steps up as the work builds.
+        </p>
+      </div>
+
       <div class="offer-grid">
         <div class="offer-card">
           <div class="offer-topline">
             <span class="tag">Self-guided</span>
-            <span class="save-chip">Save $83</span>
+            <span class="save-chip">Founding price</span>
           </div>
-          <h3>Relapse Control Guide™</h3>
+          <h3>Relapse Control Guide&trade;</h3>
           <p class="muted">For adults tired of acne that improves, then comes back.</p>
           <div class="price-block">
-            <div class="price-row"><span class="old-price">$110</span><strong class="new-price">$27</strong></div>
-            <div class="price-note"><span>One-time payment</span><span class="countdown-pill">Discount ends March 31, 2026</span></div>
+            <div class="price-row"><strong class="new-price">$27</strong></div>
+            <div class="price-note"><span>One-time payment</span><span class="countdown-pill">Founding price. Rises to $39 once the first cohort fills.</span></div>
           </div>
           <p>Understand recurring flare cycles, reduce common relapse mistakes, and limit the repeated creation of post-acne marks from ongoing inflammation.</p>
           <ul>
-            <li><span class="check">✓</span><span>Why acne relapses</span></li>
-            <li><span class="check">✓</span><span>What commonly restarts the cycle</span></li>
-            <li><span class="check">✓</span><span>How to stop panic-switching products</span></li>
-            <li><span class="check">✓</span><span>Relapse self-audit, weekly tracker, and prevention planning</span></li>
+            <li><span class="check">&#10003;</span><span>Why acne relapses</span></li>
+            <li><span class="check">&#10003;</span><span>What commonly restarts the cycle</span></li>
+            <li><span class="check">&#10003;</span><span>How to stop panic-switching products</span></li>
+            <li><span class="check">&#10003;</span><span>Relapse self-audit, weekly tracker, and prevention planning</span></li>
           </ul>
           <div style="margin-top:22px;"><a href="#cta" class="btn btn-secondary btn-full">Start With The Guide</a></div>
         </div>
@@ -1157,20 +1203,20 @@
         <div class="offer-card">
           <div class="offer-topline">
             <span class="tag">Self-guided</span>
-            <span class="save-chip">Save $113</span>
+            <span class="save-chip">Founding price</span>
           </div>
-          <h3>Hormonal Trigger Mapping Workbook™</h3>
+          <h3>Hormonal Trigger Mapping Workbook&trade;</h3>
           <p class="muted">For adults who feel like something is triggering their acne, but cannot clearly tell what.</p>
           <div class="price-block">
-            <div class="price-row"><span class="old-price">$150</span><strong class="new-price">$37</strong></div>
-            <div class="price-note"><span>One-time payment</span><span class="countdown-pill">Discount ends March 31, 2026</span></div>
+            <div class="price-row"><strong class="new-price">$37</strong></div>
+            <div class="price-note"><span>One-time payment</span><span class="countdown-pill">Founding price. Rises to $54 once the first cohort fills.</span></div>
           </div>
           <p>Organize recurring acne clues around timing, stress, sleep, cycle shifts, irritation, and lingering post-acne marks so your skin feels less random and more understandable.</p>
           <ul>
-            <li><span class="check">✓</span><span>Track active acne versus residual redness and discoloration</span></li>
-            <li><span class="check">✓</span><span>Map cycle clues, routine changes, and pattern timing</span></li>
-            <li><span class="check">✓</span><span>Use interpretation prompts and clinician-prep notes</span></li>
-            <li><span class="check">✓</span><span>4-week trigger journal included</span></li>
+            <li><span class="check">&#10003;</span><span>Track active acne versus residual redness and discoloration</span></li>
+            <li><span class="check">&#10003;</span><span>Map cycle clues, routine changes, and pattern timing</span></li>
+            <li><span class="check">&#10003;</span><span>Use interpretation prompts and clinician-prep notes</span></li>
+            <li><span class="check">&#10003;</span><span>4-week trigger journal included</span></li>
           </ul>
           <div style="margin-top:22px;"><a href="#cta" class="btn btn-secondary btn-full">Map Your Trigger Pattern</a></div>
         </div>
@@ -1178,41 +1224,62 @@
         <div class="offer-card">
           <div class="offer-topline">
             <span class="tag">Self-guided</span>
-            <span class="save-chip">Save $83</span>
+            <span class="save-chip">Founding price</span>
           </div>
-          <h3>Barrier-First Acne Reset™</h3>
+          <h3>Barrier-First Reset&trade;</h3>
           <p class="muted">For acne-prone, reactive skin that needs less overload and more tolerability.</p>
           <div class="price-block">
-            <div class="price-row"><span class="old-price">$110</span><strong class="new-price">$27</strong></div>
-            <div class="price-note"><span>One-time payment</span><span class="countdown-pill">Discount ends March 31, 2026</span></div>
+            <div class="price-row"><strong class="new-price">$27</strong></div>
+            <div class="price-note"><span>One-time payment</span><span class="countdown-pill">Founding price. Rises to $39 once the first cohort fills.</span></div>
           </div>
           <p>Reduce unnecessary irritation, improve tolerability, and avoid worsening active acne or post-acne redness and discoloration through over-treatment.</p>
           <ul>
-            <li><span class="check">✓</span><span>Signs of barrier stress</span></li>
-            <li><span class="check">✓</span><span>How harsh routines backfire</span></li>
-            <li><span class="check">✓</span><span>Routine simplification and reintroduction planning</span></li>
-            <li><span class="check">✓</span><span>7-day reset tracker and when to seek medical review</span></li>
+            <li><span class="check">&#10003;</span><span>Signs of barrier stress</span></li>
+            <li><span class="check">&#10003;</span><span>How harsh routines backfire</span></li>
+            <li><span class="check">&#10003;</span><span>Routine simplification and reintroduction planning</span></li>
+            <li><span class="check">&#10003;</span><span>7-day reset tracker and when to seek medical review</span></li>
           </ul>
           <div style="margin-top:22px;"><a href="#cta" class="btn btn-secondary btn-full">Calm Your Routine</a></div>
+        </div>
+
+        <div class="offer-card">
+          <div class="offer-topline">
+            <span class="tag">Self-guided</span>
+            <span class="save-chip">Founding price</span>
+          </div>
+          <h3>Is It Really Acne?&trade;</h3>
+          <p class="muted">For adults whose bumps may not be acne at all, and who keep treating the wrong thing.</p>
+          <div class="price-block">
+            <div class="price-row"><strong class="new-price">$27</strong></div>
+            <div class="price-note"><span>One-time payment</span><span class="countdown-pill">Founding price. Rises to $39 once the first cohort fills.</span></div>
+          </div>
+          <p>Recognise whether your pattern looks more like acne or something commonly mistaken for it, so you can stop treating the wrong thing and prepare for a clinician's evaluation.</p>
+          <ul>
+            <li><span class="check">&#10003;</span><span>Recognition cues people miss when bumps are not acne</span></li>
+            <li><span class="check">&#10003;</span><span>What standard acne care can do to a non-acne pattern</span></li>
+            <li><span class="check">&#10003;</span><span>How to prepare for a dermatologist&rsquo;s evaluation</span></li>
+            <li><span class="check">&#10003;</span><span>Recognition-only. Only a licensed clinician can diagnose this</span></li>
+          </ul>
+          <div style="margin-top:22px;"><a href="#cta" class="btn btn-secondary btn-full">Start With Recognition</a></div>
         </div>
 
         <div class="offer-card featured">
           <div class="offer-topline">
             <span class="tag">Best self-guided value</span>
-            <span class="save-chip">Save $233</span>
+            <span class="save-chip">Save $14 vs separate</span>
           </div>
-          <h3>AnnAlchemy Starter Library™</h3>
-          <p class="muted">Get all three self-guided offers in one private portal download.</p>
+          <h3>AnnAlchemy&trade; Starter Library&trade;</h3>
+          <p class="muted">Get the three core relapse-and-routine guides in one private portal download.</p>
           <div class="price-block">
-            <div class="price-row"><span class="old-price">$310</span><strong class="new-price">$77</strong></div>
-            <div class="price-note"><span>One-time payment</span><span class="countdown-pill">Discount ends March 31, 2026</span></div>
+            <div class="price-row"><span class="old-price">$91</span><strong class="new-price">$77</strong></div>
+            <div class="price-note"><span>One-time payment</span><span class="countdown-pill">Buying the three guides separately is $91. Founding price; it steps up with the guides.</span></div>
           </div>
           <p>Get the complete self-guided system for recurring acne, pattern mapping, and barrier-first support in one place.</p>
           <ul>
-            <li><span class="check">✓</span><span>Relapse Control Guide™</span></li>
-            <li><span class="check">✓</span><span>Hormonal Trigger Mapping Workbook™</span></li>
-            <li><span class="check">✓</span><span>Barrier-First Acne Reset™</span></li>
-            <li><span class="check">✓</span><span>All PDFs and deliverables from all three self-guided protocols included</span></li>
+            <li><span class="check">&#10003;</span><span>Relapse Control Guide&trade;</span></li>
+            <li><span class="check">&#10003;</span><span>Hormonal Trigger Mapping Workbook&trade;</span></li>
+            <li><span class="check">&#10003;</span><span>Barrier-First Reset&trade;</span></li>
+            <li><span class="check">&#10003;</span><span>All PDFs and deliverables from all three of these protocols included</span></li>
           </ul>
           <div style="margin-top:22px;"><a href="#cta" class="btn btn-primary btn-full">Unlock The Starter Library</a></div>
         </div>
@@ -1222,25 +1289,25 @@
         <div class="offer-card spotlight" id="clarity-session">
           <div class="offer-topline">
             <span class="tag">Most popular personalized option</span>
-            <span class="save-chip">Save $383</span>
+            <span class="save-chip">3 slots / week</span>
           </div>
-          <h3>AnnAlchemy Clarity Session™</h3>
+          <h3>AnnAlchemy Clarity Session&trade;</h3>
           <p class="muted">A focused 1:1 strategy session for adults who want help understanding what is active, what is residual, what may be driving the cycle, and what their next-step priorities should be.</p>
           <div class="price-block">
-            <div class="price-row"><span class="old-price">$510</span><strong class="new-price">$127</strong></div>
-            <div class="price-note"><span>1:1 session</span><span class="countdown-pill">Discount ends March 31, 2026</span></div>
+            <div class="price-row"><strong class="new-price">$127</strong></div>
+            <div class="price-note"><span>1:1 session</span><span class="countdown-pill">Only 3 slots open each week. Founding rate before it steps up.</span></div>
           </div>
           <ul>
-            <li><span class="check">✓</span><span>60–75 minute 1:1 Zoom session</span></li>
-            <li><span class="check">✓</span><span>Intake process and written roadmap</span></li>
-            <li><span class="check">✓</span><span>Help understanding acne pattern, likely aggravators, and tolerability issues</span></li>
-            <li><span class="check">✓</span><span>More strategic next-step priorities for recurring acne and acne marks</span></li>
+            <li><span class="check">&#10003;</span><span>60&ndash;75 minute 1:1 Zoom session</span></li>
+            <li><span class="check">&#10003;</span><span>Intake process and written roadmap</span></li>
+            <li><span class="check">&#10003;</span><span>Help understanding acne pattern, likely aggravators, and tolerability issues</span></li>
+            <li><span class="check">&#10003;</span><span>More strategic next-step priorities for recurring acne and acne marks</span></li>
           </ul>
 
           <div class="card" style="margin-top:20px; padding:20px; background:rgba(255,255,255,.08); border-color:rgba(255,255,255,.08); box-shadow:none;">
             <h3 style="font-size:1.05rem;">Bonus access included</h3>
             <p class="small muted" style="margin-top:10px;">
-              AnnAlchemy Starter Library™ bundle, tracker template, next-step roadmap, medical-visit prep sheet, 7-day reset tracker, routine simplification checklist, reintroduction worksheet, Relapse Risk Audit™, Trigger Mapping Sheet™, Barrier Distress Check™, and Acne Pattern Summary Page™.
+              AnnAlchemy&trade; Starter Library&trade; bundle, tracker template, next-step roadmap, medical-visit prep sheet, 7-day reset tracker, routine simplification checklist, reintroduction worksheet, Relapse Risk Audit&trade;, Trigger Mapping Sheet&trade;, Barrier Distress Check&trade;, and Acne Pattern Summary Page&trade;.
             </p>
           </div>
 
@@ -1250,26 +1317,26 @@
         <div class="offer-card featured">
           <div class="offer-topline">
             <span class="tag">High-touch support</span>
-            <span class="save-chip">Save $1,500</span>
+            <span class="save-chip">1 client / month</span>
           </div>
-          <h3>AnnAlchemy Intensive™</h3>
+          <h3>AnnAlchemy Intensive&trade;</h3>
           <p class="muted">A nurse-led, evidence-informed coaching experience for adults who want more support implementing a strategic, tolerable, relapse-aware, and mark-aware acne management process over time.</p>
           <div class="price-block">
-            <div class="price-row"><span class="old-price">$1997</span><strong class="new-price">$497</strong></div>
-            <div class="price-note"><span>2-pay option available</span><span class="countdown-pill">Discount ends March 31, 2026</span></div>
+            <div class="price-row"><strong class="new-price">$497</strong></div>
+            <div class="price-note"><span>2-pay option available</span><span class="countdown-pill">Only 1 client taken on each month. Founding rate before it steps up.</span></div>
           </div>
           <ul>
-            <li><span class="check">✓</span><span>Kickoff strategy call (75–90 minutes)</span></li>
-            <li><span class="check">✓</span><span>Weekly check-ins or calls</span></li>
-            <li><span class="check">✓</span><span>Tracker review and support around tolerability, consistency, and pattern changes</span></li>
-            <li><span class="check">✓</span><span>Final summary and maintenance plan</span></li>
-            <li><span class="check">✓</span><span>Google Docs-based support structure</span></li>
+            <li><span class="check">&#10003;</span><span>Kickoff strategy call (75&ndash;90 minutes)</span></li>
+            <li><span class="check">&#10003;</span><span>Weekly check-ins or calls</span></li>
+            <li><span class="check">&#10003;</span><span>Tracker review and support around tolerability, consistency, and pattern changes</span></li>
+            <li><span class="check">&#10003;</span><span>Final summary and maintenance plan</span></li>
+            <li><span class="check">&#10003;</span><span>Google Docs-based support structure</span></li>
           </ul>
 
           <div class="card card-soft" style="margin-top:20px; padding:20px;">
             <h3 style="font-size:1.05rem;">Premium inclusions may include</h3>
             <p class="muted small" style="margin-top:10px;">
-              All bonuses from the AnnAlchemy Clarity Session™ plus: async support during business days, tracker feedback, photo review commentary, personalized dashboard, maintenance extension option, written weekly focus notes, progress check-ins, and a 7-day brief follow-up.
+              All bonuses from the AnnAlchemy Clarity Session&trade; plus: async support during business days, tracker feedback, photo review commentary, personalized dashboard, maintenance extension option, written weekly focus notes, progress check-ins, and a 7-day brief follow-up.
             </p>
           </div>
 
@@ -1288,28 +1355,40 @@
 
       <div class="two-col-checks">
         <div class="card">
-          <h3>This is for you if…</h3>
+          <h3>This is for you if&hellip;</h3>
           <ul class="check-list">
-            <li><span class="check">✓</span><span>You have persistent or recurrent acne</span></li>
-            <li><span class="check">✓</span><span>Your skin feels unpredictable and frustrating to manage</span></li>
-            <li><span class="check">✓</span><span>You are tired of over-treating and starting over</span></li>
-            <li><span class="check">✓</span><span>You want a more structured, evidence-informed approach</span></li>
-            <li><span class="check">✓</span><span>You are also dealing with redness or discoloration after breakouts</span></li>
-            <li><span class="check">✓</span><span>You want more clarity, consistency, and tolerability</span></li>
+            <li><span class="check">&#10003;</span><span>You have persistent or recurrent acne</span></li>
+            <li><span class="check">&#10003;</span><span>Your skin feels unpredictable and frustrating to manage</span></li>
+            <li><span class="check">&#10003;</span><span>You are tired of over-treating and starting over</span></li>
+            <li><span class="check">&#10003;</span><span>You want a more structured, evidence-informed approach</span></li>
+            <li><span class="check">&#10003;</span><span>You are also dealing with redness or discoloration after breakouts</span></li>
+            <li><span class="check">&#10003;</span><span>You want more clarity, consistency, and tolerability</span></li>
           </ul>
         </div>
 
         <div class="card">
-          <h3>This is not for you if…</h3>
+          <h3>This is not for you if&hellip;</h3>
           <ul class="pain-list">
-            <li><span class="check">✕</span><span>You want a promise of a permanent cure</span></li>
-            <li><span class="check">✕</span><span>You want a one-product solution or magic fix</span></li>
-            <li><span class="check">✕</span><span>You want to keep switching constantly instead of staying consistent</span></li>
-            <li><span class="check">✕</span><span>You want aggressive over-treatment over a structured process</span></li>
-            <li><span class="check">✕</span><span>You do not want to track patterns or follow through</span></li>
-            <li><span class="check">✕</span><span>You want diagnosis or treatment beyond the scope of education and coaching support</span></li>
+            <li><span class="check">&#10007;</span><span>You want a promise of a permanent cure</span></li>
+            <li><span class="check">&#10007;</span><span>You want a one-product solution or magic fix</span></li>
+            <li><span class="check">&#10007;</span><span>You want to keep switching constantly instead of staying consistent</span></li>
+            <li><span class="check">&#10007;</span><span>You want aggressive over-treatment over a structured process</span></li>
+            <li><span class="check">&#10007;</span><span>You do not want to track patterns or follow through</span></li>
+            <li><span class="check">&#10007;</span><span>You want diagnosis or treatment beyond the scope of education and coaching support</span></li>
           </ul>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-tight">
+    <div class="container">
+      <div class="card card-soft">
+        <span class="eyebrow"><span class="eyebrow-dot"></span> Before you choose</span>
+        <h3 style="margin-top:14px;">Not sure it is acne in the first place?</h3>
+        <p class="muted" style="margin-top:12px;">
+          If you have been here before, trying everything for acne and watching nothing work, or watching it get worse, your pattern may be worth a second look. Some bumps that look like acne are not. If that resonates, <strong>Is It Really Acne?&trade;</strong> is likely the more useful starting point, because treating the wrong thing is one of the most common reasons a routine never holds. Only a licensed clinician can diagnose this, and that guide is built to help you recognise the pattern and prepare for the conversation.
+        </p>
       </div>
     </div>
   </section>
@@ -1323,7 +1402,10 @@
 
       <div class="card card-soft" style="margin-top:28px;">
         <p class="muted">
-          Acne is a chronic inflammatory skin condition that often persists into adulthood. Current guidance supports not only treatment selection, but also maintenance planning, skin-care advice, attention to tolerability, and escalation when needed. Post-acne erythema and hyperpigmentation are common sequelae and may require distinct expectations and care considerations.
+          Acne is a chronic inflammatory skin condition that commonly continues into adulthood. Current dermatology guidance points to more than product selection alone. It also supports maintenance planning, skincare and tolerability, and knowing when to escalate to medical care.<sup>1</sup> The marks acne can leave behind, such as lingering redness (post-inflammatory erythema) and brown or dark discoloration (post-inflammatory hyperpigmentation), are common after inflammation and often need their own expectations and timeline, separate from active breakouts.
+        </p>
+        <p class="small muted" style="margin-top:14px; border-top:1px solid var(--line); padding-top:14px;">
+          1. Reynolds RV, Yeung H, Cheng CE, et al. Guidelines of care for the management of acne vulgaris. <em>J Am Acad Dermatol</em>. 2024;90(5):1006.e1-1006.e30. doi:10.1016/j.jaad.2023.12.017
         </p>
       </div>
     </div>
@@ -1342,10 +1424,10 @@
       <div class="pricing-table">
         <div class="pricing-card">
           <span class="tag">Self-guided</span>
-          <h3>AnnAlchemy Starter Library™</h3>
+          <h3>AnnAlchemy&trade; Starter Library&trade;</h3>
           <div class="price-block">
-            <div class="price-row"><span class="old-price">$310</span><strong class="new-price">$77</strong></div>
-            <div class="price-note"><span>One-time payment</span><span class="countdown-pill">Ends March 31, 2026</span></div>
+            <div class="price-row"><span class="old-price">$91</span><strong class="new-price">$77</strong></div>
+            <div class="price-note"><span>One-time payment</span><span class="countdown-pill">Separately $91. Founding price.</span></div>
           </div>
           <p class="muted">Best if you want to understand the pattern, reduce common relapse mistakes, and get structured tools to work through recurring acne more strategically.</p>
           <div style="margin-top:20px;"><a href="#cta" class="btn btn-secondary btn-full">Begin Self-Guided</a></div>
@@ -1353,10 +1435,10 @@
 
         <div class="pricing-card featured">
           <span class="tag">Most popular next step</span>
-          <h3>AnnAlchemy Clarity Session™</h3>
+          <h3>AnnAlchemy Clarity Session&trade;</h3>
           <div class="price-block">
-            <div class="price-row"><span class="old-price">$510</span><strong class="new-price">$127</strong></div>
-            <div class="price-note"><span>1:1 session</span><span class="countdown-pill">Ends March 31, 2026</span></div>
+            <div class="price-row"><strong class="new-price">$127</strong></div>
+            <div class="price-note"><span>1:1 session</span><span class="countdown-pill">3 slots open each week. Founding rate.</span></div>
           </div>
           <p class="muted">Best if you want help understanding your acne pattern, likely aggravators, tolerability issues, and what your next priorities should be.</p>
           <div style="margin-top:20px;"><a href="#cta" class="btn btn-primary btn-full">Book Your 1:1 Session</a></div>
@@ -1364,10 +1446,10 @@
 
         <div class="pricing-card">
           <span class="tag">Highest support</span>
-          <h3>AnnAlchemy Intensive™</h3>
+          <h3>AnnAlchemy Intensive&trade;</h3>
           <div class="price-block">
-            <div class="price-row"><span class="old-price">$1997</span><strong class="new-price">$497</strong></div>
-            <div class="price-note"><span>2-pay option available</span><span class="countdown-pill">Ends March 31, 2026</span></div>
+            <div class="price-row"><strong class="new-price">$497</strong></div>
+            <div class="price-note"><span>2-pay option available</span><span class="countdown-pill">1 client each month. Founding rate.</span></div>
           </div>
           <p class="muted">Best if you want guided implementation, accountability, and structured support while managing recurring acne and acne marks over time.</p>
           <div style="margin-top:20px;"><a href="#cta" class="btn btn-secondary btn-full">Apply For Ongoing Support</a></div>
@@ -1417,6 +1499,11 @@
 
       <div class="faq-grid">
         <details class="faq-item">
+          <summary>What if I am not sure this is even acne?</summary>
+          <div class="faq-content">That uncertainty is common and worth taking seriously. Some persistent bumps that look like acne are not acne, and treating the wrong thing is one of the most common reasons a routine never holds. If your pattern has not responded to standard acne care, Is It Really Acne?&trade; is the more useful starting point. It is built to help you recognise the pattern and prepare for a clinician's evaluation. Only a licensed clinician can diagnose this.</div>
+        </details>
+
+        <details class="faq-item">
           <summary>What if I have already tried almost everything?</summary>
           <div class="faq-content">Many adults with recurring acne are not lacking effort. They are lacking a clearer way to distinguish pattern, tolerability problems, likely aggravators, and what is still active versus what is residual. This framework is built for that exact situation.</div>
         </details>
@@ -1428,17 +1515,17 @@
 
         <details class="faq-item">
           <summary>How do I know whether I should start self-guided or book a session?</summary>
-          <div class="faq-content">Start self-guided if you want education, structure, and tools you can work through on your own. Book the AnnAlchemy Clarity Session™ if you want help interpreting your pattern, identifying likely aggravators, and getting a more personalized next-step roadmap. Apply for the Intensive if you want ongoing support implementing the process over time.</div>
+          <div class="faq-content">Start self-guided if you want education, structure, and tools you can work through on your own. Book the AnnAlchemy Clarity Session&trade; if you want help interpreting your pattern, identifying likely aggravators, and getting a more personalized next-step roadmap. Apply for the Intensive if you want ongoing support implementing the process over time.</div>
         </details>
 
         <details class="faq-item">
           <summary>Can this help if I also have redness or dark marks after breakouts?</summary>
-          <div class="faq-content">Yes. The framework is mark-aware. It accounts for common post-acne erythema and hyperpigmentation and helps you think more clearly about how visible marks may differ from active acne in both priority and timeline.</div>
+          <div class="faq-content">Yes. The framework is mark-aware. It accounts for common post-acne redness and discoloration (post-inflammatory erythema and hyperpigmentation) and helps you think more clearly about how visible marks may differ from active acne in both priority and timeline.</div>
         </details>
 
         <details class="faq-item">
           <summary>Is this a replacement for dermatologist care?</summary>
-          <div class="faq-content">No. This does not replace diagnosis or individualized medical treatment. Dermatology or other qualified medical review may be appropriate when symptoms are severe, worsening, unclear, scarring, or not responding as expected.</div>
+          <div class="faq-content">No. This does not replace diagnosis or individualized medical treatment, and it is not meant to. It is designed to work alongside care from a dermatologist or other physician, supporting your understanding, consistency, and decision-making around your appointments rather than substituting for clinical advice. If you are already under a doctor's care, the guides and the 1:1 support are intended to complement that plan, not compete with it, and you should keep following your clinician's guidance; nothing here should override it. Dermatology or other qualified medical review may be appropriate when symptoms are severe, worsening, unclear, scarring, or not responding as expected.</div>
         </details>
 
         <details class="faq-item">
@@ -1498,14 +1585,14 @@
       <div class="split">
         <div class="disclaimer">
           <strong style="display:block; color:var(--ink); margin-bottom:10px;">Important Disclaimer</strong>
-          AnnAlchemy™ is a nurse-led, evidence-informed support and education framework. It is designed to help adults better understand recurring acne patterns, improve structure and consistency, and make more informed next-step decisions.
+          AnnAlchemy&trade; is a nurse-led, evidence-informed support and education framework. It is designed to help adults better understand recurring acne patterns, improve structure and consistency, and make more informed next-step decisions.
           <br /><br />
           It is not a medical diagnosis service, does not replace individualized medical care, and does not guarantee cure, clearance, or permanent resolution of acne or acne marks. Referral to a dermatologist or other qualified medical care may be appropriate in some cases, especially when symptoms are severe, unclear, worsening, or require medical treatment beyond the scope of education and coaching support.
         </div>
 
         <div class="disclaimer">
           <strong style="display:block; color:var(--ink); margin-bottom:10px;">Intellectual Property and Use Notice</strong>
-          The AnnAlchemy Method™, its named phases, pillar architecture, worksheets, language systems, and branded educational materials are proprietary intellectual property of AnnAlchemy™.
+          The AnnAlchemy Method&trade;, its named phases, pillar architecture, worksheets, language systems, and branded educational materials are proprietary intellectual property of AnnAlchemy&trade;.
           <br /><br />
           This website content is provided for personal educational viewing only.
           <br /><br />
@@ -1519,7 +1606,7 @@
           <br /><br />
           A better strategy is.
           <br /><br />
-          AnnAlchemy™ helps you stop guessing, calm the chaos, and manage recurring acne with more clarity and control.
+          AnnAlchemy&trade; helps you stop guessing, calm the chaos, and manage recurring acne with more clarity and control.
         </p>
       </div>
     </div>
@@ -1527,14 +1614,14 @@
 
   <footer class="footer">
     <div class="container" style="display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap;">
-      <span> The AnnAlchemy Method™. Nurse-led, evidence-informed recurring acne support.</span>
-      <span>AnnAlchemy™. All rights reserved. Personal educational use only. No reproduction, redistribution, adaptation, resale, or derivative use permitted.</span>
+      <span>The AnnAlchemy Method&trade;. Nurse-led, evidence-informed recurring acne support.</span>
+      <span>AnnAlchemy&trade;. All rights reserved. Personal educational use only. No reproduction, redistribution, adaptation, resale, or derivative use permitted.</span>
     </div>
   </footer>
 
   <div class="sticky-mobile-cta">
     <div class="sticky-mobile-copy">
-      AnnAlchemy Clarity Session™
+      AnnAlchemy Clarity Session&trade;
       <span>1:1 support for recurring acne + acne marks</span>
     </div>
     <a href="#clarity-session" class="btn btn-primary" style="padding:13px 16px; width:auto;">Reserve</a>
