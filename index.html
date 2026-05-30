@@ -451,6 +451,36 @@
       box-shadow:var(--shadow-lg);  
       overflow:hidden;  
     }  
+    .offer-card[id]{
+      scroll-margin-top:96px;
+    }
+    .offer-card:target{
+      border-color:rgba(149,102,63,.46);
+      box-shadow:0 0 0 4px rgba(149,102,63,.12), var(--shadow-lg);
+    }
+    .offer-card.spotlight:target{
+      border-color:rgba(255,255,255,.34);
+      box-shadow:0 0 0 4px rgba(149,102,63,.16), var(--shadow-lg);
+    }  
+    /* Shareable anchor for the Find Your Starting Point quiz widget */
+    #starting-point{
+      scroll-margin-top:96px;
+    }
+    .anchor-offset{
+      display:block;
+      position:relative;
+      top:-96px;
+      visibility:hidden;
+      height:0;
+      width:0;
+      pointer-events:none;
+    }
+    #starting-point:target .decision-shell,
+    #find-your-starting-point:target + #starting-point .decision-shell{
+      border-color:rgba(149,102,63,.46);
+      box-shadow:0 0 0 4px rgba(149,102,63,.12), var(--shadow-xl);
+    }
+
     .offer-card.featured{  
       border:1.5px solid rgba(149,102,63,.30);  
       background:linear-gradient(180deg, #fff 0%, #fff7f0 100%);  
@@ -1013,6 +1043,15 @@
       flex-wrap:wrap;
       margin-top:20px;
     }
+    .decision-result .inline-offer-link{
+      color:var(--accent-dark);
+      font-weight:800;
+      text-decoration:underline;
+      text-underline-offset:3px;
+    }
+    .decision-result .inline-offer-link:hover{
+      color:var(--accent);
+    }
     .decision-result .result-footer{
       border-top:1px solid var(--line);
       margin-top:22px;
@@ -1391,6 +1430,7 @@
   <!-- Decision-Flow Routing Widget                                -->
   <!-- ============================================================ -->
 
+  <span id="find-your-starting-point" class="anchor-offset" aria-hidden="true"></span>
   <section class="section section-tight" id="starting-point">
     <div class="container">
       <div class="decision-shell">
@@ -1508,7 +1548,7 @@
             <h3>Prefer to ask first?</h3>
             <p class="muted">DM the word <strong>SKIN</strong> on TikTok and Anna can point you toward the best starting point without pushing you into the wrong resource.</p>
           </div>
-          <a href="https://www.tiktok.com/@AnnAlchemist" target="_blank" rel="noopener" class="btn btn-secondary">DM Anna on TikTok</a>
+          <a href="https://www.tiktok.com/@your-handle" target="_blank" rel="noopener" class="btn btn-secondary">DM Anna on TikTok</a>
         </div>
       </div>
     </div>
@@ -1695,7 +1735,7 @@ When those factors keep interacting, the result can feel like a repeating patter
       </div>
 
       <div class="offer-grid">  
-        <div class="offer-card featured">  
+        <div class="offer-card featured" id="relapse-control-guide">  
           <div class="offer-topline">  
             <span class="tag">Available now</span>  
             <span class="save-chip">Founding price</span>  
@@ -1717,7 +1757,7 @@ When those factors keep interacting, the result can feel like a repeating patter
           <div style="margin-top:22px;"><a href="https://tally.so/r/dWk9MD" target="_blank" rel="noopener" class="btn btn-primary btn-full">Get The Guide (₱1,697 / $27)</a></div>  
         </div>
 
-        <div class="offer-card coming-soon-card">  
+        <div class="offer-card coming-soon-card" id="hormonal-trigger-mapping-workbook">  
           <div class="offer-topline">  
             <span class="tag">Self-guided</span>  
             <span class="save-chip coming-soon">Coming soon</span>  
@@ -1739,7 +1779,7 @@ When those factors keep interacting, the result can feel like a repeating patter
           <div style="margin-top:22px;"><a href="#notify" class="btn btn-secondary btn-full">Notify Me When This Is Available</a></div>  
         </div>
 
-        <div class="offer-card coming-soon-card">  
+        <div class="offer-card coming-soon-card" id="barrier-first-reset">  
           <div class="offer-topline">  
             <span class="tag">Self-guided</span>  
             <span class="save-chip coming-soon">Coming soon</span>  
@@ -1761,7 +1801,7 @@ When those factors keep interacting, the result can feel like a repeating patter
           <div style="margin-top:22px;"><a href="#notify" class="btn btn-secondary btn-full">Notify Me When This Is Available</a></div>  
         </div>
 
-        <div class="offer-card coming-soon-card">  
+        <div class="offer-card coming-soon-card" id="is-it-really-acne">  
           <div class="offer-topline">  
             <span class="tag">Self-guided</span>  
             <span class="save-chip coming-soon">Coming soon</span>  
@@ -1783,7 +1823,7 @@ When those factors keep interacting, the result can feel like a repeating patter
           <div style="margin-top:22px;"><a href="#notify" class="btn btn-secondary btn-full">Notify Me When This Is Available</a></div>  
         </div>
 
-        <div class="offer-card featured coming-soon-card">  
+        <div class="offer-card featured coming-soon-card" id="starter-library">  
           <div class="offer-topline">  
             <span class="tag">Best self-guided value</span>  
             <span class="save-chip coming-soon">Coming soon</span>  
@@ -1836,7 +1876,7 @@ When those factors keep interacting, the result can feel like a repeating patter
           <div style="margin-top:22px;"><a href="#notify" class="btn btn-primary btn-full">Notify Me When This Is Available</a></div>  
         </div>
 
-        <div class="offer-card featured coming-soon-card">  
+        <div class="offer-card featured coming-soon-card" id="intensive">  
           <div class="offer-topline">  
             <span class="tag">High-touch support</span>  
             <span class="save-chip coming-soon">Coming soon</span>  
@@ -2284,7 +2324,7 @@ When those factors keep interacting, the result can feel like a repeating patter
           primaryHref: '#faq',
           secondaryText: 'Join the notify list',
           secondaryHref: '#notify',
-          clarity: 'After you have medical guidance, AnnAlchemy Clarity Session&trade; may be useful for organizing your observations and next-step questions.'
+          clarity: 'After you have medical guidance, <a href="#clarity-session" class="inline-offer-link">AnnAlchemy Clarity Session&trade;</a> may be useful for organizing your observations and next-step questions.'
         },
         clarity: {
           label: 'One-on-one support',
@@ -2306,7 +2346,7 @@ When those factors keep interacting, the result can feel like a repeating patter
           primaryHref: '#is-it-really-acne',
           secondaryText: 'Join the notify list',
           secondaryHref: '#notify',
-          clarity: 'If you want help interpreting which recognition clues matter most in your specific case, AnnAlchemy Clarity Session&trade; is the deeper option once it opens.'
+          clarity: 'If you want help interpreting which recognition clues matter most in your specific case, <a href="#clarity-session" class="inline-offer-link">AnnAlchemy Clarity Session&trade;</a> is the deeper option once it opens.'
         },
         barrier: {
           label: 'Calm-first',
@@ -2317,7 +2357,7 @@ When those factors keep interacting, the result can feel like a repeating patter
           primaryHref: '#barrier-first-reset',
           secondaryText: 'Join the notify list',
           secondaryHref: '#notify',
-          clarity: 'If you want help interpreting whether barrier stress, acne activity, or both are driving your pattern, AnnAlchemy Clarity Session&trade; is the deeper option once it opens.'
+          clarity: 'If you want help interpreting whether barrier stress, acne activity, or both are driving your pattern, <a href="#clarity-session" class="inline-offer-link">AnnAlchemy Clarity Session&trade;</a> is the deeper option once it opens.'
         },
         hormonal: {
           label: 'Pattern-mapping',
@@ -2325,10 +2365,10 @@ When those factors keep interacting, the result can feel like a repeating patter
           reason: 'Your answers point toward timing patterns, cycle-related clues, stress shifts, or recurring triggers that need organized tracking.',
           description: 'Hormonal Trigger Mapping Workbook&trade; helps you organize acne timing, stress, sleep, cycle clues, routine changes, and post-acne marks so the pattern feels less random. It is educational tracking support, not hormone diagnosis or medical treatment.',
           primaryText: 'See the workbook',
-          primaryHref: '#hormonal-trigger-mapping',
+          primaryHref: '#hormonal-trigger-mapping-workbook',
           secondaryText: 'Join the notify list',
           secondaryHref: '#notify',
-          clarity: 'If you want help interpreting which lens matters most in your specific case, AnnAlchemy Clarity Session&trade; is the deeper option once it opens.'
+          clarity: 'If you want help interpreting which lens matters most in your specific case, <a href="#clarity-session" class="inline-offer-link">AnnAlchemy Clarity Session&trade;</a> is the deeper option once it opens.'
         },
         relapse: {
           label: 'Available now',
@@ -2336,10 +2376,10 @@ When those factors keep interacting, the result can feel like a repeating patter
           reason: 'Your answers match the recurring-acne pattern this guide was built for: improvement, relapse, confusion, and reactive routine changes.',
           description: 'Relapse Control Guide&trade; helps you understand why recurring acne may keep cycling back, reduce common relapse mistakes, and respond to flares with more structure. It also accounts for post-acne redness and discoloration so visible marks do not keep confusing your next decision.',
           primaryText: 'Get the Relapse Control Guide&trade;',
-          primaryHref: 'https://tally.so/r/dWk9MD',
+          primaryHref: '#relapse-control-guide',
           secondaryText: 'Read the refund policy',
           secondaryHref: '#refund-policy',
-          clarity: 'If you want help interpreting which lens matters most in your specific case, AnnAlchemy Clarity Session&trade; is a one-time nurse-led interpretation. The amount you pay today on the guide is credited toward it if you decide to upgrade.'
+          clarity: 'If you want help interpreting which lens matters most in your specific case, <a href="#clarity-session" class="inline-offer-link">AnnAlchemy Clarity Session&trade;</a> is a one-time nurse-led interpretation. The amount you pay today on the guide is credited toward it if you decide to upgrade.'
         },
         starter: {
           label: 'Multi-guide path',
@@ -2350,7 +2390,7 @@ When those factors keep interacting, the result can feel like a repeating patter
           primaryHref: '#starter-library',
           secondaryText: 'Join the notify list',
           secondaryHref: '#notify',
-          clarity: 'If you want help interpreting which layer to prioritize first, AnnAlchemy Clarity Session&trade; is the deeper option once it opens.'
+          clarity: 'If you want help interpreting which layer to prioritize first, <a href="#clarity-session" class="inline-offer-link">AnnAlchemy Clarity Session&trade;</a> is the deeper option once it opens.'
         }
       };
 
@@ -2415,5 +2455,3 @@ When those factors keep interacting, the result can feel like a repeating patter
 
 </body>  
 </html>
-
-
