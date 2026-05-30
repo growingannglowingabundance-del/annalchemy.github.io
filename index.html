@@ -705,6 +705,13 @@
       box-shadow:var(--shadow-md);  
       overflow:hidden;  
     }  
+    .faq-item[id]{
+      scroll-margin-top:96px;
+    }
+    .faq-item:target{
+      border-color:rgba(149,102,63,.46);
+      box-shadow:0 0 0 4px rgba(149,102,63,.12), var(--shadow-md);
+    }
     .faq-item summary{  
       list-style:none;  
       cursor:pointer;  
@@ -2180,9 +2187,9 @@ When those factors keep interacting, the result can feel like a repeating patter
           <div class="faq-content">Yes. The framework is mark-aware. It accounts for common post-acne redness and discoloration (post-inflammatory erythema and hyperpigmentation) and helps you think more clearly about how visible marks may differ from active acne in both priority and timeline.</div>  
         </details>
 
-        <details class="faq-item">  
-          <summary>Is this a replacement for dermatologist care?</summary>  
-          <div class="faq-content">No. This does not replace diagnosis or individualized medical treatment, and it is not meant to. It is designed to work alongside care from a dermatologist or other physician, supporting your understanding, consistency, and decision-making around your appointments rather than substituting for clinical advice. If you are already under a doctor's care, the guides and the 1:1 support are intended to complement that plan, not compete with it, and you should keep following your clinician's guidance; nothing here should override it. Dermatology or other qualified medical review may be appropriate when symptoms are severe, worsening, unclear, scarring, or not responding as expected.</div>  
+        <details class="faq-item" id="medical-safety-faq">  
+          <summary>When should I see a dermatologist before using AnnAlchemy&trade; resources?</summary>  
+          <div class="faq-content">AnnAlchemy&trade; resources are educational and supportive. They do not replace diagnosis, individualized medical treatment, prescription guidance, or care from a licensed dermatologist, physician, or qualified healthcare provider. Dermatology review should come first if your acne is severe, painful, deep or cystic, scarring, rapidly worsening, sudden or unusual, widespread, not responding as expected, or connected to a significant skin reaction. Medical guidance should also come first if you are pregnant, breastfeeding, planning pregnancy, managing a chronic illness, taking medications that may affect your skin, or unsure whether what you are seeing is acne. If you are already under a clinician&rsquo;s care, AnnAlchemy&trade; resources are meant to support your understanding, consistency, and appointment preparation — not override your clinician&rsquo;s plan.</div>  
         </details>
 
         <details class="faq-item">  
@@ -2314,6 +2321,18 @@ When those factors keep interacting, the result can feel like a repeating patter
 
       if(!startButton || !form || !resultBox) return;
 
+      const openAnchoredFaq = function(){
+        if(window.location.hash === '#medical-safety-faq'){
+          const safetyFaq = document.getElementById('medical-safety-faq');
+          if(safetyFaq){
+            safetyFaq.open = true;
+          }
+        }
+      };
+
+      openAnchoredFaq();
+      window.addEventListener('hashchange', openAnchoredFaq);
+
       const routes = {
         dermatologist: {
           label: 'Clinical review first',
@@ -2321,7 +2340,7 @@ When those factors keep interacting, the result can feel like a repeating patter
           reason: 'Your answers suggest a pattern that should be assessed by a licensed clinician before choosing a self-guided education product.',
           description: 'Severe, painful, scarring, or rapidly worsening skin can need medical evaluation and treatment options that sit outside the scope of AnnAlchemy&trade; education. AnnAlchemy&trade; can support your understanding and consistency around care, but it should not replace clinical assessment.',
           primaryText: 'Read the safety FAQ',
-          primaryHref: '#faq',
+          primaryHref: '#medical-safety-faq',
           secondaryText: 'Join the notify list',
           secondaryHref: '#notify',
           clarity: 'After you have medical guidance, <a href="#clarity-session" class="inline-offer-link">AnnAlchemy Clarity Session&trade;</a> may be useful for organizing your observations and next-step questions.'
