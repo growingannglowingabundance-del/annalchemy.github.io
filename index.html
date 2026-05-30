@@ -1039,12 +1039,47 @@
       .decision-inner{grid-template-columns:1fr}
       .talk-to-anna{align-items:flex-start; flex-direction:column}
     }
+    /* Widget spacing correction: protects mobile heading and adds breathing room inside the answer panel. */
+    .decision-intro-card h2{
+      line-height:1.12;
+      padding-top:.08em;
+      overflow:visible;
+      text-wrap:balance;
+    }
+    .decision-form{
+      border:1px solid rgba(232,221,209,.74);
+      border-radius:var(--radius-lg);
+      background:rgba(255,255,255,.54);
+      box-shadow:var(--shadow-sm);
+      padding:clamp(22px, 3.2vw, 38px);
+    }
+    #decisionFlowNote{
+      border:1px solid var(--line);
+      border-radius:var(--radius-md);
+      background:rgba(255,255,255,.72);
+      box-shadow:var(--shadow-sm);
+      padding:clamp(18px, 2vw, 26px) clamp(20px, 2.8vw, 34px);
+      margin-bottom:4px;
+      line-height:1.75;
+    }
+
     @media (max-width:600px){
-      .decision-shell{padding:22px}
+      .decision-shell{
+        padding:18px;
+        overflow:visible;
+      }
       .decision-intro-card,
       .decision-question,
       .decision-result,
-      .talk-to-anna{padding:20px}
+      .talk-to-anna{padding:22px 20px}
+      .decision-form{padding:18px}
+      .decision-intro-card h2{
+        font-size:clamp(2rem, 8.6vw, 2.55rem);
+        line-height:1.1;
+        padding-top:.16em;
+        margin-top:14px !important;
+      }
+      #decisionFlowNote{padding:18px 18px}
       .decision-actions .btn,
       .decision-result .result-actions .btn{width:100%}
     }
@@ -1473,7 +1508,7 @@
             <h3>Prefer to ask first?</h3>
             <p class="muted">DM the word <strong>SKIN</strong> on TikTok and Anna can point you toward the best starting point without pushing you into the wrong resource.</p>
           </div>
-          <a href="https://www.tiktok.com/@annalchemist" target="_blank" rel="noopener" class="btn btn-secondary">DM Anna on TikTok</a>
+          <a href="https://www.tiktok.com/@your-handle" target="_blank" rel="noopener" class="btn btn-secondary">DM Anna on TikTok</a>
         </div>
       </div>
     </div>
@@ -2380,5 +2415,6 @@ When those factors keep interacting, the result can feel like a repeating patter
 
 </body>  
 </html>
+
 
 
