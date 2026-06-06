@@ -1198,6 +1198,129 @@
       .quick-check-actions{justify-content:flex-start}
       .quick-check-actions .btn{width:100%}
     }
+
+
+    /* ============================================================
+       Founder credibility section + founding bonus refinements
+       ============================================================ */
+    .credential-chips{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:8px;
+      margin:20px auto 6px;
+      max-width:760px;
+    }
+
+    .credential-chip{
+      display:inline-block;
+      padding:6px 12px;
+      background:var(--accent-soft);
+      border:1px solid var(--line-strong);
+      border-radius:16px;
+      font-size:.8rem;
+      color:var(--ink);
+      font-weight:700;
+      letter-spacing:.01em;
+      white-space:nowrap;
+    }
+
+    .founder-photo{
+      width:200px;
+      height:200px;
+      border-radius:50%;
+      object-fit:cover;
+      border:4px solid var(--accent-soft);
+      box-shadow:0 10px 30px rgba(44,30,20,.14);
+      display:block;
+      margin:0 auto;
+      background:var(--paper);
+    }
+
+    .founder-bio-expand{
+      margin-top:18px;
+      padding-top:18px;
+      border-top:1px solid var(--line);
+    }
+
+    .founder-bio-expand summary{
+      cursor:pointer;
+      font-weight:800;
+      color:var(--accent-dark);
+      font-size:.96rem;
+      list-style:none;
+      padding:8px 0;
+      user-select:none;
+    }
+
+    .founder-bio-expand summary::-webkit-details-marker{display:none}
+    .founder-bio-expand summary::after{
+      content:" ↓";
+      font-size:.85rem;
+      opacity:.72;
+      margin-left:6px;
+    }
+    .founder-bio-expand[open] summary::after{content:" ↑"}
+    .founder-bio-expand summary:hover{text-decoration:underline}
+    .founder-bio-expand-content{margin-top:14px}
+
+    .founder-inline-cta{
+      margin:22px 0 8px;
+      padding:18px;
+      background:var(--accent-soft);
+      border:1px solid var(--line-strong);
+      border-radius:var(--radius-sm);
+      text-align:center;
+    }
+
+    .founder-inline-cta p{
+      margin:0 0 12px;
+      color:var(--ink);
+      font-weight:800;
+    }
+
+    .founding-bonus-card{
+      background:linear-gradient(180deg, var(--accent-soft), var(--accent-pale));
+      border:1px solid var(--line-strong);
+      border-radius:var(--radius-lg);
+      padding:clamp(24px, 3vw, 34px);
+      box-shadow:var(--shadow-lg);
+    }
+
+    .founding-bonus-chip{
+      margin:16px 0 0;
+      padding:16px 18px;
+      background:var(--paper);
+      border:1px solid var(--line-strong);
+      border-radius:var(--radius-sm);
+      box-shadow:var(--shadow-sm);
+    }
+
+    .quick-check-subtle-link{
+      display:inline-block;
+      margin-top:10px;
+      font-size:.9rem;
+      color:var(--muted);
+      text-decoration:underline;
+      text-underline-offset:3px;
+      font-weight:700;
+      opacity:.82;
+    }
+    .quick-check-subtle-link:hover{opacity:1;color:var(--accent-dark)}
+
+    .quick-check-trust{
+      margin-top:10px;
+      color:var(--muted);
+      font-size:.92rem;
+      text-align:right;
+    }
+
+    @media (max-width:640px){
+      .founder-photo{width:160px;height:160px;border-width:3px}
+      .credential-chip{font-size:.75rem;padding:5px 10px}
+      .quick-check-trust{text-align:left}
+    }
+
   </style>    
 
   <!-- Tally popup runtime for AnnAlchemy™ Quick Skin Check -->
@@ -1282,6 +1405,31 @@
       </div>    
     </div>    
   </header>
+
+  <!-- ============================================================ -->
+  <!-- Founding Reader Bonus Banner v14 — with $127 value           -->
+  <!-- ============================================================ -->
+
+  <section class="section section-tight" id="founding-reader-bonus">
+    <div class="container" style="max-width: 920px;">
+      <div class="founding-bonus-card">
+        <div class="stack" style="gap: 12px;">
+          <span class="eyebrow"><span class="eyebrow-dot"></span> Founding Reader Bonus</span>
+          <h3 style="margin:0; font-size:clamp(1.35rem, 2.4vw, 2rem);">The first 10 readers of the Relapse Control Guide&trade; receive a free AnnAlchemy Clarity Session&trade; (valued at $127).</h3>
+          <p class="muted" style="margin:0;">
+            One 30-minute nurse-led interpretation and prioritization session, included with the founding-price guide, in exchange for an honest written review after you complete the guide. Your choice whether to be credited by name or anonymously. Critical reviews are welcome; honest ones are required.
+          </p>
+          <p class="small muted" style="margin:0;">
+            <strong>Closes when 10 readers complete checkout.</strong> Educational support only. Not diagnosis, prescription, or medical care.
+          </p>
+          <div style="margin-top:8px;">
+            <a href="#start-here" class="btn btn-primary">See the Relapse Control Guide&trade;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
 
   <section class="section section-tight">    
     <div class="container">    
@@ -1512,16 +1660,16 @@
       <div class="decision-shell">  
         <div class="decision-inner">  
           <div class="decision-intro-card stack">  
-            <span class="eyebrow"><span class="eyebrow-dot"></span> Find your starting point</span>  
-            <h2 style="margin-top:18px;">Not sure which AnnAlchemy&trade; guide is the right starting point?</h2>  
+            <span class="eyebrow"><span class="eyebrow-dot"></span> Quick Match</span>  
+            <h2 style="margin-top:18px;">Not sure where to start?</h2>  
             <p class="lead" style="max-width:unset; margin-top:14px;">  
-              Most readers arrive with one of four patterns. Answer three short questions and this page will point you to the most useful starting point for your situation.  
+              Get matched to the right AnnAlchemy&trade; guide in 30 seconds. Three questions. No email needed.  
             </p>  
             <p class="muted" style="margin-top:14px;">  
               This is not a diagnosis. It is a way to help you choose wisely instead of guessing.  
             </p>  
             <div style="margin-top:22px;">  
-              <button type="button" class="btn btn-primary" id="startDecisionFlow">Find my starting point</button>  
+              <button type="button" class="btn btn-primary" id="startDecisionFlow">Start the Quick Match</button>  
             </div>  
           </div>
 
@@ -1632,8 +1780,7 @@
 
   <!-- ============================================================ -->
   <!-- AnnAlchemy Quick Skin Check Tally popup                       -->
-  <!-- Use this as the deeper routing option directly below the      -->
-  <!-- fast Find Your Starting Point widget.                         -->
+  <!-- More careful routing option directly below the Quick Match.   -->
   <!-- ============================================================ -->
 
   <section class="section section-tight" id="quick-skin-check">
@@ -1642,15 +1789,15 @@
         <div class="quick-check-inner">
           <div class="quick-check-copy">
             <span class="eyebrow"><span class="eyebrow-dot"></span> Quick Skin Check</span>
-            <h2>Need a clearer route before choosing a guide?</h2>
+            <h2>Want a more careful read of your pattern?</h2>
             <p class="lead" style="max-width:unset;">
-              Not sure which AnnAlchemy&trade; starting point fits your skin right now? Take the Quick Skin Check first.
+              The Quick Skin Check is the more thorough routing tool. If your answers above felt mixed, if you are unsure whether your pattern is recurring acne or something that only resembles it, or if you want your personalized starting-point recommendation sent to your email, take this version.
             </p>
             <p class="quick-check-note">
-              It helps route you to the safest next step based on your pattern. Educational only. Not diagnosis, prescription, or medical care.
+              Educational only. Not diagnosis, prescription, or medical care.
             </p>
-            <p class="muted small">
-              Use this deeper quiz if your answers feel mixed, if you are unsure whether the pattern is recurring acne or something that only resembles acne, or if you want your starting-point recommendation sent to your email.
+            <p class="muted small" style="font-weight:800; color:var(--ink);">
+              60 seconds. No payment. Recommendation sent to your email.
             </p>
           </div>
           <div class="quick-check-actions">
@@ -1662,16 +1809,20 @@
               data-tally-width="720"
               data-tally-align-left="1"
               data-tally-hide-title="1">
-              Take the AnnAlchemy&trade; Quick Skin Check
+              Take the Quick Skin Check
             </button>
-            <a href="https://tally.so/r/5BM7yo" target="_blank" rel="noopener" class="btn btn-secondary">
-              Open the quiz in a new tab
-            </a>
+            <div style="width:100%; text-align:right;">
+              <a href="https://tally.so/r/5BM7yo" target="_blank" rel="noopener" class="quick-check-subtle-link">
+                or open the quiz in a new tab
+              </a>
+              <p class="quick-check-trust">Created by Anna Cadano, RN. Nurse-led, evidence-informed.</p>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
+
 
   <section class="section" id="framework">    
     <div class="container">    
@@ -1867,6 +2018,15 @@ When those factors keep interacting, the result can feel like a repeating patter
             <div class="price-note"><span>One-time payment</span><span class="countdown-pill">Founding price. Rises to $49 once the first cohort fills.</span></div>    
           </div>    
           <p>Understand recurring flare cycles, reduce common relapse mistakes, and account for the post-acne redness and discoloration that recurring inflammation can leave behind.</p>    
+          
+          <div class="founding-bonus-chip">
+            <p style="margin:0; font-weight:800; color:var(--ink); font-size:.96rem;">
+              Founding Reader Bonus included
+            </p>
+            <p class="muted" style="margin-top:6px; margin-bottom:0; font-size:.92rem; line-height:1.65;">
+              First 10 buyers at the founding price receive a free 30-minute AnnAlchemy Clarity Session&trade; ($127 value) in exchange for an honest written review. Anonymous or credited, your choice.
+            </p>
+          </div>
           <ul>    
             <li><span class="check">&#10003;</span><span>Why acne relapses and why marks linger after it</span></li>    
             <li><span class="check">&#10003;</span><span>What commonly restarts the cycle</span></li>    
@@ -2585,3 +2745,5 @@ When those factors keep interacting, the result can feel like a repeating patter
 
 </body>    
 </html>
+
+
