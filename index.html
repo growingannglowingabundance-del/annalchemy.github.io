@@ -804,10 +804,69 @@
       margin-top:28px;
     }
 
+    /* ===== Footer card v15.1 ===== */
     .footer{
       padding:30px 0 110px;
+    }
+    .footer-card{
+      background:var(--paper);
+      border:1px solid var(--line);
+      border-radius:var(--radius-lg);
+      box-shadow:var(--shadow-md);
+      padding:34px 38px;
+    }
+    .footer-top{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      gap:28px;
+      flex-wrap:wrap;
+      padding-bottom:22px;
+      border-bottom:1px solid var(--line);
+    }
+    .footer-brand{
+      flex:1 1 260px;
+    }
+    .footer-brand-name{
+      font-family: Georgia, "Times New Roman", serif;
+      font-size:1.35rem;
+      font-weight:700;
+      color:var(--ink);
+      margin-bottom:6px;
+    }
+    .footer-brand p{
       color:var(--muted);
       font-size:.92rem;
+      margin:0;
+      max-width:320px;
+    }
+    .footer-nav{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px 26px;
+      align-content:flex-start;
+    }
+    .footer-nav a{
+      color:var(--accent-dark);
+      font-size:.92rem;
+      font-weight:700;
+    }
+    .footer-nav a:hover{text-decoration:underline}
+    .footer-legal{
+      display:flex;
+      justify-content:space-between;
+      gap:16px;
+      flex-wrap:wrap;
+      padding-top:22px;
+      color:var(--muted);
+      font-size:.85rem;
+    }
+    .footer-legal span:last-child{text-align:right}
+
+    @media (max-width: 640px){
+      .footer-card{padding:26px 22px}
+      .footer-legal{flex-direction:column}
+      .footer-legal span:last-child{text-align:left}
     }
 
     .sticky-mobile-cta{
@@ -2738,9 +2797,32 @@ When those factors keep interacting, the result can feel like a repeating patter
   </section>
 
   <footer class="footer">
-    <div class="container" style="display:flex; justify-content:space-between; align-items:flex-start; gap:24px; flex-wrap:wrap;">
-      <span style="flex:1 1 280px; text-align:left;">The AnnAlchemy Method&trade;. Nurse-led, evidence-informed recurring acne support.</span>
-      <span style="flex:1 1 280px; text-align:right;">&copy; AnnAlchemy&trade;. All rights reserved. Personal educational use only. No reproduction, redistribution, adaptation, resale, or derivative use permitted.</span>
+    <div class="container">
+      <div class="footer-card">
+
+        <div class="footer-top">
+          <div class="footer-brand">
+            <div class="footer-brand-name">AnnAlchemy&trade;</div>
+            <p>The AnnAlchemy Method&trade;. Nurse-led, evidence-informed recurring acne support.</p>
+          </div>
+          <nav class="footer-nav" aria-label="Footer">
+            <a href="#founder">About</a>
+            <a href="#start-here">The Guide</a>
+            <a href="#quick-skin-check">Quick Skin Check</a>
+            <a href="mailto:hello@annalchemy.org">Contact</a>
+            <a href="/refund-policy/">Refund Policy</a>
+            <a href="/privacy-policy.html">Privacy Policy</a>
+            <a href="/terms.html">Terms of Use</a>
+            <a href="https://www.facebook.com/AnnAlchemybyAnnaRN" target="_blank" rel="noopener">Facebook</a>
+          </nav>
+        </div>
+
+        <div class="footer-legal">
+          <span>&copy; AnnAlchemy&trade;. All rights reserved. Personal educational use only. No reproduction, redistribution, adaptation, resale, or derivative use permitted.</span>
+          <span>hello@annalchemy.org &middot; Taguig City, Philippines</span>
+        </div>
+
+      </div>
     </div>
   </footer>
 
