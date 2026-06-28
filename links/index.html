@@ -1,1 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="AnnAlchemy™ & Self-Loyalty Lab™ — nurse-led, evidence-informed help for recurring acne, plus guides for your boundaries and self-worth." />
+  <title>AnnAlchemy™ — Links</title>
 
+  <meta property="og:title" content="AnnAlchemy™ — Links" />
+  <meta property="og:description" content="Nurse-led, evidence-informed help for recurring acne and acne marks — plus Self Loyalty Lab." />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <style>
+    :root{
+      --bg:#f6efe7;
+      --bg-soft:#fbf7f2;
+      --paper:#fffdfa;
+      --paper-2:#fff8f1;
+      --ink:#1b1511;
+      --muted:#6a5f56;
+      --muted-2:#85776b;
+      --line:#e8ddd1;
+      --line-strong:#d8c6b5;
+
+      /* AnnAlchemy accent (gold-brown) */
+      --accent:#95663f;
+      --accent-dark:#6f4527;
+      --accent-soft:#f2e4d7;
+      --accent-pale:#fbf3eb;
+
+      /* Self-Loyalty Lab accent (warm rosewood / clay-rose) */
+      --accent2:#9e5a66;
+      --accent2-dark:#7c424c;
+      --accent2-soft:#f0dadf;
+      --accent2-pale:#faeff1;
+
+      --shadow-lg:0 18px 48px rgba(44,30,20,.10);
+      --shadow-md:0 10px 28px rgba(44,30,20,.08);
+      --shadow-sm:0 6px 18px rgba(44,30,20,.05);
+      --radius-lg:26px;
+      --radius-md:18px;
+      --radius-sm:14px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color:var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(149,102,63,.08), transparent 28%),
+        radial-gradient(circle at 92% 8%, rgba(138,91,107,.05), transparent 18%),
+        linear-gradient(180deg, #fcf8f3 0%, #f6efe7 100%);
+      line-height:1.6;
+      min-height:100vh;
+      -webkit-font-smoothing:antialiased;
+    }
+    a{text-decoration:none;color:inherit}
+
+    .wrap{
+      width:min(520px, calc(100% - 32px));
+      margin:0 auto;
+      padding:40px 0 56px;
+    }
+
+    /* ---------- Header / brand ---------- */
+    .brand{
+      display:flex;flex-direction:column;align-items:center;text-align:center;
+      gap:14px;margin-bottom:8px;
+    }
+    .brand-badge{
+      width:72px;height:72px;border-radius:22px;
+      background:
+        radial-gradient(circle at 30% 25%, rgba(255,255,255,.45), transparent 28%),
+        linear-gradient(135deg, var(--accent) 0%, #c08a63 100%);
+      box-shadow:0 16px 38px rgba(149,102,63,.26);
+      display:flex;align-items:center;justify-content:center;
+      font-family:Georgia,"Times New Roman",serif;
+      color:#fff;font-size:34px;font-weight:700;letter-spacing:.02em;
+    }
+    .brand-name{
+      font-family:Georgia,"Times New Roman",serif;
+      font-size:1.55rem;font-weight:700;letter-spacing:.01em;color:var(--ink);margin:0;
+    }
+    .brand-kicker{
+      font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;
+      color:var(--accent-dark);font-weight:800;margin:0;
+    }
+    .brand-tagline{font-size:.95rem;color:var(--muted);max-width:340px;margin:2px auto 0;}
+
+    /* ---------- Email capture (top priority) ---------- */
+    .capture{
+      margin:28px 0 8px;
+      background:linear-gradient(180deg, var(--paper) 0%, var(--paper-2) 100%);
+      border:1px solid var(--line-strong);
+      border-radius:var(--radius-lg);
+      box-shadow:var(--shadow-lg);
+      padding:24px 22px 22px;
+      text-align:center;
+    }
+    .capture .pill{
+      display:inline-block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+      font-weight:800;color:var(--accent-dark);background:var(--accent-pale);
+      border:1px solid var(--accent-soft);padding:5px 12px;border-radius:999px;margin-bottom:12px;
+    }
+    .capture h2{font-family:Georgia,"Times New Roman",serif;font-size:1.3rem;line-height:1.3;margin:0 0 6px;color:var(--ink);}
+    .capture p{font-size:.92rem;color:var(--muted);margin:0 0 18px}
+
+    /* ---------- Link buttons ---------- */
+    .links{display:flex;flex-direction:column;gap:13px}
+
+    .lnk{
+      position:relative;display:flex;align-items:center;gap:14px;
+      background:var(--paper);border:1px solid var(--line);
+      border-radius:var(--radius-md);padding:16px 18px;box-shadow:var(--shadow-sm);
+      transition:transform .14s ease, box-shadow .14s ease, border-color .14s ease;
+    }
+    .lnk:hover{transform:translateY(-2px);box-shadow:var(--shadow-md);border-color:var(--line-strong);}
+    .lnk:active{transform:translateY(0)}
+
+    .lnk .ico{
+      width:42px;height:42px;flex:0 0 auto;border-radius:13px;
+      display:flex;align-items:center;justify-content:center;font-size:20px;
+      background:var(--accent-pale);border:1px solid var(--accent-soft);
+    }
+    .lnk .body{flex:1;min-width:0}
+    .lnk .title{font-weight:700;font-size:1.02rem;color:var(--ink);line-height:1.25}
+    .lnk .sub{font-size:.82rem;color:var(--muted);margin-top:2px}
+    .lnk .arrow{color:var(--accent);font-size:1.1rem;flex:0 0 auto}
+
+    /* Primary (flagship) */
+    .lnk.primary{
+      background:linear-gradient(135deg, var(--accent) 0%, #a9774d 100%);
+      border-color:var(--accent-dark);box-shadow:0 16px 34px rgba(149,102,63,.26);
+    }
+    .lnk.primary .title,.lnk.primary .sub{color:#fff}
+    .lnk.primary .sub{color:rgba(255,255,255,.82)}
+    .lnk.primary .ico{background:rgba(255,255,255,.18);border-color:rgba(255,255,255,.28)}
+    .lnk.primary .arrow{color:#fff}
+
+    /* Full-width email-capture button */
+    .capture .lnk{justify-content:flex-start}
+
+    /* Self Loyalty Lab tint */
+    .lnk.lab .ico{background:var(--accent2-pale);border-color:var(--accent2-soft)}
+    .lnk.lab .arrow{color:var(--accent2)}
+    .lnk.lab:hover{border-color:var(--accent2-soft)}
+
+    /* Coming-soon state */
+    .lnk.soon{opacity:.66;cursor:default;pointer-events:none}
+    .badge-soon{
+      position:absolute;top:10px;right:14px;font-size:9px;letter-spacing:.1em;text-transform:uppercase;
+      font-weight:800;color:var(--accent2-dark);background:var(--accent2-pale);
+      border:1px solid var(--accent2-soft);padding:3px 8px;border-radius:999px;
+    }
+
+    /* ---------- Section headers (brand groups) ---------- */
+    .group{margin-top:30px}
+    .group-head{text-align:center;margin:0 0 14px}
+    .group-head .eyebrow{
+      font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:800;
+      color:var(--accent-dark);margin:0 0 3px;
+    }
+    .group-head .gname{
+      font-family:Georgia,"Times New Roman",serif;font-size:1.18rem;color:var(--ink);margin:0;
+    }
+    .group-head .gdesc{font-size:.84rem;color:var(--muted);margin:4px auto 0;max-width:320px}
+
+    /* Self Loyalty Lab header tint */
+    .group.lab .group-head .eyebrow{color:var(--accent2-dark)}
+
+    /* ---------- Socials ---------- */
+    .sep{text-align:center;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted-2);font-weight:800;margin:30px 0 4px;}
+    .socials{display:flex;justify-content:center;gap:14px;margin-top:18px;}
+    .social{
+      width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;
+      background:var(--paper);border:1px solid var(--line);box-shadow:var(--shadow-sm);
+      transition:transform .14s ease, box-shadow .14s ease;
+    }
+    .social:hover{transform:translateY(-2px);box-shadow:var(--shadow-md)}
+    .social svg{width:22px;height:22px;fill:var(--accent-dark)}
+
+    /* ---------- Footer ---------- */
+    .foot{text-align:center;margin-top:30px;font-size:.78rem;color:var(--muted-2);line-height:1.6;}
+    .foot a{color:var(--accent-dark);font-weight:600}
+    .foot .tm{margin-top:8px;font-size:.72rem;color:var(--muted-2)}
+
+    @media (max-width:380px){.lnk .sub{display:none}}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+
+    <!-- ===================== HEADER ===================== -->
+    <header class="brand">
+      <div class="brand-badge">A</div>
+      <div>
+        <p class="brand-kicker">Nurse-led acne education</p>
+        <h1 class="brand-name">AnnAlchemy&trade;</h1>
+      </div>
+      <p class="brand-tagline">Evidence-informed help for recurring acne and the marks it leaves behind. Smart, calm, no hype.</p>
+    </header>
+
+    <!-- ===================== EMAIL CAPTURE (FIRST) ===================== -->
+    <section class="capture">
+      <span class="pill">Free guide</span>
+      <h2>Why Your Acne Keeps Coming Back</h2>
+      <p>The honest, evidence-informed breakdown. Enter your email and I'll send it straight to your inbox.</p>
+
+      <!-- Email-capture button. Paste your Tally form LINK below. -->
+      <a class="lnk primary" href="https://tally.so/r/VLdQME" target="_blank" rel="noopener">
+        <span class="ico">🎁</span>
+        <span class="body"><span class="title">Send me the free guide</span></span>
+        <span class="arrow">→</span>
+      </a>
+
+      <!-- ===================================================================
+           OPTIONAL: want the email form ON the page instead of a button?
+           1) Delete the <a> button block just above.
+           2) Delete these comment markers around the block below.
+           3) Replace YOUR_TALLY_FORM_ID with your real form ID.
+      <div id="tally-embed">
+        <iframe data-tally-src="https://tally.so/embed/Pd4v2d?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+                loading="lazy" width="100%" height="120" frameborder="0" title="Get the free guide"></iframe>
+      </div>
+      =================================================================== -->
+    </section>
+
+    <!-- ===================== SECTION 1: ANNALCHEMY ===================== -->
+    <section class="group">
+      <div class="group-head">
+        <p class="eyebrow">Section 1 · The skin work</p>
+        <p class="gname">AnnAlchemy&trade;</p>
+        <p class="gdesc">For recurring acne, hormonal flares, and post-acne marks.</p>
+      </div>
+
+      <nav class="links" aria-label="AnnAlchemy links">
+        <a class="lnk" href="https://annalchemy.org/#start-here" target="_blank" rel="noopener">
+          <span class="ico">💬</span>
+          <span class="body">
+            <span class="title">Start Here</span>
+            <span class="sub">Why your acne keeps relapsing — the full story</span>
+          </span>
+          <span class="arrow">→</span>
+        </a>
+
+        <a class="lnk primary" href="https://payhip.com/b/ZzmSJ" target="_blank" rel="noopener">
+          <span class="ico">🛒</span>
+          <span class="body">
+            <span class="title">Relapse Control Guide&trade;</span>
+            <span class="sub">The self-guided flagship — get instant access</span>
+          </span>
+          <span class="arrow">→</span>
+        </a>
+
+        <a class="lnk" href="https://annalchemy.org/when-it-comes-back" target="_blank" rel="noopener">
+          <span class="ico">📘</span>
+          <span class="body">
+            <span class="title">When It Comes Back&trade;: The First 48 Hours</span>
+            <span class="sub">Your calm, step-by-step flare-up plan</span>
+          </span>
+          <span class="arrow">→</span>
+        </a>
+      </nav>
+    </section>
+
+    <!-- ===================== SECTION 2: SELF LOYALTY LAB ===================== -->
+    <section class="group lab">
+      <div class="group-head">
+        <p class="eyebrow">Section 2 · The inner work</p>
+        <p class="gname">Self-Loyalty Lab&trade;</p>
+        <p class="gdesc">For your boundaries, your peace, and your way back to yourself.</p>
+      </div>
+
+      <nav class="links" aria-label="Self Loyalty Lab links">
+        <!-- Boyfriend Boundary Guide (NEW — swap link when live, then remove 'soon' + the badge line) -->
+        <a class="lnk lab soon" href="PASTE_PAYHIP_LINK_BOYFRIEND" target="_blank" rel="noopener">
+          <span class="badge-soon">Coming soon</span>
+          <span class="ico">💗</span>
+          <span class="body">
+            <span class="title">The Boyfriend Boundary Guide&trade;</span>
+            <span class="sub">Stop giving wife-level benefits to boyfriend-level commitment</span>
+          </span>
+          <span class="arrow">→</span>
+        </a>
+
+        <!-- Self Return Guide (NEW — swap link when live, then remove 'soon' + the badge line) -->
+        <a class="lnk lab soon" href="PASTE_PAYHIP_LINK_SELFRETURN" target="_blank" rel="noopener">
+          <span class="badge-soon">Coming soon</span>
+          <span class="ico">🌿</span>
+          <span class="body">
+            <span class="title">The Self-Return Guide&trade;</span>
+            <span class="sub">Coming back to yourself when you're already deep in</span>
+          </span>
+          <span class="arrow">→</span>
+        </a>
+      </nav>
+    </section>
+
+    <!-- ===================== SOCIALS ===================== -->
+    <p class="sep">Find me here</p>
+    <div class="socials">
+      <a class="social" href="https://www.tiktok.com/@annalchemist" target="_blank" rel="noopener" aria-label="TikTok">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16.6 5.82a4.28 4.28 0 0 1-1.08-2.82h-3.1v12.4a2.45 2.45 0 0 1-2.45 2.36 2.45 2.45 0 1 1 .64-4.82V9.74a5.56 5.56 0 0 0-.64-.04 5.55 5.55 0 1 0 5.55 5.55V8.66a7.34 7.34 0 0 0 4.2 1.32V6.88a4.28 4.28 0 0 1-3.12-1.06z"/></svg>
+      </a>
+      <a class="social" href="https://www.facebook.com/AnnAlchemybyAnnaRN" target="_blank" rel="noopener" aria-label="Facebook">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z"/></svg>
+      </a>
+      <a class="social" href="mailto:hello@annalchemy.org" aria-label="Email">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5z"/></svg>
+      </a>
+
+      <!-- OPTIONAL INSTAGRAM — to switch on, delete these two comment lines and paste your IG link.
+      <a class="social" href="PASTE_INSTAGRAM_LINK" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16zm0 3.24A6.6 6.6 0 1 0 18.6 12 6.6 6.6 0 0 0 12 5.4zm0 10.89A4.29 4.29 0 1 1 16.29 12 4.29 4.29 0 0 1 12 16.29zm6.85-11.15a1.54 1.54 0 1 1-1.54-1.54 1.54 1.54 0 0 1 1.54 1.54z"/></svg>
+      </a>
+      -->
+    </div>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="foot">
+      <p>Questions? <a href="mailto:hello@annalchemy.org">hello@annalchemy.org</a></p>
+      <p class="tm">Educational only — not a diagnosis or a substitute for medical care.<br/>&copy; <span id="yr"></span> AnnAlchemy&trade; &amp; Self-Loyalty Lab&trade;. All rights reserved.</p>
+    </footer>
+
+  </main>
+
+  <script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+  <!-- Tally loader (only needed if you switch to the inline form option) -->
+  <script async src="https://tally.so/widgets/embed.js"></script>
+</body>
+</html>
