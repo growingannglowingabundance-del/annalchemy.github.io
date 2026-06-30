@@ -87,13 +87,15 @@
     .hero-tagline{font-size:.95rem;color:var(--muted);max-width:340px;margin:0}
     .hero-by{font-size:.8rem;color:var(--muted-2);margin:0}
 
-    .socials{display:flex;justify-content:center;gap:12px;margin-top:6px}
+    .socials{display:flex;justify-content:center;gap:14px;margin-top:10px}
     .social{
-      width:46px;height:46px;border-radius:13px;display:flex;align-items:center;justify-content:center;
-      background:var(--card);border:1px solid var(--border);transition:transform .14s ease,border-color .14s ease,background .14s ease;
+      width:56px;height:56px;border-radius:16px;display:flex;align-items:center;justify-content:center;
+      background:var(--btn);border:1px solid rgba(0,0,0,.05);
+      box-shadow:0 8px 22px rgba(0,0,0,.35);
+      transition:transform .14s ease,background .14s ease,box-shadow .14s ease;
     }
-    .social:hover{transform:translateY(-2px);border-color:var(--border-hover);background:var(--card-2)}
-    .social svg{width:21px;height:21px;fill:var(--text)}
+    .social:hover{transform:translateY(-2px);background:var(--btn-hover);box-shadow:0 12px 28px rgba(0,0,0,.45)}
+    .social svg{width:27px;height:27px;fill:var(--btn-text)}
 
     /* ---------------- CONTENT ---------------- */
     .content{display:flex;flex-direction:column;gap:14px}
@@ -133,12 +135,11 @@
     .card-price .was{font-size:.85rem;color:var(--muted-2);text-decoration:line-through}
     .card-price .free{font-weight:800;font-size:.78rem;letter-spacing:.1em;color:var(--gold);text-transform:uppercase}
 
-    .pill{
-      position:absolute;top:14px;right:14px;font-size:9px;letter-spacing:.1em;text-transform:uppercase;
-      font-weight:800;padding:4px 9px;border-radius:999px;
+    .tag{
+      display:inline-block;font-size:9px;letter-spacing:.12em;text-transform:uppercase;
+      font-weight:800;padding:4px 9px;border-radius:999px;margin-bottom:7px;
     }
-    .pill-gold{color:#1c130c;background:var(--gold)}
-    .pill-soon{color:var(--rose);background:rgba(210,142,156,.12);border:1px solid rgba(210,142,156,.3)}
+    .tag-gold{color:#1c130c;background:var(--gold)}
 
     /* CTA button — cream, high contrast */
     .cta{
@@ -214,7 +215,6 @@
 
       <!-- Free guide (email capture) -->
       <a class="card" href="https://tally.so/r/VLdQME" target="_blank" rel="noopener">
-        <span class="pill pill-gold">Free</span>
         <div class="card-top">
           <!-- To use a real cover image: <img src="YOUR_IMAGE_URL" alt="" /> inside the thumb div -->
           <div class="thumb thumb-gold">A</div>
@@ -245,11 +245,11 @@
 
       <!-- Relapse Control Guide (flagship) -->
       <a class="card" href="https://payhip.com/b/ZzmSJ" target="_blank" rel="noopener">
-        <span class="pill pill-gold">Founding price</span>
         <div class="card-top">
           <!-- Real cover available: <img src="https://annalchemy.org/img/rcg-preview-cover.jpg" alt="" /> -->
           <div class="thumb thumb-gold">A</div>
           <div class="card-info">
+            <span class="tag tag-gold">Founding price</span>
             <div class="card-title">Relapse Control Guide&trade;</div>
             <div class="card-desc">The self-guided flagship for recurring acne and the marks it leaves behind.</div>
             <div class="card-price"><span class="now">$27</span><span class="was">$49</span></div>
@@ -275,9 +275,8 @@
         <span class="dot"></span><span class="txt">The inner work</span><span class="name">Self-Loyalty Lab&trade;</span>
       </div>
 
-      <!-- Boyfriend Boundary Guide (NEW — swap link, then change class "card soon"->"card", replace cta-soon block with the live CTA, remove the SOON pill) -->
+      <!-- Boyfriend Boundary Guide (NEW — when live: paste the Payhip link, change class "card soon" to "card", remove onclick="return false;", and replace the cta-soon line with: <div class="cta">Get the guide <span class="arrow">&rarr;</span></div>) -->
       <a class="card soon" href="PASTE_PAYHIP_LINK_BOYFRIEND" target="_blank" rel="noopener" onclick="return false;">
-        <span class="pill pill-soon">Coming soon</span>
         <div class="card-top">
           <div class="thumb thumb-rose">S</div>
           <div class="card-info">
@@ -290,7 +289,6 @@
 
       <!-- Self-Return Guide (NEW — same swap steps as above) -->
       <a class="card soon" href="PASTE_PAYHIP_LINK_SELFRETURN" target="_blank" rel="noopener" onclick="return false;">
-        <span class="pill pill-soon">Coming soon</span>
         <div class="card-top">
           <div class="thumb thumb-rose">S</div>
           <div class="card-info">
