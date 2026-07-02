@@ -93,7 +93,7 @@
       transition:transform .14s ease,background .14s ease,box-shadow .14s ease;
     }
     .social:hover{transform:translateY(-2px);background:var(--btn-hover);box-shadow:0 12px 28px rgba(0,0,0,.45)}
-    .social svg{width:px;height:px;fill:var(--btn-text)}
+    .social svg{width:24px;height:24px;fill:var(--btn-text)}
 
     /* ---------------- CONTENT ---------------- */
     .content{display:flex;flex-direction:column;gap:14px}
@@ -193,7 +193,7 @@
         <p class="hero-kicker">@AnnAlchemist</p>
         <h1 class="hero-name">AnnAlchemy&trade;</h1>
       </div>
-      <p class="hero-tagline">Alchemy for the whole woman: the skin you live in, and the self you come home to.</p>
+      <p class="hero-tagline">Alchemy for the skin you live in &mdash; and the self you're learning to keep.</p>
       <p class="hero-by">by Anna Cadano, RN &middot; Registered Nurse since 2008</p>
       <div class="socials">
         <a class="social" href="https://www.tiktok.com/@annalchemist" target="_blank" rel="noopener" aria-label="TikTok">
@@ -206,8 +206,10 @@
           <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5z"/></svg>
         </a>
         <!-- OPTIONAL INSTAGRAM — delete these comment lines and paste your IG link to switch on.
+             NOTE: the placeholder Instagram <path> below is decorative/incomplete — replace it with a clean
+             Instagram glyph path when you enable this, or the icon may render distorted.
         <a class="social" href="PASTE_INSTAGRAM_LINK" target="_blank" rel="noopener" aria-label="Instagram">
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1..07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1..06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16zm0 3.24A6.6 6.6 0 1 0 18.6 12 6.6 6.6 0 0 0 12 5.4zm0 10.89A4.29 4.29 0 1 1 16.29 12 4.29 4.29 0 0 1 12 16.29zm6.85-11.15a1.54 1.54 0 1 1-1.54-1.54 1.54 1.54 0 0 1 1.54 1.54z"/></svg>
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16zm0 3.24A6.6 6.6 0 1 0 18.6 12 6.6 6.6 0 0 0 12 5.4zm0 10.89A4.29 4.29 0 1 1 16.29 12 4.29 4.29 0 0 1 12 16.29zm6.85-11.15a1.54 1.54 0 1 1-1.54-1.54 1.54 1.54 0 0 1 1.54 1.54z"/></svg>
         </a>
         -->
       </div>
@@ -215,6 +217,9 @@
 
     <!-- ===================== CONTENT ===================== -->
     <div class="content">
+
+      <!-- Identity orientation line -->
+      <p class="group-desc" style="margin-top:0;margin-bottom:4px">Not sure where to start? If your skin clears and then keeps coming back no matter what you try, the free guide below is the right first step.</p>
 
       <!-- Free guide (email capture) -->
       <a class="card" href="https://tally.so/r/VLdQME" target="_blank" rel="noopener">
@@ -276,9 +281,9 @@
       <div class="group-label rose">
         <span class="dot"></span><span class="txt">The inner work</span><span class="name">Self-Loyalty Lab&trade;</span>
       </div>
-      <p class="group-desc">Boundaries, standards, and self-worth, so you stop abandoning yourself to be chosen.</p>
+      <p class="group-desc">Boundaries, standards, and self-worth &mdash; so being chosen never costs you yourself.</p>
 
-      <!-- Boyfriend Boundary Guide (NEW — when live: paste the Payhip link, change class "card soon" to "card", remove onclick="return false;", and replace the cta-soon line with: <div class="cta">Get the guide <span class="arrow">&rarr;</span></div>) -->
+      <!-- Boyfriend Boundary Guide (LIVE) -->
       <a class="card" href="https://payhip.com/b/uCRbB" target="_blank" rel="noopener">
         <div class="card-top">
           <div class="thumb thumb-rose">S</div>
@@ -290,7 +295,9 @@
         <div class="cta">Get the guide <span class="arrow">&rarr;</span></div>
       </a>
 
-      <!-- Self-Return Guide (NEW — same swap steps as above) -->
+      <!-- Self-Return Guide (COMING SOON — when live: paste the Payhip link into href,
+           change class "card soon" to "card", remove onclick="return false;",
+           and replace the cta-soon line with: <div class="cta">Get the guide <span class="arrow">&rarr;</span></div>) -->
       <a class="card soon" href="PASTE_PAYHIP_LINK_SELFRETURN" target="_blank" rel="noopener" onclick="return false;">
         <div class="card-top">
           <div class="thumb thumb-rose">S</div>
