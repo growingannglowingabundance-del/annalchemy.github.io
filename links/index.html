@@ -82,7 +82,7 @@
     /* Tip: to use a real photo instead of the "A" badge, see the avatar div in the HTML below. */
     .hero-kicker{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:800;margin:2px 0 0}
     .hero-name{font-family:Georgia,"Times New Roman",serif;font-size:1.9rem;font-weight:700;margin:0;color:#fff}
-    .hero-tagline{font-size:.95rem;color:var(--muted);max-width:340px;margin:0}
+    .hero-tagline{font-size:.95rem;color:var(--muted);max-width:360px;margin:0}
     .hero-by{font-size:.8rem;color:var(--muted-2);margin:0}
 
     .socials{display:flex;justify-content:center;gap:14px;margin-top:10px}
@@ -106,6 +106,9 @@
     .group-label .txt{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:800;color:var(--gold)}
     .group-label.rose .txt{color:var(--rose)}
     .group-label .name{font-family:Georgia,"Times New Roman",serif;font-size:1rem;color:var(--text);margin-left:2px}
+
+    /* Section description under each group label */
+    .group-desc{font-size:.86rem;color:var(--muted);margin:1px 2px 4px;max-width:520px;line-height:1.5}
 
     /* ---------------- CARD ---------------- */
     .card{
@@ -185,12 +188,12 @@
     <header class="hero">
       <!-- To use a real photo instead of the "A": replace the line below with
            <div class="avatar"><img src="https://annalchemy.org/img/anna-cadano-founder-portrait.jpg" alt="Anna Cadano, RN" /></div> -->
-      <div class="avatar">A</div>
+      <div class="avatar"><img src="https://annalchemy.org/img/anna-cadano-founder-portrait.jpg" alt="Anna Cadano, RN" /></div>
       <div>
-        <p class="hero-kicker">Nurse-led acne education</p>
+        <p class="hero-kicker">@AnnAlchemist</p>
         <h1 class="hero-name">AnnAlchemy&trade;</h1>
       </div>
-      <p class="hero-tagline">Evidence-informed help for recurring acne and the marks it leaves behind. Smart, calm, no hype.</p>
+      <p class="hero-tagline">Alchemy for the whole woman: the skin you live in, and the self you come home to.</p>
       <p class="hero-by">by Anna Cadano, RN &middot; Registered Nurse since 2008</p>
       <div class="socials">
         <a class="social" href="https://www.tiktok.com/@annalchemist" target="_blank" rel="noopener" aria-label="TikTok">
@@ -220,18 +223,17 @@
           <div class="thumb thumb-gold">A</div>
           <div class="card-info">
             <div class="card-title">Why Your Acne Keeps Coming Back</div>
-            <div class="card-desc">The honest, evidence-informed breakdown — straight to your inbox.</div>
+            <div class="card-desc">The honest, evidence-informed breakdown, straight to your inbox.</div>
             <div class="card-price"><span class="free">Free guide</span></div>
           </div>
         </div>
         <div class="cta">Send me the free guide <span class="arrow">&rarr;</span></div>
       </a>
 
-      <p style="font-family:Georgia,serif;font-size:.92rem;color:#b6a899;margin:18px 2px 2px;max-width:520px;">Alchemy for the whole woman: the skin you live in, and the self you come home to.</p>
       <div class="group-label">
         <span class="dot"></span><span class="txt">The skin work</span><span class="name">AnnAlchemy&trade;</span>
       </div>
-      <p style="font-size:.86rem;color:#b6a899;margin:3px 2px 2px;max-width:520px;line-height:1.5;">Calm, evidence-informed help for recurring acne and the marks it leaves behind.</p>
+      <p class="group-desc">Evidence-informed help for recurring acne and the marks it leaves behind. Smart, calm, no hype.</p>
 
       <!-- Start Here -->
       <a class="card" href="https://annalchemy.org" target="_blank" rel="noopener">
@@ -239,7 +241,7 @@
           <div class="thumb thumb-gold">A</div>
           <div class="card-info">
             <div class="card-title">Start Here</div>
-            <div class="card-desc">Why your acne keeps relapsing — the full story.</div>
+            <div class="card-desc">Why your acne keeps relapsing, the full story.</div>
           </div>
         </div>
         <div class="cta">Read the story <span class="arrow">&rarr;</span></div>
@@ -249,7 +251,7 @@
       <a class="card" href="https://payhip.com/b/ZzmSJ" target="_blank" rel="noopener">
         <div class="card-top">
           <!-- Real cover available: <img src="https://annalchemy.org/img/rcg-preview-cover.jpg" alt="" /> -->
-          <div class="thumb thumb-gold">A</div>
+          <div class="thumb thumb-gold"<img src="https://annalchemy.org/img/rcg-preview-cover.jpg" alt="" /></div>
           <div class="card-info">
             <span class="tag tag-gold">Founding price</span>
             <div class="card-title">Relapse Control Guide&trade;</div>
@@ -276,7 +278,7 @@
       <div class="group-label rose">
         <span class="dot"></span><span class="txt">The inner work</span><span class="name">Self-Loyalty Lab&trade;</span>
       </div>
-      <p style="font-size:.86rem;color:#b6a899;margin:3px 2px 2px;max-width:520px;line-height:1.5;">Boundaries, standards, and self-worth, so you stop abandoning yourself to be chosen.</p>
+      <p class="group-desc">Boundaries, standards, and self-worth, so you stop abandoning yourself to be chosen.</p>
 
       <!-- Boyfriend Boundary Guide (NEW — when live: paste the Payhip link, change class "card soon" to "card", remove onclick="return false;", and replace the cta-soon line with: <div class="cta">Get the guide <span class="arrow">&rarr;</span></div>) -->
       <a class="card soon" href="PASTE_PAYHIP_LINK_BOYFRIEND" target="_blank" rel="noopener" onclick="return false;">
@@ -307,7 +309,7 @@
     <!-- ===================== FOOTER ===================== -->
     <footer class="foot">
       <p>Questions? <a href="mailto:hello@annalchemy.org">hello@annalchemy.org</a></p>
-      <p class="tm">Educational only — not a diagnosis or a substitute for medical care.<br/>&copy; <span id="yr"></span> AnnAlchemy&trade; &amp; Self-Loyalty Lab&trade;. All rights reserved.</p>
+      <p class="tm">Educational only, not a diagnosis or a substitute for medical care.<br/>&copy; <span id="yr"></span> AnnAlchemy&trade; &amp; Self-Loyalty Lab&trade;. All rights reserved.</p>
     </footer>
 
   </main>
