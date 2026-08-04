@@ -141,6 +141,7 @@
       font-weight:800;padding:4px 9px;border-radius:999px;margin-bottom:7px;
     }
     .tag-gold{color:#1c130c;background:var(--gold)}
+    .tag-rose{color:#1c130c;background:var(--rose)}
 
     /* CTA button — cream, high contrast */
     .cta{
@@ -150,6 +151,24 @@
     }
     .card:hover .cta{background:var(--btn-hover)}
     .cta .arrow{font-size:1rem}
+
+    /* ---- Two-language CTA row (Self-Loyalty Lab guides) ---- */
+    .cta-row{
+      margin-top:16px;display:grid;grid-template-columns:1fr 1fr;gap:10px;
+    }
+    .cta-half{
+      display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;
+      background:var(--btn);color:var(--btn-text);
+      padding:12px 8px;border-radius:var(--radius-sm);text-align:center;
+      transition:background .14s ease,transform .14s ease;
+    }
+    .cta-half:hover{background:var(--btn-hover);transform:translateY(-1px)}
+    .cta-half .lang{font-weight:700;font-size:.97rem;line-height:1.25}
+    .cta-half .price{font-weight:600;font-size:.8rem;color:#7a6047}
+    /* Cards that hold their own buttons are plain divs, not link elements */
+    .card-multi{cursor:default}
+    .card-multi:hover{transform:none}
+    .card-multi .card-top{cursor:default}
 
     /* Coming-soon: dim ghost button so it doesn't compete with live CTAs */
     .card.soon{cursor:default}
@@ -178,6 +197,8 @@
 
     @media (max-width:400px){
       .card-desc{font-size:.82rem}
+      .cta-half .lang{font-size:.92rem}
+      .cta-half .price{font-size:.76rem}
     }
   </style>
 </head>
@@ -205,13 +226,6 @@
         <a class="social" href="mailto:hello@annalchemy.org" aria-label="Email">
           <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5z"/></svg>
         </a>
-        <!-- OPTIONAL INSTAGRAM — delete these comment lines and paste your IG link to switch on.
-             NOTE: the placeholder Instagram <path> below is decorative/incomplete — replace it with a clean
-             Instagram glyph path when you enable this, or the icon may render distorted.
-        <a class="social" href="PASTE_INSTAGRAM_LINK" target="_blank" rel="noopener" aria-label="Instagram">
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16zm0 3.24A6.6 6.6 0 1 0 18.6 12 6.6 6.6 0 0 0 12 5.4zm0 10.89A4.29 4.29 0 1 1 16.29 12 4.29 4.29 0 0 1 12 16.29zm6.85-11.15a1.54 1.54 0 1 1-1.54-1.54 1.54 1.54 0 0 1 1.54 1.54z"/></svg>
-        </a>
-        -->
       </div>
     </header>
 
@@ -224,7 +238,6 @@
       <!-- Free guide (email capture) -->
       <a class="card" href="https://tally.so/r/VLdQME" target="_blank" rel="noopener">
         <div class="card-top">
-          <!-- To use a real cover image: <img src="YOUR_IMAGE_URL" alt="" /> inside the thumb div -->
           <div class="thumb thumb-gold">A</div>
           <div class="card-info">
             <div class="card-title">Why Your Acne Keeps Coming Back</div>
@@ -253,9 +266,8 @@
       </a>
 
       <!-- Relapse Control Guide (flagship) -->
-      <a class="card" href=" https://annalchemy.org" target="_blank" rel="noopener">
+      <a class="card" href="https://annalchemy.org" target="_blank" rel="noopener">
         <div class="card-top">
-          <!-- Real cover available: <img src="https://annalchemy.org/img/rcg-preview-cover.jpg" alt="" /> -->
           <div class="thumb thumb-gold">A</div>
           <div class="card-info">
             <span class="tag tag-gold">Founding price</span>
@@ -281,35 +293,49 @@
       <div class="group-label rose">
         <span class="dot"></span><span class="txt">The inner work</span><span class="name">Self-Loyalty Lab&trade;</span>
       </div>
-      <p class="group-desc">Boundaries, standards, and self-worth &mdash; so being chosen never costs you yourself.</p>
+      <p class="group-desc">Boundaries, standards, and self-worth, so being chosen never costs you yourself. Two guides, two different seasons. Pick the one closest to where you are now.</p>
 
-      <!-- Boyfriend Boundary Guide (COMING SOON — when live: paste the Payhip link into href,
-           change class "card soon" to "card", remove onclick="return false;",
-           and replace the cta-soon line with: <div class="cta">Get the guide <span class="arrow">&rarr;</span></div>) -->
-      <a class="card soon" href="https://payhip.com/b/uCRbB" target="_blank" rel="noopener" onclick="return false;">
+      <!-- ============ Boyfriend Boundary Guide ============ -->
+      <div class="card card-multi">
         <div class="card-top">
           <div class="thumb thumb-rose">S</div>
           <div class="card-info">
+            <span class="tag tag-rose">For the start</span>
             <div class="card-title">The Boyfriend Boundary Guide&trade;</div>
-            <div class="card-desc">Stop giving wife-level benefits to boyfriend-level commitment.</div>
+            <div class="card-desc">Dating, talking, situationship, or newly together, and you can already feel yourself giving more than he has earned.</div>
           </div>
         </div>
-        <div class="cta-soon">Coming soon</div>
-      </a>
+        <div class="cta-row">
+          <a class="cta-half" href="https://payhip.com/b/uCRbB" target="_blank" rel="noopener">
+            <span class="lang">Taglish</span><span class="price">$19</span>
+          </a>
+          <a class="cta-half" href="https://payhip.com/b/c5ZAz" target="_blank" rel="noopener">
+            <span class="lang">English</span><span class="price">$29</span>
+          </a>
+        </div>
+      </div>
 
-      <!-- Self-Return Guide (COMING SOON — when live: paste the Payhip link into href,
-           change class "card soon" to "card", remove onclick="return false;",
-           and replace the cta-soon line with: <div class="cta">Get the guide <span class="arrow">&rarr;</span></div>) -->
-      <a class="card soon" href="PASTE_PAYHIP_LINK_SELFRETURN" target="_blank" rel="noopener" onclick="return false;">
+      <!-- ============ Self-Return Guide ============ -->
+      <div class="card card-multi">
         <div class="card-top">
           <div class="thumb thumb-rose">S</div>
           <div class="card-info">
+            <span class="tag tag-rose">For when you're deep in</span>
             <div class="card-title">The Self-Return Guide&trade;</div>
-            <div class="card-desc">Coming back to yourself when you're already deep in.</div>
+            <div class="card-desc">You have been over-giving for a long time, and you are trying to find your way back to yourself.</div>
           </div>
         </div>
-        <div class="cta-soon">Coming soon</div>
-      </a>
+        <div class="cta-row">
+          <a class="cta-half" href="https://payhip.com/b/Skgca" target="_blank" rel="noopener">
+            <span class="lang">Taglish</span><span class="price">$25</span>
+          </a>
+          <a class="cta-half" href="https://payhip.com/b/LTXpY" target="_blank" rel="noopener">
+            <span class="lang">English</span><span class="price">$39</span>
+          </a>
+        </div>
+      </div>
+
+      <p class="group-desc" style="margin-top:2px">Both editions contain the same guide. Choose whichever you read most comfortably. Educational only, and not for anyone in an unsafe relationship.</p>
 
     </div>
 
