@@ -30,12 +30,13 @@
       --success-soft:#17251F;
       --danger:#E0866F;
       /* Gold CTA ramp - deep face so white labels clear AA */
+      --on-accent:#2A1D12;
       --gold:#d6ab7c;
       --gold-deep:#95663f;
       --gold-lift:#c89066;
       --gold-btn:linear-gradient(135deg, #5f3f21 0%, #6f4a27 100%);
       --gold-btn-sheen:radial-gradient(circle at 30% 25%, rgba(255,255,255,.16), transparent 32%);
-      --gold-pill:linear-gradient(135deg, #c89066 0%, #d6ab7c 100%);
+      --gold-pill:linear-gradient(135deg, var(--gold-lift) 0%, var(--gold) 100%);
       --gold-pill-sheen:radial-gradient(circle at 30% 25%, rgba(255,255,255,.28), transparent 32%);
       --shadow-xl:0 34px 100px rgba(0,0,0,.55);
       --shadow-lg:0 18px 48px rgba(0,0,0,.45);
@@ -81,10 +82,11 @@
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color:var(--ink);
       background:
-        radial-gradient(circle at top left, rgba(196,168,140,.08), transparent 28%),
-        radial-gradient(circle at 92% 8%, rgba(196,168,140,.06), transparent 18%),
+        radial-gradient(60% 40% at 50% -5%, rgba(196,168,140,.10), transparent 70%),
+        radial-gradient(50% 30% at 100% 0%, rgba(196,168,140,.06), transparent 70%),
         linear-gradient(180deg, #1B150F 0%, #15110D 100%);
       background-color:#15110D;
+      background-attachment:fixed;
       line-height:1.65;
       overflow-x:hidden;
     }
@@ -208,12 +210,10 @@
       letter-spacing:.02em;
     }
     .brand-badge{
-      width:44px;height:44px;border-radius:15px;
-      background:
-        radial-gradient(circle at 30% 25%, rgba(58,43,34,.45), transparent 28%),
-        linear-gradient(135deg, var(--accent) 0%, #C4A88C 100%);
-      box-shadow:0 12px 30px rgba(196,168,140,.22);
+      width:44px;height:44px;
       flex:0 0 auto;
+      display:block;
+      color:#F4EDE4;
     }
     .brand-wordmark{
       display:flex;
@@ -222,15 +222,21 @@
     }
     .brand-wordmark small{
       font-size:10px;
-      letter-spacing:.18em;
+      letter-spacing:.24em;
       text-transform:uppercase;
-      color:var(--muted-2);
-      font-weight:800;
+      color:var(--muted);
+      font-weight:500;
+      order:2;
     }
     .brand-wordmark strong{
-      font-size:1rem;
-      letter-spacing:.02em;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size:1.42rem;
+      font-weight:500;
+      letter-spacing:.11em;
+      line-height:1;
+      text-transform:uppercase;
       color:var(--ink);
+      order:1;
     }
     .nav-actions{
       display:flex;
@@ -255,13 +261,15 @@
     .btn:hover{transform:translateY(-1px)}
     .btn-primary{
       background:var(--gold-btn-sheen), var(--gold-btn);
-      color:var(--ink);
-      box-shadow:0 16px 36px rgba(0,0,0,.24);
+      color:#FFFFFF;
+      border-color:rgba(255,255,255,.16);
+      text-shadow:0 1px 2px rgba(40,26,14,.5);
+      box-shadow:0 16px 36px rgba(95,63,33,.42);
     }
     .btn-primary:hover{box-shadow:0 20px 42px rgba(0,0,0,.28)}
     .btn-secondary{
-      background:var(--paper);
-      border-color:var(--line);
+      background:var(--paper-2);
+      border-color:var(--line-strong);
       color:var(--ink);
       box-shadow:var(--shadow-sm);
     }
@@ -303,7 +311,7 @@
       margin-top:2px;
     }
     .pill{
-      padding:10px 14px;
+      padding:11px 26px;
       background:var(--paper);
       border:1px solid var(--line);
       border-radius:999px;
@@ -312,9 +320,9 @@
       box-shadow:0 6px 20px rgba(44,30,20,.04);
     }
     .pill.urgent{
-      background:linear-gradient(180deg, #fff5ed 0%, #fff1e5 100%);
-      border-color:#efcfb6;
-      color:#8a4f24;
+      background:var(--gold-pill-sheen), var(--gold-pill);
+      border-color:rgba(255,255,255,.22);
+      color:#2A1D12;
       font-weight:700;
     }
 
@@ -413,10 +421,10 @@
       padding:28px;
     }
     .card-soft{
-      background:linear-gradient(180deg, #fff 0%, #fff9f3 100%);
+      background:linear-gradient(180deg, var(--paper) 0%, var(--paper-2) 100%);
     }
     .card-dark{
-      background:linear-gradient(135deg, #251b15 0%, #35271f 100%);
+      background:linear-gradient(135deg, #3F2E23 0%, #221913 100%);
       color:var(--ink);
       border-color:rgba(255,255,255,.08);
       box-shadow:var(--shadow-lg);
@@ -451,7 +459,7 @@
     }
     .phase-card,
     .pillar-card{
-      background:linear-gradient(180deg, #fff 0%, #fffaf6 100%);
+      background:linear-gradient(180deg, var(--paper) 0%, var(--paper-2) 100%);
       border:1px solid var(--line);
       border-radius:24px;
       padding:24px;
@@ -500,7 +508,7 @@
 
     .offer-card.featured{
       border:1.5px solid rgba(196,168,140,.30);
-      background:linear-gradient(180deg, #fff 0%, #fff7f0 100%);
+      background:linear-gradient(180deg, var(--paper) 0%, var(--paper-2) 100%);
     }
 
     .offer-topline{
@@ -576,9 +584,9 @@
       gap:8px;
       padding:7px 10px;
       border-radius:999px;
-      background:#fff3ea;
-      color:#8a4f24;
-      border:1px solid #efcfb6;
+      background:#C4A88C;
+      color:#3A2B22;
+      border:1px solid #D3BCA4;
       font-weight:700;
       font-size:.78rem;
     }
@@ -641,7 +649,7 @@
     }
 
     .cta-band{
-      background:linear-gradient(135deg, #231a15 0%, #34271f 100%);
+      background:linear-gradient(135deg, #3F2E23 0%, #221913 100%);
       color:var(--ink);
       border-radius:34px;
       padding:42px;
@@ -742,12 +750,26 @@
     .footer-brand{
       flex:1 1 260px;
     }
-    .footer-brand-name{
-      font-family: Georgia, "Times New Roman", serif;
-      font-size:1.35rem;
-      font-weight:700;
-      color:var(--ink);
+    .footer-brand-lockup{
+      display:flex;
+      align-items:center;
+      gap:14px;
       margin-bottom:6px;
+    }
+    .footer-mark{
+      width:38px;height:38px;
+      flex:0 0 auto;
+      display:block;
+      color:var(--ink);
+    }
+    .footer-brand-name{
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size:1.5rem;
+      font-weight:500;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:var(--ink);
+      margin-bottom:0;
     }
     .footer-brand p{
       color:var(--muted);
@@ -789,10 +811,10 @@
       justify-content:space-between;
       gap:12px;
       padding:12px 14px;
-      background:rgba(35,26,21,.95);
-      border:1px solid rgba(255,255,255,.08);
+      background:#291F17;
+      border:1px solid var(--line-strong);
       border-radius:18px;
-      box-shadow:0 20px 40px rgba(17,12,10,.28);
+      box-shadow:0 20px 44px rgba(0,0,0,.62);
       backdrop-filter:blur(14px);
     }
     .sticky-mobile-copy{
@@ -1041,7 +1063,7 @@
       .founder-text-col{text-align:left}
       .founder-photo-col{position:static; align-items:center}
       .founder-photo{max-width:240px; margin:0 auto}
-      .credential-chips{justify-content:center}
+      .credential-chips{justify-content:flex-start}
       .credential-chip{font-size:.75rem;padding:5px 10px}
       .guide-preview-grid{grid-template-columns:1fr; gap:30px; max-width:320px; margin-left:auto; margin-right:auto}
       .footer .container span{text-align:left !important;}
@@ -1057,10 +1079,10 @@
     <div class="container">
       <div class="nav">
         <div class="brand">
-          <div class="brand-badge"></div>
+          <svg class="brand-badge" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M50 20 L76 74 H24 Z" fill="none" stroke="currentColor" stroke-width="5.5" stroke-linejoin="miter"/><path d="M35.5 56 H64.5" stroke="currentColor" stroke-width="5.5"/></svg>
           <div class="brand-wordmark">
-            <small>Nurse-led, evidence-informed</small>
             <strong>AnnAlchemy&trade;</strong>
+            <small>Nurse-led, evidence-informed</small>
           </div>
         </div>
         <div class="nav-actions">
@@ -1623,12 +1645,12 @@
   <section aria-labelledby="downsell-heading" style="
     width:min(820px, calc(100% - 32px));
     margin:56px auto;
-    background:#f2e4d7;
-    border:1px solid rgba(196,168,140,.18);
+    background:linear-gradient(135deg, #3F2E23 0%, #221913 100%);
+    border:1px solid rgba(196,168,140,.22);
     border-radius:18px;
     padding:32px;
     font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
-    color:#1b1511;
+    color:#F4EDE4;
     line-height:1.7;">
     <p style="font-size:.78rem; font-weight:600; color:#C4A88C; text-transform:uppercase; letter-spacing:.14em; margin:0 0 12px 0;">
       Not in a full-reset season?
@@ -1642,7 +1664,7 @@
     <p style="margin:0 0 20px 0;">
       For that exact moment there is a shorter guide, <strong>When It Comes Back: The First 48 Hours&trade;</strong>. It covers the first forty-eight hours of a returning flare, the two calm moves that protect your skin before panic makes the next decision. It is built to be useful entirely on its own, and what you pay for it is credited toward the Relapse Control Guide&trade; whenever you are ready for the full work.
     </p>
-    <a href="https://annalchemy.org/when-it-comes-back.html" style="display:inline-block; background:#fffdfa; color:#F6EFE7; font-weight:700; padding:13px 30px; border-radius:999px; border:1px solid rgba(196,168,140,.28); text-decoration:none;">
+    <a href="https://annalchemy.org/when-it-comes-back.html" style="display:inline-block; background:radial-gradient(circle at 30% 25%, rgba(255,255,255,.16), transparent 32%), linear-gradient(135deg, #5f3f21 0%, #6f4a27 100%); color:#FFFFFF; font-weight:700; padding:13px 30px; border-radius:999px; border:1px solid rgba(255,255,255,.16); text-shadow:0 1px 2px rgba(40,26,14,.5); box-shadow:0 14px 30px rgba(95,63,33,.42); text-decoration:none;">
       See When It Comes Back: The First 48 Hours&trade;
     </a>
   </section>
@@ -1690,7 +1712,13 @@
       <div class="footer-card">
         <div class="footer-top">
           <div class="footer-brand">
-            <div class="footer-brand-name">AnnAlchemy&trade;</div>
+            <div class="footer-brand-lockup">
+              <svg class="footer-mark" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M50 20 L76 74 H24 Z" fill="none" stroke="currentColor" stroke-width="6" stroke-linejoin="miter"/>
+                <path d="M35.5 56 H64.5" stroke="currentColor" stroke-width="6"/>
+              </svg>
+              <div class="footer-brand-name">AnnAlchemy&trade;</div>
+            </div>
             <p>The AnnAlchemy Method&trade;. Nurse-led, evidence-informed recurring acne support.</p>
           </div>
           <nav class="footer-nav" aria-label="Footer">
