@@ -4,25 +4,56 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Terms of Use for AnnAlchemy™, a nurse-led, evidence-informed acne education brand." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@300;400;500;600&display=swap">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg' fill='none' stroke='%233A2B22' stroke-width='7' stroke-linejoin='miter'%3E%3Cpath d='M50 20 L76 74 H24 Z'/%3E%3Cpath d='M35.5 56 H64.5'/%3E%3C/svg%3E">
   <title>Terms of Use — AnnAlchemy™</title>
   <style>
     :root{
-      --bg:#f6efe7; --paper:#fffdfa; --ink:#1b1511; --muted:#6a5f56;
-      --line:#e8ddd1; --line-strong:#d8c6b5; --accent:#95663f; --accent-dark:#6f4527;
-      --accent-soft:#f2e4d7; --shadow-md:0 10px 28px rgba(44,30,20,.08);
-      --shadow-sm:0 6px 18px rgba(44,30,20,.05); --radius-lg:26px; --max:820px;
+      --bg:#F4EDE4; --paper:#FFFFFF; --ink:#2E231C; --muted:#6B5546;
+      --line:#E0D5C8; --line-strong:#C4A88C; --accent:#6B5546; --accent-dark:#3A2B22;
+      --accent-soft:#EFE7DC; --shadow-md:0 10px 28px rgba(44,30,20,.08);
+      --shadow-sm:0 6px 18px rgba(44,30,20,.05); --radius-lg:26px; --max:820px; --measure:880px;
     }
+        /* ===== Scroll reveal ====================================================
+       Blur + fade + rise as each block enters the viewport. Two depths: a
+       container travels 28px, and text inside it travels a shorter 12px just
+       after, so a card arrives as one object whose contents settle into it
+       rather than a frame that fills in piece by piece.
+       Classes are applied by JS, so the page still renders in full with JS off,
+       and are stripped once the transition ends so no stray transform is left
+       behind to break position:sticky. */
+    @media (prefers-reduced-motion: no-preference){
+      .reveal{
+        opacity:0;
+        transform:translate3d(0, var(--reveal-rise, 28px), 0);
+        filter:blur(var(--reveal-blur, 3px));
+        transition:opacity .72s cubic-bezier(.22,.61,.36,1),
+                   transform .72s cubic-bezier(.22,.61,.36,1),
+                   filter .52s cubic-bezier(.22,.61,.36,1);
+        transition-delay:var(--reveal-delay, 0ms);
+        will-change:opacity, transform, filter;
+      }
+      .reveal.is-visible{
+        opacity:1;
+        transform:translate3d(0, 0, 0);
+        filter:blur(0);
+      }
+    }
+
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{
       margin:0;
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color:var(--ink);
-      background:linear-gradient(180deg, #fcf8f3 0%, #f6efe7 100%);
+      background:linear-gradient(180deg, #FAF6F0 0%, #F4EDE4 100%);
+      background-color:#F4EDE4;
       line-height:1.7;
     }
     a{color:var(--accent-dark)}
-    .container{width:min(var(--max), calc(100% - 32px)); margin:0 auto}
+    .container{width:min(var(--measure, 820px), 100%); margin:0 auto; padding-left:clamp(22px, 6vw, 72px); padding-right:clamp(22px, 6vw, 72px)}
     .wrap{padding:56px 0 80px}
     .eyebrow{
       display:inline-flex; align-items:center; gap:8px; padding:9px 15px;
@@ -51,6 +82,20 @@
       background:var(--accent-soft); border:1px dashed var(--accent); border-radius:8px;
       padding:2px 8px; font-weight:700; color:var(--accent-dark); font-size:.92rem;
     }
+
+    /* Identity-sheet lockup: mark + Cormorant wordmark, clear space = 0.4x */
+    .brand-lockup{display:flex; align-items:center; gap:15px; margin-bottom:6px}
+    .brand-lockup .mark{color:#3A2B22}
+    .brand-lockup .words{display:flex; flex-direction:column; gap:3px}
+    .brand-lockup .name{
+      font-family:'Cormorant Garamond', Georgia, serif;
+      font-size:1.5rem; font-weight:500; letter-spacing:.11em;
+      text-transform:uppercase; line-height:1; color:var(--accent-dark);
+    }
+    .brand-lockup .sub{
+      font-family:Inter, sans-serif; font-size:.72rem; font-weight:500;
+      color:var(--muted); text-transform:uppercase; letter-spacing:.18em;
+    }
     .backlink{display:inline-block; margin-top:30px; font-weight:700; color:var(--accent-dark)}
     .pagefoot{border-top:1px solid var(--line); margin-top:40px; padding-top:22px; font-size:.9rem; color:var(--muted)}
   </style>
@@ -58,6 +103,7 @@
 <body>
   <div class="wrap">
     <div class="container">
+      <div class="brand-lockup"><svg class="mark" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="width:40px;height:40px;flex:0 0 auto;display:block"><path d="M50 20 L76 74 H24 Z" fill="none" stroke="currentColor" stroke-width="6" stroke-linejoin="miter"/><path d="M35.5 56 H64.5" stroke="currentColor" stroke-width="6"/></svg><div class="words"><div class="name">AnnAlchemy&trade;</div><div class="sub">Nurse-led, evidence-informed</div></div></div>
       <span class="eyebrow"><span class="eyebrow-dot"></span> Terms of Use</span>
       <h1>Terms of Use</h1>
       <p class="meta">Last updated: June 16, 2026</p>
@@ -112,5 +158,135 @@
       <a class="backlink" href="/">&larr; Back to AnnAlchemy&trade;</a>
     </div>
   </div>
+
+
+  <script>
+  /* Scroll reveal - identical across annalchemy.org and its sub-pages. */
+  (function () {
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+    if (reduce.matches || !('IntersectionObserver' in window)) return;
+
+    var SELECTOR = ['h1', 'h2', 'h3', 'h4', 'p', 'li', '.card', '.card-soft', '.lead', '.eyebrow', '.brand-lockup', '.btn', 'table', 'ul', 'ol', 'blockquote', '.pagefoot', '.backlink', '.meta'].join(',');
+    var MAX_DEPTH = 2;  /* container + its text; deeper nesting compounds badly */
+
+    var groups = new Map(), targets = [];
+    document.querySelectorAll(SELECTOR).forEach(function (el) {
+      if (el.dataset.reveal || !el.getClientRects().length) return;
+      if (el.closest('[style*="display:none"]')) return;
+      
+      /* how many reveal targets already wrap this one */
+      var depth = 0;
+      for (var n = el.parentElement; n; n = n.parentElement) {
+        if (n.dataset && n.dataset.reveal) depth++;
+      }
+      if (depth >= MAX_DEPTH) return;
+
+      el.dataset.reveal = '1';
+      el.classList.add('reveal');
+      var key = el.parentElement || document.body;
+      var i = groups.get(key) || 0;
+      groups.set(key, i + 1);
+      /* children start just after their container, and travel less far */
+      el.style.setProperty('--reveal-delay', (Math.min(i, 5) * 70 + depth * 90) + 'ms');
+      if (depth > 0) {
+        el.style.setProperty('--reveal-rise', '12px');
+        el.style.setProperty('--reveal-blur', '2px');
+      }
+      targets.push(el);
+    });
+
+    function settle(el) {
+      var cleared = false;
+      function clear() {
+        if (cleared) return;
+        cleared = true;
+        el.removeEventListener('transitionend', onEnd);
+        el.classList.remove('reveal', 'is-visible');
+        ['--reveal-delay', '--reveal-rise', '--reveal-blur'].forEach(function (p) {
+          el.style.removeProperty(p);
+        });
+        el.style.willChange = '';
+      }
+      function onEnd(e) { if (e.propertyName === 'transform') clear(); }
+      el.addEventListener('transitionend', onEnd);
+      setTimeout(clear, 2000);
+    }
+
+    function show(el) {
+      if (el.classList.contains('is-visible')) return;
+      io.unobserve(el);
+      settle(el);
+      el.classList.add('is-visible');
+    }
+
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) show(e.target); });
+    }, { threshold: 0.05, rootMargin: '0px 0px -6% 0px' });
+    targets.forEach(function (el) { io.observe(el); });
+
+    /* Safety net: a fast flick can carry a block through the viewport between
+       two observer deliveries, which would strand it invisible for good.
+       Content must never be lost to the animation. */
+    var queued = false;
+    function sweep() {
+      queued = false;
+      /* At maximum scroll the page cannot move further, so anything still
+         sitting inside the bottom 6% dead zone would never reveal. Once we are
+         at the end, take everything that is left. */
+      var atEnd = window.innerHeight + window.scrollY >= document.body.scrollHeight - 2;
+      var limit = atEnd ? Infinity : window.innerHeight * 0.94;
+      for (var i = targets.length - 1; i >= 0; i--) {
+        var el = targets[i];
+        if (el.classList.contains('is-visible') || !el.classList.contains('reveal')) {
+          targets.splice(i, 1); continue;
+        }
+        if (el.getBoundingClientRect().top < limit) show(el);
+      }
+      if (!targets.length) window.removeEventListener('scroll', onScroll);
+    }
+    function onScroll() {
+      if (queued) return;
+      queued = true;
+      requestAnimationFrame(sweep);
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    /* Anchor jumps must land on painted content, not mid-animation. */
+    function revealAt(hash) {
+      if (!hash || hash.length < 2) return;
+      var dest;
+      try { dest = document.querySelector(hash); } catch (e) { return; }
+      if (!dest) return;
+      var top = dest.getBoundingClientRect().top + window.scrollY;
+      var bottom = top + window.innerHeight * 1.5;
+      targets.slice().forEach(function (el) {
+        var y = el.getBoundingClientRect().top + window.scrollY;
+        if (y + el.offsetHeight < top || y > bottom) return;
+        el.style.transition = 'none';
+        show(el);
+        void el.offsetHeight;
+        el.style.transition = '';
+      });
+    }
+    window.addEventListener('hashchange', function () { revealAt(location.hash); });
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest && e.target.closest('a[href^="#"]');
+      if (a) revealAt(a.getAttribute('href'));
+    }, true);
+    if (location.hash) revealAt(location.hash);
+
+    reduce.addEventListener('change', function () {
+      if (!reduce.matches) return;
+      io.disconnect();
+      targets.forEach(function (el) {
+        el.classList.remove('reveal', 'is-visible');
+        ['--reveal-delay', '--reveal-rise', '--reveal-blur'].forEach(function (p) {
+          el.style.removeProperty(p);
+        });
+      });
+    });
+  })();
+  </script>
 </body>
 </html>

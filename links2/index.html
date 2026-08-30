@@ -3,16 +3,46 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@300;400;500;600&display=swap">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg' fill='none' stroke='%233A2B22' stroke-width='7' stroke-linejoin='miter'%3E%3Cpath d='M50 20 L76 74 H24 Z'/%3E%3Cpath d='M35.5 56 H64.5'/%3E%3C/svg%3E">
 <title>AnnAlchemy™ Links</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 
 <style>
+    /* ===== Scroll reveal ====================================================
+       Blur + fade + rise as each block enters the viewport. Two depths: a
+       container travels 28px, and text inside it travels a shorter 12px just
+       after, so a card arrives as one object whose contents settle into it
+       rather than a frame that fills in piece by piece.
+       Classes are applied by JS, so the page still renders in full with JS off,
+       and are stripped once the transition ends so no stray transform is left
+       behind to break position:sticky. */
+    @media (prefers-reduced-motion: no-preference){
+      .reveal{
+        opacity:0;
+        transform:translate3d(0, var(--reveal-rise, 28px), 0);
+        filter:blur(var(--reveal-blur, 3px));
+        transition:opacity .72s cubic-bezier(.22,.61,.36,1),
+                   transform .72s cubic-bezier(.22,.61,.36,1),
+                   filter .52s cubic-bezier(.22,.61,.36,1);
+        transition-delay:var(--reveal-delay, 0ms);
+        will-change:opacity, transform, filter;
+      }
+      .reveal.is-visible{
+        opacity:1;
+        transform:translate3d(0, 0, 0);
+        filter:blur(0);
+      }
+    }
+
   body{
     margin:0;
     font-family:Inter, sans-serif;
     background:#15110d;
     color:#f4ede4;
+      background-color:#15110D;
     line-height:1.6;
   }
 
@@ -50,7 +80,7 @@
     font-size:12px;
     letter-spacing:2px;
     text-transform:uppercase;
-    color:#d6ab7c;
+    color:#C4A88C;
   }
 
   .box{
@@ -107,7 +137,7 @@
   }
 
   .dm strong{
-    color:#d6ab7c;
+    color:#C4A88C;
   }
 
   .footer{
@@ -205,5 +235,134 @@
 
 </div>
 
+
+  <script>
+  /* Scroll reveal - identical across annalchemy.org and its sub-pages. */
+  (function () {
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+    if (reduce.matches || !('IntersectionObserver' in window)) return;
+
+    var SELECTOR = ['h1', 'h2', 'h3', 'p', '.box', '.hero > *', '.section-title', '.cta', '.desc', '.sub', '.footer', '.brand'].join(',');
+    var MAX_DEPTH = 2;  /* container + its text; deeper nesting compounds badly */
+
+    var groups = new Map(), targets = [];
+    document.querySelectorAll(SELECTOR).forEach(function (el) {
+      if (el.dataset.reveal || !el.getClientRects().length) return;
+      if (el.closest('[style*="display:none"]')) return;
+      
+      /* how many reveal targets already wrap this one */
+      var depth = 0;
+      for (var n = el.parentElement; n; n = n.parentElement) {
+        if (n.dataset && n.dataset.reveal) depth++;
+      }
+      if (depth >= MAX_DEPTH) return;
+
+      el.dataset.reveal = '1';
+      el.classList.add('reveal');
+      var key = el.parentElement || document.body;
+      var i = groups.get(key) || 0;
+      groups.set(key, i + 1);
+      /* children start just after their container, and travel less far */
+      el.style.setProperty('--reveal-delay', (Math.min(i, 5) * 70 + depth * 90) + 'ms');
+      if (depth > 0) {
+        el.style.setProperty('--reveal-rise', '12px');
+        el.style.setProperty('--reveal-blur', '2px');
+      }
+      targets.push(el);
+    });
+
+    function settle(el) {
+      var cleared = false;
+      function clear() {
+        if (cleared) return;
+        cleared = true;
+        el.removeEventListener('transitionend', onEnd);
+        el.classList.remove('reveal', 'is-visible');
+        ['--reveal-delay', '--reveal-rise', '--reveal-blur'].forEach(function (p) {
+          el.style.removeProperty(p);
+        });
+        el.style.willChange = '';
+      }
+      function onEnd(e) { if (e.propertyName === 'transform') clear(); }
+      el.addEventListener('transitionend', onEnd);
+      setTimeout(clear, 2000);
+    }
+
+    function show(el) {
+      if (el.classList.contains('is-visible')) return;
+      io.unobserve(el);
+      settle(el);
+      el.classList.add('is-visible');
+    }
+
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) show(e.target); });
+    }, { threshold: 0.05, rootMargin: '0px 0px -6% 0px' });
+    targets.forEach(function (el) { io.observe(el); });
+
+    /* Safety net: a fast flick can carry a block through the viewport between
+       two observer deliveries, which would strand it invisible for good.
+       Content must never be lost to the animation. */
+    var queued = false;
+    function sweep() {
+      queued = false;
+      /* At maximum scroll the page cannot move further, so anything still
+         sitting inside the bottom 6% dead zone would never reveal. Once we are
+         at the end, take everything that is left. */
+      var atEnd = window.innerHeight + window.scrollY >= document.body.scrollHeight - 2;
+      var limit = atEnd ? Infinity : window.innerHeight * 0.94;
+      for (var i = targets.length - 1; i >= 0; i--) {
+        var el = targets[i];
+        if (el.classList.contains('is-visible') || !el.classList.contains('reveal')) {
+          targets.splice(i, 1); continue;
+        }
+        if (el.getBoundingClientRect().top < limit) show(el);
+      }
+      if (!targets.length) window.removeEventListener('scroll', onScroll);
+    }
+    function onScroll() {
+      if (queued) return;
+      queued = true;
+      requestAnimationFrame(sweep);
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    /* Anchor jumps must land on painted content, not mid-animation. */
+    function revealAt(hash) {
+      if (!hash || hash.length < 2) return;
+      var dest;
+      try { dest = document.querySelector(hash); } catch (e) { return; }
+      if (!dest) return;
+      var top = dest.getBoundingClientRect().top + window.scrollY;
+      var bottom = top + window.innerHeight * 1.5;
+      targets.slice().forEach(function (el) {
+        var y = el.getBoundingClientRect().top + window.scrollY;
+        if (y + el.offsetHeight < top || y > bottom) return;
+        el.style.transition = 'none';
+        show(el);
+        void el.offsetHeight;
+        el.style.transition = '';
+      });
+    }
+    window.addEventListener('hashchange', function () { revealAt(location.hash); });
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest && e.target.closest('a[href^="#"]');
+      if (a) revealAt(a.getAttribute('href'));
+    }, true);
+    if (location.hash) revealAt(location.hash);
+
+    reduce.addEventListener('change', function () {
+      if (!reduce.matches) return;
+      io.disconnect();
+      targets.forEach(function (el) {
+        el.classList.remove('reveal', 'is-visible');
+        ['--reveal-delay', '--reveal-rise', '--reveal-blur'].forEach(function (p) {
+          el.style.removeProperty(p);
+        });
+      });
+    });
+  })();
+  </script>
 </body>
 </html>
