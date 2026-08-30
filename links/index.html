@@ -116,7 +116,10 @@
     .avatar img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
     /* Tip: to use a real photo instead of the "A" badge, see the avatar div in the HTML below. */
     .hero-kicker{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:800;margin:2px 0 0}
-    .hero-name{font-family:'Cormorant Garamond',Georgia,'Times New Roman',serif;font-size:2.15rem;font-weight:500;letter-spacing:.11em;text-transform:uppercase;margin:0;color:var(--text)}
+    .hero-name{font-family:'Cormorant Garamond',Georgia,'Times New Roman',serif;font-size:2.15rem;font-weight:500;letter-spacing:.11em;text-transform:uppercase;margin:0;color:var(--text);
+      display:flex;align-items:center;gap:13px}
+    /* Clear space is 0.4x the mark height, per the identity sheet. */
+    .hero-mark{width:34px;height:34px;flex:0 0 auto;display:block;color:var(--text)}
     .hero-tagline{font-size:.95rem;color:var(--muted);max-width:360px;margin:0}
     .hero-by{font-size:.8rem;color:var(--muted-2);margin:0}
 
@@ -269,7 +272,13 @@
       <div class="avatar"><img src="/img/anna-cadano-founder-portrait.jpg" alt="Anna Cadano, Registered Nurse" /></div>
       <div>
         <p class="hero-kicker">@AnnAlchemist</p>
-        <h1 class="hero-name">AnnAlchemy&trade;</h1>
+        <h1 class="hero-name">
+          <svg class="hero-mark" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M50 20 L76 74 H24 Z" fill="none" stroke="currentColor" stroke-width="6" stroke-linejoin="miter"/>
+            <path d="M35.5 56 H64.5" stroke="currentColor" stroke-width="6"/>
+          </svg>
+          <span>AnnAlchemy&trade;</span>
+        </h1>
       </div>
       <p class="hero-tagline">Alchemy for the whole woman. The skin you live in, and the self you come home to.</p>
       <p class="hero-by">by Anna Cadano, RN &middot; Registered Nurse since 2008</p>
@@ -300,7 +309,7 @@
       <!-- Free guide (email capture) -->
       <a class="card" href="https://tally.so/r/VLdQME" target="_blank" rel="noopener">
         <div class="card-top">
-          <div class="thumb thumb-gold"><svg viewBox="0 0 100 100" width="30" height="30" fill="none" aria-hidden="true"><path d="M50 20 L76 74 H24 Z" fill="none" stroke="#F4EDE4" stroke-width="7" stroke-linejoin="miter"/><path d="M35.5 56 H64.5" stroke="#F4EDE4" stroke-width="7"/></svg></div>
+          <div class="thumb thumb-gold"><svg viewBox="0 0 100 100" width="44" height="44" fill="none" aria-hidden="true"><path d="M50 14 A36 36 0 1 1 24.5 24.5" fill="none" stroke="#F4EDE4" stroke-width="6" stroke-linecap="butt"/><path d="M50 34 L64 62 H36 Z" fill="none" stroke="#F4EDE4" stroke-width="6" stroke-linejoin="miter"/><path d="M42 53 H58" stroke="#F4EDE4" stroke-width="6"/></svg></div>
           <div class="card-info">
             <div class="card-title">Why Your Acne Keeps Coming Back</div>
             <div class="card-desc">The honest, evidence-informed breakdown, straight to your inbox.</div>
@@ -318,7 +327,7 @@
       <!-- Start Here -->
       <a class="card" href="https://annalchemy.org" target="_blank" rel="noopener">
         <div class="card-top">
-          <div class="thumb thumb-gold"><svg viewBox="0 0 100 100" width="30" height="30" fill="none" aria-hidden="true"><path d="M50 20 L76 74 H24 Z" fill="none" stroke="#F4EDE4" stroke-width="7" stroke-linejoin="miter"/><path d="M35.5 56 H64.5" stroke="#F4EDE4" stroke-width="7"/></svg></div>
+          <div class="thumb thumb-gold"><svg viewBox="0 0 100 100" width="44" height="44" fill="none" aria-hidden="true"><path d="M50 14 A36 36 0 1 1 24.5 24.5" fill="none" stroke="#F4EDE4" stroke-width="6" stroke-linecap="butt"/><path d="M50 34 L64 62 H36 Z" fill="none" stroke="#F4EDE4" stroke-width="6" stroke-linejoin="miter"/><path d="M42 53 H58" stroke="#F4EDE4" stroke-width="6"/></svg></div>
           <div class="card-info">
             <div class="card-title">Start Here</div>
             <div class="card-desc">Why your acne keeps relapsing, the full story.</div>
@@ -330,7 +339,7 @@
       <!-- Relapse Control Guide (flagship) -->
       <a class="card" href="https://annalchemy.org" target="_blank" rel="noopener">
         <div class="card-top">
-          <div class="thumb thumb-gold"><svg viewBox="0 0 100 100" width="30" height="30" fill="none" aria-hidden="true"><path d="M50 20 L76 74 H24 Z" fill="none" stroke="#F4EDE4" stroke-width="7" stroke-linejoin="miter"/><path d="M35.5 56 H64.5" stroke="#F4EDE4" stroke-width="7"/></svg></div>
+          <div class="thumb thumb-gold"><svg viewBox="0 0 100 100" width="44" height="44" fill="none" aria-hidden="true"><path d="M50 14 A36 36 0 1 1 24.5 24.5" fill="none" stroke="#F4EDE4" stroke-width="6" stroke-linecap="butt"/><path d="M50 34 L64 62 H36 Z" fill="none" stroke="#F4EDE4" stroke-width="6" stroke-linejoin="miter"/><path d="M42 53 H58" stroke="#F4EDE4" stroke-width="6"/></svg></div>
           <div class="card-info">
             <span class="tag tag-gold">Founding price</span>
             <div class="card-title">Relapse Control Guide&trade;</div>
@@ -343,7 +352,7 @@
       <!-- When It Comes Back -->
       <a class="card" href="https://annalchemy.org/when-it-comes-back" target="_blank" rel="noopener">
         <div class="card-top">
-          <div class="thumb thumb-gold"><svg viewBox="0 0 100 100" width="30" height="30" fill="none" aria-hidden="true"><path d="M50 20 L76 74 H24 Z" fill="none" stroke="#F4EDE4" stroke-width="7" stroke-linejoin="miter"/><path d="M35.5 56 H64.5" stroke="#F4EDE4" stroke-width="7"/></svg></div>
+          <div class="thumb thumb-gold"><svg viewBox="0 0 100 100" width="44" height="44" fill="none" aria-hidden="true"><path d="M50 14 A36 36 0 1 1 24.5 24.5" fill="none" stroke="#F4EDE4" stroke-width="6" stroke-linecap="butt"/><path d="M50 34 L64 62 H36 Z" fill="none" stroke="#F4EDE4" stroke-width="6" stroke-linejoin="miter"/><path d="M42 53 H58" stroke="#F4EDE4" stroke-width="6"/></svg></div>
           <div class="card-info">
             <div class="card-title">When It Comes Back&trade;: The First 48 Hours</div>
             <div class="card-desc">Your calm, step-by-step plan for the first 48 hours of a flare.</div>
