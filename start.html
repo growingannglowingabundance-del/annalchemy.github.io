@@ -4,36 +4,74 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="AnnAlchemy™ — A nurse-led, evidence-informed framework for adults who want more clarity, more control, and a more strategic way to manage recurring acne and acne marks." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@300;400;500;600&display=swap">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg' fill='none' stroke='%233A2B22' stroke-width='7' stroke-linejoin='miter'%3E%3Cpath d='M50 20 L76 74 H24 Z'/%3E%3Cpath d='M35.5 56 H64.5'/%3E%3C/svg%3E">
   <title>AnnAlchemy™ — Stop Guessing Why Your Acne Keeps Coming Back</title>
   <style>
     :root{
-      --bg:#f6efe7;
-      --bg-soft:#fbf7f2;
-      --paper:#fffdfa;
-      --paper-2:#fff8f1;
-      --ink:#1b1511;
-      --muted:#6a5f56;
-      --muted-2:#85776b;
-      --line:#e8ddd1;
-      --line-strong:#d8c6b5;
-      --accent:#95663f;
-      --accent-dark:#6f4527;
-      --accent-soft:#f2e4d7;
-      --accent-pale:#fbf3eb;
-      --accent-glow:rgba(149,102,63,.18);
-      --dark:#231913;
-      --success:#214536;
-      --success-soft:#eaf4ef;
-      --danger:#7b3a2b;
-      --shadow-xl:0 34px 100px rgba(44,30,20,.14);
-      --shadow-lg:0 18px 48px rgba(44,30,20,.10);
-      --shadow-md:0 10px 28px rgba(44,30,20,.08);
-      --shadow-sm:0 6px 18px rgba(44,30,20,.05);
+      --bg:#15110D;
+      --bg-soft:#1B150F;
+      --paper:#221913;
+      --paper-2:#291F17;
+      --ink:#F4EDE4;
+      --muted:#C4B3A1;
+      --muted-2:#9A8878;
+      --line:rgba(244,237,228,.10);
+      --line-strong:rgba(244,237,228,.22);
+      --accent:#C4A88C;
+      --accent-dark:#F6EFE7;
+      --accent-soft:#2A2019;
+      --accent-pale:#1E1711;
+      --accent-glow:rgba(196,168,140,.20);
+      --dark:#0F0C09;
+      --success:#7FBFA1;
+      --success-soft:#17251F;
+      --danger:#E0866F;
+      /* Gold CTA ramp - deep face so white labels clear AA */
+      --gold:#d6ab7c;
+      --gold-deep:#95663f;
+      --gold-lift:#c89066;
+      --gold-btn:linear-gradient(135deg, #5f3f21 0%, #6f4a27 100%);
+      --gold-btn-sheen:radial-gradient(circle at 30% 25%, rgba(255,255,255,.16), transparent 32%);
+      --gold-pill:linear-gradient(135deg, #c89066 0%, #d6ab7c 100%);
+      --gold-pill-sheen:radial-gradient(circle at 30% 25%, rgba(255,255,255,.28), transparent 32%);
+      --shadow-xl:0 34px 100px rgba(0,0,0,.55);
+      --shadow-lg:0 18px 48px rgba(0,0,0,.45);
+      --shadow-md:0 10px 28px rgba(0,0,0,.38);
+      --shadow-sm:0 6px 18px rgba(0,0,0,.30);
       --radius-xl:34px;
       --radius-lg:26px;
       --radius-md:18px;
       --radius-sm:14px;
       --max:1200px;
+    }
+
+        /* ===== Scroll reveal ====================================================
+       Blur + fade + rise as each block enters the viewport. Two depths: a
+       container travels 28px, and text inside it travels a shorter 12px just
+       after, so a card arrives as one object whose contents settle into it
+       rather than a frame that fills in piece by piece.
+       Classes are applied by JS, so the page still renders in full with JS off,
+       and are stripped once the transition ends so no stray transform is left
+       behind to break position:sticky. */
+    @media (prefers-reduced-motion: no-preference){
+      .reveal{
+        opacity:0;
+        transform:translate3d(0, var(--reveal-rise, 28px), 0);
+        filter:blur(var(--reveal-blur, 3px));
+        transition:opacity .72s cubic-bezier(.22,.61,.36,1),
+                   transform .72s cubic-bezier(.22,.61,.36,1),
+                   filter .52s cubic-bezier(.22,.61,.36,1);
+        transition-delay:var(--reveal-delay, 0ms);
+        will-change:opacity, transform, filter;
+      }
+      .reveal.is-visible{
+        opacity:1;
+        transform:translate3d(0, 0, 0);
+        filter:blur(0);
+      }
     }
 
     *{box-sizing:border-box}
@@ -43,9 +81,10 @@
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color:var(--ink);
       background:
-        radial-gradient(circle at top left, rgba(149,102,63,.08), transparent 28%),
-        radial-gradient(circle at 92% 8%, rgba(149,102,63,.06), transparent 18%),
-        linear-gradient(180deg, #fcf8f3 0%, #f6efe7 100%);
+        radial-gradient(circle at top left, rgba(196,168,140,.08), transparent 28%),
+        radial-gradient(circle at 92% 8%, rgba(196,168,140,.06), transparent 18%),
+        linear-gradient(180deg, #1B150F 0%, #15110D 100%);
+      background-color:#15110D;
       line-height:1.65;
       overflow-x:hidden;
     }
@@ -57,7 +96,7 @@
     .section-tight{padding:64px 0}
     .center{text-align:center}
     .muted{color:var(--muted)}
-    .muted-light{color:rgba(255,255,255,.74)}
+    .muted-light{color:rgba(244,237,228,.74)}
     .small{font-size:.95rem}
     .lead{
       font-size:clamp(1.08rem, 1.85vw, 1.28rem);
@@ -103,7 +142,7 @@
       padding:9px 15px;
       border:1px solid var(--line);
       border-radius:999px;
-      background:rgba(255,255,255,.72);
+      background:rgba(58,43,34,.72);
       color:var(--accent-dark);
       font-size:12px;
       font-weight:800;
@@ -114,7 +153,7 @@
     }
     .eyebrow-dot{
       width:8px;height:8px;border-radius:999px;background:var(--accent);
-      box-shadow:0 0 0 6px rgba(149,102,63,.10);
+      box-shadow:0 0 0 6px rgba(196,168,140,.10);
     }
 
     .hero{
@@ -130,7 +169,7 @@
       width:440px;
       height:440px;
       border-radius:999px;
-      background:radial-gradient(circle, rgba(255,255,255,.48), transparent 70%);
+      background:radial-gradient(circle, rgba(58,43,34,.48), transparent 70%);
       pointer-events:none;
     }
     .hero:after{
@@ -141,14 +180,14 @@
       width:420px;
       height:420px;
       border-radius:999px;
-      background:radial-gradient(circle, rgba(149,102,63,.12), transparent 68%);
+      background:radial-gradient(circle, rgba(196,168,140,.12), transparent 68%);
       pointer-events:none;
     }
 
     .glass-shell{
       border:1px solid rgba(232,221,209,.9);
       border-radius:36px;
-      background:linear-gradient(180deg, rgba(255,255,255,.72), rgba(255,248,241,.82));
+      background:linear-gradient(180deg, rgba(58,43,34,.72), rgba(45,35,28,.82));
       box-shadow:var(--shadow-xl);
       backdrop-filter: blur(10px);
       overflow:hidden;
@@ -171,9 +210,9 @@
     .brand-badge{
       width:44px;height:44px;border-radius:15px;
       background:
-        radial-gradient(circle at 30% 25%, rgba(255,255,255,.45), transparent 28%),
-        linear-gradient(135deg, var(--accent) 0%, #c08a63 100%);
-      box-shadow:0 12px 30px rgba(149,102,63,.22);
+        radial-gradient(circle at 30% 25%, rgba(58,43,34,.45), transparent 28%),
+        linear-gradient(135deg, var(--accent) 0%, #C4A88C 100%);
+      box-shadow:0 12px 30px rgba(196,168,140,.22);
       flex:0 0 auto;
     }
     .brand-wordmark{
@@ -215,20 +254,20 @@
     }
     .btn:hover{transform:translateY(-1px)}
     .btn-primary{
-      background:linear-gradient(180deg, #9f6f49 0%, var(--accent-dark) 100%);
-      color:#fff;
-      box-shadow:0 16px 36px rgba(111,69,39,.24);
+      background:var(--gold-btn-sheen), var(--gold-btn);
+      color:var(--ink);
+      box-shadow:0 16px 36px rgba(0,0,0,.24);
     }
-    .btn-primary:hover{box-shadow:0 20px 42px rgba(111,69,39,.28)}
+    .btn-primary:hover{box-shadow:0 20px 42px rgba(0,0,0,.28)}
     .btn-secondary{
-      background:#fff;
+      background:var(--paper);
       border-color:var(--line);
       color:var(--ink);
       box-shadow:var(--shadow-sm);
     }
     .btn-ghost{
       background:transparent;
-      color:#fff;
+      color:var(--ink);
       border-color:rgba(255,255,255,.14);
     }
     .btn-ghost:hover{background:rgba(255,255,255,.06)}
@@ -265,7 +304,7 @@
     }
     .pill{
       padding:10px 14px;
-      background:#fff;
+      background:var(--paper);
       border:1px solid var(--line);
       border-radius:999px;
       font-size:.92rem;
@@ -287,7 +326,7 @@
     }
 
     .hero-card{
-      background:linear-gradient(180deg, rgba(255,255,255,.98), rgba(255,248,241,.94));
+      background:linear-gradient(180deg, rgba(58,43,34,.98), rgba(45,35,28,.94));
       border:1px solid rgba(232,221,209,.95);
       border-radius:30px;
       box-shadow:var(--shadow-xl);
@@ -300,7 +339,7 @@
       position:absolute;
       inset:auto -80px -80px auto;
       width:240px;height:240px;border-radius:999px;
-      background:radial-gradient(circle, rgba(149,102,63,.12), transparent 70%);
+      background:radial-gradient(circle, rgba(196,168,140,.12), transparent 70%);
     }
 
     .hero-bullets{
@@ -338,7 +377,7 @@
       padding-bottom:8px;
     }
     .trust-item{
-      background:rgba(255,255,255,.78);
+      background:rgba(58,43,34,.78);
       border:1px solid var(--line);
       border-radius:20px;
       padding:20px;
@@ -352,7 +391,7 @@
     }
 
     .section-shell{
-      background:linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,250,245,.90));
+      background:linear-gradient(180deg, rgba(58,43,34,.92), rgba(45,35,28,.90));
       border:1px solid rgba(232,221,209,.92);
       border-radius:34px;
       box-shadow:var(--shadow-lg);
@@ -378,14 +417,14 @@
     }
     .card-dark{
       background:linear-gradient(135deg, #251b15 0%, #35271f 100%);
-      color:#fff;
+      color:var(--ink);
       border-color:rgba(255,255,255,.08);
       box-shadow:var(--shadow-lg);
     }
-    .card-dark .muted{color:rgba(255,255,255,.74)}
+    .card-dark .muted{color:rgba(244,237,228,.74)}
     .card-dark .check-list li,
     .card-dark .check-list li span:not(.check){
-      color:#ffffff;
+      color:var(--ink);
     }
 
     .stack{display:grid; gap:18px}
@@ -444,7 +483,7 @@
     }
     .offer-card{
       position:relative;
-      background:#fff;
+      background:var(--paper);
       border:1px solid var(--line);
       border-radius:28px;
       padding:30px;
@@ -455,12 +494,12 @@
       scroll-margin-top:96px;
     }
     .offer-card:target{
-      border-color:rgba(149,102,63,.46);
-      box-shadow:0 0 0 4px rgba(149,102,63,.12), var(--shadow-lg);
+      border-color:rgba(196,168,140,.46);
+      box-shadow:0 0 0 4px rgba(196,168,140,.12), var(--shadow-lg);
     }
 
     .offer-card.featured{
-      border:1.5px solid rgba(149,102,63,.30);
+      border:1.5px solid rgba(196,168,140,.30);
       background:linear-gradient(180deg, #fff 0%, #fff7f0 100%);
     }
 
@@ -504,8 +543,8 @@
       margin:16px 0 18px;
       padding:18px 18px 16px;
       border-radius:20px;
-      background:linear-gradient(180deg, rgba(149,102,63,.05), rgba(149,102,63,.02));
-      border:1px solid rgba(149,102,63,.14);
+      background:linear-gradient(180deg, rgba(196,168,140,.05), rgba(196,168,140,.02));
+      border:1px solid rgba(196,168,140,.14);
     }
     .price-row{
       display:flex;
@@ -565,7 +604,7 @@
       margin-top:28px;
     }
     .faq-item{
-      background:#fff;
+      background:var(--paper);
       border:1px solid var(--line);
       border-radius:20px;
       box-shadow:var(--shadow-md);
@@ -575,8 +614,8 @@
       scroll-margin-top:96px;
     }
     .faq-item:target{
-      border-color:rgba(149,102,63,.46);
-      box-shadow:0 0 0 4px rgba(149,102,63,.12), var(--shadow-md);
+      border-color:rgba(196,168,140,.46);
+      box-shadow:0 0 0 4px rgba(196,168,140,.12), var(--shadow-md);
     }
     .faq-item summary{
       list-style:none;
@@ -603,7 +642,7 @@
 
     .cta-band{
       background:linear-gradient(135deg, #231a15 0%, #34271f 100%);
-      color:#fff;
+      color:var(--ink);
       border-radius:34px;
       padding:42px;
       box-shadow:0 24px 60px rgba(26,18,13,.22);
@@ -623,7 +662,7 @@
     }
     .cta-band .lead,
     .cta-band .muted{
-      color:rgba(255,255,255,.76);
+      color:rgba(244,237,228,.76);
     }
     .cta-steps{
       display:grid;
@@ -651,11 +690,11 @@
     }
     .cta-step .num{
       background:rgba(255,255,255,.14);
-      color:#fff;
+      color:var(--ink);
     }
 
     .disclaimer{
-      background:#fff;
+      background:var(--paper);
       border:1px solid var(--line);
       border-radius:22px;
       padding:24px;
@@ -757,14 +796,14 @@
       backdrop-filter:blur(14px);
     }
     .sticky-mobile-copy{
-      color:#fff;
+      color:var(--ink);
       font-size:.92rem;
       line-height:1.25;
       font-weight:800;
     }
     .sticky-mobile-copy span{
       display:block;
-      color:rgba(255,255,255,.70);
+      color:rgba(244,237,228,.70);
       font-size:.78rem;
       font-weight:500;
       margin-top:3px;
@@ -1537,8 +1576,8 @@
   <section class="section section-tight" id="cta">
     <div class="container">
       <div class="cta-band">
-        <span class="eyebrow" style="background:rgba(255,255,255,.06); border-color:rgba(255,255,255,.12); color:#fff;">
-          <span class="eyebrow-dot" style="background:#fff; box-shadow:none;"></span>
+        <span class="eyebrow" style="background:rgba(255,255,255,.06); border-color:rgba(255,255,255,.12); color:var(--ink);">
+          <span class="eyebrow-dot" style="background:var(--paper); box-shadow:none;"></span>
           4 simple next steps
         </span>
 
@@ -1585,13 +1624,13 @@
     width:min(820px, calc(100% - 32px));
     margin:56px auto;
     background:#f2e4d7;
-    border:1px solid rgba(149,102,63,.18);
+    border:1px solid rgba(196,168,140,.18);
     border-radius:18px;
     padding:32px;
     font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
     color:#1b1511;
     line-height:1.7;">
-    <p style="font-size:.78rem; font-weight:600; color:#95663f; text-transform:uppercase; letter-spacing:.14em; margin:0 0 12px 0;">
+    <p style="font-size:.78rem; font-weight:600; color:#C4A88C; text-transform:uppercase; letter-spacing:.14em; margin:0 0 12px 0;">
       Not in a full-reset season?
     </p>
     <h2 id="downsell-heading" style="font-family: Georgia, 'Times New Roman', serif; font-size:1.5rem; line-height:1.2; font-weight:700; margin:0 0 14px 0;">
@@ -1603,7 +1642,7 @@
     <p style="margin:0 0 20px 0;">
       For that exact moment there is a shorter guide, <strong>When It Comes Back: The First 48 Hours&trade;</strong>. It covers the first forty-eight hours of a returning flare, the two calm moves that protect your skin before panic makes the next decision. It is built to be useful entirely on its own, and what you pay for it is credited toward the Relapse Control Guide&trade; whenever you are ready for the full work.
     </p>
-    <a href="https://annalchemy.org/when-it-comes-back.html" style="display:inline-block; background:#fffdfa; color:#6f4527; font-weight:700; padding:13px 30px; border-radius:999px; border:1px solid rgba(149,102,63,.28); text-decoration:none;">
+    <a href="https://annalchemy.org/when-it-comes-back.html" style="display:inline-block; background:#fffdfa; color:#F6EFE7; font-weight:700; padding:13px 30px; border-radius:999px; border:1px solid rgba(196,168,140,.28); text-decoration:none;">
       See When It Comes Back: The First 48 Hours&trade;
     </a>
   </section>
@@ -1695,5 +1734,134 @@
     });
   </script>
 
+
+  <script>
+  /* Scroll reveal - identical across annalchemy.org and its sub-pages. */
+  (function () {
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+    if (reduce.matches || !('IntersectionObserver' in window)) return;
+
+    var SELECTOR = ['h1', 'h2', 'h3', 'h4', 'p', 'li', '.card', '.card-soft', '.lead', '.eyebrow', '.btn', 'table', 'ul', 'ol', '.section-shell', 'blockquote', 'figure', '.container > *', '.wrap > *', '.header', '.footer', '.footnote', '.pagefoot'].join(',');
+    var MAX_DEPTH = 2;  /* container + its text; deeper nesting compounds badly */
+
+    var groups = new Map(), targets = [];
+    document.querySelectorAll(SELECTOR).forEach(function (el) {
+      if (el.dataset.reveal || !el.getClientRects().length) return;
+      if (el.closest('[style*="display:none"]')) return;
+      
+      /* how many reveal targets already wrap this one */
+      var depth = 0;
+      for (var n = el.parentElement; n; n = n.parentElement) {
+        if (n.dataset && n.dataset.reveal) depth++;
+      }
+      if (depth >= MAX_DEPTH) return;
+
+      el.dataset.reveal = '1';
+      el.classList.add('reveal');
+      var key = el.parentElement || document.body;
+      var i = groups.get(key) || 0;
+      groups.set(key, i + 1);
+      /* children start just after their container, and travel less far */
+      el.style.setProperty('--reveal-delay', (Math.min(i, 5) * 70 + depth * 90) + 'ms');
+      if (depth > 0) {
+        el.style.setProperty('--reveal-rise', '12px');
+        el.style.setProperty('--reveal-blur', '2px');
+      }
+      targets.push(el);
+    });
+
+    function settle(el) {
+      var cleared = false;
+      function clear() {
+        if (cleared) return;
+        cleared = true;
+        el.removeEventListener('transitionend', onEnd);
+        el.classList.remove('reveal', 'is-visible');
+        ['--reveal-delay', '--reveal-rise', '--reveal-blur'].forEach(function (p) {
+          el.style.removeProperty(p);
+        });
+        el.style.willChange = '';
+      }
+      function onEnd(e) { if (e.propertyName === 'transform') clear(); }
+      el.addEventListener('transitionend', onEnd);
+      setTimeout(clear, 2000);
+    }
+
+    function show(el) {
+      if (el.classList.contains('is-visible')) return;
+      io.unobserve(el);
+      settle(el);
+      el.classList.add('is-visible');
+    }
+
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) show(e.target); });
+    }, { threshold: 0.05, rootMargin: '0px 0px -6% 0px' });
+    targets.forEach(function (el) { io.observe(el); });
+
+    /* Safety net: a fast flick can carry a block through the viewport between
+       two observer deliveries, which would strand it invisible for good.
+       Content must never be lost to the animation. */
+    var queued = false;
+    function sweep() {
+      queued = false;
+      /* At maximum scroll the page cannot move further, so anything still
+         sitting inside the bottom 6% dead zone would never reveal. Once we are
+         at the end, take everything that is left. */
+      var atEnd = window.innerHeight + window.scrollY >= document.body.scrollHeight - 2;
+      var limit = atEnd ? Infinity : window.innerHeight * 0.94;
+      for (var i = targets.length - 1; i >= 0; i--) {
+        var el = targets[i];
+        if (el.classList.contains('is-visible') || !el.classList.contains('reveal')) {
+          targets.splice(i, 1); continue;
+        }
+        if (el.getBoundingClientRect().top < limit) show(el);
+      }
+      if (!targets.length) window.removeEventListener('scroll', onScroll);
+    }
+    function onScroll() {
+      if (queued) return;
+      queued = true;
+      requestAnimationFrame(sweep);
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    /* Anchor jumps must land on painted content, not mid-animation. */
+    function revealAt(hash) {
+      if (!hash || hash.length < 2) return;
+      var dest;
+      try { dest = document.querySelector(hash); } catch (e) { return; }
+      if (!dest) return;
+      var top = dest.getBoundingClientRect().top + window.scrollY;
+      var bottom = top + window.innerHeight * 1.5;
+      targets.slice().forEach(function (el) {
+        var y = el.getBoundingClientRect().top + window.scrollY;
+        if (y + el.offsetHeight < top || y > bottom) return;
+        el.style.transition = 'none';
+        show(el);
+        void el.offsetHeight;
+        el.style.transition = '';
+      });
+    }
+    window.addEventListener('hashchange', function () { revealAt(location.hash); });
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest && e.target.closest('a[href^="#"]');
+      if (a) revealAt(a.getAttribute('href'));
+    }, true);
+    if (location.hash) revealAt(location.hash);
+
+    reduce.addEventListener('change', function () {
+      if (!reduce.matches) return;
+      io.disconnect();
+      targets.forEach(function (el) {
+        el.classList.remove('reveal', 'is-visible');
+        ['--reveal-delay', '--reveal-rise', '--reveal-blur'].forEach(function (p) {
+          el.style.removeProperty(p);
+        });
+      });
+    });
+  })();
+  </script>
 </body>
 </html>
