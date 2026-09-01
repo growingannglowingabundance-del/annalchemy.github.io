@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Self-Loyalty Lab: Love Without Losing Yourself</title>
+<meta name="description" content="Guides and tools for women who over-give in relationships. Stop abandoning your standards when attachment starts. From a Registered Nurse since 2008.">
+<link rel="canonical" href="https://annalchemy.org/self-loyalty-lab/">
+<meta property="og:title" content="Self-Loyalty Lab: Love Without Losing Yourself">
+<meta property="og:description" content="Guides and tools for women who over-give in relationships. Stop abandoning your standards when attachment starts.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://annalchemy.org/self-loyalty-lab/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap">
+<link rel="icon" href="data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cellipse cx='50' cy='46' rx='34' ry='42' fill='none' stroke='%235E2A53' stroke-width='6'/%3E%3Cpath d='M36 62 V38 L44 47 L50 32 L56 47 L64 38 V62 Z' fill='%235E2A53'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --ink:#2E1A2A;
+    --soft:#6E5C68;
+    --line:#E4D8E1;
+    --bg:#FBF7F0;
+    --card:#FFFFFF;
+    --accent:#5E2A53;
+    --accent-soft:#F1E8EE;
+    --dark:#171417;
+    --serif:'EB Garamond',Georgia,serif;
+    --display:'Playfair Display',Georgia,serif;
+    --ui:Archivo,system-ui,-apple-system,sans-serif;
+    --measure:680px;
+    --wide:880px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;background:var(--bg);color:var(--ink);
+    font-family:var(--serif);line-height:1.62;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--accent)}
+
+  .brandbar{
+    background:var(--accent);color:var(--bg);font-family:var(--ui);
+    font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+    text-align:center;padding:11px 20px;
+  }
+  .wrap{max-width:var(--measure);margin:0 auto;padding:0 22px}
+  .wide{max-width:var(--wide);margin:0 auto;padding:0 22px}
+  section{padding:52px 0}
+  section + section{border-top:1px solid var(--line)}
+
+  .lockup{display:flex;align-items:center;gap:14px;padding:36px 0 0}
+  .lockup .name{font-family:var(--display);font-weight:600;font-size:15px;letter-spacing:.16em}
+  .lockup .sub{font-family:var(--ui);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--soft);margin-top:4px}
+
+  .eyebrow{font-family:var(--ui);font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--accent);margin:0 0 14px}
+  h1{font-family:var(--display);font-weight:600;font-size:clamp(2.1rem,5.6vw,3.1rem);line-height:1.08;margin:0 0 18px;text-wrap:balance}
+  h2{font-family:var(--display);font-weight:600;font-size:clamp(1.5rem,3.6vw,2rem);line-height:1.18;margin:0 0 16px;text-wrap:balance}
+  h3{font-family:var(--display);font-weight:600;font-size:1.3rem;line-height:1.25;margin:0 0 8px}
+  p{margin:0 0 15px}
+  .lede{font-size:1.16rem;line-height:1.55;color:#4A3A46}
+  .meta{font-family:var(--ui);font-size:.82rem;line-height:1.6;color:var(--soft)}
+  .small{font-family:var(--ui);font-size:.8rem;color:var(--soft)}
+
+  .pull{
+    font-family:var(--display);font-style:italic;font-weight:600;
+    font-size:clamp(1.45rem,4vw,1.9rem);line-height:1.28;color:var(--accent);
+    margin:26px 0;padding-left:20px;border-left:2px solid var(--line);
+  }
+
+  /* --- buttons: plum on cream, with a lit top edge so they read as objects --- */
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;
+    font-family:var(--ui);font-size:.85rem;font-weight:600;letter-spacing:.1em;
+    text-transform:uppercase;text-decoration:none;
+    padding:18px 26px;min-height:56px;border:1px solid transparent;cursor:pointer;
+    transition:background .2s ease, box-shadow .2s ease, transform .16s ease, color .2s ease;
+  }
+  .btn-primary{
+    background:linear-gradient(180deg,#7A3D6D 0%,#6A3260 14%,#5E2A53 34%,#5E2A53 74%,#673058 90%,#743A68 100%);
+    color:#fff;
+    box-shadow:inset 0 1px 0 rgba(255,236,250,.30),
+               inset 0 -1px 1px rgba(20,6,18,.30),
+               0 6px 16px rgba(46,26,42,.22);
+  }
+  .btn-primary:hover,.btn-primary:focus-visible{
+    background:linear-gradient(180deg,#8B4A7D 0%,#7A3D6D 14%,#6A3260 34%,#6A3260 74%,#743A68 90%,#84457A 100%);
+    transform:translateY(-1px);
+    box-shadow:inset 0 1px 0 rgba(255,240,252,.40),
+               inset 0 -1px 1px rgba(20,6,18,.28),
+               0 10px 22px rgba(46,26,42,.28);
+  }
+  .btn-primary:active{transform:translateY(0);box-shadow:inset 0 2px 5px rgba(20,6,18,.45)}
+  .btn-ghost{
+    background:transparent;border-color:var(--accent);color:var(--accent);
+  }
+  .btn-ghost:hover,.btn-ghost:focus-visible{background:var(--accent-soft);transform:translateY(-1px)}
+  .btn-row{display:flex;flex-wrap:wrap;gap:12px;margin:24px 0 14px}
+  .btn-row .btn{flex:1 1 240px}
+
+  /* --- cards --- */
+  .card{background:var(--card);border:1px solid var(--line);padding:30px 26px;margin:0 0 20px}
+  .card-soft{background:var(--accent-soft);border-left:2px solid var(--accent);padding:22px 24px;margin:24px 0}
+  .pathways{display:grid;gap:14px;margin:24px 0}
+  @media(min-width:640px){.pathways{grid-template-columns:1fr 1fr}}
+  .pathway{background:var(--card);border:1px solid var(--line);padding:20px 22px}
+  .pathway .tag{font-family:var(--ui);font-size:.66rem;font-weight:700;letter-spacing:.2em;
+    text-transform:uppercase;color:var(--accent);margin-bottom:8px}
+  .pathway p{font-family:var(--display);font-style:italic;font-size:1.08rem;margin:0;color:#4A3A46}
+
+  /* --- product cards --- */
+  .product{background:var(--card);border:1px solid var(--line);padding:32px 28px;margin:0 0 22px;scroll-margin-top:24px}
+  .product .paths{font-family:var(--ui);font-size:.7rem;font-weight:700;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--accent);margin:0 0 12px}
+  .product ul{list-style:none;padding:0;margin:18px 0 0}
+  .product li{font-family:var(--ui);font-size:.88rem;color:#4A3A46;padding:8px 0 8px 20px;position:relative;border-top:1px solid var(--line)}
+  .product li:first-child{border-top:none}
+  .product li::before{content:"";position:absolute;left:2px;top:16px;width:6px;height:6px;background:var(--accent)}
+  .price-pair{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+  .price-pair .btn{flex:1 1 180px}
+
+  /* --- reviews --- */
+  blockquote{margin:0 0 20px;padding:22px 24px;background:var(--card);border:1px solid var(--line)}
+  blockquote p{font-size:1.04rem;margin:0 0 10px}
+  blockquote cite{font-family:var(--ui);font-size:.78rem;font-style:normal;letter-spacing:.06em;color:var(--accent);font-weight:600}
+
+  /* --- Q&A --- */
+  .qa{border-top:1px solid var(--line);padding:22px 0}
+  .qa h3{font-family:var(--display);font-style:italic;font-size:1.2rem;color:var(--accent);margin-bottom:10px}
+
+  /* --- table --- */
+  .table-scroll{overflow-x:auto;margin:22px 0}
+  table{width:100%;border-collapse:collapse;background:var(--card);font-family:var(--ui);font-size:.87rem;min-width:520px}
+  th,td{padding:13px 14px;text-align:left;border-bottom:1px solid var(--line)}
+  th{background:var(--accent);color:var(--bg);font-weight:600;letter-spacing:.06em;font-size:.76rem;text-transform:uppercase}
+  td:not(:first-child){font-variant-numeric:tabular-nums}
+  tr.system td{background:var(--accent-soft);font-weight:700;color:var(--accent)}
+  tr:last-child td{border-bottom:none}
+
+  .warn{background:var(--dark);color:#FBF7F0;font-family:var(--ui);font-size:.87rem;line-height:1.65;padding:24px 26px;margin:22px 0}
+  .warn a{color:#E7C9DF}
+  .hotlines{list-style:none;padding:0;margin:14px 0 0}
+  .hotlines li{padding:7px 0;border-top:1px solid rgba(255,255,255,.14)}
+  .hotlines li:first-child{border-top:none}
+
+  footer{background:var(--accent);color:var(--bg);font-family:var(--ui);font-size:.8rem;padding:38px 0;margin-top:8px}
+  footer a{color:#EBD4E4}
+  footer .wrap{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between}
+</style>
+</head>
+<body>
+<div class="brandbar">AnnAlchemy&trade; &middot; Self-Loyalty Lab&trade;</div>
+
+<div class="wrap">
+  <div class="lockup">
+    <svg width="46" height="46" viewBox="0 0 100 100" style="display:block;flex-shrink:0" aria-label="Self-Loyalty Lab mirror mark">
+      <ellipse cx="50" cy="46" rx="34" ry="42" fill="none" stroke="#5E2A53" stroke-width="4"></ellipse>
+      <path d="M36 62 V38 L44 47 L50 32 L56 47 L64 38 V62 Z" fill="#5E2A53"></path>
+      <rect x="34" y="66" width="32" height="4" fill="#5E2A53"></rect>
+      <rect x="30" y="90" width="40" height="4" fill="#5E2A53"></rect>
+    </svg>
+    <div>
+      <div class="name">SELF-LOYALTY LAB&trade;</div>
+      <div class="sub">AnnAlchemy&trade;</div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= BLOCK 1 — HERO ================= -->
+<section>
+  <div class="wrap">
+    <h1>You already know better. You still lose yourself.</h1>
+    <p class="lede">Self-Loyalty Lab is a set of guides and tools for women who give more than the relationship has earned, and who want to stop without becoming cold.</p>
+    <div class="btn-row">
+      <a class="btn btn-primary" href="/self-loyalty-lab/start/">Find where to start</a>
+      <a class="btn btn-ghost" href="#products">See everything inside</a>
+    </div>
+    <p class="small">Written by a Registered Nurse since 2008. Educational material, not therapy.</p>
+  </div>
+</section>
+
+<!-- ================= BLOCK 2 — THE RECOGNITION ================= -->
+<section>
+  <div class="wrap">
+    <h2>Read this and tell me it is not you</h2>
+    <p>You can spot a red flag from a mile away when it is your friend's relationship.</p>
+    <p>You give her good advice. Clear advice. Advice she should probably write down.</p>
+    <p>Then it is your turn, and something changes.</p>
+    <p>You explain a reasonable need until it comes out sounding like an apology.</p>
+    <p>You give one more chance, then one more after that.</p>
+    <p>You tell yourself he is stressed, he is busy, he is not like that normally.</p>
+    <p>You start managing his moods before you have checked your own.</p>
+    <p>And later you sit there wondering the only question that actually matters.</p>
+    <p class="pull">"Why am I like this when I know better?"</p>
+    <p>Here is the honest answer.</p>
+    <p>It is not that you lack information. You have plenty.</p>
+    <p>It is that your ability to stay loyal to yourself drops the moment you get attached.</p>
+    <p>That is the pattern this work is built around.</p>
+  </div>
+</section>
+
+<!-- ================= BLOCK 3 — THE PROBLEM, NAMED ================= -->
+<section>
+  <div class="wrap">
+    <h2>Most advice fixes the wrong thing</h2>
+    <p>The internet keeps telling women to raise their standards.</p>
+    <p>But you already have standards. You can list them right now.</p>
+    <p>The problem shows up later, when you like him.</p>
+    <p>That is when standards turn into suggestions.</p>
+    <p>That is when a boundary you were certain about last week becomes something you are willing to discuss.</p>
+    <p>Nobody warns you about that part, because it is not a knowledge problem. It is a pressure problem.</p>
+    <p>Attachment applies pressure. Standards bend under it.</p>
+    <p>So the work is not learning what a boundary is.</p>
+    <p>The work is staying on your own side once you are already attached.</p>
+  </div>
+</section>
+
+<!-- ================= BLOCK 4 — HOW THIS WORKS ================= -->
+<section>
+  <div class="wide">
+    <h2>Five places self-loyalty tends to break</h2>
+    <p>Every woman who finds this work is standing in one of five places. You are probably in one right now.</p>
+    <div class="pathways">
+      <div class="pathway"><div class="tag">Protect</div><p>"I know my standards until I like someone."</p></div>
+      <div class="pathway"><div class="tag">Decide</div><p>"I do not know whether to stay, wait, or leave."</p></div>
+      <div class="pathway"><div class="tag">Detach</div><p>"I know I need to let go, but I cannot."</p></div>
+      <div class="pathway"><div class="tag">Return</div><p>"I do not know who I am anymore."</p></div>
+      <div class="pathway"><div class="tag">Choose differently</div><p>"I do not want to do this again."</p></div>
+    </div>
+    <p>You do not need all five. You need the one you are standing in.</p>
+    <div class="btn-row">
+      <a class="btn btn-primary" href="/self-loyalty-lab/start/">Take the free Starting Point Assessment</a>
+    </div>
+    <p class="small">Fifteen questions. Under five minutes. Nothing is saved, nothing is sent, no email required to see your result.</p>
+  </div>
+</section>
+
+<!-- ================= BLOCK 5 — WHAT MAKES THIS DIFFERENT ================= -->
+<section>
+  <div class="wrap">
+    <h2>This will not tell you what to do</h2>
+    <p>That is not a limitation. It is the point.</p>
+    <p>Anyone can tell you to leave him. Strangers in your comments do it for free.</p>
+    <p>What almost nobody does is help you get clear enough to make the call yourself and still trust yourself afterwards.</p>
+    <p>So the material does three things instead.</p>
+    <p>It explains why your brain does this, so you stop reading your own behaviour as a character flaw.</p>
+    <p>It separates what you feel from what has actually been demonstrated, so you can see the relationship and not just the hope.</p>
+    <p>It gives you small, doable practices, because insight without practice is just a nice evening of reading.</p>
+    <p>You are not being handed another reminder to choose yourself.</p>
+    <p>You are being handed the part that comes after you have decided to.</p>
+  </div>
+</section>
+
+<!-- ================= BLOCK 6 — PROOF ================= -->
+<section>
+  <div class="wrap">
+    <h2>From women who bought it</h2>
+    <blockquote>
+      <p>"I would tell a friend that this guide doesn't tell you what decision to make. It helps you think more clearly and put yourself first. It asks thoughtful questions that made me reflect on my own feelings and self-worth."</p>
+      <cite>Cassey B. &middot; Self-Return Guide, verified buyer</cite>
+    </blockquote>
+    <blockquote>
+      <p>"One of my favorite parts was how you began by explaining the science behind why it's so difficult to let go. Understanding how our brain forms attachments and why those connections are so powerful gave so much compassion to the healing process. It made the rest of the book feel grounded rather than simply motivational."</p>
+      <cite>Justinne T. &middot; Self-Return Guide, verified buyer</cite>
+    </blockquote>
+    <blockquote>
+      <p>"At first, reading it might feel uncomfortable because it directly points out the reality you've been trying to avoid. But once you digest it, it gives you so much clarity and permission to stop over-functioning and blaming yourself for missing someone."</p>
+      <cite>Verified buyer &middot; Self-Return Guide</cite>
+    </blockquote>
+    <blockquote>
+      <p>"Reading this really helped enlighten me and made me reflect on how I should show up in this new relationship. I was already aware of these things before, but because I was so attracted to him and so in love, I found myself losing sight of them."</p>
+      <cite>Verified buyer &middot; Boyfriend Boundary Guide</cite>
+    </blockquote>
+    <blockquote>
+      <p>"It's truly an eye-opener for women. It gives us direction on how to choose the right partner without compromising our self-worth."</p>
+      <cite>Verified buyer &middot; Boyfriend Boundary Guide</cite>
+    </blockquote>
+    <blockquote>
+      <p>"I realized that feeling that way doesn't always mean the relationship is still right for me. Sometimes, it just means that a strong bond was formed. And just because there was a bond, doesn't mean it's still something worth returning to."</p>
+      <cite>Verified buyer &middot; Self-Return Guide</cite>
+    </blockquote>
+    <p class="small">Reviews are from verified Payhip purchases and are shared with permission.</p>
+  </div>
+</section>
+
+<!-- ================= BLOCK 7 — WHICH ONE IS FOR ME ================= -->
+<section>
+  <div class="wrap">
+    <h2>Two guides. One question tells you which.</h2>
+    <p><strong>The Boyfriend Boundary Guide</strong> is for the woman who still knows what she wants and can say it out loud. She just feels herself starting to bend.</p>
+    <p><strong>The Self-Return Guide</strong> is for the woman who has bent so many times she is no longer sure what she wants.</p>
+    <p class="pull">If you do not know which one, that is usually the second one.</p>
+  </div>
+</section>
+
+<!-- ================= BLOCK 8 — THE PRODUCTS ================= -->
+<section id="products">
+  <div class="wide">
+    <h2>Everything available right now</h2>
+
+    <article class="product" id="bbg">
+      <div class="paths">Pathways: Protect and Choose differently</div>
+      <h3>The Boyfriend Boundary Guide&trade;</h3>
+      <p>For dating, talking stage, situationships, and new relationships. This is the one for when the attachment is starting and you can feel yourself handing over more than has been earned.</p>
+      <p>Inside: how to tell what has actually been demonstrated versus what you are hoping for, how much access matches how much commitment, what is reasonable to give at each stage, and worked-through scenarios so it is not just theory.</p>
+      <ul>
+        <li>English edition, $29 or &#8369;1,699</li>
+        <li>Taglish edition, $19 or &#8369;1,099</li>
+        <li>Includes 1 month of the Self-Return Assistant</li>
+        <li>Personalised, watermarked PDF</li>
+        <li>Free preview available before you buy</li>
+      </ul>
+      <div class="price-pair">
+        <a class="btn btn-primary" href="https://payhip.com/b/c5ZAz" target="_blank" rel="noopener">English &middot; $29</a>
+        <a class="btn btn-primary" href="https://payhip.com/b/uCRbB" target="_blank" rel="noopener">Taglish &middot; $19</a>
+      </div>
+    </article>
+
+    <article class="product" id="srg">
+      <div class="paths">Pathways: Detach, Decide and Return</div>
+      <h3>The Self-Return Guide&trade;</h3>
+      <p>For when you already know something is wrong and still cannot pull away. Also for after, when the relationship has ended and you are trying to work out how much of yourself is missing.</p>
+      <p>Inside: the science of why letting go is physically hard, how to clear attachment fog before you make any decision, why on and off cycles are the hardest to leave, how to separate the bond you feel from an honest read of whether he is right for you, and small practices for coming back to yourself.</p>
+      <ul>
+        <li>English edition, $39 or &#8369;2,299</li>
+        <li>Taglish edition, $29 or &#8369;1,499</li>
+        <li>Includes 2 months of the Self-Return Assistant</li>
+        <li>Personalised, watermarked PDF</li>
+        <li>Free preview available before you buy</li>
+      </ul>
+      <div class="price-pair">
+        <a class="btn btn-primary" href="https://payhip.com/b/LTXpY" target="_blank" rel="noopener">English &middot; $39</a>
+        <a class="btn btn-primary" href="https://payhip.com/b/Skgca" target="_blank" rel="noopener">Taglish &middot; $29</a>
+      </div>
+    </article>
+
+    <article class="product" id="workbook">
+      <div class="paths">Pathway: Return</div>
+      <h3>The Self-Return Workbook&trade;</h3>
+      <p>The doing version. Eight weeks of structured practice, about fifteen minutes a day.</p>
+      <p>Inside: the 36-item Over-Giving Pattern Assessment, the Give and Receive Ledger, and eight weeks of guided practices. Week 8 asks you to retake the assessment and compare it against Week 1, so you can see movement instead of guessing at it.</p>
+      <ul>
+        <li>English only, $49 or &#8369;2,799</li>
+        <li>Includes 2 months of the Self-Return Assistant</li>
+        <li>Personalised, watermarked PDF</li>
+      </ul>
+      <div class="price-pair">
+        <a class="btn btn-primary" href="https://payhip.com/b/CBtId" target="_blank" rel="noopener">Get the Self-Return Workbook</a>
+      </div>
+    </article>
+
+    <article class="product" id="assistant">
+      <div class="paths">Support alongside any pathway</div>
+      <h3>The Self-Return Assistant&trade;</h3>
+      <p>An AI assistant trained only on this material. Ask it about your own situation and get answers grounded in the guides rather than in whatever the internet is saying this week.</p>
+      <p>It does not diagnose, it does not tell you to leave, and it does not replace a therapist.</p>
+      <ul>
+        <li>3-month pass, $17.99 or &#8369;999</li>
+        <li>Comes free with every guide and workbook purchase</li>
+        <li>Available to buyers only</li>
+      </ul>
+      <div class="price-pair">
+        <a class="btn btn-primary" href="https://payhip.com/b/XiBCj" target="_blank" rel="noopener">Get a 3-month pass</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ================= BLOCK 9 — THE SYSTEM ================= -->
+<section id="system">
+  <div class="wrap">
+    <h2>The Self-Loyalty Lab System&trade;</h2>
+    <p>Everything above, together.</p>
+    <p>Because most women do not stay in one pathway. She protects, then she has to decide, then she has to detach, then she has to return. Buying them one at a time as each stage arrives costs more and leaves gaps.</p>
+    <div class="card">
+      <h3>What is included</h3>
+      <ul style="list-style:none;padding:0;margin:14px 0 0" class="meta">
+        <li style="padding:6px 0">The Boyfriend Boundary Guide, English and Taglish</li>
+        <li style="padding:6px 0">The Self-Return Guide, English and Taglish</li>
+        <li style="padding:6px 0">The Self-Return Workbook</li>
+        <li style="padding:6px 0">3 months of the Self-Return Assistant</li>
+        <li style="padding:6px 0">All five pathways covered</li>
+        <li style="padding:6px 0">New tools added to the library later come to you at no extra cost</li>
+      </ul>
+    </div>
+    <p class="pull">$111 or &#8369;6,999<br><span style="font-family:var(--ui);font-style:normal;font-size:.85rem;color:var(--soft)">Buying separately: $153.99 or &#8369;9,394</span></p>
+    <div class="btn-row">
+      <!-- BUILD SHEET STEP 1: the System listing does not exist on Payhip yet.
+           Replace this href with the new Payhip link before publishing. -->
+      <a class="btn btn-primary" href="PAYHIP_SYSTEM_URL_GOES_HERE">Get the Self-Loyalty Lab System</a>
+    </div>
+    <p class="small">Covered by the eight-week promise below.</p>
+  </div>
+</section>
+
+<!-- ================= BLOCK 10 — OBJECTIONS ================= -->
+<section>
+  <div class="wrap">
+    <h2>The questions women actually ask before buying</h2>
+
+    <div class="qa">
+      <h3>"What if this confirms what I already know?"</h3>
+      <p>It might. That is the fear underneath most of the hesitation here, and it deserves a straight answer instead of reassurance.</p>
+      <p>But nothing in this material tells you to leave. It is built specifically not to. What it does is help you see the situation without the fog, and then you decide, on your timeline. Seeing something clearly is not the same as being forced to act on it.</p>
+      <p>And the thing you are avoiding does not go away while you avoid it. It just costs more later.</p>
+    </div>
+
+    <div class="qa">
+      <h3>"I have bought books before and nothing changed."</h3>
+      <p>Fair. Most relationship books are motivational. You feel something for two days and then it fades, because feeling inspired is not a skill.</p>
+      <p>This is built the other way round. The guides explain the mechanism, then give you practice. The workbook is eight weeks of doing, not reading. And Week 8 makes you compare your own numbers against Week 1, so you are not relying on a vibe to know whether anything shifted.</p>
+    </div>
+
+    <div class="qa">
+      <h3>"A guide cannot understand my situation."</h3>
+      <p>Correct. It cannot. No book can.</p>
+      <p>What it can do is describe the pattern accurately enough that you recognise your own situation inside it, then hand you the questions to ask about your specific version. If you want something closer to a conversation, the Self-Return Assistant is included and can respond to your actual details.</p>
+    </div>
+
+    <div class="qa">
+      <h3>"I do not want to become cold."</h3>
+      <p>Then you are in the right place, because nothing here asks you to.</p>
+      <p>This is not detachment training. It is not hyper-independence. It is not go no-contact and post about your glow up. The whole point is staying warm and generous while also staying loyal to yourself. Soft heart, strong self. Those are not opposites.</p>
+    </div>
+
+    <div class="qa">
+      <h3>"Maybe I am actually the problem."</h3>
+      <p>Patterns are usually learned somewhere, often long before the current relationship. Learned is not the same as broken, and understanding where something came from is not the same as excusing it.</p>
+      <p>You will not be blamed in this material. You also will not be told the pattern is not yours to work with. Both of those would be lies.</p>
+    </div>
+
+    <div class="qa">
+      <h3>"Is this therapy?"</h3>
+      <p>No, and it does not replace it. Anna is a Registered Nurse and an educator, not a therapist. This is educational material. If you are in danger, or if what comes up is more than you can hold, the support section at the bottom of this page is there for exactly that.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BLOCK 11 — ABOUT ANNA ================= -->
+<section>
+  <div class="wrap">
+    <h2>Who wrote this</h2>
+    <p>Anna Cadano has been a Registered Nurse since 2008. Her background is clinical research, pharmacovigilance, hospital practice, medical data review, and medical coding.</p>
+    <p>That work trains you to do one specific thing. You stop looking at the symptom in front of you and start looking for the pattern behind it. You ask what the evidence actually supports, not what everyone assumes.</p>
+    <p>She spent years watching capable women disappear inside relationships they over-gave to. It was rarely dramatic. One boundary moved. One preference swallowed. One need made smaller. One more chance. One more thing carried. Until the woman could not find herself in her own life.</p>
+    <p>Self-Loyalty Lab applies the pattern-first way of thinking to that.</p>
+    <p>The aim is not to blame women for something most of them were taught. It is to make the pattern visible enough to interrupt.</p>
+    <p>And it goes past the individual woman. When adults get better at choosing, relating, and parenting without repeating what they inherited, what gets handed to the next generation can change too.</p>
+    <p class="pull">Gentle to women. Sharp to the pattern.</p>
+  </div>
+</section>
+
+<!-- ================= BLOCK 12 — PRICING TABLE ================= -->
+<section>
+  <div class="wide">
+    <h2>Prices</h2>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th>&nbsp;</th><th>USD</th><th>PHP</th><th>Assistant included</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Boyfriend Boundary Guide, Taglish</td><td>$19</td><td>&#8369;1,099</td><td>1 month</td></tr>
+          <tr><td>Boyfriend Boundary Guide, English</td><td>$29</td><td>&#8369;1,699</td><td>1 month</td></tr>
+          <tr><td>Self-Return Guide, Taglish</td><td>$29</td><td>&#8369;1,499</td><td>2 months</td></tr>
+          <tr><td>Self-Return Guide, English</td><td>$39</td><td>&#8369;2,299</td><td>2 months</td></tr>
+          <tr><td>Self-Return Workbook, English</td><td>$49</td><td>&#8369;2,799</td><td>2 months</td></tr>
+          <tr><td>Self-Return Assistant, 3-month pass</td><td>$17.99</td><td>&#8369;999</td><td>n/a</td></tr>
+          <tr class="system"><td>The Self-Loyalty Lab System</td><td>$111</td><td>&#8369;6,999</td><td>3 months</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="small">Every guide and workbook is delivered as a personalised, watermarked PDF.</p>
+  </div>
+</section>
+
+<!-- ================= BLOCK 13 — HOW TO PAY ================= -->
+<section>
+  <div class="wrap">
+    <h2>Paying from the Philippines</h2>
+    <h3>Card or PayPal</h3>
+    <p>Use the buttons above. Delivery is automatic.</p>
+    <h3>GCash</h3>
+    <p>Open GCash and choose Send Money, then Bank Transfer.</p>
+    <div class="card-soft">
+      <p class="meta" style="margin:0">
+        <strong>Bank:</strong> Union Bank of the Philippines<br>
+        <strong>Account name:</strong> Anna Margarita Cadano<br>
+        <strong>Account number:</strong> 109672770015
+      </p>
+    </div>
+    <p>Then message with three things:</p>
+    <ol class="meta">
+      <li>A screenshot of the transfer</li>
+      <li>Your full name exactly as you want it printed on the watermark</li>
+      <li>Your email address</li>
+    </ol>
+    <p>Payments are checked twice a day, Manila time, between 8AM and 12PM and between 1PM and 10PM. Your copy is emailed within 24 hours of the next check.</p>
+  </div>
+</section>
+
+<!-- ================= BLOCK 14 — REFUNDS ================= -->
+<section>
+  <div class="wrap">
+    <h2>Refunds</h2>
+
+    <h3>For the guides</h3>
+    <p>If you read it properly and it genuinely does not help you, email me at <a href="mailto:hello@annalchemy.org">hello@annalchemy.org</a> within 30 days and tell me what did not land. I will refund you, and I will use what you tell me to make the guide better.</p>
+    <p>I ask for one thing only: tell me honestly what did not work. Not a form, not proof, not a reason you have to justify. Just the truth, because that is worth more to me than the money.</p>
+    <p>One refund per person. If I have refunded you, further purchases are final.</p>
+    <p>If I refund you, your access is withdrawn and your copy is no longer licensed to you. Your name is on every page, so a refunded copy in circulation is traceable to the order it came from.</p>
+    <p>If something goes wrong on my side, that is separate and always fixable. If your copy did not arrive, will not open, is the wrong guide or edition, or you were charged twice, email me and I will sort it out.</p>
+    <p>There is also a free preview, so you can see exactly what you are getting before you spend anything.</p>
+
+    <h3>For the Workbook and the Self-Loyalty Lab System</h3>
+    <p><strong>The eight-week promise</strong></p>
+    <p>This workbook asks for eight weeks and about fifteen minutes a day. If you actually do that and nothing moves, I do not want your money.</p>
+    <p>Week 8 asks you to redo the pattern assessment and compare it with Week 1. If you have done the work and your scores have not shifted, email me at <a href="mailto:hello@annalchemy.org">hello@annalchemy.org</a> within 90 days with those two sets of numbers and tell me what did not land. I will refund you in full.</p>
+    <p>No forms, no photos, no proof beyond your own two scores. I am not asking you to justify yourself to me. I am asking what did not work, because that is worth more to me than the money.</p>
+    <p>If you have not started and you have realised it is not for you, email me within 30 days and I will refund you, no questions at all.</p>
+    <!-- BUILD SHEET STEP 8: one further sentence is drafted and awaiting Anna's approval:
+         "If a refund is issued, any Self-Return Assistant access included with that
+         purchase ends at the same time."
+         It is deliberately NOT published here. Add it only once approved. -->
+  </div>
+</section>
+
+<!-- ================= BLOCK 15 — SUPPORT AND SAFETY ================= -->
+<section>
+  <div class="wrap">
+    <h2>If this is heavier than a guide</h2>
+    <p>This is educational material written by a nurse. It is not therapy, it is not a diagnosis, and it is not a safety plan.</p>
+    <p>If you are in immediate danger, or if you are being hurt, controlled, or threatened, please contact local emergency services or a domestic violence support service in your area rather than working through this alone.</p>
+    <p>If reading about any of this brings up more than you can hold, working with a trauma-informed therapist alongside the material is a good idea, not a failure.</p>
+    <!-- BUILD SHEET STEP 9: these numbers were written from memory and are NOT verified.
+         Confirm every one against its official source before this page goes public. -->
+    <div class="warn">
+      <strong>Philippines</strong>
+      <ul class="hotlines">
+        <li>National Emergency Hotline: <a href="tel:911">911</a></li>
+        <li>NCMH Crisis Hotline: <a href="tel:1553">1553</a> (toll-free, nationwide landline), 0917 899 8727, 0966 351 4518</li>
+        <li>PNP Women and Children Protection Center: 0919 777 7377</li>
+        <li>DSWD: 8931 8101</li>
+      </ul>
+      <p style="margin:16px 0 0;font-size:.82rem;opacity:.85">If a number does not connect, call 911 or go to the nearest police station or hospital.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BLOCK 16 — FINAL CLOSE ================= -->
+<section>
+  <div class="wrap">
+    <h2>What this is actually for</h2>
+    <p>You do not need to stop loving him.</p>
+    <p>You do not need to become cold.</p>
+    <p>You do not need to suspect everybody.</p>
+    <p>You do not need to stop being generous, because your generosity was never the problem.</p>
+    <p>And you do not need a stranger on the internet to make the decision for you.</p>
+    <p>You need to become someone you can trust when love makes you vulnerable.</p>
+    <p>That is the whole thing.</p>
+    <p class="pull">Love without losing yourself.</p>
+    <div class="btn-row">
+      <a class="btn btn-primary" href="/self-loyalty-lab/start/">Find where to start</a>
+      <a class="btn btn-ghost" href="#system">Get the Self-Loyalty Lab System</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>
+      Self-Loyalty Lab&trade; &middot; AnnAlchemy&trade;<br>
+      Anna Cadano, RN since 2008
+    </div>
+    <div>
+      <a href="mailto:hello@annalchemy.org">hello@annalchemy.org</a><br>
+      <a href="/">AnnAlchemy&trade;</a> &middot; <a href="/terms.html">Terms</a> &middot; <a href="/privacy-policy.html">Privacy</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
