@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Self-Loyalty Starting Point Assessment | Self-Loyalty Lab</title>
+<meta name="description" content="A free 15-question self-check that shows you where self-loyalty is under the most pressure right now, and where to start. Nothing is saved.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap">
+<style>
+  :root{
+    --ink:#2E1A2A;
+    --soft:#6E5C68;
+    --line:#E4D8E1;
+    --bg:#FBF7F0;
+    --card:#FFFFFF;
+    --accent:#5E2A53;
+    --accent-soft:#F1E8EE;
+    --dark:#171417;
+    --serif:'EB Garamond',Georgia,serif;
+    --display:'Playfair Display',Georgia,serif;
+    --ui:Archivo,system-ui,-apple-system,sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;background:var(--bg);color:var(--ink);
+    font-family:var(--serif);
+    line-height:1.62;-webkit-font-smoothing:antialiased;
+  }
+  .brandbar{
+    background:var(--accent);color:var(--bg);font-family:var(--ui);
+    font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+    text-align:center;padding:11px 20px;
+  }
+  .wrap{max-width:680px;margin:0 auto;padding:40px 22px 96px}
+  .lockup{display:flex;align-items:center;gap:14px;margin:0 0 36px}
+  .lockup .name{font-family:var(--display);font-weight:600;font-size:15px;letter-spacing:.16em}
+  .lockup .sub{font-family:var(--ui);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--soft);margin-top:4px}
+  .eyebrow{font-family:var(--ui);font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+  h1{font-family:var(--display);font-weight:600;font-size:2.35rem;line-height:1.1;margin:0 0 16px;text-wrap:pretty}
+  h2{font-family:var(--display);font-weight:600;font-size:1.6rem;line-height:1.2;margin:0 0 12px}
+  p{margin:0 0 15px}
+  .lede{color:#4A3A46;font-size:1.16rem;line-height:1.55}
+  .meta{font-family:var(--ui);font-size:.82rem;line-height:1.6;color:var(--soft)}
+  .privacy{
+    background:var(--accent-soft);border-left:2px solid var(--accent);padding:18px 20px;
+    font-family:var(--ui);font-size:.86rem;line-height:1.6;color:#4A3A46;
+    margin:26px 0 30px;
+  }
+  .privacy strong{color:var(--accent)}
+  .q{
+    background:var(--card);border:1px solid var(--line);
+    padding:24px 24px 14px;margin:0 0 18px;
+  }
+  .qnum{font-family:var(--ui);font-size:.68rem;font-weight:700;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+  .qtext{font-size:1.16rem;line-height:1.45;margin-bottom:18px}
+  .opts{display:flex;flex-wrap:wrap;gap:8px;padding-bottom:10px}
+  .opt{
+    flex:1 1 auto;min-width:calc(50% - 8px);
+    font-family:var(--ui);font-size:.85rem;letter-spacing:.02em;
+    border:1px solid var(--line);background:#fff;
+    padding:13px 12px;cursor:pointer;text-align:center;color:var(--soft);
+    transition:border-color .12s,background .12s,color .12s;
+  }
+  .opt:hover{border-color:var(--accent);color:var(--accent)}
+  .opt.sel{background:var(--accent);border-color:var(--accent);color:#fff}
+  button.cta{
+    font-family:var(--ui);font-size:.87rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+    background:var(--accent);color:#fff;border:none;
+    padding:19px 28px;cursor:pointer;width:100%;
+  }
+  button.cta:hover{background:var(--dark)}
+  button.cta:disabled{background:#C9BCC6;cursor:not-allowed}
+  a.cta{
+    display:block;text-align:center;text-decoration:none;
+    font-family:var(--ui);font-size:.85rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+    background:var(--accent);color:#fff;padding:19px 28px;margin:0 0 12px;
+  }
+  a.cta:hover{background:var(--dark)}
+  a.ghost{
+    display:block;text-align:center;text-decoration:none;
+    font-family:var(--ui);font-size:.82rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+    border:1px solid var(--accent);color:var(--accent);padding:18px 28px;margin:0 0 12px;
+  }
+  a.ghost:hover{background:var(--accent-soft)}
+  .result{background:var(--card);border:1px solid var(--line);padding:32px 28px;margin-bottom:18px}
+  .result h1{font-family:var(--display);font-style:italic;font-weight:700;font-size:2.5rem;letter-spacing:.01em}
+  .tag{font-family:var(--ui);font-size:.68rem;font-weight:700;letter-spacing:.2em;
+    text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+  .quote{font-family:var(--display);font-style:italic;font-size:1.5rem;line-height:1.3;color:var(--accent);
+    margin:0 0 22px;padding-left:18px;border-left:2px solid var(--line)}
+  .warn{color:#FBF7F0;font-family:var(--ui);font-size:.85rem;line-height:1.65;
+    background:var(--dark);padding:22px 24px;margin:20px 0}
+  hr{border:none;border-top:1px solid var(--line);margin:30px 0}
+  .hide{display:none}
+  .err{color:#8A2F4A;font-family:var(--ui);font-size:.86rem;margin-top:12px}
+  .footnote{font-family:var(--ui);font-size:.75rem;letter-spacing:.06em;color:var(--soft);text-align:center;margin-top:40px}
+</style>
+</head>
+<body>
+<div class="brandbar">AnnAlchemy&trade; &middot; Self-Loyalty Lab&trade;</div>
+<div class="wrap">
+
+<div class="lockup">
+  <svg width="46" height="46" viewBox="0 0 100 100" style="display:block;flex-shrink:0" aria-label="Self-Loyalty Lab mirror mark">
+    <ellipse cx="50" cy="46" rx="34" ry="42" fill="none" stroke="#5E2A53" stroke-width="4"></ellipse>
+    <path d="M36 62 V38 L44 47 L50 32 L56 47 L64 38 V62 Z" fill="#5E2A53"></path>
+    <rect x="34" y="66" width="32" height="4" fill="#5E2A53"></rect>
+    <rect x="30" y="90" width="40" height="4" fill="#5E2A53"></rect>
+  </svg>
+  <div>
+    <div class="name">SELF-LOYALTY LAB&trade;</div>
+    <div class="sub">AnnAlchemy&trade;</div>
+  </div>
+</div>
+
+<!-- ============ INTRO + QUESTIONS ============ -->
+<div id="quiz">
+  <div class="eyebrow">Free assessment</div>
+  <h1>The Self-Loyalty Starting Point&trade; Assessment</h1>
+  <p class="lede">Fifteen questions. Under five minutes. This does not tell you what is wrong with you and it does not tell you what to do about him. It shows you where self-loyalty is under the most pressure right now, so you know where to start.</p>
+
+  <div class="privacy">
+    <strong>Nothing here is saved.</strong> Your answers stay on your phone or computer and are never sent anywhere. There is no account, no email required, and nothing for anyone to read later. Close the tab and it is gone.
+  </div>
+
+  <p class="meta">Answer for how things are right now, not how you wish they were. First instinct is usually the accurate one.</p>
+
+  <div id="questions"></div>
+
+  <button class="cta" id="submitBtn">See where to start</button>
+  <p class="err hide" id="err">Please answer every question first. The unanswered ones are highlighted above.</p>
+</div>
+
+<!-- ============ RESULT ============ -->
+<div id="result" class="hide"></div>
+
+<div class="footnote">Anna Cadano, RN since 2008 &middot; hello@annalchemy.org</div>
+</div>
+
+<script>
+(function(){
+  var SCALE = ["Not really me","Sometimes","Often","That is exactly me"];
+
+  var QUESTIONS = [
+    {p:"PROTECT", t:"I can list my standards clearly, right up until I actually like someone."},
+    {p:"DETACH",  t:"I know this is not good for me and I still cannot pull away."},
+    {p:"DECIDE",  t:"I go back and forth between staying and leaving and never land anywhere."},
+    {p:"RETURN",  t:"If someone asked me what I want, I am not sure I could answer honestly."},
+    {p:"CHOOSE",  t:"I can see that this is the same pattern I have been in before."},
+    {p:"PROTECT", t:"I give access to my time, energy or body faster than the commitment has been earned."},
+    {p:"DETACH",  t:"I miss him in a way that overrides what I know about how he treats me."},
+    {p:"DECIDE",  t:"I keep waiting for one more piece of proof before I decide anything."},
+    {p:"RETURN",  t:"I have let go of friendships, interests or plans that used to matter to me."},
+    {p:"CHOOSE",  t:"I am mostly out of it now, and my worry is doing it again with someone new."},
+    {p:"PROTECT", t:"I explain a reasonable need until it comes out sounding like an apology."},
+    {p:"DETACH",  t:"We have broken up and got back together more than once."},
+    {p:"DECIDE",  t:"I am holding on to who he could become rather than who he has shown me he is."},
+    {p:"RETURN",  t:"I do not recognise the woman I have turned into inside this relationship."},
+    {p:"CHOOSE",  t:"I want to know what to look for next time so this does not repeat."}
+  ];
+
+  var RESULTS = {
+    PROTECT: {
+      name:"PROTECT",
+      quote:"I know my standards until I like someone.",
+      body:"You have not lost yourself. You can still say what you want, and you would recognise a bad deal if a friend described it to you. What is happening is narrower than that, and more fixable. Your standards are holding fine until attachment shows up, and then they quietly turn into things you are willing to discuss.<br><br>So the work for you is not learning what a boundary is. You know. The work is holding one while you are still attracted to him, and matching how much access he gets to how much he has actually demonstrated.",
+      product:"The Boyfriend Boundary Guide",
+      why:"It is built for exactly this stage. Dating, talking, situationship, or new relationship, with the bending already starting.",
+      link:"#bbg"
+    },
+    DECIDE: {
+      name:"DECIDE",
+      quote:"I do not know whether to stay, wait, or leave.",
+      body:"You are not confused because you lack information. You are confused because what you feel and what you have observed are pointing in different directions, and you keep waiting for one more piece of proof to settle it. That piece is not coming, because more evidence does not resolve a conflict between the heart and the eyes.<br><br>Nothing here will make the decision for you, and you should be suspicious of anything that claims it will. What you need is enough clarity to make the call yourself and still trust yourself afterwards.",
+      product:"The Self-Return Guide",
+      why:"It walks through clearing attachment fog before deciding, and separating what you feel from an honest read of what he has actually shown you.",
+      link:"#srg"
+    },
+    DETACH: {
+      name:"DETACH",
+      quote:"I know I need to let go, but I cannot.",
+      body:"This one is not a willpower failure, and reading it as one is doing you real damage. Bonds are physically hard to break. That is not a metaphor. The pull you feel when you miss him is real, and it is separate from the question of whether he is good for you.<br><br>Missing someone is information about the bond. It is not information about whether the relationship is right. Those two things feel identical from the inside, and telling them apart is most of the work here.",
+      product:"The Self-Return Guide",
+      why:"It opens with why letting go is so hard, then covers on and off cycles, attachment fog, and what to do when the urge to go back gets loud.",
+      link:"#srg"
+    },
+    RETURN: {
+      name:"RETURN",
+      quote:"I do not know who I am anymore.",
+      body:"This is the deepest of the five, and it usually did not happen in one dramatic moment. It happened in small ones. A plan cancelled. An opinion swallowed. A need made smaller so it would fit. A friendship allowed to go quiet. None of them felt like much on the day.<br><br>Whether the relationship lasted four months or fifteen years does not really matter here. What matters is that you gave away more of yourself than you meant to, and now you are trying to find where you went.",
+      product:"The Self-Return Guide and the Self-Return Workbook",
+      why:"The Guide explains what happened and starts the return. The Workbook is eight weeks of actually doing it, with an assessment at Week 1 and again at Week 8 so you can see movement instead of guessing.",
+      link:"#srg"
+    },
+    CHOOSE: {
+      name:"CHOOSE DIFFERENTLY",
+      quote:"I do not want to do this again.",
+      body:"You are further along than most women who take this. You are not asking what to do about him. You are asking how not to repeat it, and that is the right question at the right time.<br><br>The risk at this stage is quiet. Coming through something painful does not automatically change how you choose. Without something different in place, the next person is often a new face applying the same pressure to the same soft spot.",
+      product:"The Boyfriend Boundary Guide",
+      why:"It is about reading what has actually been demonstrated versus what you are hoping for, and matching access to proof. That is the toolkit for choosing next time.",
+      link:"#bbg"
+    }
+  };
+
+  var qWrap = document.getElementById('questions');
+  var answers = new Array(QUESTIONS.length).fill(null);
+
+  QUESTIONS.forEach(function(q, i){
+    var div = document.createElement('div');
+    div.className = 'q';
+    div.id = 'q'+i;
+    var opts = SCALE.map(function(s, v){
+      return '<div class="opt" data-q="'+i+'" data-v="'+v+'">'+s+'</div>';
+    }).join('');
+    div.innerHTML = '<div class="qnum">Question '+(i+1)+' of '+QUESTIONS.length+'</div>'+
+                    '<div class="qtext">'+q.t+'</div>'+
+                    '<div class="opts">'+opts+'</div>';
+    qWrap.appendChild(div);
+  });
+
+  qWrap.addEventListener('click', function(e){
+    var el = e.target;
+    if(!el.classList.contains('opt')) return;
+    var qi = +el.dataset.q;
+    answers[qi] = +el.dataset.v;
+    var sibs = el.parentNode.querySelectorAll('.opt');
+    for(var i=0;i<sibs.length;i++){ sibs[i].classList.remove('sel'); }
+    el.classList.add('sel');
+    document.getElementById('q'+qi).style.borderColor = '#E4D8E1';
+  });
+
+  document.getElementById('submitBtn').addEventListener('click', function(){
+    var missing = [];
+    answers.forEach(function(a,i){ if(a===null) missing.push(i); });
+    if(missing.length){
+      missing.forEach(function(i){ document.getElementById('q'+i).style.borderColor = '#8A2F4A'; });
+      document.getElementById('err').classList.remove('hide');
+      var t = document.getElementById('q'+missing[0]).getBoundingClientRect().top + window.pageYOffset - 80;
+      window.scrollTo({top:t, behavior:'smooth'});
+      return;
+    }
+
+    var totals = {PROTECT:0, DECIDE:0, DETACH:0, RETURN:0, CHOOSE:0};
+    QUESTIONS.forEach(function(q,i){ totals[q.p] += answers[i]; });
+
+    var order = Object.keys(totals).sort(function(a,b){ return totals[b]-totals[a]; });
+    var top = order[0];
+    var second = order[1];
+    var close = (totals[top] - totals[second]) <= 1;
+    var grand = answers.reduce(function(s,v){ return s+v; }, 0);
+
+    render(top, second, close, grand, totals);
+  });
+
+  function render(top, second, close, grand, totals){
+    var r = RESULTS[top];
+    var r2 = RESULTS[second];
+    var html = '';
+
+    html += '<div class="result">';
+    html += '<div class="tag">Your starting point</div>';
+    html += '<h1>'+r.name+'</h1>';
+    html += '<p class="quote">"'+r.quote+'"</p>';
+    html += '<p>'+r.body+'</p>';
+    html += '</div>';
+
+    if(close){
+      html += '<div class="result">';
+      html += '<div class="tag">Also close</div>';
+      html += '<h2>'+r2.name+'</h2>';
+      html += '<p class="lede">'+r2.name+' scored almost as high. That is normal. These stages overlap and most women move through more than one. Start with '+r.name+' anyway. Doing one properly beats doing two badly.</p>';
+      html += '</div>';
+    }
+
+    html += '<div class="result">';
+    html += '<div class="tag">Where to start</div>';
+    html += '<h2>'+r.product+'</h2>';
+    html += '<p>'+r.why+'</p>';
+    html += '<a class="cta" href="/self-loyalty-lab'+r.link+'">See '+r.product+'</a>';
+    html += '<a class="ghost" href="/self-loyalty-lab#system">Or get everything in the Self-Loyalty Lab System</a>';
+    html += '</div>';
+
+    if(grand >= 34){
+      html += '<div class="result">';
+      html += '<div class="tag">One more thing</div>';
+      html += '<p>You scored high across most of the five, not just one. That usually means this is not a single stage you are stuck in, it is a pattern running through the whole thing.</p>';
+      html += '<p>Starting with '+r.name+' still works. But the System covers all five, and at this level you are likely to need more than one of them.</p>';
+      html += '</div>';
+    }
+
+    html += '<div class="warn">';
+    html += 'This is an educational self-check written by a Registered Nurse. It is not a diagnosis, not therapy, and not a safety assessment. If you are being hurt, controlled, or threatened, please contact local emergency services or a domestic violence support service rather than working through it alone. In the Philippines: 911, or the NCMH Crisis Hotline on 1553.';
+    html += '</div>';
+
+    html += '<hr>';
+    html += '<p class="meta">Your result was worked out on your own device and has not been saved or sent anywhere. If you want to keep it, screenshot this page.</p>';
+    html += '<a class="ghost" href="/self-loyalty-lab">Back to Self-Loyalty Lab</a>';
+
+    document.getElementById('quiz').classList.add('hide');
+    var out = document.getElementById('result');
+    out.innerHTML = html;
+    out.classList.remove('hide');
+    window.scrollTo({top:0, behavior:'smooth'});
+  }
+})();
+</script>
+</body>
+</html>
