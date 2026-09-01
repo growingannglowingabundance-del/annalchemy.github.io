@@ -1,14 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="./support.js"></script>
-</head>
-<body>
-<x-dc>
-<helmet>
-<script src="./image-slot.js"></script>
+<title>Self-Loyalty Lab: Love Without Losing Yourself</title>
+<meta name="description" content="Guides and tools for women who give more than the relationship has earned. Stop abandoning your standards once attachment starts. Written by a Registered Nurse since 2008.">
+<link rel="canonical" href="https://annalchemy.org/self-loyalty-lab/">
+<meta property="og:title" content="Self-Loyalty Lab: Love Without Losing Yourself">
+<meta property="og:description" content="Guides and tools for women who give more than the relationship has earned. Stop abandoning your standards once attachment starts.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://annalchemy.org/self-loyalty-lab/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cellipse cx='50' cy='46' rx='34' ry='42' fill='none' stroke='%235E2A53' stroke-width='6'/%3E%3Cpath d='M36 62 V38 L44 47 L50 32 L56 47 L64 38 V62 Z' fill='%235E2A53'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap">
 <style>
@@ -19,8 +23,63 @@
     .sllpad { padding-left: 22px !important; padding-right: 22px !important; }
   }
 </style>
-</helmet>
-
+<style>
+  html { scroll-behavior: smooth; }
+  /* the fixed bar must never sit on top of the footer;
+     the reserved strip carries the footer's plum so it reads as one band */
+  body { padding-bottom: 84px; background: #5E2A53; }
+  @media (max-width: 560px) { body { padding-bottom: 128px; } }
+  a:focus-visible { outline: 2px solid #5E2A53; outline-offset: 3px; }
+  @media (max-width: 760px) {
+    h1 { font-size: 40px !important; }
+    h2 { font-size: 30px !important; }
+  }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+<style>
+/* ===== Scroll reveal ====================================================
+       Blur + fade + rise as each block enters the viewport. Two depths: a
+       container travels 28px, and text inside it travels a shorter 12px just
+       after, so a card arrives as one object whose contents settle into it
+       rather than a frame that fills in piece by piece.
+       Classes are applied by JS, so the page still renders in full with JS off,
+       and are stripped once the transition ends so no stray transform is left
+       behind to break position:sticky. */
+    @media (prefers-reduced-motion: no-preference){
+      .reveal{
+        opacity:0;
+        transform:translate3d(0, var(--reveal-rise, 28px), 0);
+        filter:blur(var(--reveal-blur, 3px));
+        transition:opacity .72s cubic-bezier(.22,.61,.36,1),
+                   transform .72s cubic-bezier(.22,.61,.36,1),
+                   filter .52s cubic-bezier(.22,.61,.36,1);
+        transition-delay:var(--reveal-delay, 0ms);
+        will-change:opacity, transform, filter;
+      }
+      .reveal.is-visible{
+        opacity:1;
+        transform:translate3d(0, 0, 0);
+        filter:blur(0);
+      }
+    }
+</style>
+<style>
+  .hv1:hover, .hv1:focus-visible { background: #171417 !important; }
+  .hv2:hover, .hv2:focus-visible { background: #F1E8EE !important; }
+  .hv3:hover, .hv3:focus-visible { background: #C7A5BF !important; }
+  .hv4:hover, .hv4:focus-visible { background: #171417 !important; }
+  .hv5:hover, .hv5:focus-visible { background: #F1E8EE !important; }
+  .hv6:hover, .hv6:focus-visible { background: #171417 !important; }
+  .hv7:hover, .hv7:focus-visible { background: #F1E8EE !important; }
+  .hv8:hover, .hv8:focus-visible { background: #171417 !important; }
+  .hv9:hover, .hv9:focus-visible { background: #F1E8EE !important; }
+  .hv10:hover, .hv10:focus-visible { background: #DEC3D8 !important; }
+  .hv11:hover, .hv11:focus-visible { background: #F1E8EE !important; }
+  .hv12:hover, .hv12:focus-visible { background: #171417 !important; }
+  .hv13:hover, .hv13:focus-visible { background: #C7A5BF !important; }
+</style>
+</head>
+<body>
 <div style="font-family: 'EB Garamond', Georgia, serif; color: #2E1A2A; background: #FBF7F0; -webkit-font-smoothing: antialiased;">
 
   <div style="background: #5E2A53; color: #FBF7F0; font-family: Archivo, sans-serif; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; text-align: center; padding: 11px 20px;">AnnAlchemy™ · Self-Loyalty Lab™</div>
@@ -46,8 +105,8 @@
       <p style="font-size: 22px; line-height: 1.55; color: #4A3A46; max-width: 620px; margin: 30px 0 0; text-wrap: pretty;">Self-Loyalty Lab is a set of guides and tools for women who give more than the relationship has earned, and who want to stop without becoming cold.</p>
 
       <div style="display: flex; flex-wrap: wrap; gap: 14px; margin-top: 40px;">
-        <a href="/self-loyalty-lab/start" style="font-family: Archivo, sans-serif; font-size: 14px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; background: #5E2A53; color: #FBF7F0; padding: 19px 34px;" style-hover="background: #171417;">Find where to start</a>
-        <a href="#products" style="font-family: Archivo, sans-serif; font-size: 14px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; color: #5E2A53; padding: 19px 34px; border: 1px solid #5E2A53;" style-hover="background: #F1E8EE;">See everything inside</a>
+        <a href="/self-loyalty-lab/start" style="font-family: Archivo, sans-serif; font-size: 14px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; background: #5E2A53; color: #FBF7F0; padding: 19px 34px;" class="hv1">Find where to start</a>
+        <a href="#products" style="font-family: Archivo, sans-serif; font-size: 14px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; color: #5E2A53; padding: 19px 34px; border: 1px solid #5E2A53;" class="hv2">See everything inside</a>
       </div>
 
       <div style="font-family: Archivo, sans-serif; font-size: 13px; line-height: 1.6; color: #6E5C68; margin-top: 26px;">Written by a Registered Nurse since 2008. Educational material, not therapy.</div>
@@ -108,23 +167,23 @@
       <p style="font-size: 21px; line-height: 1.6; color: #DCCBD7; max-width: 620px; margin: 0 0 46px;">Every woman who finds this work is standing in one of five places. You are probably in one right now.</p>
 
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1px; background: #3B303A; border: 1px solid #3B303A;">
-        <div style="background: #171417; padding: 32px 28px; display: flex; flex-direction: column; gap: 14px;">
+        <div class="rv-card" style="background: #171417; padding: 32px 28px; display: flex; flex-direction: column; gap: 14px;">
           <div style="font-family: Archivo, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.2em; color: #C7A5BF;">PROTECT</div>
           <div style="font-family: 'Playfair Display', serif; font-style: italic; font-size: 23px; line-height: 1.32;">"I know my standards until I like someone."</div>
         </div>
-        <div style="background: #171417; padding: 32px 28px; display: flex; flex-direction: column; gap: 14px;">
+        <div class="rv-card" style="background: #171417; padding: 32px 28px; display: flex; flex-direction: column; gap: 14px;">
           <div style="font-family: Archivo, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.2em; color: #C7A5BF;">DECIDE</div>
           <div style="font-family: 'Playfair Display', serif; font-style: italic; font-size: 23px; line-height: 1.32;">"I do not know whether to stay, wait, or leave."</div>
         </div>
-        <div style="background: #171417; padding: 32px 28px; display: flex; flex-direction: column; gap: 14px;">
+        <div class="rv-card" style="background: #171417; padding: 32px 28px; display: flex; flex-direction: column; gap: 14px;">
           <div style="font-family: Archivo, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.2em; color: #C7A5BF;">DETACH</div>
           <div style="font-family: 'Playfair Display', serif; font-style: italic; font-size: 23px; line-height: 1.32;">"I know I need to let go, but I cannot."</div>
         </div>
-        <div style="background: #171417; padding: 32px 28px; display: flex; flex-direction: column; gap: 14px;">
+        <div class="rv-card" style="background: #171417; padding: 32px 28px; display: flex; flex-direction: column; gap: 14px;">
           <div style="font-family: Archivo, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.2em; color: #C7A5BF;">RETURN</div>
           <div style="font-family: 'Playfair Display', serif; font-style: italic; font-size: 23px; line-height: 1.32;">"I do not know who I am anymore."</div>
         </div>
-        <div style="background: #171417; padding: 32px 28px; display: flex; flex-direction: column; gap: 14px;">
+        <div class="rv-card" style="background: #171417; padding: 32px 28px; display: flex; flex-direction: column; gap: 14px;">
           <div style="font-family: Archivo, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.2em; color: #C7A5BF;">CHOOSE DIFFERENTLY</div>
           <div style="font-family: 'Playfair Display', serif; font-style: italic; font-size: 23px; line-height: 1.32;">"I do not want to do this again."</div>
         </div>
@@ -133,7 +192,7 @@
       <p style="font-size: 22px; line-height: 1.55; margin: 40px 0 0; font-weight: 500;">You do not need all five. You need the one you are standing in.</p>
 
       <div style="margin-top: 32px;">
-        <a href="/self-loyalty-lab/start" style="display: inline-block; font-family: Archivo, sans-serif; font-size: 14px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; background: #FBF7F0; color: #171417; padding: 19px 34px;" style-hover="background: #C7A5BF;">Take the free Starting Point Assessment</a>
+        <a href="/self-loyalty-lab/start" style="display: inline-block; font-family: Archivo, sans-serif; font-size: 14px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; background: #FBF7F0; color: #171417; padding: 19px 34px;" class="hv3">Take the free Starting Point Assessment</a>
       </div>
       <div style="font-family: Archivo, sans-serif; font-size: 13px; line-height: 1.65; color: #A895A4; margin-top: 20px; max-width: 560px;">Fifteen questions. Under five minutes. Nothing is saved, nothing is sent, no email required to see your result.</div>
     </div>
@@ -254,8 +313,8 @@
             <div style="color: #6E5C68;">Free preview available before you buy</div>
           </div>
           <div style="display: flex; flex-wrap: wrap; gap: 12px;">
-            <a href="#" style="font-family: Archivo, sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.09em; text-transform: uppercase; text-decoration: none; background: #5E2A53; color: #FBF7F0; padding: 17px 28px;" style-hover="background: #171417;">Get it in English — $29</a>
-            <a href="#" style="font-family: Archivo, sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.09em; text-transform: uppercase; text-decoration: none; color: #5E2A53; border: 1px solid #5E2A53; padding: 17px 28px;" style-hover="background: #F1E8EE;">Get it in Taglish — $19</a>
+            <a href="https://payhip.com/b/c5ZAz" target="_blank" rel="noopener" style="font-family: Archivo, sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.09em; text-transform: uppercase; text-decoration: none; background: #5E2A53; color: #FBF7F0; padding: 17px 28px;" class="hv4">Get it in English — $29</a>
+            <a href="https://payhip.com/b/uCRbB" target="_blank" rel="noopener" style="font-family: Archivo, sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.09em; text-transform: uppercase; text-decoration: none; color: #5E2A53; border: 1px solid #5E2A53; padding: 17px 28px;" class="hv5">Get it in Taglish — $19</a>
           </div>
         </div>
 
@@ -274,8 +333,8 @@
             <div style="color: #6E5C68;">Free preview available before you buy</div>
           </div>
           <div style="display: flex; flex-wrap: wrap; gap: 12px;">
-            <a href="#" style="font-family: Archivo, sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.09em; text-transform: uppercase; text-decoration: none; background: #5E2A53; color: #FBF7F0; padding: 17px 28px;" style-hover="background: #171417;">Get it in English — $39</a>
-            <a href="#" style="font-family: Archivo, sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.09em; text-transform: uppercase; text-decoration: none; color: #5E2A53; border: 1px solid #5E2A53; padding: 17px 28px;" style-hover="background: #F1E8EE;">Get it in Taglish — $29</a>
+            <a href="https://payhip.com/b/LTXpY" target="_blank" rel="noopener" style="font-family: Archivo, sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.09em; text-transform: uppercase; text-decoration: none; background: #5E2A53; color: #FBF7F0; padding: 17px 28px;" class="hv6">Get it in English — $39</a>
+            <a href="https://payhip.com/b/Skgca" target="_blank" rel="noopener" style="font-family: Archivo, sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.09em; text-transform: uppercase; text-decoration: none; color: #5E2A53; border: 1px solid #5E2A53; padding: 17px 28px;" class="hv7">Get it in Taglish — $29</a>
           </div>
         </div>
 
@@ -291,7 +350,7 @@
             <div style="color: #6E5C68;">Includes 2 months of the Self-Return Assistant</div>
             <div style="color: #6E5C68;">Personalised, watermarked PDF</div>
           </div>
-          <div><a href="#" style="display: inline-block; font-family: Archivo, sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.09em; text-transform: uppercase; text-decoration: none; background: #5E2A53; color: #FBF7F0; padding: 17px 28px;" style-hover="background: #171417;">Get the Self-Return Workbook</a></div>
+          <div><a href="https://payhip.com/b/CBtId" target="_blank" rel="noopener" style="display: inline-block; font-family: Archivo, sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.09em; text-transform: uppercase; text-decoration: none; background: #5E2A53; color: #FBF7F0; padding: 17px 28px;" class="hv8">Get the Self-Return Workbook</a></div>
         </div>
 
         <div id="assistant" style="border: 1px solid #E4D8E1; padding: 40px 36px; display: flex; flex-direction: column; gap: 22px; scroll-margin-top: 24px;">
@@ -306,7 +365,7 @@
             <div style="color: #6E5C68;">Comes free with every guide and workbook purchase</div>
             <div style="color: #6E5C68;">Available to buyers only</div>
           </div>
-          <div><a href="#" style="display: inline-block; font-family: Archivo, sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.09em; text-transform: uppercase; text-decoration: none; color: #5E2A53; border: 1px solid #5E2A53; padding: 17px 28px;" style-hover="background: #F1E8EE;">Get a 3-month pass</a></div>
+          <div><a href="https://payhip.com/b/XiBCj" target="_blank" rel="noopener" style="display: inline-block; font-family: Archivo, sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.09em; text-transform: uppercase; text-decoration: none; color: #5E2A53; border: 1px solid #5E2A53; padding: 17px 28px;" class="hv9">Get a 3-month pass</a></div>
         </div>
 
       </div>
@@ -336,7 +395,7 @@
           <div style="font-family: Archivo, sans-serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #DEC3D8; padding-bottom: 8px; border-bottom: 1px solid #7E4A73;">Price</div>
           <div style="font-family: 'Playfair Display', serif; font-weight: 600; font-size: 52px; line-height: 1;">$111<span style="font-size: 26px; color: #DEC3D8;"> or ₱6,999</span></div>
           <div style="font-family: Archivo, sans-serif; font-size: 14px; color: #DEC3D8;">Buying separately: $153.99 or ₱9,394</div>
-          <div style="margin-top: 14px;"><a href="#" style="display: inline-block; font-family: Archivo, sans-serif; font-size: 14px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; background: #FBF7F0; color: #5E2A53; padding: 19px 34px;" style-hover="background: #DEC3D8;">Get the Self-Loyalty Lab System</a></div>
+          <div style="margin-top: 14px;"><a href="https://payhip.com/b/g9PLB" target="_blank" rel="noopener" style="display: inline-block; font-family: Archivo, sans-serif; font-size: 14px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; background: #FBF7F0; color: #5E2A53; padding: 19px 34px;" class="hv10">Get the Self-Loyalty Lab System</a></div>
           <div style="font-family: Archivo, sans-serif; font-size: 13px; color: #DEC3D8;">Covered by the eight-week promise below.</div>
         </div>
       </div>
@@ -392,7 +451,7 @@
 
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 44px; align-items: start;">
         <div>
-          <image-slot id="anna-portrait" shape="rect" placeholder="Portrait of Anna Cadano RN — upright, warm, plain background" style="display: block; width: 100%; aspect-ratio: 4 / 5;"></image-slot>
+          <img src="/img/anna-cadano-founder-portrait.jpg" alt="Anna Cadano, RN, founder of AnnAlchemy" loading="lazy" decoding="async" style="display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center top;">
           <div style="font-family: Archivo, sans-serif; font-size: 12px; letter-spacing: 0.06em; color: #6E5C68; margin-top: 12px;">Anna Cadano, RN · Founder, AnnAlchemy™</div>
         </div>
         <div style="display: flex; flex-direction: column; gap: 18px; font-size: 20px; line-height: 1.6; color: #3A2A36;">
@@ -524,9 +583,9 @@
           <p style="margin: 0;">Week 8 asks you to redo the pattern assessment and compare it with Week 1. If you have done the work and your scores have not shifted, email me at <a href="mailto:hello@annalchemy.org">hello@annalchemy.org</a> within 90 days with those two sets of numbers and tell me what did not land. I will refund you in full.</p>
           <p style="margin: 0;">No forms, no photos, no proof beyond your own two scores. I am not asking you to justify yourself to me. I am asking what did not work, because that is worth more to me than the money.</p>
           <p style="margin: 0;">If you have not started and you have realised it is not for you, email me within 30 days and I will refund you, no questions at all.</p>
-          <sc-if value="{{ showAssistantRefundSentence }}" hint-placeholder-val="{{ false }}">
+          
             <p style="margin: 0;">If a refund is issued, any Self-Return Assistant access included with that purchase ends at the same time.</p>
-          </sc-if>
+          
         </div>
       </div>
 
@@ -579,8 +638,8 @@
       </div>
 
       <div style="display: flex; flex-wrap: wrap; gap: 14px; justify-content: center;">
-        <a href="/self-loyalty-lab/start" style="font-family: Archivo, sans-serif; font-size: 14px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; color: #5E2A53; border: 1px solid #5E2A53; padding: 19px 34px;" style-hover="background: #F1E8EE;">Find where to start</a>
-        <a href="#system" style="font-family: Archivo, sans-serif; font-size: 14px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; background: #5E2A53; color: #FBF7F0; padding: 19px 34px;" style-hover="background: #171417;">Get the Self-Loyalty Lab System</a>
+        <a href="/self-loyalty-lab/start" style="font-family: Archivo, sans-serif; font-size: 14px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; color: #5E2A53; border: 1px solid #5E2A53; padding: 19px 34px;" class="hv11">Find where to start</a>
+        <a href="#system" style="font-family: Archivo, sans-serif; font-size: 14px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; background: #5E2A53; color: #FBF7F0; padding: 19px 34px;" class="hv12">Get the Self-Loyalty Lab System</a>
       </div>
     </div>
   </div>
@@ -599,23 +658,168 @@
 
 </div>
 
-<sc-if value="{{ showStickyBar }}" hint-placeholder-val="{{ true }}">
+
   <div style="position: fixed; left: 0; right: 0; bottom: 0; background: #171417; color: #FBF7F0; padding: 14px 24px; display: flex; flex-wrap: wrap; gap: 14px; align-items: center; justify-content: center; z-index: 40; font-family: Archivo, sans-serif;">
     <span style="font-size: 13px; letter-spacing: 0.06em; color: #DCCBD7;">Not sure which one you need?</span>
-    <a href="/self-loyalty-lab/start" style="font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; background: #FBF7F0; color: #171417; padding: 12px 22px;" style-hover="background: #C7A5BF;">Take the free assessment</a>
+    <a href="/self-loyalty-lab/start" style="font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; background: #FBF7F0; color: #171417; padding: 12px 22px;" class="hv13">Take the free assessment</a>
   </div>
-</sc-if>
 
-</x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;showAssistantRefundSentence&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Legal&quot;},&quot;showStickyBar&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Conversion&quot;}}">
-class Component extends DCLogic {
-  renderVals() {
-    return {
-      showAssistantRefundSentence: this.props.showAssistantRefundSentence ?? false,
-      showStickyBar: this.props.showStickyBar ?? true
-    };
-  }
-}
-</script>
+  <script>
+  /* Scroll reveal - identical across annalchemy.org and its sub-pages. */
+  (function () {
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+    if (reduce.matches || !('IntersectionObserver' in window)) return;
+
+    var QUERY = '.sllpad > div, .rv-card, #bbg, #srg, #workbook, #assistant, h1, h2, h3, p, table, img, div';
+    var MAX_DEPTH = 2;  /* container + its text; deeper nesting compounds badly */
+
+    function eligible(el) {
+      if (el.matches('.sllpad > div, .rv-card, #bbg, #srg, #workbook, #assistant')) return true;
+      if (el.tagName !== 'DIV') return true;
+      /* a layout wrapper is not a thing you can see arriving; its contents are */
+      return !el.querySelector('div, p, h1, h2, h3, table, img, ul, ol');
+    }
+
+    var groups = new Map(), targets = [], io;
+
+    function collect(root) {
+      var fresh = [];
+      root.querySelectorAll(QUERY).forEach(function (el) {
+        if (el.dataset.reveal || !el.getClientRects().length) return;
+        if (!eligible(el)) return;
+        /* a fixed bar is already in place; moving it would be a glitch, not a reveal */
+        if (el.closest('[style*="position: fixed"]')) return;
+        /* how many reveal targets already wrap this one */
+        var depth = 0;
+        for (var n = el.parentElement; n; n = n.parentElement) {
+          if (n.dataset && n.dataset.reveal) depth++;
+        }
+        if (depth >= MAX_DEPTH) return;
+
+        el.dataset.reveal = '1';
+        el.classList.add('reveal');
+        var key = el.parentElement || document.body;
+        var i = groups.get(key) || 0;
+        groups.set(key, i + 1);
+        /* children start just after their container, and travel less far */
+        el.style.setProperty('--reveal-delay', (Math.min(i, 5) * 70 + depth * 90) + 'ms');
+        if (depth > 0) {
+          el.style.setProperty('--reveal-rise', '12px');
+          el.style.setProperty('--reveal-blur', '2px');
+        }
+        targets.push(el);
+        fresh.push(el);
+      });
+      return fresh;
+    }
+
+    function settle(el) {
+      var cleared = false;
+      function clear() {
+        if (cleared) return;
+        cleared = true;
+        el.removeEventListener('transitionend', onEnd);
+        el.classList.remove('reveal', 'is-visible');
+        ['--reveal-delay', '--reveal-rise', '--reveal-blur'].forEach(function (p) {
+          el.style.removeProperty(p);
+        });
+        el.style.willChange = '';
+      }
+      function onEnd(e) { if (e.propertyName === 'transform') clear(); }
+      el.addEventListener('transitionend', onEnd);
+      setTimeout(clear, 2000);
+    }
+
+    function show(el) {
+      if (el.classList.contains('is-visible')) return;
+      io.unobserve(el);
+      settle(el);
+      el.classList.add('is-visible');
+    }
+
+    io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) show(e.target); });
+    }, { threshold: 0.05, rootMargin: '0px 0px -6% 0px' });
+    collect(document).forEach(function (el) { io.observe(el); });
+
+    /* Safety net: a fast flick can carry a block through the viewport between
+       two observer deliveries, which would strand it invisible for good.
+       Content must never be lost to the animation. */
+    var queued = false;
+    function sweep() {
+      queued = false;
+      /* At maximum scroll the page cannot move further, so anything still
+         sitting inside the bottom 6% dead zone would never reveal. Once we are
+         at the end, take everything that is left. */
+      var atEnd = window.innerHeight + window.scrollY >= document.body.scrollHeight - 2;
+      var limit = atEnd ? Infinity : window.innerHeight * 0.94;
+      for (var i = targets.length - 1; i >= 0; i--) {
+        var el = targets[i];
+        if (el.classList.contains('is-visible') || !el.classList.contains('reveal')) {
+          targets.splice(i, 1); continue;
+        }
+        if (el.getBoundingClientRect().top < limit) show(el);
+      }
+    }
+    function onScroll() {
+      if (queued) return;
+      queued = true;
+      requestAnimationFrame(sweep);
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    /* Content injected later - the assessment result, for one - has to be
+       picked up too, or it would arrive already faded out and never come back. */
+    if ('MutationObserver' in window) {
+      new MutationObserver(function (records) {
+        var added = false;
+        records.forEach(function (r) {
+          for (var i = 0; i < r.addedNodes.length; i++) {
+            if (r.addedNodes[i].nodeType === 1) { added = true; break; }
+          }
+        });
+        if (!added) return;
+        collect(document).forEach(function (el) { io.observe(el); });
+        onScroll();
+      }).observe(document.body, { childList: true, subtree: true });
+    }
+
+    /* Anchor jumps must land on painted content, not mid-animation. */
+    function revealAt(hash) {
+      if (!hash || hash.length < 2) return;
+      var dest;
+      try { dest = document.querySelector(hash); } catch (e) { return; }
+      if (!dest) return;
+      var top = dest.getBoundingClientRect().top + window.scrollY;
+      var bottom = top + window.innerHeight * 1.5;
+      targets.slice().forEach(function (el) {
+        var y = el.getBoundingClientRect().top + window.scrollY;
+        if (y + el.offsetHeight < top || y > bottom) return;
+        el.style.transition = 'none';
+        show(el);
+        void el.offsetHeight;
+        el.style.transition = '';
+      });
+    }
+    window.addEventListener('hashchange', function () { revealAt(location.hash); });
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest && e.target.closest('a[href^="#"]');
+      if (a) revealAt(a.getAttribute('href'));
+    }, true);
+    if (location.hash) revealAt(location.hash);
+
+    reduce.addEventListener('change', function () {
+      if (!reduce.matches) return;
+      io.disconnect();
+      targets.forEach(function (el) {
+        el.classList.remove('reveal', 'is-visible');
+        ['--reveal-delay', '--reveal-rise', '--reveal-blur'].forEach(function (p) {
+          el.style.removeProperty(p);
+        });
+      });
+    });
+  })();
+  </script>
 </body>
 </html>

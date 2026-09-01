@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<script src="./image-slot.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap">
+<style>
+  body { margin: 0; background: #FBF7F0; }
+  a { color: #5E2A53; text-decoration: underline; text-underline-offset: 3px; }
+  a:hover { color: #171417; }
+  @media (max-width: 760px) {
+    .sllpad { padding-left: 22px !important; padding-right: 22px !important; }
+  }
+</style>
+</helmet>
+
+<div style="font-family: 'EB Garamond', Georgia, serif; color: #2E1A2A; background: #FBF7F0; -webkit-font-smoothing: antialiased;">
+
+  <div style="background: #5E2A53; color: #FBF7F0; font-family: Archivo, sans-serif; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; text-align: center; padding: 11px 20px;">AnnAlchemy™ · Self-Loyalty Lab™</div>
+
+  <!-- BLOCK 1 HERO -->
+  <div class="sllpad" style="padding: 96px 32px 84px; display: flex; justify-content: center;">
+    <div style="width: 100%; max-width: 760px; display: flex; flex-direction: column; align-items: flex-start; gap: 0;">
+      <div style="display: flex; align-items: center; gap: 18px; margin-bottom: 42px;">
+        <svg width="60" height="60" viewBox="0 0 100 100" style="display: block; width: 60px; height: 60px; flex-shrink: 0;" aria-label="Self-Loyalty Lab mirror mark">
+          <ellipse cx="50" cy="46" rx="34" ry="42" fill="none" stroke="#5E2A53" stroke-width="4"></ellipse>
+          <path d="M36 62 V38 L44 47 L50 32 L56 47 L64 38 V62 Z" fill="#5E2A53"></path>
+          <rect x="34" y="66" width="32" height="4" fill="#5E2A53"></rect>
+          <rect x="30" y="90" width="40" height="4" fill="#5E2A53"></rect>
+        </svg>
+        <div style="display: flex; flex-direction: column; gap: 5px;">
+          <div style="font-family: 'Playfair Display', serif; font-weight: 600; font-size: 17px; letter-spacing: 0.16em;">SELF-LOYALTY LAB<span style="font-size: 9px; vertical-align: super; letter-spacing: 0;">™</span></div>
+          <div style="font-family: Archivo, sans-serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #6E5C68;">AnnAlchemy™</div>
+        </div>
+      </div>
+
+      <h1 style="font-family: 'Playfair Display', serif; font-weight: 700; font-style: italic; font-size: 62px; line-height: 1.02; letter-spacing: -0.015em; margin: 0; text-wrap: pretty;">You already know better.<br>You still lose yourself.</h1>
+
+      <p style="font-size: 22px; line-height: 1.55; color: #4A3A46; max-width: 620px; margin: 30px 0 0; text-wrap: pretty;">Self-Loyalty Lab is a set of guides and tools for women who give more than the relationship has earned, and who want to stop without becoming cold.</p>
+
+      <div style="display: flex; flex-wrap: wrap; gap: 14px; margin-top: 40px;">
+        <a href="/self-loyalty-lab/start" style="font-family: Archivo, sans-serif; font-size: 14px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; background: #5E2A53; color: #FBF7F0; padding: 19px 34px;" style-hover="background: #171417;">Find where to start</a>
+        <a href="#products" style="font-family: Archivo, sans-serif; font-size: 14px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; color: #5E2A53; padding: 19px 34px; border: 1px solid #5E2A53;" style-hover="background: #F1E8EE;">See everything inside</a>
+      </div>
+
+      <div style="font-family: Archivo, sans-serif; font-size: 13px; line-height: 1.6; color: #6E5C68; margin-top: 26px;">Written by a Registered Nurse since 2008. Educational material, not therapy.</div>
+    </div>
+  </div>
+
+  <!-- BLOCK 2 RECOGNITION -->
+  <div class="sllpad" style="background: #FFFFFF; border-top: 1px solid #E4D8E1; padding: 88px 32px; display: flex; justify-content: center;">
+    <div style="width: 100%; max-width: 680px;">
+      <div style="font-family: Archivo, sans-serif; font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase; color: #5E2A53;">The recognition</div>
+      <h2 style="font-family: 'Playfair Display', serif; font-weight: 600; font-size: 42px; line-height: 1.12; margin: 16px 0 34px; text-wrap: pretty;">Read this and tell me it is not you</h2>
+      <div style="display: flex; flex-direction: column; gap: 20px; font-size: 21px; line-height: 1.62; color: #3A2A36;">
+        <p style="margin: 0;">You can spot a red flag from a mile away when it is your friend's relationship.</p>
+        <p style="margin: 0;">You give her good advice. Clear advice. Advice she should probably write down.</p>
+        <p style="margin: 0;">Then it is your turn, and something changes.</p>
+        <p style="margin: 0;">You explain a reasonable need until it comes out sounding like an apology.</p>
+        <p style="margin: 0;">You give one more chance, then one more after that.</p>
+        <p style="margin: 0;">You tell yourself he is stressed, he is busy, he is not like that normally.</p>
+        <p style="margin: 0;">You start managing his moods before you have checked your own.</p>
+        <p style="margin: 0;">And later you sit there wondering the only question that actually matters.</p>
+      </div>
+      <div style="margin: 46px 0; padding: 40px 0; border-top: 1px solid #E4D8E1; border-bottom: 1px solid #E4D8E1;">
+        <div style="font-family: 'Playfair Display', serif; font-weight: 600; font-style: italic; font-size: 40px; line-height: 1.18; color: #5E2A53; text-wrap: pretty;">"Why am I like this when I know better?"</div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 20px; font-size: 21px; line-height: 1.62; color: #3A2A36;">
+        <p style="margin: 0;">Here is the honest answer.</p>
+        <p style="margin: 0;">It is not that you lack information. You have plenty.</p>
+        <p style="margin: 0;">It is that your ability to stay loyal to yourself drops the moment you get attached.</p>
+        <p style="margin: 0; font-weight: 500; color: #171417;">That is the pattern this work is built around.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- BLOCK 3 PROBLEM -->
+  <div class="sllpad" style="padding: 88px 32px; display: flex; justify-content: center;">
+    <div style="width: 100%; max-width: 680px;">
+      <div style="font-family: Archivo, sans-serif; font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase; color: #5E2A53;">The problem, named</div>
+      <h2 style="font-family: 'Playfair Display', serif; font-weight: 600; font-size: 42px; line-height: 1.12; margin: 16px 0 34px; text-wrap: pretty;">Most advice fixes the wrong thing</h2>
+      <div style="display: flex; flex-direction: column; gap: 20px; font-size: 21px; line-height: 1.62; color: #3A2A36;">
+        <p style="margin: 0;">The internet keeps telling women to raise their standards.</p>
+        <p style="margin: 0;">But you already have standards. You can list them right now.</p>
+        <p style="margin: 0;">The problem shows up later, when you like him.</p>
+        <p style="margin: 0;">That is when standards turn into suggestions.</p>
+        <p style="margin: 0;">That is when a boundary you were certain about last week becomes something you are willing to discuss.</p>
+        <p style="margin: 0;">Nobody warns you about that part, because it is not a knowledge problem. It is a pressure problem.</p>
+        <p style="margin: 0; font-family: 'Playfair Display', serif; font-style: italic; font-size: 27px; line-height: 1.4; color: #5E2A53;">Attachment applies pressure. Standards bend under it.</p>
+        <p style="margin: 0;">So the work is not learning what a boundary is.</p>
+        <p style="margin: 0; font-weight: 500; color: #171417;">The work is staying on your own side once you are already attached.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- BLOCK 4 FIVE PATHWAYS -->
+  <div class="sllpad" style="background: #171417; color: #FBF7F0; padding: 92px 32px; display: flex; justify-content: center;">
+    <div style="width: 100%; max-width: 860px;">
+      <div style="font-family: Archivo, sans-serif; font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase; color: #C7A5BF;">How this works</div>
+      <h2 style="font-family: 'Playfair Display', serif; font-weight: 600; font-size: 44px; line-height: 1.1; margin: 16px 0 22px; text-wrap: pretty;">Five places self-loyalty tends to break</h2>
+      <p style="font-size: 21px; line-height: 1.6; color: #DCCBD7; max-width: 620px; margin: 0 0 46px;">Every woman who finds this work is standing in one of five places. You are probably in one right now.</p>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1px; background: #3B303A; border: 1px solid #3B303A;">
+        <div style="background: #171417; padding: 32px 28px; display: flex; flex-direction: column; gap: 14px;">
+          <div style="font-family: Archivo, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.2em; color: #C7A5BF;">PROTECT</div>
+          <div style="font-family: 'Playfair Display', serif; font-style: italic; font-size: 23px; line-height: 1.32;">"I know my standards until I like someone."</div>
+        </div>
+        <div style="background: #171417; padding: 32px 28px; display: flex; flex-direction: column; gap: 14px;">
+          <div style="font-family: Archivo, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.2em; color: #C7A5BF;">DECIDE</div>
+          <div style="font-family: 'Playfair Display', serif; font-style: italic; font-size: 23px; line-height: 1.32;">"I do not know whether to stay, wait, or leave."</div>
+        </div>
+        <div style="background: #171417; padding: 32px 28px; display: flex; flex-direction: column; gap: 14px;">
+          <div style="font-family: Archivo, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.2em; color: #C7A5BF;">DETACH</div>
+          <div style="font-family: 'Playfair Display', serif; font-style: italic; font-size: 23px; line-height: 1.32;">"I know I need to let go, but I cannot."</div>
+        </div>
+        <div style="background: #171417; padding: 32px 28px; display: flex; flex-direction: column; gap: 14px;">
+          <div style="font-family: Archivo, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.2em; color: #C7A5BF;">RETURN</div>
+          <div style="font-family: 'Playfair Display', serif; font-style: italic; font-size: 23px; line-height: 1.32;">"I do not know who I am anymore."</div>
+        </div>
+        <div style="background: #171417; padding: 32px 28px; display: flex; flex-direction: column; gap: 14px;">
+          <div style="font-family: Archivo, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.2em; color: #C7A5BF;">CHOOSE DIFFERENTLY</div>
+          <div style="font-family: 'Playfair Display', serif; font-style: italic; font-size: 23px; line-height: 1.32;">"I do not want to do this again."</div>
+        </div>
+      </div>
+
+      <p style="font-size: 22px; line-height: 1.55; margin: 40px 0 0; font-weight: 500;">You do not need all five. You need the one you are standing in.</p>
+
+      <div style="margin-top: 32px;">
+        <a href="/self-loyalty-lab/start" style="display: inline-block; font-family: Archivo, sans-serif; font-size: 14px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; background: #FBF7F0; color: #171417; padding: 19px 34px;" style-hover="background: #C7A5BF;">Take the free Starting Point Assessment</a>
+      </div>
+      <div style="font-family: Archivo, sans-serif; font-size: 13px; line-height: 1.65; color: #A895A4; margin-top: 20px; max-width: 560px;">Fifteen questions. Under five minutes. Nothing is saved, nothing is sent, no email required to see your result.</div>
+    </div>
+  </div>
+
+  <!-- BLOCK 5 DIFFERENT -->
+  <div class="sllpad" style="padding: 88px 32px; display: flex; justify-content: center;">
+    <div style="width: 100%; max-width: 680px;">
+      <div style="font-family: Archivo, sans-serif; font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase; color: #5E2A53;">What makes this different</div>
+      <h2 style="font-family: 'Playfair Display', serif; font-weight: 600; font-size: 42px; line-height: 1.12; margin: 16px 0 34px; text-wrap: pretty;">This will not tell you what to do</h2>
+      <div style="display: flex; flex-direction: column; gap: 20px; font-size: 21px; line-height: 1.62; color: #3A2A36;">
+        <p style="margin: 0;">That is not a limitation. It is the point.</p>
+        <p style="margin: 0;">Anyone can tell you to leave him. Strangers in your comments do it for free.</p>
+        <p style="margin: 0;">What almost nobody does is help you get clear enough to make the call yourself and still trust yourself afterwards.</p>
+        <p style="margin: 0;">So the material does three things instead.</p>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 0; margin: 38px 0; border-top: 1px solid #E4D8E1;">
+        <div style="display: flex; gap: 24px; padding: 26px 0; border-bottom: 1px solid #E4D8E1;">
+          <div style="font-family: Archivo, sans-serif; font-size: 12px; font-weight: 700; color: #5E2A53; padding-top: 8px; flex-shrink: 0;">01</div>
+          <div style="font-size: 20px; line-height: 1.55; color: #3A2A36;">It explains why your brain does this, so you stop reading your own behaviour as a character flaw.</div>
+        </div>
+        <div style="display: flex; gap: 24px; padding: 26px 0; border-bottom: 1px solid #E4D8E1;">
+          <div style="font-family: Archivo, sans-serif; font-size: 12px; font-weight: 700; color: #5E2A53; padding-top: 8px; flex-shrink: 0;">02</div>
+          <div style="font-size: 20px; line-height: 1.55; color: #3A2A36;">It separates what you feel from what has actually been demonstrated, so you can see the relationship and not just the hope.</div>
+        </div>
+        <div style="display: flex; gap: 24px; padding: 26px 0; border-bottom: 1px solid #E4D8E1;">
+          <div style="font-family: Archivo, sans-serif; font-size: 12px; font-weight: 700; color: #5E2A53; padding-top: 8px; flex-shrink: 0;">03</div>
+          <div style="font-size: 20px; line-height: 1.55; color: #3A2A36;">It gives you small, doable practices, because insight without practice is just a nice evening of reading.</div>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 20px; font-size: 21px; line-height: 1.62; color: #3A2A36;">
+        <p style="margin: 0;">You are not being handed another reminder to choose yourself.</p>
+        <p style="margin: 0; font-weight: 500; color: #171417;">You are being handed the part that comes after you have decided to.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- BLOCK 6 PROOF -->
+  <div class="sllpad" style="background: #FFFFFF; border-top: 1px solid #E4D8E1; padding: 88px 32px; display: flex; justify-content: center;">
+    <div style="width: 100%; max-width: 900px;">
+      <div style="font-family: Archivo, sans-serif; font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase; color: #5E2A53;">Proof</div>
+      <h2 style="font-family: 'Playfair Display', serif; font-weight: 600; font-size: 42px; line-height: 1.12; margin: 16px 0 44px;">From women who bought it</h2>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 28px;">
+        <div style="border-top: 2px solid #5E2A53; padding-top: 22px; display: flex; flex-direction: column; gap: 16px;">
+          <div style="font-size: 19px; line-height: 1.58; color: #3A2A36;">"I would tell a friend that this guide doesn't tell you what decision to make. It helps you think more clearly and put yourself first. It asks thoughtful questions that made me reflect on my own feelings and self-worth."</div>
+          <div style="font-family: Archivo, sans-serif; font-size: 12px; letter-spacing: 0.05em; color: #6E5C68;"><span style="font-weight: 700; color: #171417;">Cassey B.</span> · Self-Return Guide · verified buyer</div>
+        </div>
+        <div style="border-top: 2px solid #5E2A53; padding-top: 22px; display: flex; flex-direction: column; gap: 16px;">
+          <div style="font-size: 19px; line-height: 1.58; color: #3A2A36;">"One of my favorite parts was how you began by explaining the science behind why it's so difficult to let go. Understanding how our brain forms attachments and why those connections are so powerful gave so much compassion to the healing process. It made the rest of the book feel grounded rather than simply motivational."</div>
+          <div style="font-family: Archivo, sans-serif; font-size: 12px; letter-spacing: 0.05em; color: #6E5C68;"><span style="font-weight: 700; color: #171417;">Justinne T.</span> · Self-Return Guide · verified buyer</div>
+        </div>
+        <div style="border-top: 2px solid #5E2A53; padding-top: 22px; display: flex; flex-direction: column; gap: 16px;">
+          <div style="font-size: 19px; line-height: 1.58; color: #3A2A36;">"At first, reading it might feel uncomfortable because it directly points out the reality you've been trying to avoid. But once you digest it, it gives you so much clarity and permission to stop over-functioning and blaming yourself for missing someone."</div>
+          <div style="font-family: Archivo, sans-serif; font-size: 12px; letter-spacing: 0.05em; color: #6E5C68;">Verified buyer · Self-Return Guide</div>
+        </div>
+        <div style="border-top: 2px solid #5E2A53; padding-top: 22px; display: flex; flex-direction: column; gap: 16px;">
+          <div style="font-size: 19px; line-height: 1.58; color: #3A2A36;">"Reading this really helped enlighten me and made me reflect on how I should show up in this new relationship. I was already aware of these things before, but because I was so attracted to him and so in love, I found myself losing sight of them."</div>
+          <div style="font-family: Archivo, sans-serif; font-size: 12px; letter-spacing: 0.05em; color: #6E5C68;">Verified buyer · Boyfriend Boundary Guide</div>
+        </div>
+        <div style="border-top: 2px solid #5E2A53; padding-top: 22px; display: flex; flex-direction: column; gap: 16px;">
+          <div style="font-size: 19px; line-height: 1.58; color: #3A2A36;">"It's truly an eye-opener for women. It gives us direction on how to choose the right partner without compromising our self-worth."</div>
+          <div style="font-family: Archivo, sans-serif; font-size: 12px; letter-spacing: 0.05em; color: #6E5C68;">Verified buyer · Boyfriend Boundary Guide</div>
+        </div>
+        <div style="border-top: 2px solid #5E2A53; padding-top: 22px; display: flex; flex-direction: column; gap: 16px;">
+          <div style="font-size: 19px; line-height: 1.58; color: #3A2A36;">"I realized that feeling that way doesn't always mean the relationship is still right for me. Sometimes, it just means that a strong bond was formed. And just because there was a bond, doesn't mean it's still something worth returning to."</div>
+          <div style="font-family: Archivo, sans-serif; font-size: 12px; letter-spacing: 0.05em; color: #6E5C68;">Verified buyer · Self-Return Guide</div>
+        </div>
+      </div>
+
+      <div style="font-family: Archivo, sans-serif; font-size: 13px; color: #6E5C68; margin-top: 34px;">Reviews are from verified Payhip purchases and are shared with permission.</div>
+    </div>
+  </div>
+
+  <!-- BLOCK 7 WHICH ONE -->
+  <div class="sllpad" style="padding: 88px 32px; display: flex; justify-content: center;">
+    <div style="width: 100%; max-width: 860px;">
+      <div style="font-family: Archivo, sans-serif; font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase; color: #5E2A53;">Which one is for me</div>
+      <h2 style="font-family: 'Playfair Display', serif; font-weight: 600; font-size: 42px; line-height: 1.12; margin: 16px 0 40px;">Two guides. One question tells you which.</h2>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 28px;">
+        <div style="background: #FFFFFF; border: 1px solid #E4D8E1; padding: 34px 30px; display: flex; flex-direction: column; gap: 16px;">
+          <div style="font-family: 'Playfair Display', serif; font-weight: 600; font-size: 26px; line-height: 1.2;">The Boyfriend Boundary Guide</div>
+          <div style="font-size: 19px; line-height: 1.58; color: #3A2A36;">For the woman who still knows what she wants and can say it out loud. She just feels herself starting to bend.</div>
+        </div>
+        <div style="background: #FFFFFF; border: 1px solid #E4D8E1; padding: 34px 30px; display: flex; flex-direction: column; gap: 16px;">
+          <div style="font-family: 'Playfair Display', serif; font-weight: 600; font-size: 26px; line-height: 1.2;">The Self-Return Guide</div>
+          <div style="font-size: 19px; line-height: 1.58; color: #3A2A36;">For the woman who has bent so many times she is no longer sure what she wants.</div>
+        </div>
+      </div>
+
+      <div style="font-family: 'Playfair Display', serif; font-weight: 600; font-style: italic; font-size: 34px; line-height: 1.25; color: #5E2A53; margin-top: 44px; max-width: 620px; text-wrap: pretty;">If you do not know which one, that is usually the second one.</div>
+    </div>
+  </div>
+
+  <!-- BLOCK 8 PRODUCTS -->
+  <div id="products" class="sllpad" style="background: #FFFFFF; border-top: 1px solid #E4D8E1; padding: 88px 32px; display: flex; justify-content: center;">
+    <div style="width: 100%; max-width: 900px;">
+      <div style="font-family: Archivo, sans-serif; font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase; color: #5E2A53;">The products</div>
+      <h2 style="font-family: 'Playfair Display', serif; font-weight: 600; font-size: 42px; line-height: 1.12; margin: 16px 0 46px;">Everything available right now</h2>
+
+      <div style="display: flex; flex-direction: column; gap: 26px;">
+
+        <div id="bbg" style="border: 1px solid #5E2A53; padding: 40px 36px; display: flex; flex-direction: column; gap: 22px; scroll-margin-top: 24px;">
+          <div style="display: flex; flex-direction: column; gap: 10px;">
+            <div style="font-family: 'Playfair Display', serif; font-weight: 600; font-size: 32px; line-height: 1.15;">The Boyfriend Boundary Guide</div>
+            <div style="font-family: Archivo, sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #5E2A53;">Pathways · Protect and Choose Differently</div>
+          </div>
+          <div style="font-size: 20px; line-height: 1.58; color: #3A2A36;">For dating, talking stage, situationships, and new relationships. This is the one for when the attachment is starting and you can feel yourself handing over more than has been earned.</div>
+          <div style="font-size: 19px; line-height: 1.58; color: #4A3A46; padding-left: 20px; border-left: 2px solid #E4D8E1;">Inside: how to tell what has actually been demonstrated versus what you are hoping for, how much access matches how much commitment, what is reasonable to give at each stage, and worked-through scenarios so it is not just theory.</div>
+          <div style="display: flex; flex-direction: column; gap: 9px; font-family: Archivo, sans-serif; font-size: 14px; line-height: 1.5; color: #3A2A36; border-top: 1px solid #E4D8E1; padding-top: 22px;">
+            <div><span style="font-weight: 700;">English edition</span> — $29 or ₱1,699</div>
+            <div><span style="font-weight: 700;">Taglish edition</span> — $19 or ₱1,099</div>
+            <div style="color: #6E5C68;">Includes 1 month of the Self-Return Assistant</div>
+            <div style="color: #6E5C68;">Personalised, watermarked PDF</div>
+            <div style="color: #6E5C68;">Free preview available before you buy</div>
+          </div>
+          <div style="display: flex; flex-wrap: wrap; gap: 12px;">
+            <a href="#" style="font-family: Archivo, sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.09em; text-transform: uppercase; text-decoration: none; background: #5E2A53; color: #FBF7F0; padding: 17px 28px;" style-hover="background: #171417;">Get it in English — $29</a>
+            <a href="#" style="font-family: Archivo, sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.09em; text-transform: uppercase; text-decoration: none; color: #5E2A53; border: 1px solid #5E2A53; padding: 17px 28px;" style-hover="background: #F1E8EE;">Get it in Taglish — $19</a>
+          </div>
+        </div>
+
+        <div id="srg" style="border: 1px solid #5E2A53; padding: 40px 36px; display: flex; flex-direction: column; gap: 22px; scroll-margin-top: 24px;">
+          <div style="display: flex; flex-direction: column; gap: 10px;">
+            <div style="font-family: 'Playfair Display', serif; font-weight: 600; font-size: 32px; line-height: 1.15;">The Self-Return Guide</div>
+            <div style="font-family: Archivo, sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #5E2A53;">Pathways · Detach, Decide and Return</div>
+          </div>
+          <div style="font-size: 20px; line-height: 1.58; color: #3A2A36;">For when you already know something is wrong and still cannot pull away. Also for after, when the relationship has ended and you are trying to work out how much of yourself is missing.</div>
+          <div style="font-size: 19px; line-height: 1.58; color: #4A3A46; padding-left: 20px; border-left: 2px solid #E4D8E1;">Inside: the science of why letting go is physically hard, how to clear attachment fog before you make any decision, why on and off cycles are the hardest to leave, how to separate the bond you feel from an honest read of whether he is right for you, and small practices for coming back to yourself.</div>
+          <div style="display: flex; flex-direction: column; gap: 9px; font-family: Archivo, sans-serif; font-size: 14px; line-height: 1.5; color: #3A2A36; border-top: 1px solid #E4D8E1; padding-top: 22px;">
+            <div><span style="font-weight: 700;">English edition</span> — $39 or ₱2,299</div>
+            <div><span style="font-weight: 700;">Taglish edition</span> — $29 or ₱1,499</div>
+            <div style="color: #6E5C68;">Includes 2 months of the Self-Return Assistant</div>
+            <div style="color: #6E5C68;">Personalised, watermarked PDF</div>
+            <div style="color: #6E5C68;">Free preview available before you buy</div>
+          </div>
+          <div style="display: flex; flex-wrap: wrap; gap: 12px;">
+            <a href="#" style="font-family: Archivo, sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.09em; text-transform: uppercase; text-decoration: none; background: #5E2A53; color: #FBF7F0; padding: 17px 28px;" style-hover="background: #171417;">Get it in English — $39</a>
+            <a href="#" style="font-family: Archivo, sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.09em; text-transform: uppercase; text-decoration: none; color: #5E2A53; border: 1px solid #5E2A53; padding: 17px 28px;" style-hover="background: #F1E8EE;">Get it in Taglish — $29</a>
+          </div>
+        </div>
+
+        <div id="workbook" style="border: 1px solid #E4D8E1; padding: 40px 36px; display: flex; flex-direction: column; gap: 22px; scroll-margin-top: 24px;">
+          <div style="display: flex; flex-direction: column; gap: 10px;">
+            <div style="font-family: 'Playfair Display', serif; font-weight: 600; font-size: 32px; line-height: 1.15;">The Self-Return Workbook</div>
+            <div style="font-family: Archivo, sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #5E2A53;">Pathway · Return</div>
+          </div>
+          <div style="font-size: 20px; line-height: 1.58; color: #3A2A36;">The doing version. Eight weeks of structured practice, about fifteen minutes a day.</div>
+          <div style="font-size: 19px; line-height: 1.58; color: #4A3A46; padding-left: 20px; border-left: 2px solid #E4D8E1;">Inside: the 36-item Over-Giving Pattern Assessment, the Give and Receive Ledger, and eight weeks of guided practices. Week 8 asks you to retake the assessment and compare it against Week 1, so you can see movement instead of guessing at it.</div>
+          <div style="display: flex; flex-direction: column; gap: 9px; font-family: Archivo, sans-serif; font-size: 14px; line-height: 1.5; color: #3A2A36; border-top: 1px solid #E4D8E1; padding-top: 22px;">
+            <div><span style="font-weight: 700;">English only</span> — $49 or ₱2,799</div>
+            <div style="color: #6E5C68;">Includes 2 months of the Self-Return Assistant</div>
+            <div style="color: #6E5C68;">Personalised, watermarked PDF</div>
+          </div>
+          <div><a href="#" style="display: inline-block; font-family: Archivo, sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.09em; text-transform: uppercase; text-decoration: none; background: #5E2A53; color: #FBF7F0; padding: 17px 28px;" style-hover="background: #171417;">Get the Self-Return Workbook</a></div>
+        </div>
+
+        <div id="assistant" style="border: 1px solid #E4D8E1; padding: 40px 36px; display: flex; flex-direction: column; gap: 22px; scroll-margin-top: 24px;">
+          <div style="display: flex; flex-direction: column; gap: 10px;">
+            <div style="font-family: 'Playfair Display', serif; font-weight: 600; font-size: 32px; line-height: 1.15;">The Self-Return Assistant</div>
+            <div style="font-family: Archivo, sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #5E2A53;">Support alongside any pathway</div>
+          </div>
+          <div style="font-size: 20px; line-height: 1.58; color: #3A2A36;">An AI assistant trained only on this material. Ask it about your own situation and get answers grounded in the guides rather than in whatever the internet is saying this week.</div>
+          <div style="font-size: 19px; line-height: 1.58; color: #4A3A46; padding-left: 20px; border-left: 2px solid #E4D8E1;">It does not diagnose, it does not tell you to leave, and it does not replace a therapist.</div>
+          <div style="display: flex; flex-direction: column; gap: 9px; font-family: Archivo, sans-serif; font-size: 14px; line-height: 1.5; color: #3A2A36; border-top: 1px solid #E4D8E1; padding-top: 22px;">
+            <div><span style="font-weight: 700;">3-month pass</span> — $17.99 or ₱999</div>
+            <div style="color: #6E5C68;">Comes free with every guide and workbook purchase</div>
+            <div style="color: #6E5C68;">Available to buyers only</div>
+          </div>
+          <div><a href="#" style="display: inline-block; font-family: Archivo, sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.09em; text-transform: uppercase; text-decoration: none; color: #5E2A53; border: 1px solid #5E2A53; padding: 17px 28px;" style-hover="background: #F1E8EE;">Get a 3-month pass</a></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- BLOCK 9 SYSTEM -->
+  <div id="system" class="sllpad" style="background: #5E2A53; color: #FBF7F0; padding: 92px 32px; display: flex; justify-content: center; scroll-margin-top: 24px;">
+    <div style="width: 100%; max-width: 860px;">
+      <div style="font-family: Archivo, sans-serif; font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase; color: #DEC3D8;">The system</div>
+      <h2 style="font-family: 'Playfair Display', serif; font-weight: 700; font-style: italic; font-size: 50px; line-height: 1.06; margin: 16px 0 24px;">The Self-Loyalty Lab System</h2>
+      <p style="font-size: 22px; line-height: 1.55; color: #F0E3EC; max-width: 640px; margin: 0;">Everything above, together. Because most women do not stay in one pathway. She protects, then she has to decide, then she has to detach, then she has to return. Buying them one at a time as each stage arrives costs more and leaves gaps.</p>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-top: 48px; align-items: start;">
+        <div style="display: flex; flex-direction: column; gap: 14px;">
+          <div style="font-family: Archivo, sans-serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #DEC3D8; padding-bottom: 8px; border-bottom: 1px solid #7E4A73;">What is included</div>
+          <div style="display: flex; flex-direction: column; gap: 11px; font-size: 18px; line-height: 1.5; color: #F0E3EC;">
+            <div>The Boyfriend Boundary Guide, English and Taglish</div>
+            <div>The Self-Return Guide, English and Taglish</div>
+            <div>The Self-Return Workbook</div>
+            <div>3 months of the Self-Return Assistant</div>
+            <div>All five pathways covered</div>
+            <div>New tools added to the library later come to you at no extra cost</div>
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 14px;">
+          <div style="font-family: Archivo, sans-serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #DEC3D8; padding-bottom: 8px; border-bottom: 1px solid #7E4A73;">Price</div>
+          <div style="font-family: 'Playfair Display', serif; font-weight: 600; font-size: 52px; line-height: 1;">$111<span style="font-size: 26px; color: #DEC3D8;"> or ₱6,999</span></div>
+          <div style="font-family: Archivo, sans-serif; font-size: 14px; color: #DEC3D8;">Buying separately: $153.99 or ₱9,394</div>
+          <div style="margin-top: 14px;"><a href="#" style="display: inline-block; font-family: Archivo, sans-serif; font-size: 14px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; background: #FBF7F0; color: #5E2A53; padding: 19px 34px;" style-hover="background: #DEC3D8;">Get the Self-Loyalty Lab System</a></div>
+          <div style="font-family: Archivo, sans-serif; font-size: 13px; color: #DEC3D8;">Covered by the eight-week promise below.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BLOCK 10 OBJECTIONS -->
+  <div class="sllpad" style="padding: 88px 32px; display: flex; justify-content: center;">
+    <div style="width: 100%; max-width: 720px;">
+      <div style="font-family: Archivo, sans-serif; font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase; color: #5E2A53;">Objections</div>
+      <h2 style="font-family: 'Playfair Display', serif; font-weight: 600; font-size: 42px; line-height: 1.12; margin: 16px 0 44px; text-wrap: pretty;">The questions women actually ask before buying</h2>
+
+      <div style="display: flex; flex-direction: column; gap: 0; border-top: 1px solid #E4D8E1;">
+        <div style="padding: 32px 0; border-bottom: 1px solid #E4D8E1; display: flex; flex-direction: column; gap: 16px;">
+          <div style="font-family: 'Playfair Display', serif; font-weight: 600; font-style: italic; font-size: 27px; line-height: 1.28; color: #5E2A53;">"What if this confirms what I already know?"</div>
+          <p style="margin: 0; font-size: 20px; line-height: 1.6; color: #3A2A36;">It might. That is the fear underneath most of the hesitation here, and it deserves a straight answer instead of reassurance.</p>
+          <p style="margin: 0; font-size: 20px; line-height: 1.6; color: #3A2A36;">But nothing in this material tells you to leave. It is built specifically not to. What it does is help you see the situation without the fog, and then you decide, on your timeline. Seeing something clearly is not the same as being forced to act on it.</p>
+          <p style="margin: 0; font-size: 20px; line-height: 1.6; color: #3A2A36;">And the thing you are avoiding does not go away while you avoid it. It just costs more later.</p>
+        </div>
+        <div style="padding: 32px 0; border-bottom: 1px solid #E4D8E1; display: flex; flex-direction: column; gap: 16px;">
+          <div style="font-family: 'Playfair Display', serif; font-weight: 600; font-style: italic; font-size: 27px; line-height: 1.28; color: #5E2A53;">"I have bought books before and nothing changed."</div>
+          <p style="margin: 0; font-size: 20px; line-height: 1.6; color: #3A2A36;">Fair. Most relationship books are motivational. You feel something for two days and then it fades, because feeling inspired is not a skill.</p>
+          <p style="margin: 0; font-size: 20px; line-height: 1.6; color: #3A2A36;">This is built the other way round. The guides explain the mechanism, then give you practice. The workbook is eight weeks of doing, not reading. And Week 8 makes you compare your own numbers against Week 1, so you are not relying on a vibe to know whether anything shifted.</p>
+        </div>
+        <div style="padding: 32px 0; border-bottom: 1px solid #E4D8E1; display: flex; flex-direction: column; gap: 16px;">
+          <div style="font-family: 'Playfair Display', serif; font-weight: 600; font-style: italic; font-size: 27px; line-height: 1.28; color: #5E2A53;">"A guide cannot understand my situation."</div>
+          <p style="margin: 0; font-size: 20px; line-height: 1.6; color: #3A2A36;">Correct. It cannot. No book can.</p>
+          <p style="margin: 0; font-size: 20px; line-height: 1.6; color: #3A2A36;">What it can do is describe the pattern accurately enough that you recognise your own situation inside it, then hand you the questions to ask about your specific version. If you want something closer to a conversation, the Self-Return Assistant is included and can respond to your actual details.</p>
+        </div>
+        <div style="padding: 32px 0; border-bottom: 1px solid #E4D8E1; display: flex; flex-direction: column; gap: 16px;">
+          <div style="font-family: 'Playfair Display', serif; font-weight: 600; font-style: italic; font-size: 27px; line-height: 1.28; color: #5E2A53;">"I do not want to become cold."</div>
+          <p style="margin: 0; font-size: 20px; line-height: 1.6; color: #3A2A36;">Then you are in the right place, because nothing here asks you to.</p>
+          <p style="margin: 0; font-size: 20px; line-height: 1.6; color: #3A2A36;">This is not detachment training. It is not hyper-independence. It is not go no-contact and post about your glow up. The whole point is staying warm and generous while also staying loyal to yourself. Soft heart, strong self. Those are not opposites.</p>
+        </div>
+        <div style="padding: 32px 0; border-bottom: 1px solid #E4D8E1; display: flex; flex-direction: column; gap: 16px;">
+          <div style="font-family: 'Playfair Display', serif; font-weight: 600; font-style: italic; font-size: 27px; line-height: 1.28; color: #5E2A53;">"Maybe I am actually the problem."</div>
+          <p style="margin: 0; font-size: 20px; line-height: 1.6; color: #3A2A36;">Patterns are usually learned somewhere, often long before the current relationship. Learned is not the same as broken, and understanding where something came from is not the same as excusing it.</p>
+          <p style="margin: 0; font-size: 20px; line-height: 1.6; color: #3A2A36;">You will not be blamed in this material. You also will not be told the pattern is not yours to work with. Both of those would be lies.</p>
+        </div>
+        <div style="padding: 32px 0; border-bottom: 1px solid #E4D8E1; display: flex; flex-direction: column; gap: 16px;">
+          <div style="font-family: 'Playfair Display', serif; font-weight: 600; font-style: italic; font-size: 27px; line-height: 1.28; color: #5E2A53;">"Is this therapy?"</div>
+          <p style="margin: 0; font-size: 20px; line-height: 1.6; color: #3A2A36;">No, and it does not replace it. Anna is a Registered Nurse and an educator, not a therapist. This is educational material. If you are in danger, or if what comes up is more than you can hold, the support section at the bottom of this page is there for exactly that.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BLOCK 11 ABOUT -->
+  <div class="sllpad" style="background: #FFFFFF; border-top: 1px solid #E4D8E1; padding: 88px 32px; display: flex; justify-content: center;">
+    <div style="width: 100%; max-width: 900px;">
+      <div style="font-family: Archivo, sans-serif; font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase; color: #5E2A53;">About Anna</div>
+      <h2 style="font-family: 'Playfair Display', serif; font-weight: 600; font-size: 42px; line-height: 1.12; margin: 16px 0 40px;">Who wrote this</h2>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 44px; align-items: start;">
+        <div>
+          <image-slot id="anna-portrait" shape="rect" placeholder="Portrait of Anna Cadano RN — upright, warm, plain background" style="display: block; width: 100%; aspect-ratio: 4 / 5;"></image-slot>
+          <div style="font-family: Archivo, sans-serif; font-size: 12px; letter-spacing: 0.06em; color: #6E5C68; margin-top: 12px;">Anna Cadano, RN · Founder, AnnAlchemy™</div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 18px; font-size: 20px; line-height: 1.6; color: #3A2A36;">
+          <p style="margin: 0;">Anna Cadano has been a Registered Nurse since 2008. Her background is clinical research, pharmacovigilance, hospital practice, medical data review, and medical coding.</p>
+          <p style="margin: 0;">That work trains you to do one specific thing. You stop looking at the symptom in front of you and start looking for the pattern behind it. You ask what the evidence actually supports, not what everyone assumes.</p>
+          <p style="margin: 0;">She spent years watching capable women disappear inside relationships they over-gave to. It was rarely dramatic. One boundary moved. One preference swallowed. One need made smaller. One more chance. One more thing carried. Until the woman could not find herself in her own life.</p>
+          <p style="margin: 0;">Self-Loyalty Lab applies the pattern-first way of thinking to that.</p>
+          <p style="margin: 0;">The aim is not to blame women for something most of them were taught. It is to make the pattern visible enough to interrupt.</p>
+          <p style="margin: 0;">And it goes past the individual woman. When adults get better at choosing, relating, and parenting without repeating what they inherited, what gets handed to the next generation can change too.</p>
+          <div style="font-family: 'Playfair Display', serif; font-weight: 600; font-style: italic; font-size: 32px; line-height: 1.25; color: #5E2A53; margin-top: 12px; padding-top: 26px; border-top: 1px solid #E4D8E1;">Gentle to women. Sharp to the pattern.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BLOCK 12 PRICING -->
+  <div class="sllpad" style="padding: 88px 32px; display: flex; justify-content: center;">
+    <div style="width: 100%; max-width: 860px;">
+      <div style="font-family: Archivo, sans-serif; font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase; color: #5E2A53;">Pricing</div>
+      <h2 style="font-family: 'Playfair Display', serif; font-weight: 600; font-size: 42px; line-height: 1.12; margin: 16px 0 36px;">Prices</h2>
+
+      <div style="overflow-x: auto;">
+        <table style="width: 100%; border-collapse: collapse; font-family: Archivo, sans-serif; font-size: 15px; min-width: 520px;">
+          <thead>
+            <tr>
+              <th style="text-align: left; font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #6E5C68; padding: 0 16px 14px 0; border-bottom: 1px solid #5E2A53;">Product</th>
+              <th style="text-align: right; font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #6E5C68; padding: 0 16px 14px; border-bottom: 1px solid #5E2A53;">USD</th>
+              <th style="text-align: right; font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #6E5C68; padding: 0 16px 14px; border-bottom: 1px solid #5E2A53;">PHP</th>
+              <th style="text-align: right; font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #6E5C68; padding: 0 0 14px 16px; border-bottom: 1px solid #5E2A53;">Assistant</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="padding: 16px 16px 16px 0; border-bottom: 1px solid #E4D8E1; color: #2E1A2A;">Boyfriend Boundary Guide, Taglish</td>
+              <td style="padding: 16px; border-bottom: 1px solid #E4D8E1; text-align: right;">$19</td>
+              <td style="padding: 16px; border-bottom: 1px solid #E4D8E1; text-align: right;">₱1,099</td>
+              <td style="padding: 16px 0 16px 16px; border-bottom: 1px solid #E4D8E1; text-align: right; color: #6E5C68;">1 month</td>
+            </tr>
+            <tr>
+              <td style="padding: 16px 16px 16px 0; border-bottom: 1px solid #E4D8E1; color: #2E1A2A;">Boyfriend Boundary Guide, English</td>
+              <td style="padding: 16px; border-bottom: 1px solid #E4D8E1; text-align: right;">$29</td>
+              <td style="padding: 16px; border-bottom: 1px solid #E4D8E1; text-align: right;">₱1,699</td>
+              <td style="padding: 16px 0 16px 16px; border-bottom: 1px solid #E4D8E1; text-align: right; color: #6E5C68;">1 month</td>
+            </tr>
+            <tr>
+              <td style="padding: 16px 16px 16px 0; border-bottom: 1px solid #E4D8E1; color: #2E1A2A;">Self-Return Guide, Taglish</td>
+              <td style="padding: 16px; border-bottom: 1px solid #E4D8E1; text-align: right;">$29</td>
+              <td style="padding: 16px; border-bottom: 1px solid #E4D8E1; text-align: right;">₱1,499</td>
+              <td style="padding: 16px 0 16px 16px; border-bottom: 1px solid #E4D8E1; text-align: right; color: #6E5C68;">2 months</td>
+            </tr>
+            <tr>
+              <td style="padding: 16px 16px 16px 0; border-bottom: 1px solid #E4D8E1; color: #2E1A2A;">Self-Return Guide, English</td>
+              <td style="padding: 16px; border-bottom: 1px solid #E4D8E1; text-align: right;">$39</td>
+              <td style="padding: 16px; border-bottom: 1px solid #E4D8E1; text-align: right;">₱2,299</td>
+              <td style="padding: 16px 0 16px 16px; border-bottom: 1px solid #E4D8E1; text-align: right; color: #6E5C68;">2 months</td>
+            </tr>
+            <tr>
+              <td style="padding: 16px 16px 16px 0; border-bottom: 1px solid #E4D8E1; color: #2E1A2A;">Self-Return Workbook, English</td>
+              <td style="padding: 16px; border-bottom: 1px solid #E4D8E1; text-align: right;">$49</td>
+              <td style="padding: 16px; border-bottom: 1px solid #E4D8E1; text-align: right;">₱2,799</td>
+              <td style="padding: 16px 0 16px 16px; border-bottom: 1px solid #E4D8E1; text-align: right; color: #6E5C68;">2 months</td>
+            </tr>
+            <tr>
+              <td style="padding: 16px 16px 16px 0; border-bottom: 1px solid #E4D8E1; color: #2E1A2A;">Self-Return Assistant, 3-month pass</td>
+              <td style="padding: 16px; border-bottom: 1px solid #E4D8E1; text-align: right;">$17.99</td>
+              <td style="padding: 16px; border-bottom: 1px solid #E4D8E1; text-align: right;">₱999</td>
+              <td style="padding: 16px 0 16px 16px; border-bottom: 1px solid #E4D8E1; text-align: right; color: #6E5C68;">—</td>
+            </tr>
+            <tr>
+              <td style="padding: 20px 16px 20px 0; border-bottom: 2px solid #5E2A53; font-weight: 700; color: #5E2A53;">The Self-Loyalty Lab System</td>
+              <td style="padding: 20px 16px; border-bottom: 2px solid #5E2A53; text-align: right; font-weight: 700; color: #5E2A53;">$111</td>
+              <td style="padding: 20px 16px; border-bottom: 2px solid #5E2A53; text-align: right; font-weight: 700; color: #5E2A53;">₱6,999</td>
+              <td style="padding: 20px 0 20px 16px; border-bottom: 2px solid #5E2A53; text-align: right; font-weight: 700; color: #5E2A53;">3 months</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div style="font-family: Archivo, sans-serif; font-size: 13px; color: #6E5C68; margin-top: 20px;">Every guide and workbook is delivered as a personalised, watermarked PDF.</div>
+    </div>
+  </div>
+
+  <!-- BLOCK 13 PAY + BLOCK 14 REFUNDS -->
+  <div class="sllpad" style="background: #FFFFFF; border-top: 1px solid #E4D8E1; padding: 88px 32px; display: flex; justify-content: center;">
+    <div style="width: 100%; max-width: 900px; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 56px; align-items: start;">
+
+      <div>
+        <div style="font-family: Archivo, sans-serif; font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase; color: #5E2A53;">How to pay</div>
+        <h2 style="font-family: 'Playfair Display', serif; font-weight: 600; font-size: 34px; line-height: 1.15; margin: 14px 0 28px;">Paying from the Philippines</h2>
+
+        <div style="font-family: Archivo, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #5E2A53; margin-bottom: 10px;">Card or PayPal</div>
+        <p style="margin: 0 0 30px; font-size: 19px; line-height: 1.58; color: #3A2A36;">Use the buttons above. Delivery is automatic.</p>
+
+        <div style="font-family: Archivo, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #5E2A53; margin-bottom: 10px;">GCash</div>
+        <p style="margin: 0 0 18px; font-size: 19px; line-height: 1.58; color: #3A2A36;">Open GCash and choose Send Money, then Bank Transfer.</p>
+        <div style="background: #FBF7F0; border: 1px solid #E4D8E1; padding: 22px 24px; display: flex; flex-direction: column; gap: 12px; font-family: Archivo, sans-serif; font-size: 14px; line-height: 1.4;">
+          <div style="display: flex; flex-direction: column; gap: 3px;"><span style="font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: #6E5C68;">Bank</span><span style="color: #171417;">Union Bank of the Philippines</span></div>
+          <div style="display: flex; flex-direction: column; gap: 3px;"><span style="font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: #6E5C68;">Account name</span><span style="color: #171417;">Anna Margarita Cadano</span></div>
+          <div style="display: flex; flex-direction: column; gap: 3px;"><span style="font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: #6E5C68;">Account number</span><span style="font-weight: 700; font-size: 19px; letter-spacing: 0.04em; color: #171417;">109672770015</span></div>
+        </div>
+        <p style="margin: 20px 0 12px; font-size: 19px; line-height: 1.58; color: #3A2A36;">Then message with three things:</p>
+        <div style="display: flex; flex-direction: column; gap: 10px; font-size: 18px; line-height: 1.5; color: #3A2A36;">
+          <div style="display: flex; gap: 14px;"><span style="font-family: Archivo, sans-serif; font-size: 12px; font-weight: 700; color: #5E2A53; padding-top: 5px;">1</span><span>A screenshot of the transfer</span></div>
+          <div style="display: flex; gap: 14px;"><span style="font-family: Archivo, sans-serif; font-size: 12px; font-weight: 700; color: #5E2A53; padding-top: 5px;">2</span><span>Your full name exactly as you want it printed on the watermark</span></div>
+          <div style="display: flex; gap: 14px;"><span style="font-family: Archivo, sans-serif; font-size: 12px; font-weight: 700; color: #5E2A53; padding-top: 5px;">3</span><span>Your email address</span></div>
+        </div>
+        <p style="margin: 22px 0 0; font-family: Archivo, sans-serif; font-size: 13px; line-height: 1.65; color: #6E5C68;">Payments are checked twice a day, Manila time, between 8AM and 12PM and between 1PM and 10PM. Your copy is emailed within 24 hours of the next check.</p>
+      </div>
+
+      <div>
+        <div style="font-family: Archivo, sans-serif; font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase; color: #5E2A53;">Refunds</div>
+        <h2 style="font-family: 'Playfair Display', serif; font-weight: 600; font-size: 34px; line-height: 1.15; margin: 14px 0 28px;">Refunds</h2>
+
+        <div style="font-family: Archivo, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #5E2A53; margin-bottom: 12px;">For the guides</div>
+        <div style="display: flex; flex-direction: column; gap: 14px; font-size: 18px; line-height: 1.58; color: #3A2A36;">
+          <p style="margin: 0;">If you read it properly and it genuinely does not help you, email me at <a href="mailto:hello@annalchemy.org">hello@annalchemy.org</a> within 30 days and tell me what did not land. I will refund you, and I will use what you tell me to make the guide better.</p>
+          <p style="margin: 0;">I ask for one thing only: tell me honestly what did not work. Not a form, not proof, not a reason you have to justify. Just the truth, because that is worth more to me than the money.</p>
+          <p style="margin: 0;">One refund per person. If I have refunded you, further purchases are final.</p>
+          <p style="margin: 0;">If I refund you, your access is withdrawn and your copy is no longer licensed to you. Your name is on every page, so a refunded copy in circulation is traceable to the order it came from.</p>
+          <p style="margin: 0;">If something goes wrong on my side, that is separate and always fixable. If your copy did not arrive, will not open, is the wrong guide or edition, or you were charged twice, email me and I will sort it out.</p>
+          <p style="margin: 0;">There is also a free preview, so you can see exactly what you are getting before you spend anything.</p>
+        </div>
+
+        <div style="height: 1px; background: #E4D8E1; margin: 30px 0;"></div>
+
+        <div style="font-family: Archivo, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #5E2A53; margin-bottom: 12px;">For the Workbook and the System</div>
+        <div style="font-family: 'Playfair Display', serif; font-weight: 600; font-style: italic; font-size: 27px; line-height: 1.25; color: #5E2A53; margin-bottom: 16px;">The eight-week promise</div>
+        <div style="display: flex; flex-direction: column; gap: 14px; font-size: 18px; line-height: 1.58; color: #3A2A36;">
+          <p style="margin: 0;">This workbook asks for eight weeks and about fifteen minutes a day. If you actually do that and nothing moves, I do not want your money.</p>
+          <p style="margin: 0;">Week 8 asks you to redo the pattern assessment and compare it with Week 1. If you have done the work and your scores have not shifted, email me at <a href="mailto:hello@annalchemy.org">hello@annalchemy.org</a> within 90 days with those two sets of numbers and tell me what did not land. I will refund you in full.</p>
+          <p style="margin: 0;">No forms, no photos, no proof beyond your own two scores. I am not asking you to justify yourself to me. I am asking what did not work, because that is worth more to me than the money.</p>
+          <p style="margin: 0;">If you have not started and you have realised it is not for you, email me within 30 days and I will refund you, no questions at all.</p>
+          <sc-if value="{{ showAssistantRefundSentence }}" hint-placeholder-val="{{ false }}">
+            <p style="margin: 0;">If a refund is issued, any Self-Return Assistant access included with that purchase ends at the same time.</p>
+          </sc-if>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- BLOCK 15 SUPPORT -->
+  <div class="sllpad" style="background: #171417; color: #FBF7F0; padding: 84px 32px; display: flex; justify-content: center;">
+    <div style="width: 100%; max-width: 860px;">
+      <div style="font-family: Archivo, sans-serif; font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase; color: #C7A5BF;">Support and safety</div>
+      <h2 style="font-family: 'Playfair Display', serif; font-weight: 600; font-size: 38px; line-height: 1.14; margin: 16px 0 28px;">If this is heavier than a guide</h2>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 44px; align-items: start;">
+        <div style="display: flex; flex-direction: column; gap: 16px; font-size: 19px; line-height: 1.6; color: #DCCBD7;">
+          <p style="margin: 0;">This is educational material written by a nurse. It is not therapy, it is not a diagnosis, and it is not a safety plan.</p>
+          <p style="margin: 0;">If you are in immediate danger, or if you are being hurt, controlled, or threatened, please contact local emergency services or a domestic violence support service in your area rather than working through this alone.</p>
+          <p style="margin: 0;">If reading about any of this brings up more than you can hold, working with a trauma-informed therapist alongside the material is a good idea, not a failure.</p>
+        </div>
+        <div style="border: 1px solid #3B303A; padding: 28px 26px;">
+          <div style="font-family: Archivo, sans-serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #C7A5BF; margin-bottom: 18px;">Philippines</div>
+          <div style="display: flex; flex-direction: column; gap: 15px; font-family: Archivo, sans-serif; font-size: 14px; line-height: 1.45;">
+            <div style="display: flex; flex-direction: column; gap: 3px;"><span style="color: #A895A4;">National Emergency Hotline</span><span style="font-weight: 700; font-size: 17px;">911</span></div>
+            <div style="display: flex; flex-direction: column; gap: 3px;"><span style="color: #A895A4;">NCMH Crisis Hotline</span><span style="font-weight: 700; font-size: 17px;">1553</span><span style="color: #A895A4;">Toll-free, nationwide landline · 0917 899 8727 · 0966 351 4518</span></div>
+            <div style="display: flex; flex-direction: column; gap: 3px;"><span style="color: #A895A4;">PNP Women and Children Protection Center</span><span style="font-weight: 700; font-size: 17px;">0919 777 7377</span></div>
+            <div style="display: flex; flex-direction: column; gap: 3px;"><span style="color: #A895A4;">DSWD</span><span style="font-weight: 700; font-size: 17px;">8931 8101</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BLOCK 16 CLOSE -->
+  <div class="sllpad" style="padding: 100px 32px; display: flex; justify-content: center;">
+    <div style="width: 100%; max-width: 720px;">
+      <div style="font-family: Archivo, sans-serif; font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase; color: #5E2A53;">Final</div>
+      <h2 style="font-family: 'Playfair Display', serif; font-weight: 600; font-size: 42px; line-height: 1.12; margin: 16px 0 34px;">What this is actually for</h2>
+
+      <div style="display: flex; flex-direction: column; gap: 18px; font-size: 22px; line-height: 1.55; color: #3A2A36;">
+        <p style="margin: 0;">You do not need to stop loving him.</p>
+        <p style="margin: 0;">You do not need to become cold.</p>
+        <p style="margin: 0;">You do not need to suspect everybody.</p>
+        <p style="margin: 0;">You do not need to stop being generous, because your generosity was never the problem.</p>
+        <p style="margin: 0;">And you do not need a stranger on the internet to make the decision for you.</p>
+        <p style="margin: 0; font-weight: 500; color: #171417;">You need to become someone you can trust when love makes you vulnerable.</p>
+        <p style="margin: 0;">That is the whole thing.</p>
+      </div>
+
+      <div style="margin: 52px 0; padding: 44px 0; border-top: 1px solid #5E2A53; border-bottom: 1px solid #5E2A53; text-align: center;">
+        <div style="font-family: 'Playfair Display', serif; font-weight: 700; font-style: italic; font-size: 58px; line-height: 1.05; color: #5E2A53;">Love without losing yourself.</div>
+      </div>
+
+      <div style="display: flex; flex-wrap: wrap; gap: 14px; justify-content: center;">
+        <a href="/self-loyalty-lab/start" style="font-family: Archivo, sans-serif; font-size: 14px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; color: #5E2A53; border: 1px solid #5E2A53; padding: 19px 34px;" style-hover="background: #F1E8EE;">Find where to start</a>
+        <a href="#system" style="font-family: Archivo, sans-serif; font-size: 14px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; background: #5E2A53; color: #FBF7F0; padding: 19px 34px;" style-hover="background: #171417;">Get the Self-Loyalty Lab System</a>
+      </div>
+    </div>
+  </div>
+
+  <div style="background: #5E2A53; color: #DEC3D8; padding: 40px 32px; display: flex; flex-wrap: wrap; gap: 20px; align-items: center; justify-content: space-between; font-family: Archivo, sans-serif; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase;">
+    <div style="display: flex; align-items: center; gap: 14px;">
+      <svg width="34" height="34" viewBox="0 0 100 100" style="display: block; width: 34px; height: 34px; flex-shrink: 0;">
+        <ellipse cx="50" cy="46" rx="34" ry="42" fill="none" stroke="#FBF7F0" stroke-width="6"></ellipse>
+        <path d="M34 62 V36 L44 47 L50 30 L56 47 L66 36 V62 Z" fill="#FBF7F0"></path>
+        <rect x="30" y="88" width="40" height="6" fill="#FBF7F0"></rect>
+      </svg>
+      <span style="color: #FBF7F0;">Self-Loyalty Lab™ · AnnAlchemy™</span>
+    </div>
+    <span>Anna Cadano, RN since 2008 · hello@annalchemy.org</span>
+  </div>
+
+</div>
+
+<sc-if value="{{ showStickyBar }}" hint-placeholder-val="{{ true }}">
+  <div style="position: fixed; left: 0; right: 0; bottom: 0; background: #171417; color: #FBF7F0; padding: 14px 24px; display: flex; flex-wrap: wrap; gap: 14px; align-items: center; justify-content: center; z-index: 40; font-family: Archivo, sans-serif;">
+    <span style="font-size: 13px; letter-spacing: 0.06em; color: #DCCBD7;">Not sure which one you need?</span>
+    <a href="/self-loyalty-lab/start" style="font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; background: #FBF7F0; color: #171417; padding: 12px 22px;" style-hover="background: #C7A5BF;">Take the free assessment</a>
+  </div>
+</sc-if>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showAssistantRefundSentence&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Legal&quot;},&quot;showStickyBar&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Conversion&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      showAssistantRefundSentence: this.props.showAssistantRefundSentence ?? false,
+      showStickyBar: this.props.showStickyBar ?? true
+    };
+  }
+}
+</script>
+</body>
+</html>
