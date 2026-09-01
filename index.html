@@ -15,13 +15,18 @@
          Surfaces step along the espresso -> black axis; clay is still the only accent. */
       --bg:#15110D;
       --bg-soft:#1B150F;
-      --paper:#221913;
-      --paper-2:#291F17;
+      --paper:#2A1F18;
+      --paper-2:#322619;
       --ink:#F4EDE4;
       --muted:#C4B3A1;
       --muted-2:#9A8878;
-      --line:rgba(244,237,228,.10);
-      --line-strong:rgba(244,237,228,.22);
+      /* Card and control outlines are off; depth comes from the lit top edge
+         and the shadow below (see --shadow-*). Keeping them as transparent
+         1px borders preserves every box's geometry, so nothing shifts. */
+      --line:transparent;
+      --line-strong:transparent;
+      /* Real rules that separate content, not outlines around it */
+      --divider:rgba(244,237,228,.10);
       --accent:#C4A88C;
       --accent-dark:#F6EFE7;
       --accent-soft:#2A2019;
@@ -34,18 +39,18 @@
       --gold-deep:#95663f;
       --gold-lift:#c89066;
       /* Variant C - buttons: deeper face so the white label clears AA (5.3:1) */
-      --gold-btn:linear-gradient(135deg, #5f3f21 0%, #6f4a27 100%);
-      --gold-btn-sheen:radial-gradient(circle at 30% 25%, rgba(255,255,255,.16), transparent 32%);
+      --gold-btn:linear-gradient(135deg, #96653e 0%, #9c6a42 100%);
+      --gold-btn-sheen:none;
       /* Variant B - founding pills: bright face, espresso label (6.1:1) */
       --gold-pill:linear-gradient(135deg, var(--gold-lift) 0%, var(--gold) 100%);
       --gold-pill-sheen:radial-gradient(circle at 30% 25%, rgba(255,255,255,.28), transparent 32%);
       --success:#7FBFA1;
       --success-soft:#17251F;
       --danger:#E0866F;
-      --shadow-xl:0 34px 100px rgba(0,0,0,.55);
-      --shadow-lg:0 18px 48px rgba(0,0,0,.45);
-      --shadow-md:0 10px 28px rgba(0,0,0,.38);
-      --shadow-sm:0 6px 18px rgba(0,0,0,.30);
+      --shadow-xl:inset 0 1px 0 rgba(244,237,228,.075), inset 0 -1px 0 rgba(0,0,0,.35), 0 34px 90px rgba(0,0,0,.62);
+      --shadow-lg:inset 0 1px 0 rgba(244,237,228,.070), inset 0 -1px 0 rgba(0,0,0,.32), 0 20px 52px rgba(0,0,0,.54);
+      --shadow-md:inset 0 1px 0 rgba(244,237,228,.060), inset 0 -1px 0 rgba(0,0,0,.28), 0 12px 30px rgba(0,0,0,.46);
+      --shadow-sm:inset 0 1px 0 rgba(244,237,228,.050), inset 0 -1px 0 rgba(0,0,0,.24), 0 6px 18px rgba(0,0,0,.36);
       --radius-xl:34px;
       --radius-lg:26px;
       --radius-md:18px;
@@ -53,6 +58,117 @@
       --max:1200px;
     }
 
+
+
+    /* ===== Outbound CTAs: polished gold ==================================
+       Buttons that leave the site read as a struck-metal object: a bright
+       crown, a darker waist where the form turns, and bounce light along the
+       bottom edge. The label is espresso rather than white, which is what
+       lets the face go bright enough to look like metal and still clear AA -
+       the darkest stop holds 5.16:1 against the label. Internal buttons keep
+       the deeper gold and the white label, so the money buttons are the only
+       ones that gleam. */
+    a[target="_blank"].btn-primary,
+    a[target="_blank"].btn-primary.btn-full{
+      background:
+        linear-gradient(180deg,
+          #C08553 0%,
+          #AE764B 16%,
+          #6F4A27 32%,
+          #6F4A27 72%,
+          #8A5D36 88%,
+          #A26D44 100%);
+      color:#FFFFFF;
+      text-shadow:0 1px 2px rgba(30,18,8,.55);
+      box-shadow:
+        inset 0 1px 0 rgba(255,244,224,.60),
+        inset 0 -1px 1px rgba(120,80,44,.24),
+        0 10px 26px rgba(0,0,0,.48),
+        0 0 22px rgba(196,168,140,.16);
+      transition:background .22s ease, box-shadow .22s ease, transform .18s ease;
+    }
+    a[target="_blank"].btn-primary:hover,
+    a[target="_blank"].btn-primary:focus-visible{
+      background:
+        linear-gradient(180deg,
+          #D0955F 0%,
+          #BC8354 16%,
+          #7D5430 32%,
+          #7D5430 72%,
+          #96653E 88%,
+          #AE764B 100%);
+      box-shadow:
+        inset 0 1px 0 rgba(255,252,246,.85),
+        inset 0 -2px 2px rgba(120,80,44,.30),
+        0 14px 32px rgba(0,0,0,.50),
+        0 0 34px rgba(214,171,124,.34);
+      transform:translateY(-1px);
+    }
+    a[target="_blank"].btn-primary:active{
+      transform:translateY(0);
+      box-shadow:
+        inset 0 2px 4px rgba(120,80,44,.45),
+        inset 0 1px 0 rgba(255,250,240,.40),
+        0 4px 12px rgba(0,0,0,.40);
+    }
+
+    /* Internal buttons: same lift on hover, no gleam */
+    .btn-primary:not([target="_blank"]){
+      background:
+        linear-gradient(180deg,
+          #96653E 0%,
+          #8A5D36 16%,
+          #6F4A27 32%,
+          #6F4A27 72%,
+          #7D5430 88%,
+          #8A5D36 100%);
+      box-shadow:
+        inset 0 1px 0 rgba(255,238,214,.34),
+        inset 0 -1px 1px rgba(120,80,44,.24),
+        0 10px 26px rgba(0,0,0,.48),
+        0 0 20px rgba(196,168,140,.12);
+    }
+    .btn-primary{transition:background .22s ease, box-shadow .22s ease, transform .18s ease}
+    .btn-primary:not([target="_blank"]):active{
+      transform:translateY(0);
+      box-shadow:inset 0 2px 5px rgba(50,30,14,.55), 0 3px 10px rgba(0,0,0,.40);
+    }
+    .btn-primary:hover:not([target="_blank"]),
+    .btn-primary:focus-visible:not([target="_blank"]){
+      background:
+        linear-gradient(180deg,
+          #A26D44 0%,
+          #96653E 16%,
+          #7D5430 32%,
+          #7D5430 72%,
+          #8A5D36 88%,
+          #96653E 100%);
+      transform:translateY(-1px);
+      box-shadow:inset 0 1px 0 rgba(255,240,220,.26),
+                 inset 0 -2px 0 rgba(0,0,0,.30),
+                 0 14px 32px rgba(0,0,0,.52),
+                 0 0 24px rgba(196,168,140,.20);
+    }
+    .btn-secondary{transition:background .22s ease, box-shadow .22s ease, transform .18s ease}
+    .btn-secondary:hover, .btn-secondary:focus-visible{
+      background:linear-gradient(180deg, #46352A 0%, #38291F 100%);
+      transform:translateY(-1px);
+      box-shadow:inset 0 1px 0 rgba(244,237,228,.12),
+                 inset 0 -1px 0 rgba(0,0,0,.32),
+                 0 12px 26px rgba(0,0,0,.46);
+    }
+
+    /* Text links pick up clay on hover, the palette's only accent */
+    a:not(.btn):not(.social):not(.card):not(.offer-card){
+      transition:color .18s ease, text-decoration-color .18s ease;
+    }
+    a:not(.btn):not(.social):not(.card):not(.offer-card):hover,
+    a:not(.btn):not(.social):not(.card):not(.offer-card):focus-visible{
+      color:#D6AB7C;
+      text-decoration:underline;
+      text-underline-offset:3px;
+      text-decoration-thickness:1px;
+    }
 
     /* ===== Scroll reveal ====================================================
        Blur + fade + rise as each block enters the viewport. Two depths: a
@@ -157,7 +273,7 @@
       letter-spacing:.12em;
       text-transform:uppercase;
       backdrop-filter: blur(8px);
-      box-shadow:var(--shadow-sm);
+      box-shadow:inset 0 1px 0 rgba(244,237,228,.07), 0 4px 12px rgba(0,0,0,.30);
     }
     .eyebrow-dot{
       width:8px;height:8px;border-radius:999px;background:var(--accent);
@@ -193,7 +309,7 @@
     }
 
     .glass-shell{
-      border:1px solid rgba(232,221,209,.9);
+      border:1px solid transparent;
       border-radius:36px;
       background:linear-gradient(180deg, rgba(58,43,34,.72), rgba(45,35,28,.82));
       box-shadow:var(--shadow-xl);
@@ -268,21 +384,26 @@
     .btn-primary{
       background:var(--gold-btn-sheen), var(--gold-btn);
       color:#FFFFFF;
-      border-color:rgba(255,255,255,.16);
       text-shadow:0 1px 2px rgba(40,26,14,.5);
-      box-shadow:0 16px 36px rgba(95,63,33,.42);
+      /* lit top edge, dark base, then a warm halo so the control separates
+         from the card behind it without an outline */
+      box-shadow:inset 0 1px 0 rgba(255,240,220,.22),
+                 inset 0 -2px 0 rgba(0,0,0,.30),
+                 0 10px 26px rgba(0,0,0,.48),
+                 0 0 22px rgba(196,168,140,.16);
     }
     .btn-primary:hover{box-shadow:0 20px 42px rgba(0,0,0,.28)}
     .btn-secondary{
-      background:var(--paper-2);
-      border-color:var(--line-strong);
+      background:linear-gradient(180deg, #3A2C21 0%, #2E231A 100%);
       color:var(--ink);
-      box-shadow:var(--shadow-sm);
+      box-shadow:inset 0 1px 0 rgba(244,237,228,.09),
+                 inset 0 -1px 0 rgba(0,0,0,.30),
+                 0 8px 20px rgba(0,0,0,.40);
     }
     .btn-ghost{
       background:transparent;
       color:var(--ink);
-      border-color:rgba(255,255,255,.14);
+      border-color:transparent;
     }
     .btn-ghost:hover{background:rgba(255,255,255,.06)}
     .btn-full{width:100%}
@@ -323,11 +444,11 @@
       border-radius:999px;
       font-size:.92rem;
       color:var(--muted);
-      box-shadow:0 6px 20px rgba(44,30,20,.04);
+      box-shadow:inset 0 1px 0 rgba(255,240,220,.20), 0 6px 16px rgba(0,0,0,.34);
     }
     .pill.urgent{
       background:var(--gold-pill-sheen), var(--gold-pill);
-      border-color:rgba(255,255,255,.22);
+      border-color:transparent;
       color:#2A1D12;
       font-weight:700;
     }
@@ -341,7 +462,7 @@
 
     .hero-card{
       background:linear-gradient(180deg, rgba(58,43,34,.98), rgba(45,35,28,.94));
-      border:1px solid rgba(232,221,209,.95);
+      border:1px solid transparent;
       border-radius:30px;
       box-shadow:var(--shadow-xl);
       padding:32px;
@@ -406,7 +527,7 @@
 
     .section-shell{
       background:linear-gradient(180deg, rgba(58,43,34,.92), rgba(45,35,28,.90));
-      border:1px solid rgba(232,221,209,.92);
+      border:1px solid transparent;
       border-radius:34px;
       box-shadow:var(--shadow-lg);
       padding:34px;
@@ -420,7 +541,7 @@
     }
 
     .card{
-      background:var(--paper);
+      background:linear-gradient(180deg, #2E231A 0%, var(--paper) 100%);
       border:1px solid var(--line);
       border-radius:var(--radius-lg);
       box-shadow:var(--shadow-md);
@@ -432,7 +553,7 @@
     .card-dark{
       background:linear-gradient(135deg, #3F2E23 0%, #221913 100%);
       color:var(--ink);
-      border-color:rgba(255,255,255,.08);
+      border-color:transparent;
       box-shadow:var(--shadow-lg);
     }
     .card-dark .muted{color:rgba(244,237,228,.74)}
@@ -508,11 +629,11 @@
       scroll-margin-top:96px;
     }
     .offer-card:target{
-      border-color:rgba(196,168,140,.46);
+      border-color:transparent;
       box-shadow:0 0 0 4px rgba(196,168,140,.12), var(--shadow-lg);
     }
     .offer-card.spotlight:target{
-      border-color:rgba(255,255,255,.34);
+      border-color:transparent;
       box-shadow:0 0 0 4px rgba(196,168,140,.16), var(--shadow-lg);
     }
     /* Shareable anchor for the Find Your Starting Point quiz widget */
@@ -530,18 +651,22 @@
     }
     #starting-point:target .decision-shell,
     #find-your-starting-point:target + #starting-point .decision-shell{
-      border-color:rgba(196,168,140,.46);
+      border-color:transparent;
       box-shadow:0 0 0 4px rgba(196,168,140,.12), var(--shadow-xl);
     }
 
     .offer-card.featured{
-      border:1.5px solid rgba(196,168,140,.30);
+      border:1.5px solid transparent;
+      box-shadow:inset 0 1px 0 rgba(255,240,220,.13),
+                 inset 0 -1px 0 rgba(0,0,0,.34),
+                 0 22px 54px rgba(0,0,0,.55),
+                 0 0 34px rgba(196,168,140,.14);
       background:linear-gradient(180deg, var(--paper) 0%, var(--paper-2) 100%);
     }
     .offer-card.spotlight{
       background:linear-gradient(135deg, #2a1e17 0%, #3b2a21 100%);
       color:var(--ink);
-      border-color:rgba(255,255,255,.08);
+      border-color:transparent;
     }
     .offer-card.spotlight .muted{color:rgba(244,237,228,.76)}
     .offer-card.spotlight .tag{
@@ -590,7 +715,7 @@
       font-weight:800;
       letter-spacing:.06em;
       text-transform:uppercase;
-      border:1px solid rgba(33,69,54,.12);
+      border:1px solid transparent;
     }
 
     .save-chip.coming-soon{
@@ -628,11 +753,12 @@
       padding:18px 18px 16px;
       border-radius:20px;
       background:linear-gradient(180deg, rgba(196,168,140,.05), rgba(196,168,140,.02));
-      border:1px solid rgba(196,168,140,.14);
+      border:1px solid transparent;
+      box-shadow:inset 0 1px 0 rgba(244,237,228,.06), 0 6px 16px rgba(0,0,0,.30);
     }
     .offer-card.spotlight .price-block{
       background:rgba(255,255,255,.06);
-      border-color:rgba(255,255,255,.08);
+      border-color:transparent;
     }
     .price-row{
       display:flex;
@@ -694,14 +820,15 @@
       border-radius:999px;
       background:#C4A88C;
       color:#3A2B22;
-      border:1px solid #D3BCA4;
+      border:1px solid transparent;
       font-weight:700;
       font-size:.78rem;
+      box-shadow:inset 0 1px 0 rgba(255,240,220,.24);
     }
     .offer-card.spotlight .countdown-pill{
       background:rgba(255,255,255,.1);
       color:var(--ink);
-      border-color:rgba(255,255,255,.12);
+      border-color:transparent;
     }
 
     .offer-card ul{
@@ -727,7 +854,11 @@
     }
     .pricing-card.featured{
       background:linear-gradient(180deg, var(--paper) 0%, var(--paper-2) 100%);
-      border:1.5px solid rgba(196,168,140,.30);
+      border:1.5px solid transparent;
+      box-shadow:inset 0 1px 0 rgba(255,240,220,.13),
+                 inset 0 -1px 0 rgba(0,0,0,.34),
+                 0 22px 54px rgba(0,0,0,.55),
+                 0 0 34px rgba(196,168,140,.14);
       transform:translateY(-4px);
       box-shadow:var(--shadow-lg);
     }
@@ -762,7 +893,7 @@
       scroll-margin-top:96px;
     }
     .faq-item:target{
-      border-color:rgba(196,168,140,.46);
+      border-color:transparent;
       box-shadow:0 0 0 4px rgba(196,168,140,.12), var(--shadow-md);
     }
     .faq-item summary{
@@ -820,11 +951,12 @@
     }
     .cta-step{
       background:rgba(255,255,255,.06);
-      border:1px solid rgba(255,255,255,.10);
+      border:1px solid transparent;
       border-radius:20px;
       padding:20px;
       position:relative;
       z-index:1;
+      box-shadow:inset 0 1px 0 rgba(244,237,228,.07), 0 6px 16px rgba(0,0,0,.34);
     }
     .num{
       width:36px;height:36px;
@@ -852,7 +984,7 @@
     }
 
     .ps{
-      border-top:1px solid var(--line);
+      border-top:1px solid var(--divider);
       padding-top:24px;
       margin-top:28px;
     }
@@ -875,7 +1007,7 @@
       gap:28px;
       flex-wrap:wrap;
       padding-bottom:22px;
-      border-bottom:1px solid var(--line);
+      border-bottom:1px solid var(--divider);
     }
     .footer-brand{
       flex:1 1 260px;
@@ -948,7 +1080,7 @@
       gap:12px;
       padding:12px 14px;
       background:#291F17;
-      border:1px solid var(--line-strong);
+      border:1px solid rgba(244,237,228,.22);
       border-radius:18px;
       box-shadow:0 20px 44px rgba(0,0,0,.62);
       backdrop-filter:blur(14px);
@@ -1019,7 +1151,7 @@
        Inserted after Founder Bio and before Offer Cards
        ============================================================ */
     .decision-shell{
-      border:1px solid rgba(232,221,209,.92);
+      border:1px solid transparent;
       border-radius:var(--radius-xl);
       background:
         radial-gradient(circle at 10% 0%, rgba(196,168,140,.10), transparent 34%),
@@ -1143,7 +1275,7 @@
     }
     .decision-result{
       display:none;
-      border:1px solid rgba(196,168,140,.24);
+      border:1px solid transparent;
       border-radius:var(--radius-lg);
       background:linear-gradient(180deg, #FFFFFF 0%, #F4EDE4 100%);
       box-shadow:var(--shadow-lg);
@@ -1186,7 +1318,7 @@
       color:var(--accent);
     }
     .decision-result .result-footer{
-      border-top:1px solid var(--line);
+      border-top:1px solid var(--divider);
       margin-top:22px;
       padding-top:16px;
       font-size:.92rem;
@@ -1194,7 +1326,7 @@
     }
     .talk-to-anna{
       margin-top:22px;
-      border:1px solid rgba(196,168,140,.20);
+      border:1px solid transparent;
       border-radius:var(--radius-lg);
       background:rgba(58,43,34,.68);
       padding:22px;
@@ -1219,7 +1351,7 @@
       text-wrap:balance;
     }
     .decision-form{
-      border:1px solid rgba(232,221,209,.74);
+      border:1px solid transparent;
       border-radius:var(--radius-lg);
       background:rgba(58,43,34,.54);
       box-shadow:var(--shadow-sm);
@@ -1261,7 +1393,7 @@
        Added below the Find Your Starting Point widget
        ============================================================ */
     .quick-check-shell{
-      border:1px solid rgba(232,221,209,.92);
+      border:1px solid transparent;
       border-radius:var(--radius-xl);
       background:
         radial-gradient(circle at 86% 10%, rgba(196,168,140,.10), transparent 30%),
@@ -1412,17 +1544,27 @@
     .founder-bio-expand{
       margin-top:18px;
       padding-top:18px;
-      border-top:1px solid var(--line);
+      border-top:1px solid var(--divider);
     }
 
     .founder-bio-expand summary{
       cursor:pointer;
       font-weight:800;
       color:var(--accent-dark);
+      text-decoration:underline;
+      text-underline-offset:4px;
+      text-decoration-thickness:1px;
+      text-decoration-color:rgba(244,237,228,.40);
+      transition:color .18s ease, text-decoration-color .18s ease;
       font-size:.96rem;
       list-style:none;
       padding:8px 0;
       user-select:none;
+    }
+    .founder-bio-expand summary:hover,
+    .founder-bio-expand summary:focus-visible{
+      color:#D6AB7C;
+      text-decoration-color:#D6AB7C;
     }
 
     .founder-bio-expand summary::-webkit-details-marker{display:none}
@@ -1597,6 +1739,46 @@
       .footer .container span{text-align:left !important;}
     }
 
+      /* ===== Marks and chips: raised, and carrying meaning =================
+       The tick and the cross share one class, so they are separated by their
+       list. Ticks go clay - the affirmative colour. Crosses go cocoa, present
+       and readable but deliberately quieter, because this page is about calm
+       and a page of red crosses argues the opposite. */
+    .check{
+      background:linear-gradient(180deg, #D2B694 0%, #C4A88C 100%);
+      color:#2A1D12;
+      box-shadow:inset 0 1px 0 rgba(255,250,240,.55),
+                 inset 0 -1px 0 rgba(90,60,34,.30),
+                 0 3px 8px rgba(0,0,0,.40);
+    }
+    .pain-list .check{
+      background:linear-gradient(180deg, #7B6350 0%, #6B5546 100%);
+      color:#F4EDE4;
+      box-shadow:inset 0 1px 0 rgba(244,237,228,.20),
+                 inset 0 -1px 0 rgba(0,0,0,.34),
+                 0 3px 8px rgba(0,0,0,.38);
+    }
+
+    .credential-chip{
+      background:linear-gradient(180deg, #3B2D22 0%, #2E231A 100%);
+      color:#E0C9A9;
+      box-shadow:inset 0 1px 0 rgba(244,237,228,.11),
+                 inset 0 -1px 0 rgba(0,0,0,.34),
+                 0 4px 12px rgba(0,0,0,.40);
+    }
+
+      .inline-link{
+      color:var(--accent-dark);
+      text-decoration:underline;
+      text-underline-offset:3px;
+      text-decoration-thickness:1px;
+      text-decoration-color:rgba(244,237,228,.35);
+      transition:color .18s ease, text-decoration-color .18s ease;
+    }
+    .inline-link:hover, .inline-link:focus-visible{
+      color:#D6AB7C;
+      text-decoration-color:#D6AB7C;
+    }
   </style>
 
   <!-- Tally popup runtime for AnnAlchemy™ Quick Skin Check -->
@@ -1876,7 +2058,7 @@
               </div>
             </details>
 
-            <p class="muted" style="margin-top:24px; border-top:1px solid var(--line); padding-top:20px;">
+            <p class="muted" style="margin-top:24px; border-top:1px solid var(--divider); padding-top:20px;">
               <strong style="color:var(--ink); font-size:1.05rem;">&mdash; Anna Cadano, RN</strong><br />
               <span class="small muted">Registered Nurse since 2008. Founder, AnnAlchemy&trade; (2025).</span><br />
               <span class="small muted">hello@annalchemy.org &middot; Taguig City, Philippines</span>
@@ -2322,10 +2504,10 @@ When those factors keep interacting, the result can feel like a repeating patter
             <li><span class="check">&#10003;</span><span>What commonly restarts the cycle</span></li>
             <li><span class="check">&#10003;</span><span>How to stop panic-switching products that may worsen marks</span></li>
             <li><span class="check">&#10003;</span><span>Relapse self-audit, weekly tracker, and prevention planning</span></li>
-            <li><span class="check">&#10003;</span><span>Yours to keep, and your purchase is protected. If you put in the work and your skin shows no movement, there is a refund path. <a href="#refund-policy" style="color:var(--accent-dark); text-decoration:underline;">See how it works</a></span></li>
+            <li><span class="check">&#10003;</span><span>Yours to keep, and your purchase is protected. If you put in the work and your skin shows no movement, there is a refund path. <a class="inline-link" href="#refund-policy">See how it works</a></span></li>
           </ul>
           <div style="margin-top:22px;"><a href="https://payhip.com/b/ZzmSJ" target="_blank" rel="noopener" class="btn btn-primary btn-full">Get The Guide ($27)</a></div>
-          <p class="small muted" style="margin-top:12px; text-align:center;">Secure checkout. Yours to keep, with a calm refund path if you do the work and see no change. <a href="#refund-policy" style="color:var(--accent-dark); text-decoration:underline;">How the refund works</a></p>
+          <p class="small muted" style="margin-top:12px; text-align:center;">Secure checkout. Yours to keep, with a calm refund path if you do the work and see no change. <a class="inline-link" href="#refund-policy">How the refund works</a></p>
         </div>
 
         <div class="offer-card coming-soon-card" id="hormonal-trigger-mapping-workbook" style="display:none;">
@@ -2437,7 +2619,7 @@ When those factors keep interacting, the result can feel like a repeating patter
             <li><span class="check">&#10003;</span><span>More strategic next-step priorities for recurring acne and acne marks</span></li>
           </ul>
 
-          <div class="card" style="margin-top:20px; padding:20px; background:rgba(255,255,255,.08); border-color:rgba(255,255,255,.08); box-shadow:none;">
+          <div class="card" style="margin-top:20px; padding:20px; background:rgba(255,255,255,.08); border-color:transparent; box-shadow:none;">
             <h3 style="font-size:1.05rem;">Bonus access included</h3>
             <p class="small muted" style="margin-top:10px;">
               AnnAlchemy&trade; Starter Library&trade; bundle, tracker template, next-step roadmap, medical-visit prep sheet, 7-day reset tracker, routine simplification checklist, reintroduction worksheet, Relapse Risk Audit&trade;, Trigger Mapping Sheet&trade;, Barrier Distress Check&trade;, and Acne Pattern Summary Page&trade;.
@@ -2521,7 +2703,7 @@ When those factors keep interacting, the result can feel like a repeating patter
         <span class="eyebrow"><span class="eyebrow-dot"></span> Before you choose</span>
         <h3 style="margin-top:14px;">Not sure it is acne in the first place?</h3>
         <p class="muted" style="margin-top:12px;">
-          If you have been here before, trying everything for acne and watching nothing work, or watching it get worse, your pattern may be worth a second look. Some bumps that look like acne are not, and treating the wrong thing is one of the most common reasons a routine never holds. A dedicated recognition guide, <strong>Is It Really Acne?&trade;</strong>, is in active development for exactly this question. Until it is ready, the most useful step is to bring this concern to a licensed clinician, who is the only person who can diagnose this. <a href="https://tally.so/r/KYW9yM" style="color:var(--accent-dark); text-decoration:underline;">Join the notify list</a> to hear first when <em>Is It Really Acne?&trade;</em> is available.
+          If you have been here before, trying everything for acne and watching nothing work, or watching it get worse, your pattern may be worth a second look. Some bumps that look like acne are not, and treating the wrong thing is one of the most common reasons a routine never holds. A dedicated recognition guide, <strong>Is It Really Acne?&trade;</strong>, is in active development for exactly this question. Until it is ready, the most useful step is to bring this concern to a licensed clinician, who is the only person who can diagnose this. <a class="inline-link" href="https://tally.so/r/KYW9yM">Join the notify list</a> to hear first when <em>Is It Really Acne?&trade;</em> is available.
         </p>
       </div>
     </div>
@@ -2538,7 +2720,7 @@ When those factors keep interacting, the result can feel like a repeating patter
         <p class="muted">
           Acne is a chronic inflammatory skin condition that commonly continues into adulthood. Current dermatology guidance points to more than product selection alone. It also supports maintenance planning, skincare and tolerability, and knowing when to escalate to medical care.<sup>1</sup> The marks acne can leave behind, such as lingering redness (post-inflammatory erythema) and brown or dark discoloration (post-inflammatory hyperpigmentation), are common after inflammation and often need their own expectations and timeline, separate from active breakouts.
         </p>
-        <p class="small muted" style="margin-top:14px; border-top:1px solid var(--line); padding-top:14px;">
+        <p class="small muted" style="margin-top:14px; border-top:1px solid var(--divider); padding-top:14px;">
           1. Reynolds RV, Yeung H, Cheng CE, et al. Guidelines of care for the management of acne vulgaris. <em>J Am Acad Dermatol</em>. 2024;90(5):1006.e1-1006.e30. doi:10.1016/j.jaad.2023.12.017
         </p>
       </div>
@@ -2582,7 +2764,7 @@ When those factors keep interacting, the result can feel like a repeating patter
             <div class="price-row"><strong class="new-price">$27</strong></div>
             <div class="price-note"><span>One-time payment</span><span class="countdown-pill">Founding price. Rises to $49 once the first cohort fills.</span></div>
           </div>
-          <p class="muted">The only AnnAlchemy&trade; offer available today. A nurse-led, evidence-informed guide to understanding recurring acne and reducing the mistakes that quietly restart the cycle. Optional <a href="#refund-policy" style="color:var(--accent-dark); text-decoration:underline;">Implementation-Backed Refund Policy</a> available.</p>
+          <p class="muted">The only AnnAlchemy&trade; offer available today. A nurse-led, evidence-informed guide to understanding recurring acne and reducing the mistakes that quietly restart the cycle. Optional <a class="inline-link" href="#refund-policy">Implementation-Backed Refund Policy</a> available.</p>
           <div style="margin-top:20px;"><a href="https://payhip.com/b/ZzmSJ" target="_blank" rel="noopener" class="btn btn-primary btn-full">Get The Guide</a></div>
         </div>
 
@@ -2653,7 +2835,7 @@ When those factors keep interacting, the result can feel like a repeating patter
       <div class="faq-grid">
         <details class="faq-item">
           <summary>Is there a refund policy on the Relapse Control Guide&trade;?</summary>
-          <div class="faq-content">Yes, an optional opt-in Implementation-Backed Refund Policy is available. It is process-backed rather than outcome-backed &mdash; readers who implement the guide faithfully across their classified severity window and see no observable improvement on the guide's own success indicators receive a full refund within 14 days. Read the dedicated section <a href="#refund-policy" style="color:var(--accent-dark); text-decoration:underline;">here</a> or the full policy at <a href="refund-policy/" style="color:var(--accent-dark); text-decoration:underline;">annalchemy.org/refund-policy</a>.</div>
+          <div class="faq-content">Yes, an optional opt-in Implementation-Backed Refund Policy is available. It is process-backed rather than outcome-backed &mdash; readers who implement the guide faithfully across their classified severity window and see no observable improvement on the guide's own success indicators receive a full refund within 14 days. Read the dedicated section <a class="inline-link" href="#refund-policy">here</a> or the full policy at <a class="inline-link" href="refund-policy/">annalchemy.org/refund-policy</a>.</div>
         </details>
 
         <details class="faq-item">
@@ -2663,7 +2845,7 @@ When those factors keep interacting, the result can feel like a repeating patter
 
         <details class="faq-item">
           <summary>What if I am not sure this is even acne?</summary>
-          <div class="faq-content">That uncertainty is common and worth taking seriously. Some persistent bumps that look like acne are not, and treating the wrong thing is one of the most common reasons a routine never holds. A recognition-focused guide, Is It Really Acne?&trade;, is in active development for exactly this question. Until it is ready, the most useful step is to bring this concern to a licensed clinician, who is the only person who can diagnose this. You can <a href="https://tally.so/r/KYW9yM" style="color:var(--accent-dark); text-decoration:underline;">join the notify list</a> to be told first when the recognition guide launches.</div>
+          <div class="faq-content">That uncertainty is common and worth taking seriously. Some persistent bumps that look like acne are not, and treating the wrong thing is one of the most common reasons a routine never holds. A recognition-focused guide, Is It Really Acne?&trade;, is in active development for exactly this question. Until it is ready, the most useful step is to bring this concern to a licensed clinician, who is the only person who can diagnose this. You can <a class="inline-link" href="https://tally.so/r/KYW9yM">join the notify list</a> to be told first when the recognition guide launches.</div>
         </details>
 
         <details class="faq-item">
@@ -2703,7 +2885,7 @@ When those factors keep interacting, the result can feel like a repeating patter
     width:min(820px, calc(100% - 32px));
     margin:56px auto;
     background:#EFE7DC;
-    border:1px solid rgba(196,168,140,.18);
+    border:1px solid transparent;
     border-radius:18px;
     padding:32px;
     font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
@@ -2736,13 +2918,13 @@ When those factors keep interacting, the result can feel like a repeating patter
 
   <a href="https://annalchemy.org/when-it-comes-back.html" style="
       display:inline-block;
-      background:radial-gradient(circle at 30% 25%, rgba(255,255,255,.16), transparent 32%),
-                 linear-gradient(135deg, #5f3f21 0%, #6f4a27 100%);
+      background:linear-gradient(180deg, #C08553 0%, #AE764B 16%, #6F4A27 32%,
+                 #6F4A27 72%, #8A5D36 88%, #A26D44 100%);
       color:#FFFFFF;
       font-weight:700;
       padding:13px 30px;
       border-radius:999px;
-      border:1px solid rgba(255,255,255,.16);
+      border:1px solid transparent;
       text-shadow:0 1px 2px rgba(40,26,14,.5);
       box-shadow:0 14px 30px rgba(95,63,33,.42);
       text-decoration:none;">
@@ -2779,7 +2961,7 @@ When those factors keep interacting, the result can feel like a repeating patter
   <section class="section" id="cta">
     <div class="container">
       <div class="cta-band">
-        <span class="eyebrow" style="background:rgba(255,255,255,.06); border-color:rgba(255,255,255,.12); color:var(--ink);">
+        <span class="eyebrow" style="background:rgba(255,255,255,.06); border-color:transparent; color:var(--ink);">
           <span class="eyebrow-dot" style="background:var(--paper); box-shadow:none;"></span>
           4 simple next steps
         </span>
