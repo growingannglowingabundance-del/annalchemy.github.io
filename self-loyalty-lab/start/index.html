@@ -6,7 +6,7 @@
 <title>The Self-Loyalty Starting Point Assessment | Self-Loyalty Lab</title>
 <meta name="description" content="A free 15-question self-check that shows you where self-loyalty is under the most pressure right now, and where to start. Nothing is saved.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,300;1,6..72,400;1,6..72,500;1,6..72,600&display=swap">
 <style>
   :root{
     --ink:#2E1A2A;
@@ -17,8 +17,9 @@
     --accent:#5E2A53;
     --accent-soft:#F1E8EE;
     --dark:#171417;
-    --serif:'EB Garamond',Georgia,serif;
+    --serif:'Newsreader',Georgia,serif;
     --display:'Playfair Display',Georgia,serif;
+    --displayital:'Newsreader',Georgia,serif;
     --ui:Archivo,system-ui,-apple-system,sans-serif;
   }
   *{box-sizing:border-box}
@@ -85,10 +86,10 @@
   }
   a.ghost:hover{background:var(--accent-soft)}
   .result{background:var(--card);border:1px solid var(--line);padding:32px 28px;margin-bottom:18px}
-  .result h1{font-family:var(--display);font-style:italic;font-weight:700;font-size:2.5rem;letter-spacing:.01em}
+  .result h1{font-family:var(--displayital);font-style:italic;font-weight:700;font-size:2.5rem;letter-spacing:.01em}
   .tag{font-family:var(--ui);font-size:.68rem;font-weight:700;letter-spacing:.2em;
     text-transform:uppercase;color:var(--accent);margin-bottom:12px}
-  .quote{font-family:var(--display);font-style:italic;font-size:1.5rem;line-height:1.3;color:var(--accent);
+  .quote{font-family:var(--displayital);font-style:italic;font-size:1.5rem;line-height:1.3;color:var(--accent);
     margin:0 0 22px;padding-left:18px;border-left:2px solid var(--line)}
   .warn{color:#FBF7F0;font-family:var(--ui);font-size:.85rem;line-height:1.65;
     background:var(--dark);padding:22px 24px;margin:20px 0}
@@ -183,7 +184,7 @@
     {p:"PROTECT", t:"I explain a reasonable need until it comes out sounding like an apology."},
     {p:"DETACH",  t:"We have broken up and got back together more than once."},
     {p:"DECIDE",  t:"I am holding on to who he could become rather than who he has shown me he is."},
-    {p:"RETURN",  t:"I do not recognise the woman I have turned into inside this relationship."},
+    {p:"RETURN",  t:"I do not recognize the woman I have turned into inside this relationship."},
     {p:"CHOOSE",  t:"I want to know what to look for next time so this does not repeat."}
   ];
 
@@ -191,42 +192,56 @@
     PROTECT: {
       name:"PROTECT",
       quote:"I know my standards until I like someone.",
-      body:"You have not lost yourself. You can still say what you want, and you would recognise a bad deal if a friend described it to you. What is happening is narrower than that, and more fixable. Your standards are holding fine until attachment shows up, and then they quietly turn into things you are willing to discuss.<br><br>So the work for you is not learning what a boundary is. You know. The work is holding one while you are still attracted to him, and matching how much access he gets to how much he has actually demonstrated.",
-      product:"The Boyfriend Boundary Guide",
-      why:"It is built for exactly this stage. Dating, talking, situationship, or new relationship, with the bending already starting.",
-      link:"#bbg"
+      body:"You still have your voice. That is not a small thing, and it is the reason you are in the easiest place on this list to work from.<br><br>What you are noticing is the bend. You know what you want, you can say it out loud, and yet somewhere around the point where you start really liking him, the thing you were certain about last week turns into something you are willing to discuss.<br><br>That is not weakness and it is not a character flaw. Attachment applies pressure, and standards bend under it. Everyone's do. The women who hold theirs are not stronger, they just know what the bending feels like early enough to catch it.",
+      firstStep:"Write down the three things you said you would not accept, before you met him. Not what you would like. What you said you would not accept. Then read them once a week.<br><br>Most women do not need a new list. They need the one they already had, somewhere they can see it.",
+      product:"The Boyfriend Boundary Guide\u2122",
+      why:"You can still say what you want, and you can feel yourself starting to give more than he has earned. That is exactly the moment this guide was written for, before it costs you more. One rule runs through it: access must match commitment. The deeper the access someone wants to your body, your time, your loyalty and your future, the more proven commitment it should take to earn it.<br><br>Not the whole System. You do not need eight weeks of rebuilding work for something you have not lost yet.",
+      link:"#bbg",
+      system:false
+    },
+    CHOOSE: {
+      name:"CHOOSE DIFFERENTLY",
+      quote:"I do not want to repeat this again.",
+      body:"You are not in it right now. You are looking back at one, and what you want is a guarantee that the next one will be different.<br><br>There is no guarantee. But there is something better than hoping, which is knowing exactly what you gave away last time and at what point you gave it.<br><br>Most women who repeat a pattern are not making the same mistake twice. They are making the same decision twice, at the same early moment, for the same reason. Usually it is the moment they decided that how much he wanted them was evidence of who he was.",
+      firstStep:"Pick the last relationship and answer one question honestly. At what point did you start giving more than had been earned?<br><br>Not when it went wrong. When you started over-giving. Those are usually months apart, and the second one is the one that matters.",
+      product:"The Boyfriend Boundary Guide\u2122",
+      why:"This is the one that teaches the timing. What to give, when, and what should have been demonstrated first. You learn the difference between intensity and consistency, between chemistry and character, and between a man who is bonded to you and a man who is ready for you. Confusing those is what costs women years, and it is almost always what the last one was.<br><br>Not the whole System. You are between relationships, which means what you need is the front-end work, not the recovery work.",
+      link:"#bbg",
+      system:false
     },
     DECIDE: {
       name:"DECIDE",
       quote:"I do not know whether to stay, wait, or leave.",
-      body:"You are not confused because you lack information. You are confused because what you feel and what you have observed are pointing in different directions, and you keep waiting for one more piece of proof to settle it. That piece is not coming, because more evidence does not resolve a conflict between the heart and the eyes.<br><br>Nothing here will make the decision for you, and you should be suspicious of anything that claims it will. What you need is enough clarity to make the call yourself and still trust yourself afterwards.",
-      product:"The Self-Return Guide",
-      why:"It walks through clearing attachment fog before deciding, and separating what you feel from an honest read of what he has actually shown you.",
-      link:"#srg"
+      body:"Let me be straight with you about something first. I do not have a tool that decides this for you, and nothing you find on the internet tonight will either. Nobody who has not lived your life gets to make that call, and that includes me.<br><br>Here is what I do know. You are not stuck because you lack information. You are stuck because you are trying to make a clear decision from inside an unclear state, and that does not work. When you are attached, missing him reads as proof he is right for you. The good memories come back louder than the pattern. You end up weighing a highlight reel against a bad week, which is not a fair comparison and never resolves.<br><br>The decision is not the first job. Seeing straight is. Most women find the answer becomes obvious once the fog lifts, and it very often was not the answer they expected.",
+      firstStep:"For the next seven nights, write one line before bed. How you slept, how you felt, and whether you contacted him. Nothing else.<br><br>At the end of the week you will have something you have never had, which is your own data instead of your own mood.",
+      product:"The Self-Return Guide\u2122",
+      why:"This will not tell you whether to stay or leave, and I would not trust anything that claimed it could. What it does is clear the fog first: why pulling away feels physically unbearable, why the on and off cycle is the hardest to leave, and how to see him accurately instead of seeing the highlight reel.<br><br>Then the decision is yours to make, from clarity instead of exhaustion.",
+      link:"#srg",
+      system:false
     },
     DETACH: {
       name:"DETACH",
       quote:"I know I need to let go, but I cannot.",
-      body:"This one is not a willpower failure, and reading it as one is doing you real damage. Bonds are physically hard to break. That is not a metaphor. The pull you feel when you miss him is real, and it is separate from the question of whether he is good for you.<br><br>Missing someone is information about the bond. It is not information about whether the relationship is right. Those two things feel identical from the inside, and telling them apart is most of the work here.",
-      product:"The Self-Return Guide",
-      why:"It opens with why letting go is so hard, then covers on and off cycles, attachment fog, and what to do when the urge to go back gets loud.",
-      link:"#srg"
+      body:"You already know. That is the part nobody warns you about.<br><br>You are not confused about what is happening. You could explain the whole situation to a friend in three minutes and she would agree with you. And you still cannot do the thing you already know you need to do.<br><br>That is not weakness, and it is not you being dramatic. What you are up against is a bond that formed for real reasons and does not dissolve because you decided it should. Missing someone is not evidence that returning to them is right. It is evidence that a bond was formed. Those are two different facts, and the whole difficulty of your position is that they feel like one.",
+      firstStep:"Write down, today, what you will do the next time the urge to reach out arrives. Not what you will feel. What you will do, physically, in the first ten minutes.<br><br>Then put it where you can find it at 2am, because the version of you at 2am is not the version writing it now, and she needs instructions rather than intentions.",
+      product:"The Self-Return Guide\u2122",
+      why:"Why the pull is this strong, what is happening in your body when it hits, and what to do in the exact moment you are about to reach out. It also covers the hardest part, which is holding your ground when he comes back warm and sorry.",
+      link:"#srg",
+      system:true,
+      systemLabel:"One honest note about your particular position",
+      systemBody:"DETACH is where reading tends not to be enough on its own. Not because the guide is thin, but because the hard moment for you is never while you are calmly reading. It is at 2am, after his message, after the memory, and a PDF cannot meet you there.<br><br>If you already know you are going to be in that moment more than once, the full Self-Loyalty Lab System\u2122 exists for exactly that. It is the guide plus the eight weeks of practice that build the habit, plus six months of the Self-Return Assistant, which you can ask at 2am and which will not agree with you just to make you feel better.<br><br>Start with the guide if you would rather start small. I would rather you bought one thing and used it than four things and read one."
     },
     RETURN: {
       name:"RETURN",
       quote:"I do not know who I am anymore.",
-      body:"This is the deepest of the five, and it usually did not happen in one dramatic moment. It happened in small ones. A plan cancelled. An opinion swallowed. A need made smaller so it would fit. A friendship allowed to go quiet. None of them felt like much on the day.<br><br>Whether the relationship lasted four months or fifteen years does not really matter here. What matters is that you gave away more of yourself than you meant to, and now you are trying to find where you went.",
-      product:"The Self-Return Guide and the Self-Return Workbook",
-      why:"The Guide explains what happened and starts the return. The Workbook is eight weeks of actually doing it, with an assessment at Week 1 and again at Week 8 so you can see movement instead of guessing.",
-      link:"#srg"
-    },
-    CHOOSE: {
-      name:"CHOOSE DIFFERENTLY",
-      quote:"I do not want to do this again.",
-      body:"You are further along than most women who take this. You are not asking what to do about him. You are asking how not to repeat it, and that is the right question at the right time.<br><br>The risk at this stage is quiet. Coming through something painful does not automatically change how you choose. Without something different in place, the next person is often a new face applying the same pressure to the same soft spot.",
-      product:"The Boyfriend Boundary Guide",
-      why:"It is about reading what has actually been demonstrated versus what you are hoping for, and matching access to proof. That is the toolkit for choosing next time.",
-      link:"#bbg"
+      body:"This is the deepest place on the list, and I want to say the important thing first. It did not happen because something is wrong with you.<br><br>It happened quietly. A need you did not mention. A feeling you dismissed. A preference that changed. A thing you loved that stopped, without you ever deciding to stop it. None of those felt like a decision at the time. That is exactly why there were so many of them.<br><br>And it means the way back is the same shape. You put each thing down yourself, one small choice at a time. You can pick them up the same way.",
+      firstStep:"Name one thing that used to be yours and has quietly stopped. Not a big thing. A song, a walk, a person you stopped texting, the way you used to spend Sunday morning.<br><br>Then do it once this week. Not to fix anything. Just to prove to yourself that the person who liked that is still in there.",
+      product:"The Self-Loyalty Lab System\u2122",
+      why:"I am going to be straight with you rather than sell you the cheapest thing.<br><br>For where you are, a guide alone will explain what happened and will genuinely help. What it will not do is rebuild the thing that got worn down, because self-trust is not rebuilt by reading. It is rebuilt by evidence. I noticed. I said the thing. I kept a promise to myself. That takes weeks of small repetitions, and it needs a structure.<br><br>The System is the two guides, the workbook that finds your specific pattern and gives you eight weeks of practice, and six months of the Self-Return Assistant for the nights it gets loud. Ten weeks, fifteen minutes a day, and a promise: do the eight practice weeks, and if your own before-and-after scores have not moved, I refund you in full.",
+      link:"/system/",
+      systemPrimary:true,
+      system:false,
+      fallback:"If that is not affordable right now, start with The Self-Return Guide\u2122. It stands on its own and it was written to. Message me when you are ready for the rest and I will credit what you already paid."
     }
   };
 
@@ -285,6 +300,7 @@
     var r2 = RESULTS[second];
     var html = '';
 
+    // 1 · the name and the recognition line
     html += '<div class="result">';
     html += '<div class="tag">Your starting point</div>';
     html += '<h1>'+r.name+'</h1>';
@@ -300,24 +316,41 @@
       html += '</div>';
     }
 
+    // 2 · what to do first, free, before anything is sold
+    html += '<div class="result">';
+    html += '<div class="tag">What to do first</div>';
+    html += '<h2>Start here, today, for free</h2>';
+    html += '<p>'+r.firstStep+'</p>';
+    html += '</div>';
+
+    // 3 · the routing. one recommendation, with the reason.
     html += '<div class="result">';
     html += '<div class="tag">Where to start</div>';
     html += '<h2>'+r.product+'</h2>';
     html += '<p>'+r.why+'</p>';
-    html += '<a class="cta" href="/self-loyalty-lab'+r.link+'">See '+r.product+'</a>';
-    html += '<a class="ghost" href="/self-loyalty-lab#system">Or get everything in the Self-Loyalty Lab System</a>';
+
+    if(r.systemPrimary){
+      html += '<a class="cta" href="/self-loyalty-lab/system/">See the Self-Loyalty Lab System</a>';
+      html += '<p style="margin-top:22px">'+r.fallback+'</p>';
+      html += '<a class="ghost" href="/self-loyalty-lab#srg">The Self-Return Guide alone</a>';
+    } else {
+      html += '<a class="cta" href="/self-loyalty-lab'+r.link+'">See '+r.product+'</a>';
+    }
     html += '</div>';
 
-    if(grand >= 34){
+    // DETACH only: the honest second option
+    if(r.system){
       html += '<div class="result">';
-      html += '<div class="tag">One more thing</div>';
-      html += '<p>You scored high across most of the five, not just one. That usually means this is not a single stage you are stuck in, it is a pattern running through the whole thing.</p>';
-      html += '<p>Starting with '+r.name+' still works. But the System covers all five, and at this level you are likely to need more than one of them.</p>';
+      html += '<div class="tag">'+r.systemLabel+'</div>';
+      html += '<p>'+r.systemBody+'</p>';
+      html += '<a class="ghost" href="/self-loyalty-lab/system/">See the Self-Loyalty Lab System</a>';
       html += '</div>';
     }
 
+    // 4 · the safety line. unchanged, on every result.
     html += '<div class="warn">';
-    html += 'This is an educational self-check written by a Registered Nurse. It is not a diagnosis, not therapy, and not a safety assessment. If you are being hurt, controlled, or threatened, please contact local emergency services or a domestic violence support service rather than working through it alone. In the Philippines: 911, or the NCMH Crisis Hotline on 1553.';
+    html += '<strong>If you are being hurt, controlled, threatened, or you are afraid of him, this is not the right tool.</strong> That is a safety situation and it needs different help. In the Philippines: 911, or 1553 for the NCMH Crisis Hotline, or 0919-777-7377 for the PNP Women and Children Protection Center.';
+    html += '<br><br>This is educational, written by a nurse. It is not therapy, not a diagnosis, and not advice about your specific relationship. If reading it brought up more than you can hold, working with a trauma-informed therapist alongside the material is a good idea, not a failure.';
     html += '</div>';
 
     html += '<hr>';
