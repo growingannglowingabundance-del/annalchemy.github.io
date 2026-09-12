@@ -86,6 +86,19 @@
   }
   a.ghost:hover{background:var(--accent-soft)}
   .result{background:var(--card);border:1px solid var(--line);padding:32px 28px;margin-bottom:18px}
+  #capture input[type=email]{
+    width:100%;font-family:var(--serif);font-size:1rem;color:var(--ink);
+    background:#fff;border:1px solid var(--line);padding:13px 14px;margin:6px 0 16px;
+  }
+  #capture input[type=email]:focus,#capture button:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+  #capture .check{
+    display:flex;gap:10px;align-items:flex-start;margin:0 0 12px;
+    font-family:var(--ui);font-size:.9rem;line-height:1.5;color:var(--ink);cursor:pointer;
+  }
+  #capture .check input{width:18px;height:18px;margin:2px 0 0;accent-color:var(--accent);flex:none}
+  #capture .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+  #capture .capmsg{font-family:var(--ui);font-size:.88rem;color:var(--accent);margin:12px 0 0;min-height:1.3em}
+  #capture button[disabled]{opacity:.55;cursor:default}
   .result h1{font-family:var(--displayital);font-style:italic;font-weight:700;font-size:2.5rem;letter-spacing:.01em}
   .tag{font-family:var(--ui);font-size:.68rem;font-weight:700;letter-spacing:.2em;
     text-transform:uppercase;color:var(--accent);margin-bottom:12px}
@@ -149,7 +162,7 @@
   <p class="lede">Fifteen questions. Under five minutes. This does not tell you what is wrong with you and it does not tell you what to do about him. It shows you where self-loyalty is under the most pressure right now, so you know where to start.</p>
 
   <div class="privacy">
-    <strong>Nothing here is saved.</strong> Your answers stay on your phone or computer and are never sent anywhere. There is no account, no email required, and nothing for anyone to read later. Close the tab and it is gone.
+    <strong>Nothing here is saved.</strong> Your answers stay on your phone or computer and are never sent anywhere. There is no account and no email required. At the end you can choose to have your result emailed to you, and if you do, only your address and your starting point are sent. Your answers stay on this device either way.
   </div>
 
   <p class="meta">Answer for how things are right now, not how you wish they were. First instinct is usually the accurate one.</p>
@@ -168,6 +181,10 @@
 
 <script>
 (function(){
+  /* Where the optional "email me my result" box posts to. Nothing else on this
+     page talks to a server. */
+  var CAPTURE_URL = 'https://fulfil.annalchemy.org/hooks/start';
+
   var SCALE = ["Not really me","Sometimes","Often","That is exactly me"];
 
   var QUESTIONS = [
@@ -347,6 +364,24 @@
       html += '</div>';
     }
 
+    // 3b · the optional ask. She has read the whole result by now and she has
+    // been given her free first step. Nothing above this point required an
+    // address and nothing below it does either.
+    html += '<div class="result" id="capture">';
+    html += '<div class="tag">If it helps</div>';
+    html += '<h2>Want this in your inbox?</h2>';
+    html += '<p>Your full result, so you can come back to it. Plus, if you want them, three short check-ins during your first week.</p>';
+    html += '<form id="captureForm" novalidate>';
+    html += '<input type="email" id="capEmail" name="email" placeholder="your email" autocomplete="email" required>';
+    html += '<label class="check"><input type="checkbox" id="capResult" checked> Send me my result. I am 18 or older.</label>';
+    html += '<label class="check"><input type="checkbox" id="capSeq"> Also send the three first-week check-ins. I can unsubscribe any time.</label>';
+    html += '<input type="text" id="capHp" tabindex="-1" autocomplete="off" aria-hidden="true" class="hp">';
+    html += '<button class="cta" type="submit" id="capBtn">Send it to me</button>';
+    html += '<p class="capmsg" id="capMsg" role="status" aria-live="polite"></p>';
+    html += '<p class="meta">Only your address and your starting point are sent. Your answers never leave this page.</p>';
+    html += '</form>';
+    html += '</div>';
+
     // 4 · the safety line. unchanged, on every result.
     html += '<div class="warn">';
     html += '<strong>If you are being hurt, controlled, threatened, or you are afraid of him, this is not the right tool.</strong> That is a safety situation and it needs different help. In the Philippines: 911, or 1553 for the NCMH Crisis Hotline, or 0919-777-7377 for the PNP Women and Children Protection Center.';
@@ -361,7 +396,64 @@
     var out = document.getElementById('result');
     out.innerHTML = html;
     out.classList.remove('hide');
+    wireCapture(top);
     window.scrollTo({top:0, behavior:'smooth'});
+  }
+
+  /* The optional ask. Her answers are not in scope here and never were: the
+     only things this sends are the address she typed and the five-letter code
+     of the result she has already read on screen. */
+  function wireCapture(code){
+    var form = document.getElementById('captureForm');
+    if(!form) return;
+    var msg = document.getElementById('capMsg');
+    var btn = document.getElementById('capBtn');
+
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      var email = document.getElementById('capEmail').value.trim();
+      var wantsResult = document.getElementById('capResult').checked;
+      var wantsSeq = document.getElementById('capSeq').checked;
+
+      if(!wantsResult){
+        msg.textContent = 'Tick the first box so I know it is alright to email you.';
+        return;
+      }
+      if(email.indexOf('@') < 1 || email.indexOf('.', email.indexOf('@')) < 0){
+        msg.textContent = 'That address does not look right. Have another look.';
+        return;
+      }
+
+      btn.disabled = true;
+      msg.textContent = 'Sending...';
+
+      var body = new URLSearchParams();
+      body.set('email', email);
+      body.set('result', code);
+      body.set('checkins', wantsSeq ? '1' : '');
+      body.set('hp', document.getElementById('capHp').value);
+
+      fetch(CAPTURE_URL, {
+        method:'POST',
+        headers:{'Content-Type':'application/x-www-form-urlencoded'},
+        body: body.toString()
+      }).then(function(r){
+        return r.json().catch(function(){ return {ok:false}; });
+      }).then(function(data){
+        if(data && data.ok){
+          form.innerHTML = '<p class="lede">Sent. Check your inbox in a minute, '
+            + 'and your spam folder if it is not there.</p>';
+        } else {
+          btn.disabled = false;
+          msg.textContent = 'That did not go through. Try once more, or email '
+            + 'hello@annalchemy.org and I will send it by hand.';
+        }
+      }).catch(function(){
+        btn.disabled = false;
+        msg.textContent = 'That did not go through. Try once more, or email '
+          + 'hello@annalchemy.org and I will send it by hand.';
+      });
+    });
   }
 })();
 </script>
