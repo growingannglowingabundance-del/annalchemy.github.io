@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your First Self-Loyalty Reset™ · The 2AM Card™ | Self-Loyalty Lab</title>
+<meta name="description" content="Fifteen minutes, done before bed. Decide now, while you are calm, what you will do at 2am. Free. Nothing you type is saved or sent.">
+<meta property="og:title" content="The 2AM Card™ · Self-Loyalty Lab">
+<meta property="og:description" content="Decide now, while you are calm. A free card for the moment you most want to text him.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --plum: #5E2A53;
+    --ink: #171417;
+    --paper: #FBF7F0;
+    --text: #4A3A46;
+    --muted: #7A6A76;
+    --rule: #E2D6DF;
+    --blush: #F2E4EE;
+    --serif: "Newsreader", Georgia, serif;
+    --sans: "Archivo", Arial, sans-serif;
+    --measure: 36rem;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--text);
+    font-family: var(--serif);
+    font-size: 1.1875rem;
+    line-height: 1.6;
+  }
+
+  .page {
+    max-width: var(--measure);
+    margin: 0 auto;
+    padding: 2.5rem 1.25rem 4rem;
+  }
+
+  .brand {
+    font-family: var(--sans);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: var(--plum);
+    margin: 0 0 2.5rem;
+  }
+
+  h1, h2, h3 {
+    font-family: var(--serif);
+    color: var(--ink);
+    font-weight: 500;
+    line-height: 1.15;
+  }
+
+  h1 {
+    font-size: clamp(2.25rem, 8vw, 3rem);
+    margin: 0 0 1rem;
+    letter-spacing: -0.01em;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+    margin: 0 0 0.75rem;
+  }
+
+  h3 {
+    font-size: 1.1875rem;
+    font-weight: 600;
+    margin: 0 0 0.5rem;
+  }
+
+  p { margin: 0 0 1rem; }
+
+  .lede {
+    font-size: 1.3125rem;
+    color: var(--ink);
+    margin-bottom: 1.75rem;
+  }
+
+  .steps {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1rem;
+    counter-reset: step;
+    border-top: 1px solid var(--rule);
+  }
+
+  .steps li {
+    counter-increment: step;
+    display: grid;
+    grid-template-columns: 2.25rem 1fr;
+    gap: 0.25rem 0.75rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .steps li::before {
+    content: counter(step);
+    font-family: var(--serif);
+    font-size: 1.75rem;
+    line-height: 1;
+    color: var(--plum);
+  }
+
+  .steps strong { color: var(--ink); font-weight: 600; }
+
+  .steps span { display: block; font-size: 1.0625rem; color: var(--muted); }
+
+  .quiet {
+    font-size: 1rem;
+    color: var(--muted);
+  }
+
+  section { margin-top: 3.5rem; }
+
+  .card-title {
+    padding-top: 2.5rem;
+    border-top: 3px solid var(--plum);
+  }
+
+  .card-title .kicker {
+    font-family: var(--sans);
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--plum);
+    margin: 0 0 0.5rem;
+  }
+
+  /* The wave: the one memorable element */
+  .wave {
+    margin: 1.5rem 0 1rem;
+  }
+
+  .wave svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    overflow: visible;
+  }
+
+  .wave .line {
+    fill: none;
+    stroke: var(--plum);
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-dasharray: 900;
+    stroke-dashoffset: 900;
+    animation: draw 2.4s ease-out 0.4s forwards;
+  }
+
+  .wave .base {
+    stroke: var(--rule);
+    stroke-width: 1;
+  }
+
+  .wave text {
+    font-family: var(--sans);
+    font-size: 19px;
+    fill: var(--muted);
+  }
+
+  .wave .mark {
+    fill: var(--plum);
+    font-weight: 600;
+  }
+
+  @keyframes draw { to { stroke-dashoffset: 0; } }
+
+  @media (prefers-reduced-motion: reduce) {
+    .wave .line { animation: none; stroke-dashoffset: 0; }
+  }
+
+  .pull {
+    font-size: 1.3125rem;
+    color: var(--ink);
+    font-weight: 500;
+  }
+
+  /* Fields */
+  .field { margin: 0 0 1.75rem; }
+
+  .field label,
+  .field .label {
+    display: block;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 0.5rem;
+  }
+
+  textarea,
+  input[type="text"],
+  input[type="tel"],
+  input[type="number"] {
+    width: 100%;
+    font-family: var(--serif);
+    font-size: 1.1875rem;
+    color: var(--ink);
+    background: #fff;
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    padding: 0.5rem 0.75rem;
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 5.8rem;
+    line-height: 1.9rem;
+    padding-top: 0.35rem;
+    background-image: repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent calc(1.9rem - 1px),
+      var(--rule) calc(1.9rem - 1px),
+      var(--rule) 1.9rem
+    );
+    background-attachment: local;
+    background-position: 0 0.35rem;
+  }
+
+  textarea.tall { min-height: 9.6rem; }
+
+  textarea:focus,
+  input:focus,
+  button:focus-visible,
+  a:focus-visible {
+    outline: 3px solid var(--plum);
+    outline-offset: 2px;
+  }
+
+  .pair {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  @media (min-width: 34rem) {
+    .pair { grid-template-columns: 1fr 1fr; }
+  }
+
+  .note {
+    font-style: italic;
+    color: var(--muted);
+    font-size: 1.0625rem;
+  }
+
+  .truths p { margin-bottom: 1.1rem; }
+
+  .truths strong { color: var(--ink); font-weight: 600; }
+
+  /* Tonight */
+  .tonight {
+    background: var(--blush);
+    padding: 1.75rem 1.25rem;
+    margin-left: -1.25rem;
+    margin-right: -1.25rem;
+  }
+
+  @media (min-width: 38rem) {
+    .tonight { margin-left: 0; margin-right: 0; padding: 2rem; }
+  }
+
+  .tonight .row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    margin: 1.25rem 0;
+  }
+
+  @media (min-width: 34rem) {
+    .tonight .row { grid-template-columns: 1fr 1fr 1fr; }
+  }
+
+  fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+  }
+
+  legend {
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 0.5rem;
+    padding: 0;
+  }
+
+  .choice {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .choice label {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-weight: 400;
+    color: var(--ink);
+  }
+
+  input[type="radio"] {
+    width: 1.2rem;
+    height: 1.2rem;
+    accent-color: var(--plum);
+  }
+
+  /* Actions */
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin: 2rem 0 0.75rem;
+  }
+
+  button {
+    font-family: var(--sans);
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 2px;
+    padding: 0.9rem 1.25rem;
+    cursor: pointer;
+    border: 2px solid var(--plum);
+  }
+
+  .primary { background: var(--plum); color: #fff; }
+
+  .secondary { background: transparent; color: var(--plum); }
+
+  .status {
+    font-family: var(--sans);
+    font-size: 0.9375rem;
+    color: var(--plum);
+    min-height: 1.4em;
+  }
+
+  /* Safety box: never small */
+  .safety {
+    border: 3px solid var(--ink);
+    background: #fff;
+    padding: 1.5rem 1.25rem;
+    margin-top: 3.5rem;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .safety h2 { font-size: 1.5rem; }
+
+  .safety ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1rem;
+  }
+
+  .safety li {
+    padding: 0.45rem 0;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .safety li:last-child { border-bottom: 0; }
+
+  .safety a {
+    color: var(--ink);
+    font-weight: 600;
+    font-size: 1.3125rem;
+    text-decoration: none;
+  }
+
+  .safety a:hover { text-decoration: underline; }
+
+  footer {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--rule);
+    font-size: 0.9375rem;
+    color: var(--muted);
+  }
+
+  footer p { margin-bottom: 0.5rem; }
+
+  /* Print: one clean card */
+  @media print {
+    body { background: #fff; font-size: 11.5pt; }
+    .page { max-width: none; padding: 0; }
+    .no-print, .actions, .status, .wave { display: none !important; }
+    section { margin-top: 1.4rem; }
+    .card-title { padding-top: 1rem; }
+    textarea, input { border: 0; border-bottom: 1px solid #999; background: none; }
+    textarea { min-height: 3.4rem; }
+    .tonight { background: none; border: 1px solid #999; margin: 0; }
+    .safety { margin-top: 1.4rem; }
+    a { color: #000; }
+  }
+</style>
+</head>
+<body>
+<main class="page">
+
+  <p class="brand">Self-Loyalty Lab™</p>
+
+  <header>
+    <h1>Your First Self-Loyalty Reset™</h1>
+    <p class="lede">Fifteen minutes. Three steps. Done before bed.</p>
+
+    <ol class="steps">
+      <li>
+        <div>
+          <strong>Fill in your 2AM Card, below.</strong>
+          <span>Three plans, one person, one note to yourself. About ten minutes.</span>
+        </div>
+      </li>
+      <li>
+        <div>
+          <strong>Keep it where you'll see it.</strong>
+          <span>Copy it into your phone's notes and pin it, or print it.</span>
+        </div>
+      </li>
+      <li>
+        <div>
+          <strong>Tonight, before bed, one line.</strong>
+          <span>It's at the bottom of the card. Nothing to change yet.</span>
+        </div>
+      </li>
+    </ol>
+
+    <p class="quiet">Nothing you type on this page is saved or sent anywhere. Copy it or print it before you close the tab.</p>
+  </header>
+
+  <section class="card-title" aria-labelledby="card-heading">
+    <p class="kicker">The 2AM Card™</p>
+    <h2 id="card-heading">Decide now, while you are calm.</h2>
+    <p>The moment you will need this is the moment your judgment is worst. That is not a weakness in you. It is what wanting someone does to a brain at 2am.</p>
+    <p>So it gets decided in advance, in daylight, by the version of you who can think.</p>
+  </section>
+
+  <section aria-labelledby="wave-heading">
+    <h2 id="wave-heading">The wave</h2>
+    <p>If you have stepped back from him, the longing gets <strong>louder</strong> first, not quieter.</p>
+    <p>You expect relief. What arrives is a surge of wanting so strong it feels like proof you made a mistake.</p>
+
+    <div class="wave" aria-hidden="true">
+      <svg viewBox="0 0 560 170" role="presentation">
+        <line class="base" x1="0" y1="140" x2="560" y2="140"></line>
+        <path class="line" d="M0 138 C 70 138, 110 130, 160 104 C 215 74, 240 18, 285 18 C 330 18, 350 74, 395 108 C 440 136, 490 138, 560 138"></path>
+        <text x="248" y="6">the peak</text>
+        <text x="0" y="166">the urge arrives</text>
+        <text class="mark" x="390" y="166">20 minutes later</text>
+      </svg>
+    </div>
+
+    <p class="pull">It is not proof. It is the wave.</p>
+    <p>It crests, and it passes, and it passes faster than you think.</p>
+    <p><strong>Do not decide anything at the peak. Set a timer for twenty minutes.</strong></p>
+  </section>
+
+  <section aria-labelledby="plans-heading">
+    <h2 id="plans-heading">My three plans</h2>
+
+    <div class="field">
+      <label for="plan1">If I want to message him, then I will</label>
+      <textarea id="plan1" rows="3"></textarea>
+    </div>
+
+    <div class="field">
+      <label for="plan2">If he messages me, then I will</label>
+      <textarea id="plan2" rows="3"></textarea>
+    </div>
+
+    <div class="field">
+      <label for="plan3">If I cannot sleep and my mind goes there, then I will</label>
+      <textarea id="plan3" rows="3"></textarea>
+    </div>
+  </section>
+
+  <section aria-labelledby="person-heading">
+    <h2 id="person-heading">The one person I text instead of him</h2>
+    <div class="pair">
+      <div class="field">
+        <label for="pname">Name</label>
+        <input type="text" id="pname" autocomplete="off">
+      </div>
+      <div class="field">
+        <label for="pnum">Number</label>
+        <input type="tel" id="pnum" autocomplete="off">
+      </div>
+    </div>
+    <p class="note">Tell her she is on this card. Tonight, not later. She will say yes, and then it is real.</p>
+  </section>
+
+  <section aria-labelledby="me-heading">
+    <h2 id="me-heading">From me, to me</h2>
+    <div class="field">
+      <label for="letter" class="note" style="font-weight:400">Why I stepped back. What it cost me to stay. What I promised myself.</label>
+      <textarea id="letter" class="tall" rows="5"></textarea>
+    </div>
+  </section>
+
+  <section class="truths" aria-labelledby="truths-heading">
+    <h2 id="truths-heading">Four things that are still true at 2am</h2>
+    <p><strong>A strong bond is proof that you bonded.</strong> It is not proof that he was worthy of it.</p>
+    <p><strong>Missing him is not the same as needing him back.</strong> Both can be true at once, and only one of them is a decision.</p>
+    <p><strong>You are allowed to have needs.</strong> Even now. Even after all this time.</p>
+    <p><strong>You have survived this exact feeling before.</strong> Every single time so far.</p>
+  </section>
+
+  <section class="tonight" aria-labelledby="tonight-heading">
+    <h2 id="tonight-heading">Tonight, before bed</h2>
+    <p>One line. That's all.</p>
+    <div class="row">
+      <div class="field" style="margin:0">
+        <label for="sleep">Hours I slept last night</label>
+        <input type="number" id="sleep" min="0" max="24" step="0.5" inputmode="decimal">
+      </div>
+      <div class="field" style="margin:0">
+        <label for="mood">My mood, out of ten</label>
+        <input type="number" id="mood" min="0" max="10" step="1" inputmode="numeric">
+      </div>
+      <fieldset>
+        <legend>Did I contact him?</legend>
+        <div class="choice">
+          <label><input type="radio" name="contact" value="yes"> Yes</label>
+          <label><input type="radio" name="contact" value="no"> No</label>
+        </div>
+      </fieldset>
+    </div>
+    <p style="margin:0">That's Day 1. Nothing to change yet.</p>
+  </section>
+
+  <div class="actions">
+    <button type="button" class="primary" id="copyBtn">Copy my card</button>
+    <button type="button" class="secondary" id="printBtn">Print or save as PDF</button>
+    <button type="button" class="secondary" id="shareBtn">Send this to a friend</button>
+  </div>
+  <p class="status" id="status" role="status" aria-live="polite"></p>
+
+  <aside class="safety" aria-labelledby="safety-heading">
+    <h2 id="safety-heading">If this has stopped being about heartbreak</h2>
+    <p>If you are frightened, if you are being controlled, or if you are not safe, this card is not the right tool and neither are my guides. That is a safety situation and it needs different help.</p>
+    <p><strong>Philippines</strong></p>
+    <ul>
+      <li><a href="tel:911">911</a><br>Emergency</li>
+      <li><a href="tel:1553">1553</a> &middot; <a href="tel:+639190571553">0919 057 1553</a><br>NCMH Crisis Hotline, 24 hours</li>
+      <li><a href="tel:+639209071717">0920-907-1717</a><br>PNP Women and Children Protection Center</li>
+      <li><strong>Your barangay VAW Desk</strong></li>
+    </ul>
+    <p><strong>Outside the Philippines,</strong> your local emergency number, or a domestic violence hotline in your country.</p>
+    <p style="margin:0">You are not overreacting by calling. You do not have to be sure first.</p>
+  </aside>
+
+  <footer>
+    <p><strong>Self-Loyalty Lab™</strong> · annalchemy.org/2am</p>
+    <p>Free. Print it, screenshot it, send it to the friend you are thinking of.</p>
+    <p>If you bought the Self-Loyalty Lab System™, this is your Day 1. Your files are on their way to your email.</p>
+    <p>Educational only. Not therapy, not a diagnosis, and not a safety plan for an abusive relationship.</p>
+    <p>© 2026 Anna Cadano · AnnAlchemy™ · Self-Loyalty Lab™ · hello@annalchemy.org</p>
+  </footer>
+
+</main>
+
+<script>
+  (function () {
+    var status = document.getElementById("status");
+
+    function say(msg) {
+      status.textContent = msg;
+      window.clearTimeout(say.t);
+      say.t = window.setTimeout(function () { status.textContent = ""; }, 5000);
+    }
+
+    function val(id) {
+      var el = document.getElementById(id);
+      return el && el.value.trim() ? el.value.trim() : "________";
+    }
+
+    function contact() {
+      var picked = document.querySelector('input[name="contact"]:checked');
+      return picked ? picked.value : "________";
+    }
+
+    function cardText() {
+      return [
+        "MY 2AM CARD",
+        "Decide now, while you are calm.",
+        "",
+        "Do not decide anything at the peak. Set a timer for twenty minutes.",
+        "",
+        "If I want to message him, then I will: " + val("plan1"),
+        "If he messages me, then I will: " + val("plan2"),
+        "If I cannot sleep and my mind goes there, then I will: " + val("plan3"),
+        "",
+        "The one person I text instead of him: " + val("pname") + " " + val("pnum"),
+        "",
+        "From me, to me: " + val("letter"),
+        "",
+        "Still true at 2am:",
+        "A strong bond is proof that you bonded. It is not proof that he was worthy of it.",
+        "Missing him is not the same as needing him back.",
+        "You are allowed to have needs.",
+        "You have survived this exact feeling before.",
+        "",
+        "Tonight: slept " + val("sleep") + " hrs · mood " + val("mood") + "/10 · contacted him: " + contact(),
+        "",
+        "If this stops being about heartbreak: 911 \u00b7 1553 or 0919 057 1553 (NCMH) \u00b7 0920-907-1717 (PNP WCPC) \u00b7 your barangay VAW Desk",
+        "annalchemy.org/2am"
+      ].join("\n");
+    }
+
+    function fallbackCopy(text) {
+      var ta = document.createElement("textarea");
+      ta.value = text;
+      ta.setAttribute("readonly", "");
+      ta.style.position = "fixed";
+      ta.style.opacity = "0";
+      document.body.appendChild(ta);
+      ta.select();
+      var ok = false;
+      try { ok = document.execCommand("copy"); } catch (e) { ok = false; }
+      document.body.removeChild(ta);
+      return ok;
+    }
+
+    document.getElementById("copyBtn").addEventListener("click", function () {
+      var text = cardText();
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text).then(function () {
+          say("Copied. Paste it into your notes app and pin it.");
+        }, function () {
+          say(fallbackCopy(text) ? "Copied. Paste it into your notes app and pin it." : "Couldn't copy. Take a screenshot instead.");
+        });
+      } else {
+        say(fallbackCopy(text) ? "Copied. Paste it into your notes app and pin it." : "Couldn't copy. Take a screenshot instead.");
+      }
+    });
+
+    document.getElementById("printBtn").addEventListener("click", function () {
+      window.print();
+    });
+
+    document.getElementById("shareBtn").addEventListener("click", function () {
+      var url = "https://annalchemy.org/2am";
+      var data = {
+        title: "The 2AM Card",
+        text: "A free card for the moment you most want to text him. Decide now, while you are calm.",
+        url: url
+      };
+      if (navigator.share) {
+        navigator.share(data).catch(function () {});
+      } else if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(url).then(function () {
+          say("Link copied. Send it to her.");
+        }, function () {
+          say("Share this link: " + url);
+        });
+      } else {
+        say("Share this link: " + url);
+      }
+    });
+  })();
+</script>
+</body>
+</html>
