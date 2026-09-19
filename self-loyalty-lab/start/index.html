@@ -347,9 +347,9 @@
     html += '<p>'+r.why+'</p>';
 
     if(r.systemPrimary){
-      html += '<a class="cta" href="/self-loyalty-lab/system/">See the Self-Loyalty Lab System</a>';
+      html += '<a class="cta" href="https://annalchemy.org/lab/system">See the Self-Loyalty Lab System</a>';
       html += '<p style="margin-top:22px">'+r.fallback+'</p>';
-      html += '<a class="ghost" href="/self-loyalty-lab#srg">The Self-Return Guide alone</a>';
+      html += '<a class="ghost" href="https://annalchemy.org/lab/srg">The Self-Return Guide alone</a>';
     } else {
       html += '<a class="cta" href="/self-loyalty-lab'+r.link+'">See '+r.product+'</a>';
     }
@@ -360,7 +360,7 @@
       html += '<div class="result">';
       html += '<div class="tag">'+r.systemLabel+'</div>';
       html += '<p>'+r.systemBody+'</p>';
-      html += '<a class="ghost" href="/self-loyalty-lab/system/">See the Self-Loyalty Lab System</a>';
+      html += '<a class="ghost" href="https://annalchemy.org/lab/system">See the Self-Loyalty Lab System</a>';
       html += '</div>';
     }
 
@@ -390,7 +390,7 @@
 
     html += '<hr>';
     html += '<p class="meta">Your result was worked out on your own device and has not been saved or sent anywhere. If you want to keep it, screenshot this page.</p>';
-    html += '<a class="ghost" href="/self-loyalty-lab">Back to Self-Loyalty Lab</a>';
+    html += '<a class="ghost" href="https://annalchemy.org/lab/home">Back to Self-Loyalty Lab</a>';
 
     document.getElementById('quiz').classList.add('hide');
     var out = document.getElementById('result');
