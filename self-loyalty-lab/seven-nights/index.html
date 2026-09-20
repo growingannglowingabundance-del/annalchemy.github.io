@@ -157,14 +157,29 @@
     <p>You have made the promise before. "I will not text him first." "I will not check his stories tonight." And by 11:40, you did.</p>
     <p>That is not because you are weak. It is because the promise was too big, it was made in a calm moment, and nobody helped you keep it on the night it got hard.</p>
     <div class="tint">
-      <p style="margin:0 0 10px"><strong>Everything here stays on this device.</strong> Your rule and your nightly lines are saved in this browser only. They are never sent anywhere, and I never see them.</p>
-      <p class="small" style="margin:0">On the seventh night you can choose to send me a short summary. That part is optional, it is a separate decision, and nothing happens unless you tick the box yourself.</p>
+      <p style="margin:0 0 10px"><strong>Your nightly lines stay on this device.</strong> What you write each night is saved in this browser only. It is never sent anywhere, and I never see it.</p>
+      <p class="small" style="margin:0">To start, I ask for your email, so I can send you an evening reminder for the seven nights and check you are alright. That is the only thing that reaches me. Your nightly lines never do.</p>
     </div>
-    <p class="small">Free. No email needed. Written by Anna Cadano, RN since 2008. Educational, not therapy.</p>
+    <p class="small">Free. Written by Anna Cadano, RN since 2008. Educational, not therapy.</p>
+  </section>
+
+  <!-- ============ EMAIL GATE ============ -->
+  <section id="gate">
+    <p class="eyebrow">Before you start</p>
+    <h2>Where should I send your reminders?</h2>
+    <p>Seven nights is easier when someone nudges you each evening. Enter your email and I will send one short reminder a night, and nothing else you did not ask for. Unsubscribe any time.</p>
+    <div class="field">
+      <input type="email" id="gateEmail" placeholder="your email" autocomplete="email" inputmode="email">
+    </div>
+    <label class="check"><input type="checkbox" id="gateAge" checked> I am 18 or older, and it is alright to email me my reminders.</label>
+    <input type="text" id="gateHp" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+    <button class="btn" id="gateBtn">Start the seven nights</button>
+    <p class="status" id="gateMsg" role="status"></p>
+    <p class="small" style="margin-top:12px">Only your email is sent, so I can reach you during the week. Your nightly lines stay on your device.</p>
   </section>
 
   <!-- ============ STEP 1 · PICK THE RULE ============ -->
-  <section id="step-rule">
+  <section id="step-rule" class="hide">
     <p class="eyebrow">Step one</p>
     <h2>Pick one rule</h2>
     <p>Small enough to keep. Real enough to matter. Most people fail because the rule was too big, not because they are.</p>
@@ -340,6 +355,10 @@
   // Where the optional Day 7 summary goes. Nothing else on this page talks to
   // a server.
   var SEND_URL = "https://fulfil.annalchemy.org/hooks/challenge";
+  // Captures her email when she starts, so reminders can be sent. Reuses the
+  // Starting Point capture endpoint: same shape, and it just needs an address
+  // and a source tag.
+  var JOIN_URL = "https://fulfil.annalchemy.org/hooks/start";
   var KEY = "sll-seven-nights-v1";
 
   var PRESETS = [
@@ -361,7 +380,7 @@
         if (parsed && typeof parsed === "object") return parsed;
       }
     } catch (e) { /* private mode, or storage full. Fall through. */ }
-    return { rule: "", started: null, nights: {}, answers: {} };
+    return { rule: "", started: null, nights: {}, answers: {}, joined: false };
   }
 
   function save() {
@@ -519,6 +538,57 @@
     closeNight();
     render();
   });
+
+  function wireGate() {
+    var form = el("gateBtn");
+    var msg = el("gateMsg");
+    if (!form) return;
+    form.addEventListener("click", function () {
+      if (el("gateHp").value.trim()) { return; }
+      var email = el("gateEmail").value.trim();
+      if (!el("gateAge").checked) { msg.textContent = "Please confirm you are 18 or older."; return; }
+      if (email.indexOf("@") < 1 || email.indexOf(".", email.indexOf("@")) < 0) {
+        msg.textContent = "That address does not look right. Have another look.";
+        return;
+      }
+      form.disabled = true;
+      msg.textContent = "One moment...";
+
+      var body = new URLSearchParams();
+      body.set("email", email);
+      body.set("result", "SEVEN");   // source tag: seven-nights challenge
+      body.set("checkins", "1");
+      body.set("hp", "");
+
+      function proceed() {
+        state.joined = true;
+        save();
+        showGateOrChallenge();
+        el("step-rule").scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+      fetch(JOIN_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: body.toString()
+      }).then(function (r) { return r.json().catch(function () { return {}; }); })
+        .then(proceed).catch(proceed);
+    });
+  }
+
+  function showGateOrChallenge() {
+    // The gate shows until she has joined. Everything else waits behind it.
+    var joined = Boolean(state.joined);
+    el("gate").classList.toggle("hide", joined);
+    if (!joined) {
+      el("step-rule").classList.add("hide");
+      el("step-plan").classList.add("hide");
+      el("tracker").classList.add("hide");
+      el("lookback").classList.add("hide");
+      el("share").classList.add("hide");
+      return;
+    }
+    render();
+  }
 
   function render() {
     var hasRule = Boolean(state.rule);
@@ -736,7 +806,8 @@
     });
   });
 
-  render();
+  wireGate();
+  showGateOrChallenge();
 })();
 </script>
 </body>
