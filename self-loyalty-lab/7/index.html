@@ -1,1 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Seven Nights Challenge &middot; Free &middot; Self-Loyalty Lab&trade;</title>
+<meta name="description" content="Pick one small rule for yourself and keep it for seven nights. Free. One line before bed, and on the seventh night you will have something you have never had: your own record instead of your own mood.">
+<link rel="canonical" href="https://annalchemy.org/self-loyalty-lab/seven-nights/">
+<meta property="og:title" content="The Seven Nights Challenge &middot; Self-Loyalty Lab&trade;">
+<meta property="og:description" content="One small rule. Seven nights. Free, and it starts tonight.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://annalchemy.org/self-loyalty-lab/seven-nights/">
+<meta property="og:site_name" content="Self-Loyalty Lab&trade;">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#FBF7F0">
+<link rel="icon" href="data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cellipse cx='50' cy='46' rx='34' ry='42' fill='none' stroke='%235E2A53' stroke-width='6'/%3E%3Cpath d='M36 62 V38 L44 47 L50 32 L56 47 L64 38 V62 Z' fill='%235E2A53'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Playfair+Display:wght@500;600;700&display=swap">
+<style>
+  :root {
+    --plum: #5E2A53;
+    --ink: #171417;
+    --paper: #FBF7F0;
+    --body: #3A2A36;
+    --soft: #6E5C68;
+    --rule: #E2D6DF;
+    --tint: #F6EFF4;
+    --kept: #2E6B4F;
+    --broke: #8A5A1E;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--body);
+    font-family: Newsreader, Georgia, serif;
+    font-size: 18px;
+    line-height: 1.62;
+  }
+  .wrap { max-width: 40rem; margin: 0 auto; padding: 34px 20px 80px; }
+  .brand {
+    font-family: Archivo, sans-serif; font-size: 12px; font-weight: 700;
+    letter-spacing: 0.2em; text-transform: uppercase; color: var(--plum);
+    margin: 0 0 30px;
+  }
+  h1 {
+    font-family: 'Playfair Display', serif; font-weight: 600;
+    font-size: clamp(2.1rem, 8vw, 2.9rem); line-height: 1.08;
+    margin: 0 0 14px; color: var(--ink); letter-spacing: -0.01em;
+  }
+  h2 {
+    font-family: 'Playfair Display', serif; font-weight: 600;
+    font-size: 1.6rem; line-height: 1.16; margin: 0 0 12px; color: var(--ink);
+  }
+  h3 { font-family: Archivo, sans-serif; font-size: 0.95rem; font-weight: 600; margin: 0 0 8px; color: var(--ink); }
+  p { margin: 0 0 14px; }
+  .lede { font-size: 1.24rem; color: var(--ink); }
+  .small { font-size: 0.94rem; line-height: 1.6; color: var(--soft); }
+  .eyebrow {
+    font-family: Archivo, sans-serif; font-size: 11px; font-weight: 700;
+    letter-spacing: 0.2em; text-transform: uppercase; color: var(--plum);
+    margin: 0 0 8px;
+  }
+  section { margin-top: 42px; padding-top: 28px; border-top: 1px solid var(--rule); }
+  section:first-of-type { border-top: 0; padding-top: 0; }
 
+  .card { background: #fff; border: 1px solid var(--rule); padding: 22px 20px; }
+  .tint { background: var(--tint); border-left: 4px solid var(--plum); padding: 20px; }
+
+  button, input, textarea, select { font-family: inherit; font-size: 1rem; }
+  .btn {
+    font-family: Archivo, sans-serif; font-size: 0.95rem; font-weight: 600;
+    letter-spacing: 0.04em; padding: 15px 24px; cursor: pointer;
+    background: var(--plum); color: var(--paper); border: 2px solid var(--plum);
+    border-radius: 2px;
+  }
+  .btn.ghost { background: transparent; color: var(--plum); }
+  .btn:disabled { opacity: 0.5; cursor: default; }
+  .btn:focus-visible, input:focus-visible, textarea:focus-visible, .rule:focus-visible { outline: 3px solid var(--plum); outline-offset: 2px; }
+
+  input[type=text], textarea {
+    width: 100%; padding: 12px 14px; color: var(--ink); background: #fff;
+    border: 1px solid var(--rule); border-radius: 2px;
+    font-family: Newsreader, Georgia, serif; font-size: 1.05rem;
+  }
+  textarea { min-height: 6.5rem; line-height: 1.6; resize: vertical; }
+
+  .rules { display: grid; gap: 10px; margin: 0 0 16px; }
+  .rule {
+    text-align: left; background: #fff; border: 1px solid var(--rule);
+    padding: 15px 16px; cursor: pointer; font-size: 1.05rem;
+    font-family: Newsreader, Georgia, serif; color: var(--ink); border-radius: 2px;
+  }
+  .rule:hover { border-color: var(--plum); }
+  .rule[aria-pressed="true"] { background: var(--plum); color: #fff; border-color: var(--plum); }
+
+  .nights { display: grid; gap: 10px; }
+  .night {
+    display: grid; grid-template-columns: 3.1rem 1fr; gap: 12px;
+    align-items: center; background: #fff; border: 1px solid var(--rule); padding: 13px 15px;
+  }
+  .night .n {
+    font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--plum); line-height: 1;
+  }
+  .night.done { background: var(--tint); }
+  .night .state { font-family: Archivo, sans-serif; font-size: 0.8rem; font-weight: 600; }
+  .night .state.kept { color: var(--kept); }
+  .night .state.broke { color: var(--broke); }
+  .night button.open {
+    background: none; border: 0; padding: 0; text-align: left; cursor: pointer;
+    font-family: inherit; font-size: 1rem; color: var(--ink); width: 100%;
+  }
+
+  dialog {
+    border: 1px solid var(--plum); background: var(--paper); color: var(--body);
+    padding: 24px 22px; max-width: 30rem; width: calc(100% - 32px); border-radius: 2px;
+  }
+  dialog::backdrop { background: rgba(23, 20, 23, 0.55); }
+  .field { margin: 0 0 16px; }
+  .field label { display: block; font-family: Archivo, sans-serif; font-size: 0.84rem; font-weight: 600; color: var(--ink); margin-bottom: 6px; }
+  .seg { display: flex; gap: 8px; flex-wrap: wrap; }
+  .seg button {
+    flex: 1 1 auto; min-width: 4.2rem; padding: 11px 8px; cursor: pointer;
+    background: #fff; border: 1px solid var(--rule); color: var(--ink); border-radius: 2px;
+    font-family: Archivo, sans-serif; font-size: 0.88rem;
+  }
+  .seg button[aria-pressed="true"] { background: var(--plum); color: #fff; border-color: var(--plum); }
+
+  .hide { display: none !important; }
+  .status { font-family: Archivo, sans-serif; font-size: 0.9rem; color: var(--plum); min-height: 1.3em; }
+  .check { display: flex; gap: 11px; align-items: flex-start; margin: 0 0 12px; font-size: 0.97rem; cursor: pointer; }
+  .check input { width: 19px; height: 19px; margin: 3px 0 0; accent-color: var(--plum); flex: none; }
+
+  .safety { border: 3px solid var(--ink); background: #fff; padding: 20px; margin-top: 46px; }
+  .safety a { color: var(--ink); font-weight: 600; text-decoration: none; font-size: 1.1rem; }
+  .safety a:hover { text-decoration: underline; }
+  .safety ul { list-style: none; padding: 0; margin: 0 0 12px; }
+  .safety li { padding: 7px 0; border-bottom: 1px solid var(--rule); }
+  .safety li:last-child { border-bottom: 0; }
+
+  footer { margin-top: 34px; padding-top: 18px; border-top: 1px solid var(--rule); }
+  a { color: var(--plum); }
+</style>
+</head>
+<body>
+<main class="wrap">
+
+  <p class="brand">Self-Loyalty Lab&trade;</p>
+
+  <!-- ============ INTRO ============ -->
+  <section id="intro">
+    <p class="eyebrow">Free &middot; starts tonight</p>
+    <h1>Seven nights. One promise. Kept.</h1>
+    <p class="lede">Pick one small rule for yourself. Keep it for seven nights. On the seventh night you will have something you have never had, which is your own record instead of your own mood.</p>
+    <p>You have made the promise before. "I will not text him first." "I will not check his stories tonight." And by 11:40, you did.</p>
+    <p>That is not because you are weak. It is because the promise was too big, it was made in a calm moment, and nobody helped you keep it on the night it got hard.</p>
+    <div class="tint">
+      <p style="margin:0 0 10px"><strong>Everything here stays on this device.</strong> Your rule and your nightly lines are saved in this browser only. They are never sent anywhere, and I never see them.</p>
+      <p class="small" style="margin:0">On the seventh night you can choose to send me a short summary. That part is optional, it is a separate decision, and nothing happens unless you tick the box yourself.</p>
+    </div>
+    <p class="small">Free. No email needed. Written by Anna Cadano, RN since 2008. Educational, not therapy.</p>
+  </section>
+
+  <!-- ============ STEP 1 · PICK THE RULE ============ -->
+  <section id="step-rule">
+    <p class="eyebrow">Step one</p>
+    <h2>Pick one rule</h2>
+    <p>Small enough to keep. Real enough to matter. Most people fail because the rule was too big, not because they are.</p>
+    <div class="rules" id="ruleList" role="group" aria-label="Choose a rule"></div>
+    <div class="field">
+      <label for="customRule">Or write your own</label>
+      <input type="text" id="customRule" placeholder="I do not ______" autocomplete="off" maxlength="120">
+    </div>
+    <details style="margin-bottom:18px">
+      <summary class="small" style="cursor:pointer;color:var(--plum)">How do I know if my rule is small enough?</summary>
+      <p class="small" style="margin-top:10px"><strong>Too big:</strong> "I will not think about him." You cannot keep a rule about a feeling. "I will go no contact for a month." That is four rules and a deadline.</p>
+      <p class="small"><strong>Just right:</strong> "I do not reply after 10 PM." One behavior, one boundary, and you know by bedtime whether you kept it.</p>
+      <p class="small">If you are not sure, pick the smaller one. A kept small rule teaches you more than a broken big one.</p>
+    </details>
+    <button class="btn" id="startBtn">Start tonight</button>
+    <p class="status" id="ruleStatus" role="status"></p>
+  </section>
+
+  <!-- ============ STEP 2 · THE PLAN ============ -->
+  <section id="step-plan" class="hide">
+    <p class="eyebrow">Step two, about ten minutes</p>
+    <h2>Write your plan for the hard moment</h2>
+    <p>The moment you will need this is the moment your judgment is worst. So it gets decided now, in daylight, by the version of you who can think.</p>
+    <p><a href="/self-loyalty-lab/2am/">Open your 2AM Card</a>. Three if-then lines and the name of one person you reach out to instead of him. Then keep it where you will find it.</p>
+    <p class="small">This kind of if-then plan is one of the most tested tools in behavior research. It reliably helps people follow through on things they already wanted to do.</p>
+  </section>
+
+  <!-- ============ THE TRACKER ============ -->
+  <section id="tracker" class="hide">
+    <p class="eyebrow">Your seven nights</p>
+    <h2 id="ruleHeading"></h2>
+    <p class="small" id="progress"></p>
+    <div class="nights" id="nightList"></div>
+    <p class="small" style="margin-top:14px">One line before bed. That is the whole daily task. If you miss a night, fill it in the next day. Nobody is grading this.</p>
+    <p><button class="btn ghost" id="changeRule">Change my rule</button></p>
+  </section>
+
+  <!-- ============ DAY 7 LOOK BACK ============ -->
+  <section id="lookback" class="hide">
+    <p class="eyebrow">The seventh night</p>
+    <h2>Read your seven lines together</h2>
+    <div class="card" id="summaryCard"></div>
+
+    <h3 style="margin-top:22px">Five questions</h3>
+    <div class="field">
+      <label for="q1">On the nights you broke your rule, what did those nights have in common?</label>
+      <textarea id="q1"></textarea>
+    </div>
+    <div class="field">
+      <label for="q2">How had you slept on the nights it was hardest?</label>
+      <textarea id="q2"></textarea>
+    </div>
+    <div class="field">
+      <label for="q3">What did your seven lines show you that you had not noticed before?</label>
+      <textarea id="q3"></textarea>
+    </div>
+    <div class="field">
+      <label for="q4">What was the hardest single moment, and what did you do?</label>
+      <textarea id="q4"></textarea>
+    </div>
+    <div class="field">
+      <label for="q5">What would you tell the version of you who started seven nights ago?</label>
+      <textarea id="q5"></textarea>
+    </div>
+
+    <p><button class="btn ghost" id="copyAll">Copy my whole week</button>
+       <button class="btn ghost" id="printAll">Print or save as PDF</button></p>
+    <p class="status" id="copyStatus" role="status"></p>
+  </section>
+
+  <!-- ============ THE OPTIONAL SHARE ============ -->
+  <section id="share" class="hide">
+    <p class="eyebrow">Optional, and separate</p>
+    <h2>Would you tell me what you saw?</h2>
+    <p>You finished. If you are willing, three short answers help me write this better for the next woman, and they are the only proof I have that any of it works.</p>
+    <p class="small"><strong>Nothing is sent unless you choose to send it.</strong> Your nightly lines are not included. Only the three answers below, and how many nights you kept.</p>
+
+    <div class="card">
+      <div class="field">
+        <label for="sRule">Your rule</label>
+        <input type="text" id="sRule" autocomplete="off" maxlength="120">
+      </div>
+      <div class="field">
+        <label>Nights kept, out of seven</label>
+        <div class="seg" id="keptSeg" role="group" aria-label="Nights kept"></div>
+      </div>
+      <div class="field">
+        <label for="sSaw">What did your seven lines show you?</label>
+        <textarea id="sSaw" maxlength="1200"></textarea>
+      </div>
+      <div class="field">
+        <label for="sEmail">Your email, only so I can check back with you</label>
+        <input type="text" id="sEmail" placeholder="you@example.com" autocomplete="email" inputmode="email">
+      </div>
+
+      <label class="check"><input type="checkbox" id="cShare">
+        <span>You may share my answers anonymously, with no name and no identifying details. I can change my mind any time by emailing hello@annalchemy.org.</span></label>
+      <label class="check"><input type="checkbox" id="cAge">
+        <span>I am 18 or older.</span></label>
+      <label class="check"><input type="checkbox" id="cNo">
+        <span>Or: send my answers but please do not share any of it publicly.</span></label>
+
+      <input type="text" id="hp" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+
+      <button class="btn" id="sendBtn">Send my answers</button>
+      <p class="status" id="sendStatus" role="status"></p>
+      <p class="small" style="margin-top:12px">Not comfortable? Close the tab. You keep everything you built this week, and you owe me nothing for it.</p>
+    </div>
+
+    <div class="tint" style="margin-top:22px">
+      <h3>What comes next, if you want it</h3>
+      <p style="margin:0 0 10px">Seven nights proves you can keep one promise to yourself. The Self-Loyalty Lab System&trade; is how that becomes who you are, over eight practice weeks.</p>
+      <p style="margin:0"><a href="/self-loyalty-lab/system/">See the System</a> &middot; <a href="/self-loyalty-lab/">All the guides</a></p>
+    </div>
+  </section>
+
+  <!-- ============ SAFETY ============ -->
+  <aside class="safety">
+    <h2 style="font-size:1.35rem">If this has stopped being about heartbreak</h2>
+    <p>If you are frightened, being controlled, or not safe, a rule is not the right tool and neither are my guides. That is a safety situation and it needs different help.</p>
+    <p><strong>Philippines</strong></p>
+    <ul>
+      <li><a href="tel:911">911</a><br><span class="small">Emergency</span></li>
+      <li><a href="tel:1553">1553</a> &middot; <a href="tel:+639190571553">0919 057 1553</a><br><span class="small">NCMH Crisis Hotline, 24 hours</span></li>
+      <li><a href="tel:+639209071717">0920 907 1717</a> &middot; <a href="tel:+639667255961">0966 725 5961</a><br><span class="small">PNP Women and Children Protection Center</span></li>
+      <li><strong>Your barangay VAW Desk</strong></li>
+    </ul>
+    <p class="small" style="margin:0"><strong>Outside the Philippines,</strong> your local emergency number, or a domestic violence hotline in your country. You are not overreacting by calling, and you do not have to be sure first.</p>
+  </aside>
+
+  <footer>
+    <p class="small"><strong>Self-Loyalty Lab&trade;</strong> &middot; annalchemy.org/self-loyalty-lab/seven-nights</p>
+    <p class="small">Educational only. Not therapy, not a diagnosis, and not a safety plan for an abusive relationship. You must be 18 or older.</p>
+    <p class="small">&copy; 2026 Anna Cadano, RN &middot; AnnAlchemy&trade; &middot; hello@annalchemy.org</p>
+  </footer>
+</main>
+
+<!-- One night's entry -->
+<dialog id="nightDialog">
+  <form method="dialog" id="nightForm">
+    <h2 id="dialogTitle" style="font-size:1.4rem">Night 1</h2>
+    <p class="small" id="dialogRule"></p>
+    <div class="field">
+      <label>Did you keep your rule?</label>
+      <div class="seg" id="keptSeg2" role="group" aria-label="Kept or not">
+        <button type="button" data-kept="1" aria-pressed="false">Kept it</button>
+        <button type="button" data-kept="0" aria-pressed="false">Broke it</button>
+      </div>
+    </div>
+    <div class="field">
+      <label>Hours you slept last night</label>
+      <div class="seg" id="sleepSeg" role="group" aria-label="Hours slept"></div>
+    </div>
+    <div class="field">
+      <label>Your mood, out of ten</label>
+      <div class="seg" id="moodSeg" role="group" aria-label="Mood out of ten"></div>
+    </div>
+    <div class="field">
+      <label for="noteBox">Anything else, if you want (optional)</label>
+      <textarea id="noteBox" maxlength="400" style="min-height:4.4rem"></textarea>
+    </div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <button class="btn" type="button" id="saveNight">Save this night</button>
+      <button class="btn ghost" type="button" id="cancelNight">Cancel</button>
+    </div>
+  </form>
+</dialog>
+
+<script>
+(function () {
+  "use strict";
+
+  // Where the optional Day 7 summary goes. Nothing else on this page talks to
+  // a server.
+  var SEND_URL = "https://fulfil.annalchemy.org/hooks/challenge";
+  var KEY = "sll-seven-nights-v1";
+
+  var PRESETS = [
+    "I do not reply after 10 PM.",
+    "I do not check his stories.",
+    "I do not message first.",
+    "I do not give access he has not earned this week.",
+    "I do not reread our old messages."
+  ];
+
+  // --- state, stored on this device only -----------------------------------
+  var state = load();
+
+  function load() {
+    try {
+      var raw = window.localStorage.getItem(KEY);
+      if (raw) {
+        var parsed = JSON.parse(raw);
+        if (parsed && typeof parsed === "object") return parsed;
+      }
+    } catch (e) { /* private mode, or storage full. Fall through. */ }
+    return { rule: "", started: null, nights: {}, answers: {} };
+  }
+
+  function save() {
+    try {
+      window.localStorage.setItem(KEY, JSON.stringify(state));
+      return true;
+    } catch (e) {
+      // Private browsing blocks storage. Say so rather than losing her week
+      // silently.
+      say("ruleStatus", "This browser will not let me save your week. You can still use the page, but keep a copy somewhere else.");
+      return false;
+    }
+  }
+
+  function el(id) { return document.getElementById(id); }
+
+  function say(id, msg) {
+    var node = el(id);
+    if (!node) return;
+    node.textContent = msg;
+    window.clearTimeout(say["t" + id]);
+    say["t" + id] = window.setTimeout(function () { node.textContent = ""; }, 6000);
+  }
+
+  function keptCount() {
+    var n = 0;
+    for (var i = 1; i <= 7; i++) {
+      if (state.nights[i] && state.nights[i].kept) n++;
+    }
+    return n;
+  }
+
+  function filledCount() {
+    var n = 0;
+    for (var i = 1; i <= 7; i++) { if (state.nights[i]) n++; }
+    return n;
+  }
+
+  // --- step one: the rule ---------------------------------------------------
+  var list = el("ruleList");
+  PRESETS.forEach(function (text) {
+    var b = document.createElement("button");
+    b.type = "button";
+    b.className = "rule";
+    b.setAttribute("aria-pressed", "false");
+    b.textContent = text;
+    b.addEventListener("click", function () {
+      Array.prototype.forEach.call(list.children, function (c) {
+        c.setAttribute("aria-pressed", String(c === b));
+      });
+      el("customRule").value = "";
+    });
+    list.appendChild(b);
+  });
+
+  el("customRule").addEventListener("input", function () {
+    Array.prototype.forEach.call(list.children, function (c) {
+      c.setAttribute("aria-pressed", "false");
+    });
+  });
+
+  function chosenRule() {
+    var custom = el("customRule").value.trim();
+    if (custom) return custom;
+    var picked = list.querySelector('[aria-pressed="true"]');
+    return picked ? picked.textContent : "";
+  }
+
+  el("startBtn").addEventListener("click", function () {
+    var rule = chosenRule();
+    if (!rule) { say("ruleStatus", "Pick one of the rules, or write your own."); return; }
+    state.rule = rule;
+    if (!state.started) state.started = new Date().toISOString().slice(0, 10);
+    save();
+    render();
+    el("tracker").scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+
+  el("changeRule").addEventListener("click", function () {
+    el("step-rule").classList.remove("hide");
+    el("customRule").value = state.rule;
+    el("step-rule").scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+
+  // --- the tracker ----------------------------------------------------------
+  var dialog = el("nightDialog");
+  var editing = 1;
+  var draft = {};
+
+  function seg(container, values, labelFor, key) {
+    container.innerHTML = "";
+    values.forEach(function (v) {
+      var b = document.createElement("button");
+      b.type = "button";
+      b.setAttribute("aria-pressed", "false");
+      b.textContent = labelFor(v);
+      b.addEventListener("click", function () {
+        draft[key] = v;
+        Array.prototype.forEach.call(container.children, function (c) {
+          c.setAttribute("aria-pressed", String(c === b));
+        });
+      });
+      container.appendChild(b);
+    });
+  }
+
+  function markSeg(container, value, values) {
+    Array.prototype.forEach.call(container.children, function (c, i) {
+      c.setAttribute("aria-pressed", String(values[i] === value));
+    });
+  }
+
+  var SLEEP = [3, 4, 5, 6, 7, 8, 9];
+  var MOOD = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+  seg(el("sleepSeg"), SLEEP, function (v) { return v === 3 ? "3 or less" : (v === 9 ? "9 or more" : String(v)); }, "sleep");
+  seg(el("moodSeg"), MOOD, function (v) { return String(v); }, "mood");
+
+  Array.prototype.forEach.call(el("keptSeg2").children, function (b) {
+    b.addEventListener("click", function () {
+      draft.kept = b.dataset.kept === "1";
+      Array.prototype.forEach.call(el("keptSeg2").children, function (c) {
+        c.setAttribute("aria-pressed", String(c === b));
+      });
+    });
+  });
+
+  function openNight(n) {
+    editing = n;
+    draft = Object.assign({}, state.nights[n] || {});
+    el("dialogTitle").textContent = "Night " + n;
+    el("dialogRule").textContent = state.rule;
+    el("noteBox").value = draft.note || "";
+    Array.prototype.forEach.call(el("keptSeg2").children, function (c) {
+      c.setAttribute("aria-pressed", String(draft.kept === (c.dataset.kept === "1")));
+    });
+    markSeg(el("sleepSeg"), draft.sleep, SLEEP);
+    markSeg(el("moodSeg"), draft.mood, MOOD);
+    if (typeof dialog.showModal === "function") { dialog.showModal(); }
+    else { dialog.setAttribute("open", ""); }
+  }
+
+  function closeNight() {
+    if (typeof dialog.close === "function") { dialog.close(); }
+    else { dialog.removeAttribute("open"); }
+  }
+
+  el("cancelNight").addEventListener("click", closeNight);
+
+  el("saveNight").addEventListener("click", function () {
+    if (typeof draft.kept !== "boolean") { return; }
+    draft.note = el("noteBox").value.trim();
+    state.nights[editing] = draft;
+    save();
+    closeNight();
+    render();
+  });
+
+  function render() {
+    var hasRule = Boolean(state.rule);
+    el("step-rule").classList.toggle("hide", hasRule);
+    el("step-plan").classList.toggle("hide", !hasRule);
+    el("tracker").classList.toggle("hide", !hasRule);
+
+    if (!hasRule) {
+      el("lookback").classList.add("hide");
+      el("share").classList.add("hide");
+      return;
+    }
+
+    el("ruleHeading").textContent = state.rule;
+    var filled = filledCount();
+    el("progress").textContent = filled === 0
+      ? "Seven nights, starting tonight. Come back each evening and fill in one line."
+      : filled + " of 7 nights written &middot; ".replace("&middot;", "\u00b7") + keptCount() + " kept so far";
+
+    var host = el("nightList");
+    host.innerHTML = "";
+    for (var i = 1; i <= 7; i++) {
+      var night = state.nights[i];
+      var row = document.createElement("div");
+      row.className = "night" + (night ? " done" : "");
+      var label = night
+        ? '<span class="state ' + (night.kept ? "kept" : "broke") + '">' +
+          (night.kept ? "Kept" : "Broke it") + "</span> &middot; slept " +
+          night.sleep + " &middot; mood " + night.mood + "/10"
+        : "Write tonight's line";
+      row.innerHTML = '<span class="n">' + i + '</span>' +
+        '<button type="button" class="open" data-night="' + i + '">' + label + "</button>";
+      host.appendChild(row);
+    }
+
+    var done = filled === 7;
+    el("lookback").classList.toggle("hide", !done);
+    el("share").classList.toggle("hide", !done);
+    if (done) drawSummary();
+  }
+
+  el("nightList").addEventListener("click", function (e) {
+    var b = e.target.closest("button[data-night]");
+    if (b) openNight(Number(b.dataset.night));
+  });
+
+  // --- day seven ------------------------------------------------------------
+  function weekText() {
+    var lines = ["MY SEVEN NIGHTS", "Rule: " + state.rule, ""];
+    for (var i = 1; i <= 7; i++) {
+      var n = state.nights[i];
+      if (!n) { lines.push("Night " + i + ": not written"); continue; }
+      lines.push("Night " + i + ": " + (n.kept ? "kept" : "broke it") +
+                 " \u00b7 slept " + n.sleep + " \u00b7 mood " + n.mood + "/10" +
+                 (n.note ? " \u00b7 " + n.note : ""));
+    }
+    lines.push("", "Kept " + keptCount() + " of 7 nights.", "");
+    var qs = ["On the nights you broke your rule, what did those nights have in common?",
+              "How had you slept on the nights it was hardest?",
+              "What did your seven lines show you that you had not noticed before?",
+              "What was the hardest single moment, and what did you do?",
+              "What would you tell the version of you who started seven nights ago?"];
+    qs.forEach(function (q, i) {
+      var a = el("q" + (i + 1)).value.trim();
+      if (a) { lines.push(q, a, ""); }
+    });
+    lines.push("annalchemy.org/self-loyalty-lab/seven-nights");
+    return lines.join("\n");
+  }
+
+  function drawSummary() {
+    var kept = keptCount();
+    var keptNights = [], brokeNights = [];
+    var sleepKept = 0, sleepBroke = 0;
+    for (var i = 1; i <= 7; i++) {
+      var n = state.nights[i];
+      if (!n) continue;
+      if (n.kept) { keptNights.push(n); sleepKept += n.sleep; }
+      else { brokeNights.push(n); sleepBroke += n.sleep; }
+    }
+
+    var html = '<p style="margin:0 0 10px"><strong>You kept your rule on ' + kept +
+      " of 7 nights.</strong></p>";
+
+    // The one pattern worth naming, and only when the data actually shows it.
+    if (keptNights.length && brokeNights.length) {
+      var avgKept = sleepKept / keptNights.length;
+      var avgBroke = sleepBroke / brokeNights.length;
+      var diff = avgKept - avgBroke;
+      if (diff >= 0.75) {
+        html += '<p style="margin:0 0 10px">On the nights you kept it, you had slept about ' +
+          diff.toFixed(1) + " hours more than on the nights you did not. That is worth sitting with.</p>";
+      } else if (diff <= -0.75) {
+        html += '<p style="margin:0 0 10px">Sleep does not explain your hard nights here. Something else does, and the questions below are how you find it.</p>';
+      }
+    }
+
+    if (kept === 7) {
+      html += "<p style=\"margin:0\">Seven out of seven. You did not need a bigger promise. You needed one you could keep, and now you have proof that you can.</p>";
+    } else if (kept === 0) {
+      html += "<p style=\"margin:0\">Zero kept is not a failed week. It means the rule was too big, or the hard moment had no plan attached. Both of those are fixable, and you now know which nights to plan for.</p>";
+    } else {
+      html += "<p style=\"margin:0\">A broken night is not a failure. It is data. It shows you exactly where the plan needs to be stronger next time.</p>";
+    }
+    el("summaryCard").innerHTML = html;
+  }
+
+  el("copyAll").addEventListener("click", function () {
+    var text = weekText();
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(text).then(
+        function () { say("copyStatus", "Copied. Paste it wherever you keep things."); },
+        function () { say("copyStatus", "Could not copy. Use print instead."); }
+      );
+    } else {
+      say("copyStatus", "Could not copy. Use print instead.");
+    }
+  });
+
+  el("printAll").addEventListener("click", function () { window.print(); });
+
+  // --- the optional share ---------------------------------------------------
+  var keptChoice = null;
+  var keptValues = [0, 1, 2, 3, 4, 5, 6, 7];
+  (function () {
+    var host = el("keptSeg");
+    keptValues.forEach(function (v) {
+      var b = document.createElement("button");
+      b.type = "button";
+      b.setAttribute("aria-pressed", "false");
+      b.textContent = String(v);
+      b.addEventListener("click", function () {
+        keptChoice = v;
+        Array.prototype.forEach.call(host.children, function (c) {
+          c.setAttribute("aria-pressed", String(c === b));
+        });
+      });
+      host.appendChild(b);
+    });
+  })();
+
+  // The two consent boxes are exclusive on purpose. One tick-to-agree box gets
+  // ticked by reflex; two explicit choices mean the woman who says yes meant it.
+  el("cShare").addEventListener("change", function () {
+    if (this.checked) el("cNo").checked = false;
+  });
+  el("cNo").addEventListener("change", function () {
+    if (this.checked) el("cShare").checked = false;
+  });
+
+  el("sendBtn").addEventListener("click", function () {
+    if (el("hp").value.trim()) { say("sendStatus", "Thank you."); return; }
+
+    var email = el("sEmail").value.trim().toLowerCase();
+    var rule = el("sRule").value.trim() || state.rule;
+    var saw = el("sSaw").value.trim();
+    var mayShare = el("cShare").checked;
+    var noShare = el("cNo").checked;
+
+    if (!el("cAge").checked) { say("sendStatus", "Please confirm you are 18 or older."); return; }
+    if (!mayShare && !noShare) { say("sendStatus", "Choose one of the two sharing options, so I know what you are comfortable with."); return; }
+    if (keptChoice === null) { say("sendStatus", "Tell me how many of the seven nights you kept."); return; }
+    if (email.indexOf("@") < 1 || email.indexOf(".", email.indexOf("@")) < 0) {
+      say("sendStatus", "That address does not look right."); return;
+    }
+
+    var body = new URLSearchParams();
+    body.set("email", email);
+    body.set("rule", rule);
+    body.set("kept", String(keptChoice));
+    body.set("saw", saw);
+    body.set("may_share", mayShare ? "1" : "");
+    body.set("hp", "");
+
+    el("sendBtn").disabled = true;
+    say("sendStatus", "Sending...");
+
+    fetch(SEND_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: body.toString()
+    }).then(function (r) {
+      return r.json().catch(function () { return { ok: false }; });
+    }).then(function (data) {
+      if (data && data.ok) {
+        el("share").innerHTML =
+          '<p class="eyebrow">Thank you</p>' +
+          "<h2>That helps more than you know.</h2>" +
+          "<p>Seven nights is not nothing. You kept a promise to yourself " +
+          keptChoice + " times, on purpose, and you have it written down.</p>" +
+          '<p>If you want the next part, it is here: <a href="/self-loyalty-lab/system/">The Self-Loyalty Lab System</a>.</p>';
+        el("share").scrollIntoView({ behavior: "smooth", block: "start" });
+      } else {
+        el("sendBtn").disabled = false;
+        say("sendStatus", "That did not go through. Try again, or email hello@annalchemy.org.");
+      }
+    }).catch(function () {
+      el("sendBtn").disabled = false;
+      say("sendStatus", "That did not go through. Try again, or email hello@annalchemy.org.");
+    });
+  });
+
+  // Prefill the share form from what she already has.
+  el("share").addEventListener("focusin", function () {
+    if (!el("sRule").value) el("sRule").value = state.rule;
+  });
+
+  // Keep her written answers, so closing the tab does not lose them.
+  ["q1", "q2", "q3", "q4", "q5"].forEach(function (id) {
+    var box = el(id);
+    if (state.answers[id]) box.value = state.answers[id];
+    box.addEventListener("input", function () {
+      state.answers[id] = box.value;
+      save();
+    });
+  });
+
+  render();
+})();
+</script>
+</body>
+</html>
