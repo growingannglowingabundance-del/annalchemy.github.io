@@ -338,6 +338,19 @@
     min-height: 1.4em;
   }
 
+  .checkin {
+    margin-top: 3rem;
+    padding: 1.75rem;
+    background: var(--blush);
+  }
+  .checkin h2 { font-size: 1.4rem; margin: 0 0 0.6rem; }
+  .checkin p { margin: 0 0 1rem; }
+  .ci-check {
+    display: flex; gap: 0.6rem; align-items: flex-start;
+    font-size: 1rem; margin: 0 0 1rem; cursor: pointer;
+  }
+  .ci-check input { width: 1.2rem; height: 1.2rem; margin: 0.15rem 0 0; accent-color: var(--plum); flex: none; }
+
   /* Safety box: never small */
   .safety {
     border: 3px solid var(--ink);
@@ -551,6 +564,19 @@
     <p style="margin:0">You are not overreacting by calling. You do not have to be sure first.</p>
   </aside>
 
+  <section class="checkin no-print" aria-labelledby="checkin-heading">
+    <h2 id="checkin-heading">Want me to check in on you this week?</h2>
+    <p>Leave your email and I will send one short note in a few days, to see how you are holding up. Nothing else, and you can unsubscribe any time.</p>
+    <div class="field">
+      <input type="email" id="ciEmail" placeholder="your email" autocomplete="email" inputmode="email">
+    </div>
+    <label class="ci-check"><input type="checkbox" id="ciAge" checked> I am 18 or older, and it is alright to email me.</label>
+    <input type="text" id="ciHp" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+    <button type="button" class="primary" id="ciBtn">Send it</button>
+    <p class="status" id="ciMsg" role="status" aria-live="polite"></p>
+    <p class="quiet">Only your email is sent, so I can reach you. Your card stays on your device.</p>
+  </section>
+
   <footer>
     <p><strong>Self-Loyalty Lab™</strong> · annalchemy.org/2am</p>
     <p>Free. Print it, screenshot it, send it to the friend you are thinking of.</p>
@@ -659,6 +685,56 @@
         say("Share this link: " + url);
       }
     });
+
+    // Optional check-in. The card works fully without this; it only ever runs
+    // if she chooses to leave an address after being helped. Posts to the same
+    // /hooks/start endpoint with a CARD source tag, so these land in their own
+    // MailerLite group, apart from quiz and challenge.
+    var CI_URL = "https://fulfil.annalchemy.org/hooks/start";
+    var ciBtn = document.getElementById("ciBtn");
+    if (ciBtn) {
+      ciBtn.addEventListener("click", function () {
+        var msg = document.getElementById("ciMsg");
+        if (document.getElementById("ciHp").value.trim()) { return; }
+        var email = document.getElementById("ciEmail").value.trim();
+        if (!document.getElementById("ciAge").checked) {
+          msg.textContent = "Please confirm you are 18 or older.";
+          return;
+        }
+        if (email.indexOf("@") < 1 || email.indexOf(".", email.indexOf("@")) < 0) {
+          msg.textContent = "That address does not look right. Have another look.";
+          return;
+        }
+        ciBtn.disabled = true;
+        msg.textContent = "One moment...";
+
+        var body = new URLSearchParams();
+        body.set("email", email);
+        body.set("result", "CARD");
+        body.set("checkins", "1");
+        body.set("hp", "");
+
+        function done(ok) {
+          var sec = document.querySelector(".checkin");
+          if (ok) {
+            sec.innerHTML = '<h2>Thank you.</h2><p style="margin:0">' +
+              'I will send a short note in a few days. Look after yourself tonight.</p>';
+          } else {
+            ciBtn.disabled = false;
+            msg.textContent = "That did not go through. Try again, or email hello@annalchemy.org.";
+          }
+        }
+
+        fetch(CI_URL, {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: body.toString()
+        }).then(function (r) {
+          return r.json().catch(function () { return { ok: false }; });
+        }).then(function (d) { done(d && d.ok); })
+          .catch(function () { done(false); });
+      });
+    }
   })();
 </script>
 </body>
