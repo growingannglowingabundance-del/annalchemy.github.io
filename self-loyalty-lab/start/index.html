@@ -162,7 +162,7 @@
   <p class="lede">Fifteen questions. Under five minutes. This does not tell you what is wrong with you and it does not tell you what to do about him. It shows you where self-loyalty is under the most pressure right now, so you know where to start.</p>
 
   <div class="privacy">
-    <strong>Nothing here is saved.</strong> Your answers stay on your phone or computer and are never sent anywhere. There is no account and no email required. At the end you can choose to have your result emailed to you, and if you do, only your address and your starting point are sent. Your answers stay on this device either way.
+    <strong>Your answers stay on your device.</strong> They are worked out here in your browser and are never sent anywhere. Your result shows on the next screen once you enter your email, so I can send it to you and check in during your first week. The only things that reach me are your email and your starting point, never your answers.
   </div>
 
   <p class="meta">Answer for how things are right now, not how you wish they were. First instinct is usually the accurate one.</p>
@@ -174,6 +174,20 @@
 </div>
 
 <!-- ============ RESULT ============ -->
+<div id="gate" class="hide">
+    <div class="eyebrow">Almost there</div>
+    <h2>Your result is ready.</h2>
+    <p class="lede">Enter your email and it opens on the next screen. I will send you a copy so you can come back to it, and three short check-ins during your first week. You can unsubscribe any time.</p>
+    <form id="gateForm" novalidate>
+      <input type="email" id="gateEmail" name="email" placeholder="your email" autocomplete="email" required>
+      <label class="check"><input type="checkbox" id="gateAge" checked> I am 18 or older, and it is alright to email me my result.</label>
+      <input type="text" id="gateHp" tabindex="-1" autocomplete="off" aria-hidden="true" class="hp">
+      <button class="cta" type="submit" id="gateBtn">Show my result</button>
+      <p class="capmsg" id="gateMsg" role="status" aria-live="polite"></p>
+      <p class="meta">Only your email and your starting point are sent. Your answers never leave this page.</p>
+    </form>
+  </div>
+
 <div id="result" class="hide"></div>
 
 <div class="footnote">Anna Cadano, RN since 2008 &middot; hello@annalchemy.org &middot; SelfLoyaltyLab@gmail.com</div>
@@ -213,7 +227,7 @@
       firstStep:"Write down the three things you said you would not accept, before you met him. Not what you would like. What you said you would not accept. Then read them once a week.<br><br>Most women do not need a new list. They need the one they already had, somewhere they can see it.",
       product:"The Boyfriend Boundary Guide\u2122",
       why:"You can still say what you want, and you can feel yourself starting to give more than he has earned. That is exactly the moment this guide was written for, before it costs you more. One rule runs through it: access must match commitment. The deeper the access someone wants to your body, your time, your loyalty and your future, the more proven commitment it should take to earn it.<br><br>Not the whole System. You do not need eight weeks of rebuilding work for something you have not lost yet.",
-      link:"#bbg",
+      link:"#bbg", buy:"https://annalchemy.org/lab/bbg", cta:"Catch it before you give more than he has earned",
       system:false
     },
     CHOOSE: {
@@ -223,7 +237,7 @@
       firstStep:"Pick the last relationship and answer one question honestly. At what point did you start giving more than had been earned?<br><br>Not when it went wrong. When you started over-giving. Those are usually months apart, and the second one is the one that matters.",
       product:"The Boyfriend Boundary Guide\u2122",
       why:"This is the one that teaches the timing. What to give, when, and what should have been demonstrated first. You learn the difference between intensity and consistency, between chemistry and character, and between a man who is bonded to you and a man who is ready for you. Confusing those is what costs women years, and it is almost always what the last one was.<br><br>Not the whole System. You are between relationships, which means what you need is the front-end work, not the recovery work.",
-      link:"#bbg",
+      link:"#bbg", buy:"https://annalchemy.org/lab/bbg", cta:"Learn the timing so the next one is different",
       system:false
     },
     DECIDE: {
@@ -233,7 +247,7 @@
       firstStep:"For the next seven nights, write one line before bed. How you slept, how you felt, and whether you contacted him. Nothing else.<br><br>At the end of the week you will have something you have never had, which is your own data instead of your own mood.",
       product:"The Self-Return Guide\u2122",
       why:"This will not tell you whether to stay or leave, and I would not trust anything that claimed it could. What it does is clear the fog first: why pulling away feels physically unbearable, why the on and off cycle is the hardest to leave, and how to see him accurately instead of seeing the highlight reel.<br><br>Then the decision is yours to make, from clarity instead of exhaustion.",
-      link:"#srg",
+      link:"#srg", buy:"https://annalchemy.org/lab/srg", cta:"Clear the fog before you decide anything",
       system:false
     },
     DETACH: {
@@ -243,7 +257,7 @@
       firstStep:"Write down, today, what you will do the next time the urge to reach out arrives. Not what you will feel. What you will do, physically, in the first ten minutes.<br><br>Then put it where you can find it at 2am, because the version of you at 2am is not the version writing it now, and she needs instructions rather than intentions.",
       product:"The Self-Return Guide\u2122",
       why:"Why the pull is this strong, what is happening in your body when it hits, and what to do in the exact moment you are about to reach out. It also covers the hardest part, which is holding your ground when he comes back warm and sorry.",
-      link:"#srg",
+      link:"#srg", buy:"https://annalchemy.org/lab/srg", cta:"Learn what to do in the exact 2am moment",
       system:true,
       systemLabel:"One honest note about your particular position",
       systemBody:"DETACH is where reading tends not to be enough on its own. Not because the guide is thin, but because the hard moment for you is never while you are calmly reading. It is at 2am, after his message, after the memory, and a PDF cannot meet you there.<br><br>If you already know you are going to be in that moment more than once, the full Self-Loyalty Lab System\u2122 exists for exactly that. It is the guide plus the eight weeks of practice that build the habit, plus six months of the Self-Return Assistant, which you can ask at 2am and which will not agree with you just to make you feel better.<br><br>Start with the guide if you would rather start small. I would rather you bought one thing and used it than four things and read one."
@@ -309,8 +323,67 @@
     var close = (totals[top] - totals[second]) <= 1;
     var grand = answers.reduce(function(s,v){ return s+v; }, 0);
 
-    render(top, second, close, grand, totals);
+    // Hold the computed result; the gate shows it once she enters her email.
+    pending = {top:top, second:second, close:close, grand:grand, totals:totals};
+    document.getElementById('quiz').classList.add('hide');
+    var g = document.getElementById('gate');
+    g.classList.remove('hide');
+    window.scrollTo({top:0, behavior:'smooth'});
+    wireGate();
   });
+
+  var pending = null;
+  var gateWired = false;
+
+  function wireGate(){
+    if(gateWired) return;
+    gateWired = true;
+    var form = document.getElementById('gateForm');
+    var msg = document.getElementById('gateMsg');
+    var btn = document.getElementById('gateBtn');
+
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      if(document.getElementById('gateHp').value.trim()){ return; }
+      var email = document.getElementById('gateEmail').value.trim();
+      if(!document.getElementById('gateAge').checked){
+        msg.textContent = 'Please confirm you are 18 or older.';
+        return;
+      }
+      if(email.indexOf('@') < 1 || email.indexOf('.', email.indexOf('@')) < 0){
+        msg.textContent = 'That address does not look right. Have another look.';
+        return;
+      }
+      btn.disabled = true;
+      msg.textContent = 'One moment...';
+
+      var body = new URLSearchParams();
+      body.set('email', email);
+      body.set('result', pending.top);
+      body.set('checkins', '1');
+      body.set('hp', '');
+
+      function proceed(){
+        document.getElementById('gate').classList.add('hide');
+        render(pending.top, pending.second, pending.close, pending.grand, pending.totals);
+      }
+
+      fetch(CAPTURE_URL, {
+        method:'POST',
+        headers:{'Content-Type':'application/x-www-form-urlencoded'},
+        body: body.toString()
+      }).then(function(r){
+        return r.json().catch(function(){ return {ok:false}; });
+      }).then(function(){
+        // Show the result whether or not the send succeeded. She has done her
+        // part; a failed send is my problem to chase from the logs, not a
+        // reason to withhold what she answered fifteen questions for.
+        proceed();
+      }).catch(function(){
+        proceed();
+      });
+    });
+  }
 
   function render(top, second, close, grand, totals){
     var r = RESULTS[top];
@@ -333,13 +406,6 @@
       html += '</div>';
     }
 
-    // 2 · what to do first, free, before anything is sold
-    html += '<div class="result">';
-    html += '<div class="tag">What to do first</div>';
-    html += '<h2>Start here, today, for free</h2>';
-    html += '<p>'+r.firstStep+'</p>';
-    html += '</div>';
-
     // 3 · the routing. one recommendation, with the reason.
     html += '<div class="result">';
     html += '<div class="tag">Where to start</div>';
@@ -347,11 +413,11 @@
     html += '<p>'+r.why+'</p>';
 
     if(r.systemPrimary){
-      html += '<a class="cta" href="https://annalchemy.org/lab/system">See the Self-Loyalty Lab System</a>';
+      html += '<a class="cta" href="https://annalchemy.org/lab/system">Rebuild the self-trust that reading alone will not</a>';
       html += '<p style="margin-top:22px">'+r.fallback+'</p>';
-      html += '<a class="ghost" href="https://annalchemy.org/lab/srg">The Self-Return Guide alone</a>';
+      html += '<a class="ghost" href="https://annalchemy.org/lab/srg">Or start with The Self-Return Guide alone</a>';
     } else {
-      html += '<a class="cta" href="/self-loyalty-lab'+r.link+'">See '+r.product+'</a>';
+      html += '<a class="cta" href="'+r.buy+'">'+r.cta+'</a>';
     }
     html += '</div>';
 
@@ -364,22 +430,12 @@
       html += '</div>';
     }
 
-    // 3b · the optional ask. She has read the whole result by now and she has
-    // been given her free first step. Nothing above this point required an
-    // address and nothing below it does either.
-    html += '<div class="result" id="capture">';
-    html += '<div class="tag">If it helps</div>';
-    html += '<h2>Want this in your inbox?</h2>';
-    html += '<p>Your full result, so you can come back to it. Plus, if you want them, three short check-ins during your first week.</p>';
-    html += '<form id="captureForm" novalidate>';
-    html += '<input type="email" id="capEmail" name="email" placeholder="your email" autocomplete="email" required>';
-    html += '<label class="check"><input type="checkbox" id="capResult" checked> Send me my result. I am 18 or older.</label>';
-    html += '<label class="check"><input type="checkbox" id="capSeq"> Also send the three first-week check-ins. I can unsubscribe any time.</label>';
-    html += '<input type="text" id="capHp" tabindex="-1" autocomplete="off" aria-hidden="true" class="hp">';
-    html += '<button class="cta" type="submit" id="capBtn">Send it to me</button>';
-    html += '<p class="capmsg" id="capMsg" role="status" aria-live="polite"></p>';
-    html += '<p class="meta">Only your address and your starting point are sent. Your answers never leave this page.</p>';
-    html += '</form>';
+    // 2b · what to do first. free and concrete, but placed AFTER the
+    // recommendation so she meets the product while the ache is still live.
+    html += '<div class="result">';
+    html += '<div class="tag">And tonight, free, whether or not you buy anything</div>';
+    html += '<h2>Start here</h2>';
+    html += '<p>'+r.firstStep+'</p>';
     html += '</div>';
 
     // 4 · the safety line. unchanged, on every result.
@@ -389,72 +445,16 @@
     html += '</div>';
 
     html += '<hr>';
-    html += '<p class="meta">Your result was worked out on your own device and has not been saved or sent anywhere. If you want to keep it, screenshot this page.</p>';
+    html += '<p class="meta">A copy of this is on its way to your inbox. If it has not arrived in a few minutes, check spam and Promotions.</p>';
     html += '<a class="ghost" href="https://annalchemy.org/lab/home">Back to Self-Loyalty Lab</a>';
 
     document.getElementById('quiz').classList.add('hide');
     var out = document.getElementById('result');
     out.innerHTML = html;
     out.classList.remove('hide');
-    wireCapture(top);
     window.scrollTo({top:0, behavior:'smooth'});
   }
 
-  /* The optional ask. Her answers are not in scope here and never were: the
-     only things this sends are the address she typed and the five-letter code
-     of the result she has already read on screen. */
-  function wireCapture(code){
-    var form = document.getElementById('captureForm');
-    if(!form) return;
-    var msg = document.getElementById('capMsg');
-    var btn = document.getElementById('capBtn');
-
-    form.addEventListener('submit', function(e){
-      e.preventDefault();
-      var email = document.getElementById('capEmail').value.trim();
-      var wantsResult = document.getElementById('capResult').checked;
-      var wantsSeq = document.getElementById('capSeq').checked;
-
-      if(!wantsResult){
-        msg.textContent = 'Tick the first box so I know it is alright to email you.';
-        return;
-      }
-      if(email.indexOf('@') < 1 || email.indexOf('.', email.indexOf('@')) < 0){
-        msg.textContent = 'That address does not look right. Have another look.';
-        return;
-      }
-
-      btn.disabled = true;
-      msg.textContent = 'Sending...';
-
-      var body = new URLSearchParams();
-      body.set('email', email);
-      body.set('result', code);
-      body.set('checkins', wantsSeq ? '1' : '');
-      body.set('hp', document.getElementById('capHp').value);
-
-      fetch(CAPTURE_URL, {
-        method:'POST',
-        headers:{'Content-Type':'application/x-www-form-urlencoded'},
-        body: body.toString()
-      }).then(function(r){
-        return r.json().catch(function(){ return {ok:false}; });
-      }).then(function(data){
-        if(data && data.ok){
-          form.innerHTML = '<p class="lede">Sent. Check your inbox in a minute, '
-            + 'and your spam folder if it is not there.</p>';
-        } else {
-          btn.disabled = false;
-          msg.textContent = 'That did not go through. Try once more, or email '
-            + 'hello@annalchemy.org and I will send it by hand.';
-        }
-      }).catch(function(){
-        btn.disabled = false;
-        msg.textContent = 'That did not go through. Try once more, or email '
-          + 'hello@annalchemy.org and I will send it by hand.';
-      });
-    });
-  }
 })();
 </script>
 
