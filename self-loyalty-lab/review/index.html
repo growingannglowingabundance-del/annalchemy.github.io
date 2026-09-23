@@ -1,1 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How was our session? · Self-Loyalty Lab™</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cellipse cx='50' cy='46' rx='34' ry='42' fill='none' stroke='%235E2A53' stroke-width='6'/%3E%3Cpath d='M36 62 V38 L44 47 L50 32 L56 47 L64 38 V62 Z' fill='%235E2A53'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Playfair+Display:wght@500;600&display=swap">
+<style>
+  :root{
+    --plum:#5E2A53; --ink:#171417; --paper:#FBF7F0; --body:#3A2A36;
+    --soft:#6E5C68; --rule:#E2D6DF; --tint:#F6EFF4; --blush:#F2E4EE;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--body);
+    font-family:Newsreader,Georgia,serif;font-size:18px;line-height:1.6}
+  .wrap{max-width:40rem;margin:0 auto;padding:34px 20px 80px}
+  .brand{font-family:Archivo,sans-serif;font-size:12px;font-weight:700;
+    letter-spacing:.2em;text-transform:uppercase;color:var(--plum);margin:0 0 26px}
+  h1{font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(2rem,7vw,2.6rem);
+    line-height:1.1;margin:0 0 12px;color:var(--ink)}
+  h2{font-family:'Playfair Display',serif;font-weight:600;font-size:1.4rem;
+    margin:0 0 6px;color:var(--ink)}
+  p{margin:0 0 14px}
+  .lede{font-size:1.2rem;color:var(--ink)}
+  .small{font-size:.95rem;color:var(--soft)}
+  .eyebrow{font-family:Archivo,sans-serif;font-size:11px;font-weight:700;
+    letter-spacing:.2em;text-transform:uppercase;color:var(--plum);margin:0 0 8px}
+  .q{margin:30px 0 0;padding-top:26px;border-top:1px solid var(--rule)}
+  .q label.qt{display:block;font-weight:600;color:var(--ink);margin:0 0 12px;font-size:1.08rem}
+  .opts{display:flex;flex-direction:column;gap:9px}
+  .opt{display:flex;gap:11px;align-items:flex-start;cursor:pointer;
+    background:#fff;border:1px solid var(--rule);border-radius:2px;padding:13px 15px;font-size:1.02rem}
+  .opt:hover{border-color:var(--plum)}
+  .opt input{margin:3px 0 0;width:18px;height:18px;accent-color:var(--plum);flex:none}
+  .opt.sel{background:var(--plum);color:#fff;border-color:var(--plum)}
+  textarea,input[type=text],input[type=email]{width:100%;font-family:Newsreader,Georgia,serif;
+    font-size:1.05rem;color:var(--ink);background:#fff;border:1px solid var(--rule);
+    border-radius:2px;padding:12px 14px}
+  textarea{min-height:6rem;resize:vertical;line-height:1.55}
+  .scale{display:flex;flex-wrap:wrap;gap:7px}
+  .scale button{flex:1 1 auto;min-width:2.6rem;padding:12px 4px;cursor:pointer;
+    background:#fff;border:1px solid var(--rule);border-radius:2px;color:var(--ink);
+    font-family:Archivo,sans-serif;font-size:.95rem}
+  .scale button[aria-pressed=true]{background:var(--plum);color:#fff;border-color:var(--plum)}
+  .check{display:flex;gap:11px;align-items:flex-start;margin:0 0 12px;cursor:pointer;font-size:1rem}
+  .check input{width:19px;height:19px;margin:3px 0 0;accent-color:var(--plum);flex:none}
+  .btn{font-family:Archivo,sans-serif;font-size:1rem;font-weight:600;
+    padding:15px 26px;cursor:pointer;background:var(--plum);color:#fff;
+    border:2px solid var(--plum);border-radius:2px}
+  .btn:disabled{opacity:.55;cursor:default}
+  .btn.ghost{background:transparent;color:var(--plum)}
+  .status{font-family:Archivo,sans-serif;font-size:.95rem;color:var(--plum);min-height:1.3em;margin-top:10px}
+  .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+  .hide{display:none!important}
+  /* signature pad */
+  .sigwrap{background:#fff;border:1px solid var(--rule);border-radius:2px;padding:6px}
+  canvas#sig{width:100%;height:160px;display:block;touch-action:none;border-radius:2px}
+  .sigrow{display:flex;justify-content:space-between;align-items:center;margin-top:8px}
+  footer{margin-top:40px;padding-top:18px;border-top:1px solid var(--rule)}
+  a{color:var(--plum)}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <p class="brand">Self-Loyalty Lab™</p>
 
+  <div id="intro">
+    <h1>How was our session?</h1>
+    <p class="lede">Thank you for spending the hour with me. Your honest answer, including anything that did not land, helps me do this better for the next woman.</p>
+    <p class="small">About three minutes. Nothing here is shared anywhere unless you tell me it is alright, in the question near the end.</p>
+  </div>
+
+  <form id="form">
+    <div class="q">
+      <label class="qt">Before our session, how clearly could you see your own pattern?</label>
+      <div class="opts" data-single="before">
+        <label class="opt"><input type="radio" name="before" value="A fog"> Not at all, it was a fog</label>
+        <label class="opt"><input type="radio" name="before" value="A sense of it"> I had a sense of it</label>
+        <label class="opt"><input type="radio" name="before" value="Saw it, could not act"> I could see it but not act on it</label>
+        <label class="opt"><input type="radio" name="before" value="Saw it clearly"> I could see it clearly</label>
+      </div>
+    </div>
+
+    <div class="q">
+      <label class="qt">And after?</label>
+      <div class="opts" data-single="after">
+        <label class="opt"><input type="radio" name="after" value="Still a fog"> Still a fog</label>
+        <label class="opt"><input type="radio" name="after" value="A little clearer"> A little clearer</label>
+        <label class="opt"><input type="radio" name="after" value="Clearer, know next step"> Clearer, and I know my next step</label>
+        <label class="opt"><input type="radio" name="after" value="Clear, able to act"> Clear, and I feel able to act on it</label>
+      </div>
+    </div>
+
+    <div class="q">
+      <label class="qt">How likely are you to recommend a session like this to a friend going through something similar? (0 to 10)</label>
+      <div class="scale" id="nps" role="group" aria-label="0 to 10"></div>
+    </div>
+
+    <div class="q">
+      <label class="qt" for="useful">What was the most useful thing that happened in our hour?</label>
+      <textarea id="useful"></textarea>
+    </div>
+
+    <div class="q">
+      <label class="qt" for="better">What would have made it better? Be honest. "Nothing" helps me less than one real thing.</label>
+      <textarea id="better"></textarea>
+    </div>
+
+    <div class="q">
+      <div class="eyebrow">The one that matters most</div>
+      <label class="qt" for="changed">If something shifted for you, in how you see yourself or what you did differently, tell me in your own words.</label>
+      <textarea id="changed"></textarea>
+    </div>
+
+    <div class="q">
+      <label class="qt">May I share your answer to that last question?</label>
+      <div class="opts" data-single="consent">
+        <label class="opt"><input type="radio" name="consent" value="anon"> Yes, anonymously, with nothing that identifies me</label>
+        <label class="opt"><input type="radio" name="consent" value="firstname"> Yes, and you may use my first name</label>
+        <label class="opt"><input type="radio" name="consent" value="private"> No, this was just for you. Please do not share it</label>
+      </div>
+    </div>
+
+    <!-- signature: only appears if she agreed to be quoted -->
+    <div class="q hide" id="sigblock">
+      <label class="qt">A signature, if you would like to add one</label>
+      <p class="small">Entirely optional. Some women like to sign what they said, the way you would sign a note. Draw with your finger or mouse. It is only ever shown with a quote you already said I could share, never on its own.</p>
+      <div class="sigwrap">
+        <canvas id="sig" width="600" height="160" aria-label="Signature area"></canvas>
+      </div>
+      <div class="sigrow">
+        <span class="small" id="sigHint">Sign above</span>
+        <button type="button" class="btn ghost" id="sigClear" style="padding:8px 16px;font-size:.9rem">Clear</button>
+      </div>
+      <div class="q" style="border:0;padding:0;margin-top:18px">
+        <label class="qt" for="signedName">And your name as you would like it written</label>
+        <input type="text" id="signedName" autocomplete="name" placeholder="First name, or first name and last initial">
+      </div>
+    </div>
+
+    <div class="q">
+      <label class="qt" for="email">If you would like me to check in on you in a couple of weeks, leave your email. Optional.</label>
+      <input type="email" id="email" autocomplete="email" inputmode="email" placeholder="your email">
+    </div>
+
+    <input type="text" id="hp" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+    <div class="q" style="border:0">
+      <button type="button" class="btn" id="send">Send my review</button>
+      <p class="status" id="msg" role="status" aria-live="polite"></p>
+    </div>
+  </form>
+
+  <div id="done" class="hide">
+    <h1>Thank you. Genuinely.</h1>
+    <p class="lede">Telling me what did not work is worth more to me than telling me what did. I read every one of these myself.</p>
+    <p>Anna</p>
+  </div>
+
+  <footer>
+    <p class="small"><strong>Self-Loyalty Lab™</strong> · AnnAlchemy™ · Anna Cadano, RN since 2008</p>
+    <p class="small">Educational, not therapy. If you are being hurt, controlled, or threatened, please call 911, or 1553 or 0919 057 1553, or 0920 907 1717.</p>
+  </footer>
+</main>
+
+<script>
+(function(){
+  "use strict";
+  var POST_URL = "https://fulfil.annalchemy.org/hooks/review";
+
+  function el(id){return document.getElementById(id);}
+  function say(m){var s=el("msg");s.textContent=m;}
+
+  // single-select highlighting
+  document.querySelectorAll('[data-single]').forEach(function(group){
+    group.addEventListener('change', function(){
+      group.querySelectorAll('.opt').forEach(function(o){
+        var r=o.querySelector('input'); o.classList.toggle('sel', r.checked);
+      });
+      if(group.dataset.single === 'consent') updateSig();
+    });
+  });
+
+  function chosen(name){
+    var r=document.querySelector('input[name="'+name+'"]:checked');
+    return r?r.value:"";
+  }
+
+  // NPS 0..10
+  var nps=null;
+  (function(){
+    var host=el("nps");
+    for(var i=0;i<=10;i++){
+      var b=document.createElement('button');
+      b.type='button'; b.textContent=i; b.setAttribute('aria-pressed','false');
+      b.addEventListener('click',(function(v,btn){return function(){
+        nps=v;
+        host.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-pressed','false')});
+        btn.setAttribute('aria-pressed','true');
+      };})(i,b));
+      host.appendChild(b);
+    }
+  })();
+
+  // signature only shows when she agrees to be quoted
+  function updateSig(){
+    var c=chosen('consent');
+    el("sigblock").classList.toggle('hide', !(c==='anon'||c==='firstname'));
+  }
+
+  // signature pad. Fixed 600x160 backing store; pointer coords are mapped from
+  // the on-screen size to that store, so what she draws is what gets saved.
+  var canvas=el("sig"), ctx=canvas.getContext("2d"), drawing=false, hasInk=false, last=null;
+  ctx.lineWidth=2.4; ctx.lineCap="round"; ctx.lineJoin="round"; ctx.strokeStyle="#171417";
+  function pos(e){
+    var r=canvas.getBoundingClientRect();
+    var p=e.touches?e.touches[0]:e;
+    return {x:(p.clientX-r.left)*(canvas.width/r.width),
+            y:(p.clientY-r.top)*(canvas.height/r.height)};
+  }
+  function start(e){drawing=true;last=pos(e);e.preventDefault();}
+  function move(e){
+    if(!drawing)return;
+    var p=pos(e);
+    ctx.beginPath();ctx.moveTo(last.x,last.y);ctx.lineTo(p.x,p.y);ctx.stroke();
+    last=p;hasInk=true;el("sigHint").textContent="";e.preventDefault();
+  }
+  function end(){drawing=false;}
+  canvas.addEventListener('mousedown',start);canvas.addEventListener('mousemove',move);
+  window.addEventListener('mouseup',end);
+  canvas.addEventListener('touchstart',start);canvas.addEventListener('touchmove',move);
+  canvas.addEventListener('touchend',end);
+  el("sigClear").addEventListener('click',function(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);hasInk=false;el("sigHint").textContent="Sign above";
+  });
+
+  // Decide from the pixels, not a flag: any non-transparent pixel means she drew.
+  // More reliable than tracking events, on real fingers and in testing alike.
+  function canvasHasInk(){
+    try{
+      var d=ctx.getImageData(0,0,canvas.width,canvas.height).data;
+      for(var i=3;i<d.length;i+=4){ if(d[i]!==0) return true; }
+    }catch(e){ return hasInk; }
+    return false;
+  }
+
+  el("send").addEventListener('click',function(){
+    if(el("hp").value.trim())return;
+    var before=chosen('before'), after=chosen('after'), consent=chosen('consent');
+    if(!before||!after){say("Could you answer the two 'how clearly' questions near the top?");return;}
+    if(nps===null){say("Please tap a number from 0 to 10.");return;}
+    if(!consent){say("Please answer whether I may share your words. Any answer is fine.");return;}
+    var email=el("email").value.trim();
+    if(email && (email.indexOf("@")<1 || email.indexOf(".",email.indexOf("@"))<0)){
+      say("That email does not look right. Fix it, or clear it, it is optional.");return;
+    }
+    var sig="";
+    if((consent==='anon'||consent==='firstname') && canvasHasInk()){ sig=canvas.toDataURL("image/png"); }
+
+    var btn=el("send"); btn.disabled=true; say("Sending...");
+    var body=new URLSearchParams();
+    body.set("before",before); body.set("after",after); body.set("nps",String(nps));
+    body.set("useful",el("useful").value.trim());
+    body.set("better",el("better").value.trim());
+    body.set("changed",el("changed").value.trim());
+    body.set("consent",consent);
+    body.set("signed_name",el("signedName")?el("signedName").value.trim():"");
+    body.set("signature",sig);
+    body.set("email",email);
+    body.set("hp","");
+
+    fetch(POST_URL,{method:"POST",headers:{"Content-Type":"application/x-www-form-urlencoded"},body:body.toString()})
+      .then(function(r){return r.json().catch(function(){return{ok:false};});})
+      .then(function(d){
+        if(d&&d.ok){el("form").classList.add("hide");el("intro").classList.add("hide");el("done").classList.remove("hide");window.scrollTo({top:0,behavior:"smooth"});}
+        else{btn.disabled=false;say("That did not go through. Try again, or email SelfLoyaltyLab@gmail.com.");}
+      })
+      .catch(function(){btn.disabled=false;say("That did not go through. Try again, or email SelfLoyaltyLab@gmail.com.");});
+  });
+})();
+</script>
+</body>
+</html>
