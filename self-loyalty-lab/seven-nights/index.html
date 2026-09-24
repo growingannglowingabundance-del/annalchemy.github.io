@@ -271,6 +271,10 @@
         <textarea id="sSaw" maxlength="1200"></textarea>
       </div>
       <div class="field">
+        <label>Would you tell a friend to try this? (0 to 10)</label>
+        <div class="seg" id="npsSeg" role="group" aria-label="0 to 10"></div>
+      </div>
+      <div class="field">
         <label for="sEmail">Your email, only so I can check back with you</label>
         <input type="text" id="sEmail" placeholder="you@example.com" autocomplete="email" inputmode="email">
       </div>
@@ -354,7 +358,7 @@
 
   // Where the optional Day 7 summary goes. Nothing else on this page talks to
   // a server.
-  var SEND_URL = "https://fulfil.annalchemy.org/hooks/challenge";
+  var SEND_URL = "https://fulfil.annalchemy.org/hooks/challenge-review";
   // Captures her email when she starts, so reminders can be sent. Reuses the
   // Starting Point capture endpoint: same shape, and it just needs an address
   // and a source tag.
@@ -713,6 +717,25 @@
   // --- the optional share ---------------------------------------------------
   var keptChoice = null;
   var keptValues = [0, 1, 2, 3, 4, 5, 6, 7];
+  var npsChoice = null;
+  (function () {
+    var host = el("npsSeg");
+    if (host) {
+      for (var i = 0; i <= 10; i++) {
+        (function (v) {
+          var b = document.createElement("button");
+          b.type = "button"; b.textContent = v; b.setAttribute("aria-pressed", "false");
+          b.addEventListener("click", function () {
+            npsChoice = v;
+            Array.prototype.forEach.call(host.children, function (c) { c.setAttribute("aria-pressed", "false"); });
+            b.setAttribute("aria-pressed", "true");
+          });
+          host.appendChild(b);
+        })(i);
+      }
+    }
+  })();
+
   (function () {
     var host = el("keptSeg");
     keptValues.forEach(function (v) {
@@ -760,7 +783,10 @@
     body.set("rule", rule);
     body.set("kept", String(keptChoice));
     body.set("saw", saw);
-    body.set("may_share", mayShare ? "1" : "");
+    body.set("nps", (npsChoice === null ? "" : String(npsChoice)));
+    body.set("consent", mayShare ? "anon" : "private");
+    body.set("signed_name", "");
+    body.set("signature", "");
     body.set("hp", "");
 
     el("sendBtn").disabled = true;
